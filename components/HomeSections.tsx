@@ -151,6 +151,7 @@ export const ServicesTable = () => (
 export const ServiceCards = () => (
   <section className="py-20 bg-white reveal">
     <div className="container mx-auto px-4">
+      <h2 className="font-display text-3xl font-bold text-center text-dark mb-10">Serviços de Urgência</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
           { title: "Desentupidora", keywords: "drain,cleaning,sewer,equipment" },
@@ -158,20 +159,27 @@ export const ServiceCards = () => (
           { title: "Consertos em Geral", keywords: "plumbing,repair,leak,tool" },
           { title: "Instalações em Geral", keywords: "plumbing,installation,bathroom,faucet" }
         ].map((card, i) => (
-          <div key={i} className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] transition-all duration-300 transform hover:-translate-y-2">
+          <div key={i} className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-red-600">
             <img src={`https://loremflickr.com/875/875/${card.keywords}`} alt={card.title} className="w-full h-80 object-cover transition duration-700 group-hover:scale-110" />
             
-            {/* Urgency Badge */}
-            <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-[-10px] group-hover:translate-y-0 duration-300">
-              CHEGAMOS RÁPIDO
+            {/* Urgent Badge */}
+            <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg animate-pulse z-10 flex items-center gap-1">
+              <i className="fa fa-bolt"></i> EMERGÊNCIA 24H
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6">
-              <h3 className="text-white font-display text-2xl font-bold mb-2 group-hover:text-primary transition-colors translate-y-0 group-hover:translate-y-[-5px] duration-300">{card.title}</h3>
-              <a href="#contato" className="text-primary font-bold bg-white px-4 py-2 rounded-lg text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-gray-100">
-                Faça seu Orçamento!
-              </a>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+              <h3 className="text-white font-display text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors translate-y-0 group-hover:translate-y-[-5px] duration-300">{card.title}</h3>
+              
+              <div className="flex flex-col gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                <span className="text-white/80 text-xs font-bold"><i className="fa fa-clock text-red-500 mr-1"></i> Chegamos em 40min</span>
+                <a href="#contato" className="bg-red-600 text-white font-bold px-4 py-3 rounded-lg text-center shadow-lg hover:bg-red-700 transition-colors uppercase text-sm">
+                   <i className="fa fa-phone-alt mr-1"></i> Chamar Agora (24h)
+                </a>
+              </div>
             </div>
+            
+            {/* Active Status Strip */}
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-green-500 group-hover:h-2 transition-all"></div>
           </div>
         ))}
       </div>
@@ -183,13 +191,16 @@ export const WhyChooseSection = () => (
   <section className="py-20 bg-secondary reveal">
     <div className="container mx-auto px-4">
        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-block bg-red-100 border border-red-300 text-red-700 px-6 py-2 rounded-full mb-4 animate-pulse">
+            <i className="fa fa-siren-on mr-2"></i> <strong>ALERTA:</strong> Equipes de plantão prontas para sair agora!
+          </div>
           <h2 className="font-display text-3xl font-bold text-dark mb-6">🕐 Atendimento 24h no CIC e Chegada Rápida</h2>
           <p className="text-gray-700 leading-relaxed text-lg">
-            Sabemos que um entupimento <strong className="text-red-600">não pode esperar</strong> e pode causar grandes danos ao seu imóvel. Por isso, a ADP Desentupidora mantém equipes de plantão estratégico em Curitiba, garantindo um tempo de resposta recorde entre 40 a 45 minutos. Nossos profissionais são treinados para resolver o problema na hora.
+            Sabemos que um entupimento <strong className="text-red-600 text-xl">não pode esperar</strong> e pode causar grandes danos ao seu imóvel. Por isso, a ADP Desentupidora mantém equipes de plantão estratégico em Curitiba, garantindo um tempo de resposta recorde entre 40 a 45 minutos. Nossos profissionais são treinados para resolver o problema na hora.
           </p>
-          <div className="mt-6">
-            <span className="inline-block bg-white border border-red-200 text-red-600 font-bold px-4 py-2 rounded-full shadow-sm animate-pulse">
-               ⚠️ Não deixe o problema piorar! Chame agora.
+          <div className="mt-6 flex justify-center">
+            <span className="inline-flex items-center gap-2 bg-white border-2 border-red-600 text-red-600 font-bold px-6 py-3 rounded-full shadow-lg transform hover:scale-105 transition-transform">
+               <i className="fa fa-exclamation-circle text-xl animate-bounce"></i> Evite alagamentos! Chame agora.
             </span>
           </div>
        </div>
@@ -198,21 +209,21 @@ export const WhyChooseSection = () => (
          {/* Left Col */}
          <div className="space-y-8 text-right">
             <div className="flex flex-col items-end group">
-               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 border-4 border-white">
                  <i className="fa fa-clock"></i>
                </div>
                <h3 className="font-bold text-xl group-hover:text-primary transition-colors">Atendimento Rápido</h3>
-               <p className="text-gray-600">Chegamos em minutos para resolver sua emergência.</p>
+               <p className="text-gray-600 font-medium">Chegamos em <span className="text-red-600 font-bold">minutos</span> para resolver sua emergência.</p>
             </div>
             <div className="flex flex-col items-end group">
-               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 border-4 border-white">
                  <i className="fa fa-tint"></i>
                </div>
                <h3 className="font-bold text-xl group-hover:text-primary transition-colors">Desentupidora</h3>
                <p className="text-gray-600">Equipamentos modernos para qualquer obstrução.</p>
             </div>
             <div className="flex flex-col items-end group">
-               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 border-4 border-white">
                  <i className="fa fa-wrench"></i>
                </div>
                <h3 className="font-bold text-xl group-hover:text-primary transition-colors">Encanadores</h3>
@@ -222,30 +233,30 @@ export const WhyChooseSection = () => (
 
          {/* Center Image */}
          <div className="flex justify-center relative">
-            <div className="absolute top-10 -right-4 bg-red-600 text-white font-bold w-24 h-24 rounded-full flex flex-col items-center justify-center shadow-xl z-10 animate-bounce-slow text-center text-xs p-2">
-              <span className="text-xl block">24h</span> Plantão
+            <div className="absolute top-10 -right-4 bg-red-600 text-white font-bold w-24 h-24 rounded-full flex flex-col items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.6)] z-10 animate-pulse text-center text-xs p-2 border-4 border-white">
+              <span className="text-2xl block">24h</span> Plantão
             </div>
-            <img src="https://loremflickr.com/500/800/modern,plumbing,equipment,technology" alt="Caminhão ADP" className="rounded-full border-8 border-white shadow-2xl h-[500px] w-[350px] object-cover hover:shadow-[0_0_30px_rgba(57,132,122,0.6)] transition-shadow duration-500 transform hover:scale-105" />
+            <img src="https://loremflickr.com/500/800/modern,plumbing,equipment,technology" alt="Caminhão ADP" className="rounded-full border-8 border-white shadow-2xl h-[500px] w-[350px] object-cover hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] transition-shadow duration-500 transform hover:scale-105" />
          </div>
 
          {/* Right Col */}
          <div className="space-y-8">
             <div className="flex flex-col items-start group">
-               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 border-4 border-white">
                  <i className="fa fa-tools"></i>
                </div>
                <h3 className="font-bold text-xl group-hover:text-primary transition-colors">Instalações</h3>
                <p className="text-gray-600">Instalação de louças, metais e tubulações.</p>
             </div>
             <div className="flex flex-col items-start group">
-               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 border-4 border-white">
                  <i className="fa fa-cogs"></i>
                </div>
                <h3 className="font-bold text-xl group-hover:text-primary transition-colors">Consertos</h3>
                <p className="text-gray-600">Manutenção geral residencial e comercial.</p>
             </div>
             <div className="flex flex-col items-start group">
-               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 border-4 border-white">
                  <i className="fa fa-fire-alt"></i>
                </div>
                <h3 className="font-bold text-xl group-hover:text-primary transition-colors">Água Quente/Fria</h3>
