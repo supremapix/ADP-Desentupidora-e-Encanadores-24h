@@ -1,5 +1,16 @@
 import React from 'react';
 
+/**
+ * PlumberGallery Component
+ * 
+ * Displays a responsive gallery of plumber-themed images with optimized loading.
+ * Uses picture elements with srcset for responsive images and WebP format support.
+ * 
+ * Dependencies:
+ * - Font Awesome 6.4.0+ (loaded globally in index.html)
+ * - Tailwind CSS for styling
+ */
+
 interface PlumberImage {
   id: string;
   title: string;

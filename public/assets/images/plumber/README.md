@@ -43,10 +43,11 @@ The images are used in the `PlumberGallery` component with responsive picture el
 
 ## Optimization
 
-- Desktop images: Quality 85%, JPEG optimized
-- Mobile images: Quality 80%, JPEG optimized
-- WebP images: Quality 85% (desktop) and 80% (mobile)
+- Desktop images: Quality 85%, JPEG optimized (32-44KB)
+- Mobile images: Quality 80%, JPEG optimized (12-16KB)
+- WebP images: Quality 85% (desktop, 16-20KB) and 80% (mobile, 8KB)
 - All images use lazy loading for better performance
+- WebP format provides ~50% smaller file sizes compared to JPEG
 
 ## Replacement
 
