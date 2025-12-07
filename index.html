@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADP Desentupidora Curitiba - 24h</title>
+    <meta name="description" content="Desentupidora ADP Curitiba - Atendimento 24h. Chegada em 40-45 min. Serviços de desentupimento, limpa fossa e encanador." />
+    
+    <!-- Google Fonts: MuseoModerno and Jost -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=MuseoModerno:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (Requested) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#39847a',
+              secondary: '#e5ddd5',
+              dark: '#2c2c2c',
+              light: '#ffffff',
+            },
+            fontFamily: {
+              sans: ['Jost', 'sans-serif'],
+              display: ['MuseoModerno', 'cursive'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'bounce-slow': 'bounce 2s infinite',
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Glassmorphism utilities */
+      .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .glass-dark {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* --- ANIMATIONS SYSTEM --- */
+
+      /* 1. Scroll Reveal Animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 2. Button Shimmer Effect */
+      .btn-shimmer {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-shimmer::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: 0.5s;
+      }
+      .btn-shimmer:hover::after {
+        left: 100%;
+        transition: 0.5s;
+      }
+
+      /* 3. Logo Drawing Effect */
+      .logo-path {
+        fill: transparent;
+        stroke: white;
+        stroke-width: 2;
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation: draw 2s ease-in-out forwards, fill 0.5s ease-in-out 2s forwards;
+      }
+      
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      
+      @keyframes fill {
+        to {
+          fill: white;
+          stroke: transparent;
+        }
+      }
+
+      /* 4. Navigation Link Hover */
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #39847a;
+        transition: width 0.3s ease-in-out;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* 5. Mobile Menu Slide */
+      .mobile-menu-enter {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      .mobile-menu-enter-active {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.3s ease-out;
+      }
+      .mobile-menu-exit {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      .mobile-menu-exit-active {
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 0.3s ease-in;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-secondary text-gray-800 font-sans">
+    <div id="root"></div>
+  </body>
+</html>
