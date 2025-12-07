@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import { COMPANY_WHATSAPP } from '../../constants';
+import { COMPANY_WHATSAPP } from '../constants';
+
+// Breakpoint for mobile detection (matches Tailwind's 'md' breakpoint)
+const MOBILE_BREAKPOINT = 768;
 
 /**
  * Hero Component with Video/Image Background
@@ -60,7 +63,7 @@ const Hero: React.FC<HeroProps> = ({
   // Detect mobile devices
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
     };
 
     checkIfMobile();
@@ -76,8 +79,10 @@ const Hero: React.FC<HeroProps> = ({
     if (onCtaClick) {
       onCtaClick();
     } else {
-      // Default behavior: open WhatsApp
-      window.open(`https://wa.me/${COMPANY_WHATSAPP}`, '_blank');
+      // Default behavior: open WhatsApp with security attributes
+      const whatsappUrl = `https://wa.me/${COMPANY_WHATSAPP}`;
+      const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      if (newWindow) newWindow.opener = null;
     }
   };
 
