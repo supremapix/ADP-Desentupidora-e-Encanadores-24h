@@ -7,8 +7,6 @@ const ASSETS = {
     heroPosterWebp: '/src/assets/images/plumber/hero-poster.webp',
     heroPosterMobileJpg: '/src/assets/images/plumber/hero-poster@mobile.jpg',
     heroPosterMobileWebp: '/src/assets/images/plumber/hero-poster@mobile.webp',
-    plumber1Jpg: '/src/assets/images/plumber/plumber-1.jpg',
-    plumber1Webp: '/src/assets/images/plumber/plumber-1.webp',
   },
   videos: {
     heroMp4: '/src/assets/video/hero.mp4',
@@ -43,16 +41,26 @@ const Hero: React.FC<HeroProps> = ({
   const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Detect mobile viewport
+  // Detect mobile viewport with debouncing
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    const debouncedCheckMobile = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(checkMobile, 150);
+    };
     
-    return () => window.removeEventListener('resize', checkMobile);
+    checkMobile();
+    window.addEventListener('resize', debouncedCheckMobile);
+    
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('resize', debouncedCheckMobile);
+    };
   }, []);
 
   // Handle video loading errors
@@ -63,7 +71,7 @@ const Hero: React.FC<HeroProps> = ({
 
   // Attempt to play video after load
   useEffect(() => {
-    if (videoRef.current && showVideo && backgroundType === 'video') {
+    if (videoRef.current && showVideo && backgroundType === 'video' && !videoError) {
       const playPromise = videoRef.current.play();
       
       if (playPromise !== undefined) {
@@ -73,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({
         });
       }
     }
-  }, [showVideo, backgroundType]);
+  }, [showVideo, backgroundType, videoError]);
 
   const shouldShowVideo = showVideo && backgroundType === 'video' && !videoError && !isMobile;
 
