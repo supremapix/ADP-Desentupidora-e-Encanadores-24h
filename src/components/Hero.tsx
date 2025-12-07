@@ -1,4 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import './Hero.css';
+
+/**
+ * Helper function to convert image path to WebP format
+ * Handles various image extensions (jpg, jpeg, png)
+ */
+const getWebPPath = (imagePath: string): string => {
+  return imagePath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+};
 
 interface HeroProps {
   /**
@@ -34,6 +43,18 @@ interface HeroProps {
    */
   posterMobileSrc?: string;
   /**
+   * Path to poster WebP image for desktop (optional, auto-generated if not provided)
+   */
+  posterSrcWebp?: string;
+  /**
+   * Path to poster WebP image for mobile (optional, auto-generated if not provided)
+   */
+  posterMobileSrcWebp?: string;
+  /**
+   * Text to highlight in the title (optional)
+   */
+  highlightText?: string;
+  /**
    * Call-to-action button text
    */
   ctaText?: string;
@@ -68,6 +89,9 @@ const Hero: React.FC<HeroProps> = ({
   videoSrcWebm = '/assets/video/hero.webm',
   posterSrc = '/assets/images/plumber/hero-poster.jpg',
   posterMobileSrc = '/assets/images/plumber/hero-poster@mobile.jpg',
+  posterSrcWebp,
+  posterMobileSrcWebp,
+  highlightText = 'CIC',
   ctaText = 'Chamar Agora',
   ctaLink = '#contato',
   secondaryCtaText = 'WhatsApp (Online)',
@@ -95,6 +119,9 @@ const Hero: React.FC<HeroProps> = ({
 
   // Determine which poster to use based on device
   const currentPoster = isMobile ? posterMobileSrc : posterSrc;
+  const currentPosterWebp = isMobile 
+    ? (posterMobileSrcWebp || getWebPPath(posterMobileSrc))
+    : (posterSrcWebp || getWebPPath(posterSrc));
 
   return (
     <section className={`hero-section relative bg-dark text-white pt-24 pb-32 overflow-hidden ${className}`}>
@@ -127,7 +154,7 @@ const Hero: React.FC<HeroProps> = ({
             {/* Show poster while video loads */}
             {!isVideoLoaded && (
               <picture>
-                <source srcSet={`${posterSrc.replace('.jpg', '.webp')}`} type="image/webp" />
+                <source srcSet={posterSrcWebp || getWebPPath(posterSrc)} type="image/webp" />
                 <img 
                   src={posterSrc} 
                   alt="Hero background" 
@@ -140,7 +167,7 @@ const Hero: React.FC<HeroProps> = ({
           // Image background (mobile or when video disabled)
           <picture>
             <source 
-              srcSet={`${posterMobileSrc.replace('.jpg', '.webp')}`} 
+              srcSet={posterMobileSrcWebp || getWebPPath(posterMobileSrc)} 
               type="image/webp" 
               media="(max-width: 767px)"
             />
@@ -150,7 +177,7 @@ const Hero: React.FC<HeroProps> = ({
               media="(max-width: 767px)"
             />
             <source 
-              srcSet={`${posterSrc.replace('.jpg', '.webp')}`} 
+              srcSet={posterSrcWebp || getWebPPath(posterSrc)} 
               type="image/webp"
             />
             <img 
@@ -191,12 +218,19 @@ const Hero: React.FC<HeroProps> = ({
             className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-up" 
             style={{ animationDelay: '0.2s' }}
           >
-            {title.split('Urgências CIC').map((part, index) => 
-              index === 0 ? (
-                <React.Fragment key={index}>{part}Urgências <span className="text-primary">CIC</span></React.Fragment>
-              ) : (
-                <React.Fragment key={index}>{part}</React.Fragment>
+            {highlightText && title.includes(highlightText) ? (
+              title.split(highlightText).map((part, index) => 
+                index < title.split(highlightText).length - 1 ? (
+                  <React.Fragment key={index}>
+                    {part}
+                    <span className="text-primary">{highlightText}</span>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment key={index}>{part}</React.Fragment>
+                )
               )
+            ) : (
+              title
             )}
           </h1>
 
@@ -269,52 +303,6 @@ const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
       </div>
-
-      {/* CSS Animations */}
-      <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-          opacity: 0;
-        }
-
-        .btn-shimmer::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            transparent
-          );
-          transition: left 0.5s;
-        }
-
-        .btn-shimmer:hover::before {
-          left: 100%;
-        }
-
-        @media (max-width: 640px) {
-          .hero-section {
-            padding-top: 5rem;
-            padding-bottom: 8rem;
-          }
-        }
-      `}</style>
     </section>
   );
 };
