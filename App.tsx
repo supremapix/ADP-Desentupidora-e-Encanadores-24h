@@ -8,6 +8,7 @@ import RegionPage from './pages/RegionPage';
 import ServiceHydrojetting from './pages/ServiceHydrojetting';
 import ServiceSeptic from './pages/ServiceSeptic';
 import FAQPage from './pages/FAQPage';
+import ImageGallery from './pages/ImageGallery';
 import NotFound from './pages/NotFound';
 
 const ScrollToTop = () => {
@@ -75,6 +76,7 @@ const App: React.FC = () => {
             <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
             
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/galeria-ia" element={<ImageGallery />} />
             
             {/* 404 Not Found Route - Catch All */}
             <Route path="*" element={<NotFound />} />
