@@ -19,12 +19,12 @@ const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a href={`https://api.whatsapp.com/send?phone=${COMPANY_WHATSAPP}`} className="hover:text-primary transition-all duration-300 flex items-center justify-center md:justify-start gap-2 group">
-                    <i className="fab fa-whatsapp transition-transform group-hover:scale-110 group-hover:-rotate-3 text-green-500"></i> WhatsApp
+                    <i className="fab fa-whatsapp transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 text-green-500"></i> WhatsApp
                   </a>
                 </li>
                 <li>
                   <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="hover:text-primary transition-all duration-300 flex items-center justify-center md:justify-start gap-2 group">
-                    <i className="fa fa-phone transition-transform group-hover:scale-110 group-hover:rotate-3"></i> {COMPANY_PHONE}
+                    <i className="fa fa-phone transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"></i> {COMPANY_PHONE}
                   </a>
                 </li>
                 <li>
