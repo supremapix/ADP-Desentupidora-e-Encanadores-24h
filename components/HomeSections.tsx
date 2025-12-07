@@ -25,7 +25,7 @@ export const HeroSection = () => (
     {/* Background Image Overlay with Zoom Effect */}
     <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Using Image 2: White Truck Pumping */}
-        <img src="https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L" alt="Caminhão ADP Desentupidora em Ação" className="w-full h-full object-cover opacity-30 transform scale-100 animate-[pulse_20s_ease-in-out_infinite] lg:animate-[none] lg:hover:scale-110 lg:transition-transform lg:duration-[20s]" />
+        <img src="https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L" alt="Caminhão ADP Desentupidora em Ação" className="w-full h-full object-cover opacity-30 animate-zoom-slow" />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/50 to-dark"></div>
     </div>
 
@@ -59,7 +59,7 @@ export const HeroSection = () => (
           ))}
         </ul>
         <div className="pt-4 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all hover:scale-105 inline-block hover:shadow-[0_0_30px_rgba(220,38,38,0.8)] text-center btn-shimmer relative overflow-hidden">
+          <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all hover:scale-105 inline-block hover:shadow-[0_0_40px_rgba(220,38,38,1)] text-center btn-shimmer relative overflow-hidden">
             <span className="absolute inset-0 bg-white/20 animate-[pulse_2s_infinite]"></span>
             <i className="fa fa-phone mr-2 animate-bounce"></i> Chamar Agora
           </a>
