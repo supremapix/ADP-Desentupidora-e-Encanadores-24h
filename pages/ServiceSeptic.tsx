@@ -11,7 +11,9 @@ const ServiceSeptic: React.FC = () => {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Limpeza de Fossa Séptica",
+    "serviceType": "Limpeza de Fossa Séptica e Caixa de Gordura",
+    "name": "Serviço de Limpa Fossa e Saneamento",
+    "description": "Serviço completo de limpeza de fossa séptica, negra, sumidouros e caixas de gordura com caminhões de auto vácuo. Descarte ecológico certificado e atendimento emergencial 24h.",
     "provider": {
       "@type": "LocalBusiness",
       "name": "ADP Desentupidora",
@@ -25,13 +27,54 @@ const ServiceSeptic: React.FC = () => {
         "postalCode": "81265-480",
         "addressCountry": "BR"
       },
-      "priceRange": "$$"
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Curitiba"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Curitiba"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Região Metropolitana de Curitiba"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços de Limpa Fossa",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Esgotamento de Fossa Séptica"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Limpeza de Fossa Negra"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Sucção de Resíduos Industriais"
+          }
+        }
+      ]
     },
-    "description": "Serviço de limpeza de fossa séptica, negra e caixas de gordura com caminhão auto vácuo em Curitiba e Região Metropolitana. Atendimento 24 horas."
+    "url": "https://adpcuritiba.com.br/servicos/limpeza-de-fossa"
   };
 
   const articles = [

@@ -12,6 +12,8 @@ const ServiceHydrojetting: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Hidrojateamento de Alta Pressão",
+    "name": "Serviço de Hidrojateamento e Desobstrução",
+    "description": "Serviço profissional de hidrojateamento de alta pressão (até 25.000 PSI) para desobstrução de tubulações de esgoto, limpeza de caixas de gordura, galerias pluviais e tanques industriais. Atendimento 24 horas.",
     "provider": {
       "@type": "LocalBusiness",
       "name": "ADP Desentupidora",
@@ -25,13 +27,54 @@ const ServiceHydrojetting: React.FC = () => {
         "postalCode": "81265-480",
         "addressCountry": "BR"
       },
-      "priceRange": "$$"
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Curitiba"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Curitiba"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Região Metropolitana de Curitiba"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços de Hidrojateamento",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Limpeza de Rede de Esgoto"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Limpeza de Caixa de Gordura"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Desentupimento Industrial"
+          }
+        }
+      ]
     },
-    "description": "Serviço profissional de hidrojateamento de alta pressão para desobstrução de tubulações, limpeza de redes de esgoto e caixas de gordura em Curitiba e região."
+    "url": "https://adpcuritiba.com.br/servicos/hidrojateamento"
   };
 
   const articles = [
