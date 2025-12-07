@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { HeroSection, AboutSection, ServicesTable, ServiceCards, WhyChooseSection, FAQSection } from '../components/HomeSections';
 import ContactForm from '../components/ContactForm';
 import VideoSection from '../components/VideoSection';
+import PlumberGallery from '../components/PlumberGallery';
 import { COMPANY_PHONE } from '../constants';
 
 const Home: React.FC = () => {
@@ -38,6 +39,9 @@ const Home: React.FC = () => {
       <AboutSection />
       <ServicesTable />
       <ServiceCards />
+      
+      {/* Plumber Gallery with Optimized Images */}
+      <PlumberGallery />
       
       {/* Video Section Moved Here */}
       <VideoSection locationName="Curitiba e Região" />
