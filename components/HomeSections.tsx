@@ -79,7 +79,7 @@ export const HeroSection = () => (
                <iframe 
                  className="absolute inset-0 w-full h-full"
                  /* Mobile-optimized: playsinline, controls, rel=0, and proper allow attributes */
-                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&mute=0&loop=1&playlist=12D85Dmnheg&playsinline=1&controls=1&rel=0&modestbranding=1&enablejsapi=1" 
+                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&loop=1&playlist=12D85Dmnheg&playsinline=1&controls=1&rel=0&modestbranding=1" 
                  title="Desentupidora ADP em Ação" 
                  frameBorder="0" 
                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
