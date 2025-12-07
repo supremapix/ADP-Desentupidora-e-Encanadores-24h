@@ -1,5 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
+import { COMPANY_WHATSAPP } from '../../constants';
+
+/**
+ * Hero Component with Video/Image Background
+ * 
+ * Features:
+ * - Responsive video/image background with mobile optimization
+ * - Automatically disables video on mobile devices for better performance
+ * - Customizable title, subtitle, and CTA button
+ * - Uses Font Awesome icons (loaded via CDN in index.html)
+ * 
+ * Note: Default asset paths assume files are in public/assets/ directory.
+ * Placeholder assets are currently in src/assets/ for development.
+ * For production, move optimized assets to public/assets/ as documented in asset README files.
+ */
 
 interface HeroProps {
   /** Title text to display in the hero section */
@@ -31,10 +46,10 @@ const Hero: React.FC<HeroProps> = ({
   ctaText = 'Solicitar Orçamento',
   onCtaClick,
   useVideoBackground = true,
-  posterImage = '/src/assets/images/plumber/hero-poster.jpg',
+  posterImage = '/assets/images/plumber/hero-poster.jpg',
   videoSources = {
-    webm: '/src/assets/video/hero.webm',
-    mp4: '/src/assets/video/hero.mp4',
+    webm: '/assets/video/hero.webm',
+    mp4: '/assets/video/hero.mp4',
   },
   className = '',
   minHeight = '600px',
@@ -61,8 +76,8 @@ const Hero: React.FC<HeroProps> = ({
     if (onCtaClick) {
       onCtaClick();
     } else {
-      // Default behavior: scroll to contact section or open WhatsApp
-      window.open('https://wa.me/5541999999999', '_blank');
+      // Default behavior: open WhatsApp
+      window.open(`https://wa.me/${COMPANY_WHATSAPP}`, '_blank');
     }
   };
 
@@ -128,7 +143,7 @@ const Hero: React.FC<HeroProps> = ({
           {ctaText && (
             <button
               onClick={handleCtaClick}
-              className="hero-cta inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-[#2d6b63] text-white font-bold text-lg rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 animate-fade-in-delay-2"
+              className="hero-cta inline-flex items-center gap-2 px-8 py-4 bg-primary hover:brightness-90 text-white font-bold text-lg rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 animate-fade-in-delay-2"
               aria-label={ctaText}
             >
               <i className="fab fa-whatsapp text-2xl"></i>

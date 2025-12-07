@@ -98,6 +98,15 @@ The Hero component should automatically disable video playback on mobile devices
 - Test on mobile devices (iOS Safari, Chrome Mobile)
 - Verify autoplay works (requires `muted` attribute)
 
+## Important: Asset Location for Production
+
+**Note**: These placeholder videos are currently in `src/assets/video/` as specified. For production use in a Vite project:
+
+- **Recommended**: Move final optimized videos to `public/assets/video/`
+- Files in `public/` are served as-is and can be referenced by path
+- This allows updating videos without rebuilding the application
+- Default paths in Hero component use `/assets/video/` (public folder convention)
+
 ## Implementation in React
 
 ```tsx

@@ -65,6 +65,22 @@ sharp('input.jpg')
   .toFile('output.jpg');
 ```
 
+## Important: Asset Location for Production
+
+**Note**: These placeholder assets are currently in `src/assets/` as specified. For production use in a Vite project, you have two options:
+
+1. **Option A (Recommended for static assets)**: Move final optimized images to `public/assets/images/plumber/`
+   - Files in `public/` are served as-is at the root
+   - Reference them as `/assets/images/plumber/image.jpg`
+   - No import needed in components
+
+2. **Option B (For imported assets)**: Keep in `src/assets/` and import in components
+   - Use `import heroImage from '../assets/images/plumber/hero-poster.jpg'`
+   - Vite will process and optimize during build
+   - Gets cache-busting hashes in filenames
+
+For this project, **Option A is recommended** for video/image backgrounds to allow easy updates without rebuilding.
+
 ## Implementation in Components
 
 When using these images in React components, implement responsive picture elements:
