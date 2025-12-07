@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import RegionPage from './pages/RegionPage';
 import ServiceHydrojetting from './pages/ServiceHydrojetting';
 import ServiceSeptic from './pages/ServiceSeptic';
-import ImageGallery from './pages/ImageGallery';
 import FAQPage from './pages/FAQPage';
 
 const ScrollToTop = () => {
@@ -74,8 +73,6 @@ const App: React.FC = () => {
             <Route path="/servicos/hidrojateamento" element={<ServiceHydrojetting />} />
             <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
             
-            {/* AI Gallery */}
-            <Route path="/galeria-ia" element={<ImageGallery />} />
             <Route path="/faq" element={<FAQPage />} />
           </Routes>
         </div>

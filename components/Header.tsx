@@ -66,7 +66,6 @@ const Header: React.FC = () => {
                  <Link to="/servicos/hidrojateamento" className="px-4 py-2 hover:bg-gray-50 text-gray-700 transition-colors border-l-2 border-transparent hover:border-primary">Hidrojateamento</Link>
                  <Link to="/servicos/limpeza-de-fossa" className="px-4 py-2 hover:bg-gray-50 text-gray-700 transition-colors border-l-2 border-transparent hover:border-primary">Limpeza de Fossa</Link>
                  <Link to="/faq" className="px-4 py-2 hover:bg-gray-50 text-gray-700 transition-colors border-l-2 border-transparent hover:border-primary">Perguntas Frequentes (FAQ)</Link>
-                 <Link to="/galeria-ia" className="px-4 py-2 hover:bg-gray-50 text-gray-700 transition-colors flex items-center gap-2 border-l-2 border-transparent hover:border-primary"><i className="fa fa-magic text-primary"></i> Galeria IA</Link>
               </div>
             )}
          </div>
@@ -167,7 +166,6 @@ const Header: React.FC = () => {
               <Link to="/servicos/hidrojateamento" onClick={toggleMobileMenu} className="block py-1 text-gray-600 hover:text-primary transition-transform hover:translate-x-1">Hidrojateamento</Link>
               <Link to="/servicos/limpeza-de-fossa" onClick={toggleMobileMenu} className="block py-1 text-gray-600 hover:text-primary transition-transform hover:translate-x-1">Limpeza de Fossa</Link>
               <Link to="/faq" onClick={toggleMobileMenu} className="block py-1 text-gray-600 hover:text-primary transition-transform hover:translate-x-1">FAQ / Dúvidas</Link>
-              <Link to="/galeria-ia" onClick={toggleMobileMenu} className="block py-1 text-gray-600 hover:text-primary transition-transform hover:translate-x-1"><i className="fa fa-magic mr-1"></i> Galeria de Imagens IA</Link>
             </div>
 
             <div className="border-l-4 border-primary pl-4">

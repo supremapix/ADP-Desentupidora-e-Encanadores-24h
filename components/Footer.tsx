@@ -32,11 +32,6 @@ const Footer: React.FC = () => {
                     <i className="fa fa-envelope transition-transform group-hover:scale-110"></i> Contato
                   </a>
                 </li>
-                <li>
-                  <Link to="/galeria-ia" className="hover:text-primary transition-all duration-300 flex items-center justify-center md:justify-start gap-2 group">
-                    <i className="fa fa-magic transition-transform group-hover:rotate-6 text-purple-400"></i> Galeria IA
-                  </Link>
-                </li>
               </ul>
            </div>
 
