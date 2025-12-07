@@ -3,9 +3,9 @@ import { SERVICES_LIST } from '../constants';
 
 export const HeroSection = () => (
   <section className="relative bg-dark text-white pt-24 pb-32 overflow-hidden">
-    {/* Background Image Overlay with Zoom Effect */}
+    {/* Background Image Overlay with Zoom Effect - Updated to Truck Image */}
     <div className="absolute inset-0 z-0 overflow-hidden">
-        <img src="https://loremflickr.com/1920/1080/plumber,truck,emergency,arrival" alt="Background" className="w-full h-full object-cover opacity-20 transform scale-100 animate-[pulse_20s_ease-in-out_infinite] lg:animate-[none] lg:hover:scale-110 lg:transition-transform lg:duration-[20s]" />
+        <img src="https://loremflickr.com/1920/1080/plumbing,truck,emergency" alt="Caminhão ADP Desentupidora" className="w-full h-full object-cover opacity-20 transform scale-100 animate-[pulse_20s_ease-in-out_infinite] lg:animate-[none] lg:hover:scale-110 lg:transition-transform lg:duration-[20s]" />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/50 to-dark"></div>
     </div>
 
@@ -53,8 +53,8 @@ export const HeroSection = () => (
              {/* Pointer events none ensures the blur effect doesn't block touches on the video on mobile */}
              <div className="absolute inset-0 bg-primary rounded-2xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"></div>
              
-             {/* YouTube Short Embed */}
-             <div className="relative w-full aspect-[9/16] rounded-2xl shadow-2xl border-4 border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500 z-10">
+             {/* YouTube Short Embed with fixed width for mobile to avoid height issues */}
+             <div className="relative w-[280px] sm:w-[320px] mx-auto aspect-[9/16] rounded-2xl shadow-2xl border-4 border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500 z-10">
                <iframe 
                  className="absolute inset-0 w-full h-full"
                  /* Added playsinline=1, controls=1 and rel=0 for better mobile compatibility */
@@ -67,7 +67,7 @@ export const HeroSection = () => (
                ></iframe>
              </div>
              {/* Urgent Badge on Video - pointer-events-none to click through if needed, though usually in corner */}
-             <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow animate-pulse z-20 pointer-events-none">
+             <div className="absolute top-4 right-1/2 translate-x-1/2 sm:right-4 sm:translate-x-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow animate-pulse z-20 pointer-events-none">
                AO VIVO
              </div>
         </div>
@@ -158,9 +158,14 @@ export const ServiceCards = () => (
       <h2 className="font-display text-3xl font-bold text-center text-dark mb-10">Serviços de Urgência</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { title: "Desentupidora", keywords: "technician,unclogging,toilet" },
+          // Updated images to match visual requirements:
+          // 1. Desentupidora: Plumber unclogging toilet
+          // 2. Encanadores: Plumber fixing heater/pipes
+          // 3. Consertos: General plumbing repair
+          // 4. Instalações: Plumber with thumbs up
+          { title: "Desentupidora", keywords: "plumber,unclogging,toilet" },
           { title: "Encanadores", keywords: "plumber,fixing,heater" },
-          { title: "Consertos em Geral", keywords: "plumbing,repair,pipes,industrial" },
+          { title: "Consertos em Geral", keywords: "plumber,repair,tools" },
           { title: "Instalações em Geral", keywords: "plumber,thumbs,up,smiling" }
         ].map((card, i) => (
           <div key={i} className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-red-600">
