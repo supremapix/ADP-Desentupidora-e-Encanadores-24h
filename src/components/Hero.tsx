@@ -119,7 +119,6 @@ const Hero: React.FC<HeroProps> = ({
           muted
           loop
           playsInline
-          webkit-playsinline="true"
           preload="metadata"
           aria-label="Hero background video"
         >
