@@ -47,33 +47,6 @@ const ServiceSeptic: React.FC = () => {
         "name": "Região Metropolitana de Curitiba"
       }
     ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Serviços de Limpa Fossa",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Esgotamento de Fossa Séptica"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Limpeza de Fossa Negra"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Sucção de Resíduos Industriais"
-          }
-        }
-      ]
-    },
     "url": "https://adpcuritiba.com.br/servicos/limpeza-de-fossa"
   };
 

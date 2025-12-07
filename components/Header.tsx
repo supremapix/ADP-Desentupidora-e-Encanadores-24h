@@ -113,18 +113,18 @@ const Header: React.FC = () => {
           <div className="flex gap-2 items-center">
              <a 
                href="https://wa.me/5541985171966" 
-               className="text-green-500 text-2xl transition-all duration-300 hover:scale-110 hover:rotate-6 active:scale-95 relative" 
+               className="text-green-500 text-2xl transition-all duration-300 hover:scale-110 hover:rotate-6 active:scale-95 relative group" 
                title="WhatsApp"
              >
-               <i className="fab fa-whatsapp"></i>
+               <i className="fab fa-whatsapp transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"></i>
                <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
              </a>
              <a 
                href="tel:4133451194" 
-               className="text-primary text-2xl transition-all duration-300 hover:scale-110 hover:-rotate-6 active:scale-95 relative" 
+               className="text-primary text-2xl transition-all duration-300 hover:scale-110 hover:-rotate-6 active:scale-95 relative group" 
                title="Ligar"
              >
-               <i className="fa fa-phone"></i>
+               <i className="fa fa-phone transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12"></i>
                <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping delay-75"></span>
              </a>
           </div>

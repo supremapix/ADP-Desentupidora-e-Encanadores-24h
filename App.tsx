@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
@@ -8,6 +8,7 @@ import RegionPage from './pages/RegionPage';
 import ServiceHydrojetting from './pages/ServiceHydrojetting';
 import ServiceSeptic from './pages/ServiceSeptic';
 import FAQPage from './pages/FAQPage';
+import NotFound from './pages/NotFound';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -58,7 +59,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col font-sans text-gray-800">
         <Header />
@@ -74,12 +75,15 @@ const App: React.FC = () => {
             <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
             
             <Route path="/faq" element={<FAQPage />} />
+            
+            {/* 404 Not Found Route */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
         <FloatingButtons />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

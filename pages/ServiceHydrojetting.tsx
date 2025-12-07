@@ -47,33 +47,6 @@ const ServiceHydrojetting: React.FC = () => {
         "name": "Região Metropolitana de Curitiba"
       }
     ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Serviços de Hidrojateamento",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Limpeza de Rede de Esgoto"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Limpeza de Caixa de Gordura"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Desentupimento Industrial"
-          }
-        }
-      ]
-    },
     "url": "https://adpcuritiba.com.br/servicos/hidrojateamento"
   };
 

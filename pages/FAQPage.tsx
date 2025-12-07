@@ -35,6 +35,10 @@ const FAQPage: React.FC = () => {
         { 
           q: "Como é feito o orçamento? Cobram taxa de visita?", 
           a: "A transparência é um dos pilares da ADP. Não cobramos taxa de visita para Curitiba e a maior parte da região metropolitana. O processo funciona assim: você entra em contato, nós deslocamos uma equipe técnica até o seu endereço sem custo. O técnico avalia a situação in loco, identifica a causa do entupimento, a complexidade do acesso e o equipamento necessário (máquina rotativa K-50, K-500 ou hidrojateamento). Com base nisso, ele lhe passa o orçamento exato e fechado antes de iniciar qualquer trabalho. Você tem total liberdade para aprovar ou não. Acreditamos que cobrar orçamento por telefone é desonesto, pois cada entupimento é único. Um 'entupimento de pia' pode ser apenas uma sujeira no sifão (resolvido em 5 minutos) ou uma obstrução sólida na coluna do prédio (que exige horas de trabalho). Avaliando pessoalmente, garantimos o preço justo pelo serviço real necessário, sem surpresas na hora de pagar." 
+        },
+        { 
+          q: "Quais as formas de pagamento aceitas?", 
+          a: "Buscamos facilitar ao máximo a sua vida em um momento de urgência. Aceitamos pagamentos em dinheiro, PIX (com desconto especial), cartões de débito e crédito de todas as bandeiras. Para serviços de maior valor, como limpezas de fossa grandes ou hidrojateamento extenso, oferecemos parcelamento no cartão de crédito. Para empresas, condomínios e indústrias, trabalhamos com faturamento via boleto bancário (sujeito a análise de cadastro), permitindo que você organize seu fluxo de caixa. Emitimos Nota Fiscal para todos os serviços prestados, o que é essencial para prestação de contas de síndicos e administradores de empresas." 
         }
       ]
     },
@@ -60,6 +64,14 @@ const FAQPage: React.FC = () => {
         { 
           q: "Raízes de árvores podem entupir o esgoto? Como resolver?", 
           a: "Sim, raízes são uma das causas mais frequentes e difíceis de entupimentos, especialmente em casas com jardins ou calçadas arborizadas. As raízes buscam umidade e nutrientes. Se houver a mínima fissura ou junta mal vedada na tubulação de esgoto, as raízes penetram, crescem lá dentro e formam uma 'cabeleira' densa que bloqueia totalmente o fluxo e pode até quebrar o cano. Produtos químicos dificilmente resolvem isso. A solução eficaz é o uso de máquinas rotativas com ponteiras cortadoras de raízes (lâminas afiadas que giram e cortam a vegetação por dentro do cano) ou hidrojateamento com bicos cortadores. Em casos recorrentes, após a desobstrução, pode ser necessário reparar o ponto de entrada da raiz para evitar que ela cresça novamente. A ADP possui equipamentos específicos de alta potência projetados justamente para cortar raízes sem destruir a tubulação." 
+        },
+        { 
+          q: "Tentar desentupir com arame ou cabide funciona?", 
+          a: "O famoso truque do cabide de arame é um clássico do 'faça você mesmo', mas traz riscos. Se o entupimento for muito superficial (ex: cabelo logo na saída do ralo), pode funcionar. Porém, se a obstrução estiver mais funda, o arame pode empurrar a sujeira ainda mais para longe, compactando-a e tornando o entupimento pior. O maior risco, contudo, é perfurar o cano. Tubulações de PVC ou corrugadas (sifonadas) são frágeis a objetos pontiagudos metálicos. Um furo no sifão ou no cano dentro da parede causará vazamentos silenciosos que podem danificar móveis e estruturas. Além disso, o arame pode riscar a louça sanitária, estragando a estética do seu banheiro para sempre. O custo de um serviço profissional é muito menor do que o custo de trocar um vaso sanitário riscado ou quebrar uma parede para consertar um cano furado por arame." 
+        },
+        { 
+          q: "Existe garantia para o serviço de desentupimento?", 
+          a: "Sim, todos os serviços realizados pela ADP Desentupidora possuem garantia legal. O prazo de garantia varia de acordo com o tipo de serviço executado e é especificado no orçamento/ordem de serviço. Geralmente, oferecemos 90 dias de garantia técnica. Isso significa que, se o local voltar a entupir pelo mesmo motivo ou falha na execução dentro desse prazo, retornaremos gratuitamente para refazer o serviço. Vale ressaltar que a garantia cobre a desobstrução realizada; ela não cobre novos entupimentos causados por mau uso posterior (como jogar fraldas ou objetos no vaso após a nossa saída) ou problemas estruturais da tubulação (como canos quebrados ou afundados) que foram alertados pelo técnico. Prezamos pela honestidade: se o problema for estrutural, avisaremos que o desentupimento é uma medida paliativa e que o reparo definitivo exige obra." 
         }
       ]
     },
@@ -73,6 +85,10 @@ const FAQPage: React.FC = () => {
         { 
           q: "O que é feito com o resíduo retirado da fossa?", 
           a: "A responsabilidade ambiental é coisa séria para a ADP. O material retirado de fossas sépticas e caixas de gordura é altamente poluente e biológico. Jamais deve ser descartado em rios, bueiros ou terrenos baldios (o que é crime ambiental inafiançável). Nossos caminhões transportam todo o efluente coletado para Estações de Tratamento de Esgoto (ETEs) credenciadas pela Sanepar e órgãos ambientais. Lá, o resíduo passa por processos físicos e químicos para ser tratado adequadamente antes de voltar à natureza. Nós emitimos o Certificado de Destinação de Efluentes para todos os clientes comerciais e industriais, e também para residenciais que solicitem, garantindo que você está contratando uma empresa legalizada e ecologicamente correta." 
+        },
+        { 
+          q: "Como é feita a limpeza de caixas de gordura de restaurantes?", 
+          a: "Para restaurantes e cozinhas industriais, a limpeza da caixa de gordura é uma exigência sanitária rigorosa. A gordura nesses ambientes acumula muito rápido e forma blocos duros como pedra. A limpeza manual muitas vezes é ineficiente e demorada. A ADP utiliza caminhões de hidrojateamento e sucção. Primeiro, sugamos a parte líquida e pastosa. Se houver gordura petrificada, utilizamos o hidrojato para quebrar os blocos e limpar as paredes da caixa até o concreto original. Isso elimina o mau cheiro e previne entupimentos nos ramais da cozinha. Oferecemos contratos de manutenção programada (mensal ou quinzenal) para que o restaurante nunca precise parar suas atividades por problemas de esgoto, mantendo o estabelecimento sempre em conformidade com a Vigilância Sanitária." 
         }
       ]
     },
@@ -98,6 +114,14 @@ const FAQPage: React.FC = () => {
         { 
           q: "Como saber se tenho um vazamento oculto (infiltração)?", 
           a: "Vazamentos ocultos são traiçoeiros pois podem danificar a estrutura da casa e aumentar muito a conta de água antes de serem vistos. Sinais de alerta: 1) Conta de água aumentou repentinamente sem mudança de hábito. 2) Manchas de mofo, bolhas na pintura ou rodapés soltando, especialmente em paredes que passam tubulação. 3) O 'teste do hidrômetro': feche todas as torneiras, não use o vaso e observe o relógio de água. Se ele continuar girando, há vazamento na rede pressurizada. 4) Som de água correndo nas paredes à noite quando tudo está silêncio. A ADP possui equipamentos de Caça Vazamentos (geofone eletrônico) que escutam o vazamento dentro da parede ou sob o piso, permitindo localizar o ponto exato para quebrar apenas um azulejo, e não a parede inteira." 
+        },
+        { 
+          q: "Por que as calhas e condutores entopem?", 
+          a: "Calhas e condutores verticais entopem principalmente devido ao acúmulo de folhas, galhos, poeira e ninhos de pássaros, especialmente se houver árvores próximas ao telhado. Quando a calha entope, a água da chuva transborda, podendo infiltrar pelo telhado, estragar forros de gesso e manchar paredes. Em casos graves, o peso da água parada pode até derrubar a calha. Recomendamos a limpeza de calhas duas vezes ao ano: antes da temporada de chuvas de verão e no final do outono (quando as folhas caem). Para condutores verticais entupidos, onde a limpeza manual não alcança, utilizamos hidrojateamento para lavar o tubo de cima a baixo, garantindo o escoamento total da água pluvial." 
+        },
+        { 
+          q: "Moro em apartamento no térreo. Tenho mais risco de entupimento?", 
+          a: "Infelizmente, sim. Apartamentos no térreo ou primeiro andar são o 'ponto baixo' da coluna de esgoto do prédio. Se houver um entupimento na tubulação principal do edifício ou na saída para a rua, todo o esgoto gerado pelos andares de cima (que continua descendo pela gravidade) não tem para onde ir e acaba retornando pelos ralos e vasos sanitários do apartamento mais baixo. É o chamado 'refluxo'. Para prevenir esse desastre, é vital que o condomínio mantenha a limpeza das caixas de esgoto e gordura em dia (hidrojateamento preventivo). Se você mora no térreo e ouvir borbulhas ou sentir cheiro forte, avise o síndico imediatamente, pois pode ser o prenúncio de um refluxo da coluna central." 
         }
       ]
     }
