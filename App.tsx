@@ -6,7 +6,9 @@ import FloatingButtons from './components/FloatingButtons';
 import Home from './pages/Home';
 import RegionPage from './pages/RegionPage';
 import ServiceHydrojetting from './pages/ServiceHydrojetting';
+import ServiceSeptic from './pages/ServiceSeptic';
 import ImageGallery from './pages/ImageGallery';
+import FAQPage from './pages/FAQPage';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -52,12 +54,9 @@ const App: React.FC = () => {
       };
     };
 
-    // Need a small timeout to ensure DOM elements are mounted, especially on route changes
     const timeoutId = setTimeout(handleScrollReveal, 100);
-    
-    // Also re-run when location changes
     return () => clearTimeout(timeoutId);
-  }, []); // Run once on mount, logic handles dynamic elements via re-observation if needed, but simple layout works fine here.
+  }, []);
 
   return (
     <HashRouter>
@@ -73,9 +72,11 @@ const App: React.FC = () => {
             
             {/* Service Pages */}
             <Route path="/servicos/hidrojateamento" element={<ServiceHydrojetting />} />
+            <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
             
             {/* AI Gallery */}
             <Route path="/galeria-ia" element={<ImageGallery />} />
+            <Route path="/faq" element={<FAQPage />} />
           </Routes>
         </div>
         <Footer />
