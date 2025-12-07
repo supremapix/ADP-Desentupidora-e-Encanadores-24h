@@ -76,7 +76,7 @@ const App: React.FC = () => {
             
             <Route path="/faq" element={<FAQPage />} />
             
-            {/* 404 Not Found Route */}
+            {/* 404 Not Found Route - Catch All */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
