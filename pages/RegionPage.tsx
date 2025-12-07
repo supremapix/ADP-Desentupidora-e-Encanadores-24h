@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, Navigate, Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 import VideoSection from '../components/VideoSection';
 import { BAIRROS, CIDADES_RMC } from '../constants';
@@ -153,13 +153,33 @@ const RegionPage: React.FC<RegionPageProps> = ({ type }) => {
             ))}
           </div>
           
-          <div className="bg-secondary/20 p-8 rounded-2xl border border-secondary/50">
+          <div className="bg-secondary/20 p-8 rounded-2xl border border-secondary/50 mb-12">
              <h2 className="font-display text-2xl font-bold mb-4">Sobre {formattedName}</h2>
              <p className="text-gray-700 leading-relaxed">
                Atuamos fortemente na região de {formattedName} com equipes de prontidão. Conhecemos as particularidades da rede de esgoto local e oferecemos as melhores soluções para os moradores e empresas.
                Se você precisa de uma desentupidora em {formattedName}, conte com a ADP para um serviço limpo, rápido e com garantia.
              </p>
           </div>
+
+          {/* Related Services Internal Linking */}
+          <div className="border-t border-gray-100 pt-12">
+            <h3 className="font-display text-xl font-bold text-dark mb-6">Serviços Relacionados da ADP</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+               <Link to="/servicos/hidrojateamento" className="p-4 bg-gray-50 rounded-lg hover:bg-primary hover:text-white transition text-center text-sm font-bold">
+                 Hidrojateamento 24h
+               </Link>
+               <Link to="/servicos/limpeza-de-fossa" className="p-4 bg-gray-50 rounded-lg hover:bg-primary hover:text-white transition text-center text-sm font-bold">
+                 Limpeza de Fossa
+               </Link>
+               <Link to="/faq" className="p-4 bg-gray-50 rounded-lg hover:bg-primary hover:text-white transition text-center text-sm font-bold">
+                 Dúvidas Frequentes
+               </Link>
+               <Link to="/#servicos" className="p-4 bg-gray-50 rounded-lg hover:bg-primary hover:text-white transition text-center text-sm font-bold">
+                 Todos os Serviços
+               </Link>
+            </div>
+          </div>
+
         </div>
       </section>
 

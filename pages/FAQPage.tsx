@@ -127,6 +127,22 @@ const FAQPage: React.FC = () => {
     }
   };
 
+  // Generate Structured Data for FAQPage
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": Object.values(faqData).flatMap(category => 
+      category.questions.map(q => ({
+        "@type": "Question",
+        "name": q.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": q.a
+        }
+      }))
+    )
+  };
+
   // Flatten questions for search
   const allQuestions = Object.entries(faqData).flatMap(([catKey, category]) => 
     category.questions.map((q, idx) => ({ ...q, category: category.title, globalIndex: `${catKey}-${idx}` }))
@@ -141,6 +157,12 @@ const FAQPage: React.FC = () => {
 
   return (
     <main>
+       {/* Schema.org Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       <section className="bg-dark text-white py-20 text-center">
         <div className="container mx-auto px-4">
           <h1 className="font-display text-4xl font-bold mb-4 animate-fade-in-up">Central de Ajuda e Dúvidas Técnicas</h1>

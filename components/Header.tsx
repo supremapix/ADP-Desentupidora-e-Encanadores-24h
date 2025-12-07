@@ -80,10 +80,12 @@ const Header: React.FC = () => {
         <i className="fa fa-bolt text-yellow-300"></i> EQUIPES DE PLANTÃO AGORA NO CIC <i className="fa fa-bolt text-yellow-300"></i>
       </div>
 
-      <div className="container mx-auto px-4 h-28 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-20 lg:h-28 flex items-center justify-between transition-all duration-300">
         {/* Logo Section */}
         <Link to="/" className="flex items-center gap-2 group relative z-10">
-          <AnimatedLogo />
+          <div className="transform scale-75 lg:scale-100 origin-left transition-transform duration-300">
+             <AnimatedLogo />
+          </div>
           {/* Hide text on very small screens or keep as minimal brand reinforcement */}
           <div className="hidden xl:block">
             <h1 className="font-display font-bold text-2xl text-primary leading-none group-hover:text-teal-700 transition-colors">ADP Desentupidora</h1>
@@ -134,22 +136,39 @@ const Header: React.FC = () => {
           </a>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle with Pixel Perfect Animation */}
         <button 
-          className="lg:hidden text-3xl text-primary w-10 h-10 flex items-center justify-center relative focus:outline-none ml-auto" 
+          className="lg:hidden text-primary w-10 h-10 flex items-center justify-center relative focus:outline-none ml-auto z-50 p-2" 
           onClick={toggleMobileMenu}
+          aria-label="Menu Principal"
         >
-          <div className="w-6 h-6 flex flex-col justify-between items-center transition-all duration-300">
-            <span className={`h-0.5 w-full bg-primary rounded transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`}></span>
-            <span className={`h-0.5 w-full bg-primary rounded transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`h-0.5 w-full bg-primary rounded transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`}></span>
+          <div className="w-6 h-5 relative rotate-0 transition-transform duration-500 ease-in-out cursor-pointer">
+            <span 
+              className={`block absolute h-0.5 w-full bg-primary rounded opacity-100 left-0 rotate-0 transition-all duration-300 ease-in-out ${
+                isMobileMenuOpen ? 'top-2.5 rotate-[135deg]' : 'top-0'
+              }`}
+            ></span>
+            <span 
+              className={`block absolute h-0.5 w-full bg-primary rounded opacity-100 left-0 rotate-0 transition-all duration-300 ease-in-out ${
+                isMobileMenuOpen ? 'opacity-0 left-[-60px]' : 'top-2.5'
+              }`}
+            ></span>
+            <span 
+              className={`block absolute h-0.5 w-full bg-primary rounded opacity-100 left-0 rotate-0 transition-all duration-300 ease-in-out ${
+                isMobileMenuOpen ? 'top-2.5 rotate-[-135deg]' : 'top-5'
+              }`}
+            ></span>
           </div>
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`lg:hidden bg-white border-t border-gray-100 max-h-[80vh] overflow-y-auto fixed top-28 left-0 w-full z-40 shadow-xl transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
-          <div className="flex flex-col p-4 space-y-4">
+      {/* Mobile Menu - Slide In Effect */}
+      <div 
+        className={`lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 max-h-[calc(100vh-80px)] overflow-y-auto fixed top-20 left-0 w-full z-40 shadow-xl transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) ${
+          isMobileMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+        }`}
+      >
+          <div className="flex flex-col p-4 space-y-4 pb-20">
             <div className="bg-red-50 border border-red-100 p-3 rounded-lg flex items-center gap-3 animate-pulse">
               <div className="bg-red-100 p-2 rounded-full text-red-600">
                 <i className="fa fa-bolt"></i>

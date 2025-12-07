@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SERVICES_LIST } from '../constants';
+import { Link } from 'react-router-dom';
 
 export const HeroSection = () => (
   <section className="relative bg-dark text-white pt-24 pb-32 overflow-hidden">
@@ -54,8 +55,8 @@ export const HeroSection = () => (
              {/* Pointer events none ensures the blur effect doesn't block touches on the video on mobile */}
              <div className="absolute inset-0 bg-primary rounded-2xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"></div>
              
-             {/* YouTube Short Embed with fixed width for mobile to avoid height issues */}
-             <div className="relative w-[280px] sm:w-[320px] mx-auto aspect-[9/16] rounded-2xl shadow-2xl border-4 border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500 z-10">
+             {/* YouTube Short Embed with responsive width for mobile compatibility */}
+             <div className="relative w-full max-w-[320px] mx-auto aspect-[9/16] rounded-2xl shadow-2xl border-4 border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500 z-10">
                <iframe 
                  className="absolute inset-0 w-full h-full"
                  /* Added playsinline=1, controls=1 and rel=0 for better mobile compatibility */
@@ -167,12 +168,12 @@ export const ServiceCards = () => (
           // 2. Encanadores: Plumber fixing heater/pipes
           // 3. Consertos: General plumbing repair
           // 4. Instalações: Plumber with thumbs up
-          { title: "Desentupidora", keywords: "plumber,unclogging,toilet" },
-          { title: "Encanadores", keywords: "plumber,fixing,heater" },
-          { title: "Consertos em Geral", keywords: "plumber,repair,tools" },
-          { title: "Instalações em Geral", keywords: "plumber,thumbs,up,smiling" }
+          { title: "Desentupidora", keywords: "plumber,unclogging,toilet", link: "/servicos/hidrojateamento" },
+          { title: "Encanadores", keywords: "plumber,fixing,heater", link: "/#contato" },
+          { title: "Limpa Fossa", keywords: "septic,tank,truck", link: "/servicos/limpeza-de-fossa" }, // Changed "Consertos" to "Limpa Fossa" for better relevance
+          { title: "Instalações em Geral", keywords: "plumber,thumbs,up,smiling", link: "/#contato" }
         ].map((card, i) => (
-          <div key={i} className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-red-600">
+          <Link to={card.link} key={i} className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-red-600 block">
             <img src={`https://loremflickr.com/875/875/${card.keywords}`} alt={card.title} className="w-full h-80 object-cover transition duration-700 group-hover:scale-110" />
             
             {/* Urgent Badge */}
@@ -190,15 +191,15 @@ export const ServiceCards = () => (
               
               <div className="flex flex-col gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 opacity-0 group-hover:opacity-100">
                 <span className="text-white/90 text-xs font-bold bg-black/50 px-2 py-1 rounded w-fit"><i className="fa fa-clock text-red-500 mr-1"></i> Chegamos em 40min</span>
-                <a href="#contato" className="bg-red-600 text-white font-bold px-4 py-3 rounded-lg text-center shadow-lg hover:bg-red-700 transition-colors uppercase text-sm flex items-center justify-center gap-2">
+                <span className="bg-red-600 text-white font-bold px-4 py-3 rounded-lg text-center shadow-lg hover:bg-red-700 transition-colors uppercase text-sm flex items-center justify-center gap-2">
                    <i className="fa fa-phone-alt animate-bounce"></i> Chamar Agora <i className="fa fa-bolt text-yellow-300 animate-pulse"></i>
-                </a>
+                </span>
               </div>
             </div>
             
             {/* Active Status Strip */}
             <div className="absolute bottom-0 left-0 w-full h-1 bg-green-500 group-hover:h-2 transition-all"></div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
@@ -333,9 +334,9 @@ export const FAQSection = () => {
              ))}
          </div>
          <div className="text-center mt-8">
-            <a href="/faq" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-700 transition">
+            <Link to="/faq" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-700 transition">
               Ver Todas as Perguntas
-            </a>
+            </Link>
          </div>
        </div>
     </section>
