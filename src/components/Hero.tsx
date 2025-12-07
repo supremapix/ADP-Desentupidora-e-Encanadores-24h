@@ -154,9 +154,9 @@ const Hero: React.FC<HeroProps> = ({
             {/* Show poster while video loads */}
             {!isVideoLoaded && (
               <picture>
-                <source srcSet={posterSrcWebp || getWebPPath(posterSrc)} type="image/webp" />
+                <source srcSet={currentPosterWebp} type="image/webp" />
                 <img 
-                  src={posterSrc} 
+                  src={currentPoster} 
                   alt="Hero background" 
                   className="w-full h-full object-cover opacity-30"
                 />
@@ -218,9 +218,13 @@ const Hero: React.FC<HeroProps> = ({
             className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-up" 
             style={{ animationDelay: '0.2s' }}
           >
-            {highlightText && title.includes(highlightText) ? (
-              title.split(highlightText).map((part, index) => 
-                index < title.split(highlightText).length - 1 ? (
+            {(() => {
+              if (!highlightText || !title.includes(highlightText)) {
+                return title;
+              }
+              const titleParts = title.split(highlightText);
+              return titleParts.map((part, index) => 
+                index < titleParts.length - 1 ? (
                   <React.Fragment key={index}>
                     {part}
                     <span className="text-primary">{highlightText}</span>
@@ -228,10 +232,8 @@ const Hero: React.FC<HeroProps> = ({
                 ) : (
                   <React.Fragment key={index}>{part}</React.Fragment>
                 )
-              )
-            ) : (
-              title
-            )}
+              );
+            })()}
           </h1>
 
           {/* Subtitle */}
