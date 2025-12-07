@@ -20,13 +20,13 @@ export const HeroSection = () => (
     <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12 mt-8">
       <div className="md:w-1/2 space-y-6">
         <div className="inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-widest mb-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          <i className="fa fa-bolt mr-1"></i> Chegamos Rápido
+          <i className="fa fa-bolt mr-1 text-yellow-300"></i> Chegamos Rápido
         </div>
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           🚨 Atendimento de <span className="text-primary">Urgências CIC</span> Desentupidora ADP Curitiba 🚨
         </h1>
         <h2 className="text-2xl text-gray-300 font-light animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          Chegada média: <span className="text-white font-bold bg-red-600 px-2 rounded shadow-lg shadow-red-600/50">40 a 45 minutos</span>
+          Chegada média: <span className="text-white font-bold bg-red-600 px-2 rounded shadow-lg shadow-red-600/50 animate-pulse">40 a 45 minutos</span>
         </h2>
         <p className="text-gray-300 text-lg animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           Atendendo Cidade Industrial de Curitiba (CIC), Fazendinha, Campo Comprido, Orleans, São Braz, Mossunguê (Ecoville) e Santa Felicidade.
@@ -39,8 +39,9 @@ export const HeroSection = () => (
           ))}
         </ul>
         <div className="pt-4 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all hover:scale-105 inline-block hover:shadow-[0_0_30px_rgba(220,38,38,0.8)] text-center btn-shimmer">
-            <i className="fa fa-phone mr-2"></i> Chamar Agora
+          <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all hover:scale-105 inline-block hover:shadow-[0_0_30px_rgba(220,38,38,0.8)] text-center btn-shimmer relative overflow-hidden">
+            <span className="absolute inset-0 bg-white/20 animate-[pulse_2s_infinite]"></span>
+            <i className="fa fa-phone mr-2 animate-bounce"></i> Chamar Agora
           </a>
           <a href="https://api.whatsapp.com/send?phone=5541985171966" className="bg-[#25d366] hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg transition-all hover:scale-105 inline-block text-center border-2 border-transparent hover:border-white">
             <i className="fab fa-whatsapp mr-2"></i> WhatsApp (Online)
@@ -67,8 +68,8 @@ export const HeroSection = () => (
                ></iframe>
              </div>
              {/* Urgent Badge on Video - pointer-events-none to click through if needed, though usually in corner */}
-             <div className="absolute top-4 right-1/2 translate-x-1/2 sm:right-4 sm:translate-x-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow animate-pulse z-20 pointer-events-none">
-               AO VIVO
+             <div className="absolute top-4 right-1/2 translate-x-1/2 sm:right-4 sm:translate-x-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow animate-pulse z-20 pointer-events-none border border-white/20">
+               <i className="fa fa-circle text-[8px] mr-1 text-green-300"></i> AO VIVO
              </div>
         </div>
       </div>
@@ -82,7 +83,7 @@ export const AboutSection = () => (
        <div className="group overflow-hidden rounded-lg shadow-2xl relative cursor-pointer">
          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10"></div>
          <img src="https://loremflickr.com/890/890/plumber,team,professional,portrait" alt="Equipe ADP" className="rounded-lg transition-transform duration-700 group-hover:scale-110" />
-         <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded shadow text-dark font-bold text-sm z-20 transform translate-y-0 group-hover:-translate-y-2 transition-transform">
+         <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded shadow text-dark font-bold text-sm z-20 transform translate-y-0 group-hover:-translate-y-2 transition-transform border-l-4 border-primary">
            <i className="fa fa-users text-primary mr-2"></i> Equipes Prontas
          </div>
        </div>
@@ -108,7 +109,8 @@ export const AboutSection = () => (
               </div>
             ))}
          </div>
-         <a href="https://api.whatsapp.com/send?phone=5541985171966" className="inline-block bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition mt-6 transform hover:-translate-y-1 btn-shimmer">
+         <a href="https://api.whatsapp.com/send?phone=5541985171966" className="inline-block bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition mt-6 transform hover:-translate-y-1 btn-shimmer relative">
+            <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] px-2 py-0.5 rounded-full animate-pulse">Oferta</span>
            <i className="fab fa-whatsapp mr-2 animate-bounce-slow"></i> Preços a Partir de R$ 50!
          </a>
        </div>
@@ -121,7 +123,7 @@ export const ServicesTable = () => (
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
         <h2 className="font-display text-3xl md:text-4xl font-bold text-dark">Soluções Rápidas e Eficientes</h2>
-        <p className="text-gray-600 mt-2">Para Entupimentos CIC Curitiba - <span className="text-red-600 font-bold">Atendimento Prioritário</span></p>
+        <p className="text-gray-600 mt-2">Para Entupimentos CIC Curitiba - <span className="text-red-600 font-bold bg-red-100 px-2 py-0.5 rounded animate-pulse">Atendimento Prioritário</span></p>
       </div>
 
       <div className="bg-white rounded-xl shadow-xl overflow-hidden max-w-4xl mx-auto border border-gray-100 transform hover:shadow-2xl transition-shadow duration-300">
@@ -140,7 +142,9 @@ export const ServicesTable = () => (
                     <i className="fa fa-wrench text-primary opacity-70"></i> {service}
                   </td>
                   <td className="p-4 border-b border-gray-100 text-center text-red-600 font-bold text-sm uppercase tracking-wide">
-                    <span className="bg-red-100 px-2 py-1 rounded">24h / Imediato</span>
+                    <span className="bg-red-100 px-2 py-1 rounded flex items-center justify-center gap-1">
+                      <i className="fa fa-clock text-xs"></i> 24h / Imediato
+                    </span>
                   </td>
                 </tr>
               ))}
@@ -172,17 +176,22 @@ export const ServiceCards = () => (
             <img src={`https://loremflickr.com/875/875/${card.keywords}`} alt={card.title} className="w-full h-80 object-cover transition duration-700 group-hover:scale-110" />
             
             {/* Urgent Badge */}
-            <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg animate-pulse z-10 flex items-center gap-1">
-              <i className="fa fa-bolt"></i> EMERGÊNCIA 24H
+            <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg animate-pulse z-10 flex items-center gap-1 border border-white/20">
+              <i className="fa fa-bolt text-yellow-300"></i> EMERGÊNCIA 24H
+            </div>
+
+            {/* "Saindo Agora" Flashing Badge */}
+             <div className="absolute top-4 right-4 bg-yellow-400 text-dark text-[10px] font-black px-2 py-1 rounded shadow-lg z-10 flex items-center gap-1 animate-pulse border border-black/10">
+              <i className="fa fa-truck"></i> SAINDO AGORA
             </div>
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
               <h3 className="text-white font-display text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors translate-y-0 group-hover:translate-y-[-5px] duration-300">{card.title}</h3>
               
               <div className="flex flex-col gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                <span className="text-white/80 text-xs font-bold"><i className="fa fa-clock text-red-500 mr-1"></i> Chegamos em 40min</span>
-                <a href="#contato" className="bg-red-600 text-white font-bold px-4 py-3 rounded-lg text-center shadow-lg hover:bg-red-700 transition-colors uppercase text-sm">
-                   <i className="fa fa-phone-alt mr-1"></i> Chamar Agora (24h)
+                <span className="text-white/90 text-xs font-bold bg-black/50 px-2 py-1 rounded w-fit"><i className="fa fa-clock text-red-500 mr-1"></i> Chegamos em 40min</span>
+                <a href="#contato" className="bg-red-600 text-white font-bold px-4 py-3 rounded-lg text-center shadow-lg hover:bg-red-700 transition-colors uppercase text-sm flex items-center justify-center gap-2">
+                   <i className="fa fa-phone-alt animate-bounce"></i> Chamar Agora <i className="fa fa-bolt text-yellow-300 animate-pulse"></i>
                 </a>
               </div>
             </div>
@@ -200,17 +209,20 @@ export const WhyChooseSection = () => (
   <section className="py-20 bg-secondary reveal">
     <div className="container mx-auto px-4">
        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block bg-red-100 border border-red-300 text-red-700 px-6 py-2 rounded-full mb-4 animate-pulse">
+          <div className="inline-block bg-red-100 border border-red-300 text-red-700 px-6 py-2 rounded-full mb-4 animate-pulse shadow-md">
             <i className="fa fa-siren-on mr-2"></i> <strong>ALERTA:</strong> Equipes de plantão prontas para sair agora!
           </div>
           <h2 className="font-display text-3xl font-bold text-dark mb-6">🕐 Atendimento 24h no CIC e Chegada Rápida</h2>
           <p className="text-gray-700 leading-relaxed text-lg">
-            Sabemos que um entupimento <strong className="text-red-600 text-xl">não pode esperar</strong> e pode causar grandes danos ao seu imóvel. Por isso, a ADP Desentupidora mantém equipes de plantão estratégico em Curitiba, garantindo um tempo de resposta recorde entre 40 a 45 minutos. Nossos profissionais são treinados para resolver o problema na hora.
+            Sabemos que um entupimento <strong className="text-red-600 text-xl bg-red-50 px-1 rounded">não pode esperar</strong> e pode causar grandes danos ao seu imóvel. Por isso, a ADP Desentupidora mantém equipes de plantão estratégico em Curitiba, garantindo um tempo de resposta recorde entre 40 a 45 minutos. Nossos profissionais são treinados para resolver o problema na hora.
           </p>
-          <div className="mt-6 flex justify-center">
-            <span className="inline-flex items-center gap-2 bg-white border-2 border-red-600 text-red-600 font-bold px-6 py-3 rounded-full shadow-lg transform hover:scale-105 transition-transform">
-               <i className="fa fa-exclamation-circle text-xl animate-bounce"></i> Evite alagamentos! Chame agora.
-            </span>
+          <div className="mt-8 flex justify-center">
+            <div className="flex flex-col items-center">
+              <span className="inline-flex items-center gap-2 bg-white border-2 border-red-600 text-red-600 font-bold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-transform">
+                 <i className="fa fa-exclamation-circle text-xl animate-bounce"></i> Emergência Resolvida em Minutos
+              </span>
+              <span className="text-xs text-gray-500 mt-2 font-bold animate-pulse">Atendimento Prioritário Ativado</span>
+            </div>
           </div>
        </div>
 
@@ -221,8 +233,8 @@ export const WhyChooseSection = () => (
                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 border-4 border-white">
                  <i className="fa fa-clock"></i>
                </div>
-               <h3 className="font-bold text-xl group-hover:text-primary transition-colors">Atendimento Rápido</h3>
-               <p className="text-gray-600 font-medium">Chegamos em <span className="text-red-600 font-bold">minutos</span> para resolver sua emergência.</p>
+               <h3 className="font-bold text-xl group-hover:text-primary transition-colors">Atendimento Imediato</h3>
+               <p className="text-gray-600 font-medium">Chegamos em <span className="text-red-600 font-bold bg-red-50 px-1">minutos</span> para resolver sua emergência.</p>
             </div>
             <div className="flex flex-col items-end group">
                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-2 shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 border-4 border-white">
@@ -243,7 +255,8 @@ export const WhyChooseSection = () => (
          {/* Center Image */}
          <div className="flex justify-center relative">
             <div className="absolute top-10 -right-4 bg-red-600 text-white font-bold w-24 h-24 rounded-full flex flex-col items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.6)] z-10 animate-pulse text-center text-xs p-2 border-4 border-white">
-              <span className="text-2xl block">24h</span> Plantão
+              <i className="fa fa-bolt text-yellow-300 text-lg mb-1"></i>
+              <span className="text-xl block leading-none">24h</span> Plantão
             </div>
             <img src="https://loremflickr.com/500/800/modern,plumber,truck,equipment" alt="Caminhão ADP" className="rounded-full border-8 border-white shadow-2xl h-[500px] w-[350px] object-cover hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] transition-shadow duration-500 transform hover:scale-105" />
          </div>

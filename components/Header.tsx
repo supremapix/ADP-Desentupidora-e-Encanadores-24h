@@ -76,8 +76,8 @@ const Header: React.FC = () => {
   return (
     <header className="bg-white/95 backdrop-blur-md shadow-md sticky top-0 z-50 transition-all duration-300">
       {/* Urgency Top Bar Mobile */}
-      <div className="lg:hidden bg-red-600 text-white text-xs font-bold text-center py-1 px-2 animate-pulse">
-        <i className="fa fa-exclamation-triangle mr-1"></i> EQUIPES DE PLANTÃO AGORA NO CIC
+      <div className="lg:hidden bg-red-600 text-white text-xs font-bold text-center py-1 px-2 animate-pulse flex items-center justify-center gap-2">
+        <i className="fa fa-bolt text-yellow-300"></i> EQUIPES DE PLANTÃO AGORA NO CIC <i className="fa fa-bolt text-yellow-300"></i>
       </div>
 
       <div className="container mx-auto px-4 h-28 flex items-center justify-between">
@@ -106,28 +106,31 @@ const Header: React.FC = () => {
         {/* CTA & Socials */}
         <div className="hidden xl:flex items-center gap-4">
           <div className="flex flex-col items-end mr-2">
-            <span className="text-[10px] font-bold text-red-500 bg-red-50 px-2 py-0.5 rounded-full animate-pulse border border-red-100 whitespace-nowrap">
-              PLANTÃO 24H ATIVO
+            <span className="text-[10px] font-bold text-red-500 bg-red-50 px-2 py-0.5 rounded-full animate-pulse border border-red-100 whitespace-nowrap flex items-center gap-1">
+              <i className="fa fa-circle text-[8px] text-red-600"></i> PLANTÃO ATIVO
             </span>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
              <a 
                href="https://wa.me/5541985171966" 
-               className="text-green-500 text-2xl transition-all duration-300 hover:scale-110 hover:rotate-6 active:scale-95" 
+               className="text-green-500 text-2xl transition-all duration-300 hover:scale-110 hover:rotate-6 active:scale-95 relative" 
                title="WhatsApp"
              >
                <i className="fab fa-whatsapp"></i>
+               <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
              </a>
              <a 
                href="tel:4133451194" 
-               className="text-primary text-2xl transition-all duration-300 hover:scale-110 hover:-rotate-6 active:scale-95" 
+               className="text-primary text-2xl transition-all duration-300 hover:scale-110 hover:-rotate-6 active:scale-95 relative" 
                title="Ligar"
              >
                <i className="fa fa-phone"></i>
+               <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping delay-75"></span>
              </a>
           </div>
-          <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl active:scale-95 flex items-center gap-2 btn-shimmer whitespace-nowrap">
-            <i className="fa fa-bolt"></i> Emergência
+          <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl active:scale-95 flex items-center gap-2 btn-shimmer whitespace-nowrap relative overflow-hidden group">
+            <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+            <i className="fa fa-bolt text-yellow-300 animate-pulse"></i> Emergência
           </a>
         </div>
 
@@ -149,11 +152,11 @@ const Header: React.FC = () => {
           <div className="flex flex-col p-4 space-y-4">
             <div className="bg-red-50 border border-red-100 p-3 rounded-lg flex items-center gap-3 animate-pulse">
               <div className="bg-red-100 p-2 rounded-full text-red-600">
-                <i className="fa fa-clock"></i>
+                <i className="fa fa-bolt"></i>
               </div>
               <div>
                 <p className="font-bold text-red-700 text-sm">Precisa de urgência?</p>
-                <p className="text-xs text-red-600">Chegamos em 40 minutos!</p>
+                <p className="text-xs text-red-600 font-bold">Chegamos em 40 minutos!</p>
               </div>
             </div>
 
@@ -187,8 +190,8 @@ const Header: React.FC = () => {
               ))}
             </div>
 
-            <Link to="/#contato" onClick={toggleMobileMenu} className="bg-red-600 text-white text-center py-3 rounded-lg font-bold shadow-md hover:bg-red-700 transition-all btn-shimmer">
-              CHAMAR AGORA (24h)
+            <Link to="/#contato" onClick={toggleMobileMenu} className="bg-red-600 text-white text-center py-3 rounded-lg font-bold shadow-md hover:bg-red-700 transition-all btn-shimmer flex items-center justify-center gap-2">
+              <i className="fa fa-phone-alt animate-bounce"></i> CHAMAR AGORA (24h)
             </Link>
           </div>
         </div>
