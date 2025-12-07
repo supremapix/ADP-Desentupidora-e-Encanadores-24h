@@ -10,6 +10,7 @@ import ServiceSeptic from './pages/ServiceSeptic';
 import FAQPage from './pages/FAQPage';
 import ImageGallery from './pages/ImageGallery';
 import NotFound from './pages/NotFound';
+import LegacyDesentupidora from './pages/LegacyDesentupidora';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -77,6 +78,9 @@ const App: React.FC = () => {
             
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/galeria-ia" element={<ImageGallery />} />
+
+            {/* Legacy URL Route - Para capturar tráfego antigo */}
+            <Route path="/desentupidora.html" element={<LegacyDesentupidora />} />
             
             {/* 404 Not Found Route - Catch All */}
             <Route path="*" element={<NotFound />} />
