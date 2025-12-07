@@ -42,6 +42,40 @@ const FAQPage: React.FC = () => {
         }
       ]
     },
+    condominios: {
+      title: "Condomínios e Prédios (Novo)",
+      questions: [
+        {
+          q: "Entupimento em apartamento: quem paga, o morador ou o condomínio?",
+          a: "Esta é a dúvida campeã em edifícios. A regra geral da convenção de condomínios e da jurisprudência baseia-se na localização da obstrução na rede hidráulica. O sistema de esgoto de um prédio é dividido em 'Ramais' (tubulação horizontal que sai da pia/vaso e vai até o tubo principal) e 'Colunas' ou 'Prumadas' (o tubo vertical grosso que recebe o esgoto de todos os andares e leva para a rua/fossa). \n\nSe o entupimento estiver localizado no ramal interno do apartamento (antes da junção com a coluna), a responsabilidade e o custo são do morador proprietário da unidade, pois presume-se mau uso local (cabelo, gordura, objetos). Porém, se o entupimento for identificado na Coluna Principal (prumada), a responsabilidade é do Condomínio, pois é uma área comum de uso coletivo. Muitas vezes, um entupimento na coluna faz o esgoto retornar pelo ralo do apartamento do primeiro andar, mesmo que esse morador não tenha culpa. \n\nA ADP Desentupidora possui equipamentos de vídeo inspeção que podem ajudar a determinar com precisão onde está o bloqueio, fornecendo um laudo técnico que ajuda síndicos e moradores a resolverem esse impasse de forma justa e transparente."
+        },
+        {
+          q: "Infiltração no teto do vizinho de baixo: como saber de onde vem?",
+          a: "Infiltrações entre apartamentos geram muitos conflitos. Se o vizinho de baixo reclama de manchas ou goteiras no teto (geralmente no banheiro ou cozinha), a origem quase sempre está no apartamento de cima. Existem três causas principais: \n\n1) Falha na impermeabilização do piso/box: Acontece quando o rejunte está velho ou a manta asfáltica falhou. O teste é isolar o ralo e jogar água no chão; se pingar embaixo, é o piso. \n\n2) Vazamento na tubulação de esgoto: Ocorre quando há trincas no encanamento de saída do vaso ou ralo. O sinal é que a infiltração piora logo após o uso do banheiro em cima e pode ter mau cheiro. \n\n3) Vazamento na rede de pressão (água limpa): É constante, pinga dia e noite mesmo sem uso, pois o cano está sempre cheio de água sob pressão. \n\nNossos técnicos utilizam geofones e testes de estanqueidade para diagnosticar a origem exata sem precisar quebrar o banheiro inteiro 'para procurar'. O diagnóstico preciso economiza milhares de reais em obras desnecessárias."
+        },
+        {
+          q: "Manutenção de Bombas de Recalque em prédios: por que é vital?",
+          a: "Muitos edifícios possuem as caixas de esgoto ou de águas pluviais localizadas no subsolo (garagens), abaixo do nível da rua. A gravidade não funciona para jogar essa água na rede pública, então são usadas 'Bombas de Recalque' que impulsionam o líquido para cima. Se essas bombas falharem ou queimarem (geralmente por travamento causado por sujeira, fio dental ou preservativos jogados no esgoto), o subsolo inunda rapidamente, danificando carros e elevadores. \n\nA manutenção preventiva das bombas e a limpeza do poço de sucção (onde a bomba fica) são cruciais. A ADP realiza a limpeza desses poços com caminhão de vácuo, removendo a lama e detritos que podem travar a hélice da bomba. Recomendamos limpeza semestral para garantir que, numa tempestade forte ou pico de uso, o sistema de bombeamento funcione perfeitamente, protegendo o patrimônio do condomínio."
+        }
+      ]
+    },
+    diagnostico: {
+      title: "Diagnóstico Técnico Avançado (Novo)",
+      questions: [
+        {
+          q: "Minha conta de água aumentou muito, mas não vejo vazamento. O que fazer?",
+          a: "Um aumento súbito na conta de água sem mudança no consumo (como encher piscina ou receber visitas) é o maior indicador de vazamento oculto. Esses vazamentos ocorrem geralmente em tubulações subterrâneas ou dentro de paredes, onde a água escoa direto para a terra, sem formar poças visíveis. \n\nPara confirmar: feche todas as torneiras, não use o vaso e observe o hidrômetro (relógio) de rua. Se os ponteiros ou 'borboleta' continuarem girando, há vazamento na linha que vai do relógio até a caixa d'água (alimentação direta). Se pararem, verifique a boia da caixa d'água. Outro teste é fechar o registro do cavalete à noite e ver se a caixa d'água esvaziou pela manhã (vazamento na rede interna após a caixa). \n\nSe confirmado, não saia quebrando a casa. A ADP utiliza o Geofone Eletrônico, um aparelho de ultrassom que 'escuta' o barulho do vazamento embaixo do concreto. Com ele, localizamos o ponto exato do furo com margem de erro mínima, permitindo um reparo pontual e econômico. Esse laudo também serve para pedir abatimento da conta de esgoto junto à companhia de saneamento (Sanepar), provando que a água vazada não foi para o esgoto."
+        },
+        {
+          q: "Entupimento recorrente: limpo hoje e semana que vem volta. Qual a causa?",
+          a: "Se você desentope uma pia ou vaso e o problema retorna em poucos dias ou semanas, pare de gastar com desentupimentos paliativos: você tem um problema estrutural ou crônico. As causas mais comuns são: \n\n1) Raízes de árvores: Elas crescem de volta rapidamente se não forem cortadas e a tubulação reparada. \n\n2) Tubulação com 'barriga' (contra-fluxo): Se o cano cedeu no solo e perdeu a inclinação, a água para e a sujeira decanta naquele ponto, criando um novo bloqueio constante. \n\n3) Objeto estranho preso: Às vezes, um objeto rígido (como uma escova de dentes, brinquedo ou pedaço de construção) está atravessado no cano. A máquina passa ao lado, a água flui um pouco, mas o papel higiênico enrosca nele novamente logo depois. \n\n4) Caixa de gordura subdimensionada: Se a caixa é muito pequena para o volume da cozinha, ela satura em dias. \n\nNesses casos, a solução definitiva exige uma Vídeo Inspeção Robotizada. Introduzimos uma câmera na tubulação para ver a 'imagem real' do problema. Com o diagnóstico visual, podemos propor a solução definitiva (troca de trecho, corte de raiz ou remoção do objeto) em vez de ficar 'enxugando gelo' toda semana."
+        },
+        {
+          q: "Cheiro de esgoto aparece só quando chove ou venta. Por quê?",
+          a: "Esse fenômeno é muito comum e está ligado à pressão atmosférica e ao sistema de ventilação do esgoto. A rede de esgoto da sua casa produz gases (metano, sulfídrico) naturalmente. Para que esses gases não entrem em casa, existem os sifões com água e os Tubos de Ventilação (aqueles canos que sobem até o telhado). \n\nQuando chove ou venta forte, a pressão atmosférica muda, ou o vento cria uma pressão negativa na boca do tubo de ventilação. Se o seu sistema de ventilação estiver subdimensionado, entupido (ninho de passarinho é comum) ou inexistente, essa mudança de pressão suga ou empurra a água dos sifões (ralos e pias), rompendo o selo hídrico. Sem a água no sifão para bloquear, o gás do esgoto entra livremente no banheiro. \n\nOutra causa em dias de chuva é o aumento do volume na rede pública, que pressuriza o ar dentro dos canos da rua para dentro das casas. A solução envolve verificar a desobstrução das colunas de ventilação e instalar válvulas de retenção ou anéis de vedação melhores nos vasos sanitários."
+        }
+      ]
+    },
     desentupimento: {
       title: "Técnicas e Soluções de Desentupimento",
       questions: [
@@ -72,6 +106,10 @@ const FAQPage: React.FC = () => {
         { 
           q: "Existe garantia para o serviço de desentupimento?", 
           a: "Sim, todos os serviços realizados pela ADP Desentupidora possuem garantia legal. O prazo de garantia varia de acordo com o tipo de serviço executado e é especificado no orçamento/ordem de serviço. Geralmente, oferecemos 90 dias de garantia técnica. Isso significa que, se o local voltar a entupir pelo mesmo motivo ou falha na execução dentro desse prazo, retornaremos gratuitamente para refazer o serviço. Vale ressaltar que a garantia cobre a desobstrução realizada; ela não cobre novos entupimentos causados por mau uso posterior (como jogar fraldas ou objetos no vaso após a nossa saída) ou problemas estruturais da tubulação (como canos quebrados ou afundados) que foram alertados pelo técnico. Prezamos pela honestidade: se o problema for estrutural, avisaremos que o desentupimento é uma medida paliativa e que o reparo definitivo exige obra." 
+        },
+        {
+          q: "O que fazer se a água voltar pelo ralo do chuveiro ao dar descarga?",
+          a: "Isso é um sintoma clássico de entupimento na ramificação principal do banheiro. O vaso sanitário, o chuveiro e a pia geralmente deságuam em uma caixa sifonada ou em um tubo de junção comum. Se esse tubo de saída estiver bloqueado, a água da descarga (que tem grande volume e pressão) não consegue descer para o esgoto e busca o ponto de saída mais baixo e próximo, que é o ralo do chuveiro. Isso é altamente anti-higiênico, pois traz coliformes fecais para a área de banho. \n\nNão tente resolver jogando água quente ou produtos químicos, pois o bloqueio geralmente está mais à frente na tubulação. A solução é a desobstrução mecânica da caixa sifonada ou do ramal de esgoto. Nossos técnicos removem a grelha do ralo ou o vaso sanitário para acessar a tubulação e remover o bloqueio com segurança, higienizando o local após o serviço."
         }
       ]
     },
@@ -122,6 +160,18 @@ const FAQPage: React.FC = () => {
         { 
           q: "Moro em apartamento no térreo. Tenho mais risco de entupimento?", 
           a: "Infelizmente, sim. Apartamentos no térreo ou primeiro andar são o 'ponto baixo' da coluna de esgoto do prédio. Se houver um entupimento na tubulação principal do edifício ou na saída para a rua, todo o esgoto gerado pelos andares de cima (que continua descendo pela gravidade) não tem para onde ir e acaba retornando pelos ralos e vasos sanitários do apartamento mais baixo. É o chamado 'refluxo'. Para prevenir esse desastre, é vital que o condomínio mantenha a limpeza das caixas de esgoto e gordura em dia (hidrojateamento preventivo). Se você mora no térreo e ouvir borbulhas ou sentir cheiro forte, avise o síndico imediatamente, pois pode ser o prenúncio de um refluxo da coluna central." 
+        },
+        {
+          q: "Caixa de Gordura: Plástico (PVC) ou Alvenaria? Qual é melhor?",
+          a: "Ambas funcionam, mas têm manutenções diferentes. As caixas de PVC modernas são mais fáceis de limpar, pois têm superfície lisa (a gordura não gruda tanto) e cestos removíveis. Porém, são mais frágeis a impactos. Já as caixas de alvenaria (tijolo e cimento) são mais robustas e comuns em casas antigas, mas a gordura penetra nos poros do cimento, tornando a limpeza completa mais difícil e podendo gerar mau cheiro crônico se não forem bem impermeabilizadas. \n\nIndependente do material, o segredo é a limpeza. Se você tem uma caixa de alvenaria antiga e ela vive vazando ou cheirando mal, pode ser hora de reformá-la ou instalar uma de PVC dentro dela. Nossos técnicos podem avaliar o estado da sua caixa e realizar a limpeza profunda ou substituição se necessário."
+        },
+        {
+          q: "Triturador de alimentos na pia da cozinha é bom ou ruim?",
+          a: "Trituradores são práticos, mas exigem cuidado redobrado e tubulação adequada. O erro comum é achar que o triturador faz o lixo 'desaparecer'. Ele apenas transforma comida em pasta. Se você jogar muita gordura ou fibra (casca de cebola, aipo) junto, essa pasta vira uma massa densa que entope o cano metros à frente. Além disso, trituradores exigem bastante água corrente para empurrar os resíduos. Se sua tubulação for antiga, estreita (menos de 50mm) ou tiver pouca caída, o uso de triturador é quase garantia de entupimento frequente. Se você usa triturador, evite jogar ossos, caroços, cascas duras e, principalmente, óleo. E de tempos em tempos, faça um hidrojateamento preventivo para remover a pasta acumulada nas paredes do cano."
+        },
+        {
+          q: "Vaso sanitário solto ou balançando: quais os riscos?",
+          a: "Um vaso sanitário que balança não é apenas um incômodo, é um risco de vazamento de esgoto e gases. O balanço rompe o anel de vedação (de cera ou borracha) que conecta a louça ao cano de esgoto no chão. Sem essa vedação, o cheiro de esgoto vaza para o banheiro e, pior, a água da descarga começa a vazar por baixo do piso a cada uso, podendo causar infiltração no teto do vizinho de baixo ou apodrecer o seu próprio piso. Além disso, o movimento pode trincar a louça do vaso, que é cortante como navalha se quebrar. A solução é remover o vaso, trocar o anel de vedação e fixar novamente com parafusos de latão novos e rejunte adequado. É um serviço rápido que evita grandes prejuízos."
         }
       ]
     }
@@ -210,6 +260,8 @@ const FAQPage: React.FC = () => {
                 <div key={key} className="bg-gray-50 rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100">
                   <h2 className="font-display text-2xl md:text-3xl font-bold text-primary mb-8 flex items-center gap-3 border-b border-gray-200 pb-4">
                     {key === 'geral' && <i className="fa fa-info-circle"></i>}
+                    {key === 'condominios' && <i className="fa fa-building"></i>}
+                    {key === 'diagnostico' && <i className="fa fa-stethoscope"></i>}
                     {key === 'desentupimento' && <i className="fa fa-wrench"></i>}
                     {key === 'fossa' && <i className="fa fa-truck"></i>}
                     {key === 'dicas' && <i className="fa fa-lightbulb text-yellow-500"></i>}
@@ -226,7 +278,7 @@ const FAQPage: React.FC = () => {
                           <i className={`fa fa-chevron-down transition-transform duration-300 text-primary flex-shrink-0 ml-4 ${openQuestion === Number(`${key.length}${idx}`) ? 'rotate-180' : ''}`}></i>
                         </button>
                         <div className={`transition-all duration-300 ease-in-out overflow-hidden ${openQuestion === Number(`${key.length}${idx}`) ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                          <div className="p-6 pt-2 text-gray-600 leading-relaxed text-justify border-t border-gray-50 bg-white">
+                          <div className="p-6 pt-2 text-gray-600 leading-relaxed text-justify border-t border-gray-50 bg-white whitespace-pre-line">
                             {q.a}
                           </div>
                         </div>
