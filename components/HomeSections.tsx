@@ -50,20 +50,24 @@ export const HeroSection = () => (
       
       <div className="md:w-1/2 flex justify-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
         <div className="relative group w-full max-w-sm">
-             <div className="absolute inset-0 bg-primary rounded-2xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+             {/* Pointer events none ensures the blur effect doesn't block touches on the video on mobile */}
+             <div className="absolute inset-0 bg-primary rounded-2xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"></div>
+             
              {/* YouTube Short Embed */}
-             <div className="relative w-full aspect-[9/16] rounded-2xl shadow-2xl border-4 border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500">
+             <div className="relative w-full aspect-[9/16] rounded-2xl shadow-2xl border-4 border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500 z-10">
                <iframe 
                  className="absolute inset-0 w-full h-full"
-                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&loop=1&playlist=12D85Dmnheg" 
+                 /* Added playsinline=1, controls=1 and rel=0 for better mobile compatibility */
+                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&loop=1&playlist=12D85Dmnheg&playsinline=1&controls=1&rel=0" 
                  title="Desentupidora ADP em Ação" 
                  frameBorder="0" 
                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                  allowFullScreen
+                 style={{ pointerEvents: 'auto' }}
                ></iframe>
              </div>
-             {/* Urgent Badge on Video */}
-             <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow animate-pulse">
+             {/* Urgent Badge on Video - pointer-events-none to click through if needed, though usually in corner */}
+             <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow animate-pulse z-20 pointer-events-none">
                AO VIVO
              </div>
         </div>
@@ -154,10 +158,10 @@ export const ServiceCards = () => (
       <h2 className="font-display text-3xl font-bold text-center text-dark mb-10">Serviços de Urgência</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { title: "Desentupidora", keywords: "drain,cleaning,sewer,equipment" },
-          { title: "Encanadores", keywords: "plumber,fixing,pipe,wrench" },
-          { title: "Consertos em Geral", keywords: "plumbing,repair,leak,tool" },
-          { title: "Instalações em Geral", keywords: "plumbing,installation,bathroom,faucet" }
+          { title: "Desentupidora", keywords: "technician,unclogging,toilet" },
+          { title: "Encanadores", keywords: "plumber,fixing,heater" },
+          { title: "Consertos em Geral", keywords: "plumbing,repair,pipes,industrial" },
+          { title: "Instalações em Geral", keywords: "plumber,thumbs,up,smiling" }
         ].map((card, i) => (
           <div key={i} className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-red-600">
             <img src={`https://loremflickr.com/875/875/${card.keywords}`} alt={card.title} className="w-full h-80 object-cover transition duration-700 group-hover:scale-110" />
@@ -236,7 +240,7 @@ export const WhyChooseSection = () => (
             <div className="absolute top-10 -right-4 bg-red-600 text-white font-bold w-24 h-24 rounded-full flex flex-col items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.6)] z-10 animate-pulse text-center text-xs p-2 border-4 border-white">
               <span className="text-2xl block">24h</span> Plantão
             </div>
-            <img src="https://loremflickr.com/500/800/modern,plumbing,equipment,technology" alt="Caminhão ADP" className="rounded-full border-8 border-white shadow-2xl h-[500px] w-[350px] object-cover hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] transition-shadow duration-500 transform hover:scale-105" />
+            <img src="https://loremflickr.com/500/800/modern,plumber,truck,equipment" alt="Caminhão ADP" className="rounded-full border-8 border-white shadow-2xl h-[500px] w-[350px] object-cover hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] transition-shadow duration-500 transform hover:scale-105" />
          </div>
 
          {/* Right Col */}
@@ -272,13 +276,11 @@ export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
 
+  // Redirecionamento e prévia
   const faqs = [
-    { title: "Cidade Industrial em Curitiba e como a ADP Desentope atua na região", content: "A Cidade Industrial de Curitiba (CIC) é o maior bairro da cidade, abrigando diversas indústrias e residências. A ADP possui bases estratégicas dentro do CIC para garantir o atendimento mais rápido possível, evitando paradas na produção industrial e desconforto residencial." },
-    { title: "Carlos Encontrou a ADP na Primeira Página do Google no Tatuquara", content: "Carlos, morador do Tatuquara, tinha um problema sério de retorno de esgoto. Após buscar no Google, encontrou a ADP. Em 35 minutos nossa equipe chegou ao local, identificou a obstrução na caixa de inspeção e resolveu o problema sem quebrar nada." },
-    { title: "Atendimento Rápido no Campo Comprido – Menos de 40 Minutos!", content: "\"Fiquei impressionada com a rapidez. Liguei desesperada pois a pia estava transbordando. A equipe chegou muito rápido no Campo Comprido e resolveu tudo com muita limpeza.\" - Depoimento de Cliente." },
-    { title: "ADP Desentupidora: Solução Rápida e Eficiente para Moradores e Comércios", content: "Entupimentos em comércios podem significar prejuízo. Oferecemos atendimento prioritário para estabelecimentos comerciais, com emissão de nota fiscal e laudo técnico quando necessário." },
-    { title: "A Importância do Desentupimento Preventivo no Bairro CIC", content: "A prevenção é sempre mais barata que a correção. Realizamos limpezas periódicas de caixas de gordura e fossas sépticas para evitar emergências e mau cheiro." },
-    { title: "Desentupidora CIC, Orçamento Grátis e Atendimento Ágil", content: "Não cobramos taxa de visita para orçamentos na região. Você chama, a gente avalia e passa o valor exato antes de executar o serviço. Transparência total." },
+    { title: "Cidade Industrial em Curitiba e como a ADP Desentope atua na região", content: "A Cidade Industrial de Curitiba (CIC) é o maior bairro da cidade, abrigando diversas indústrias e residências. A ADP possui bases estratégicas dentro do CIC para garantir o atendimento mais rápido possível." },
+    { title: "Carlos Encontrou a ADP na Primeira Página do Google no Tatuquara", content: "Carlos, morador do Tatuquara, tinha um problema sério de retorno de esgoto. Após buscar no Google, encontrou a ADP. Em 35 minutos nossa equipe chegou ao local." },
+    { title: "Atendimento Rápido no Campo Comprido – Menos de 40 Minutos!", content: "\"Fiquei impressionada com a rapidez. Liguei desesperada pois a pia estava transbordando. A equipe chegou muito rápido no Campo Comprido e resolveu tudo com muita limpeza.\"" },
   ];
 
   const filteredFaqs = faqs.filter(faq => 
@@ -290,27 +292,12 @@ export const FAQSection = () => {
     <section className="py-20 bg-white reveal">
        <div className="container mx-auto px-4 max-w-4xl">
          <h2 className="font-display text-2xl md:text-3xl font-bold text-center text-dark mb-6">
-            ADP Desentupidora - FAQ
+            Dúvidas Rápidas
          </h2>
-         <p className="text-center text-gray-500 mb-8">Tire suas dúvidas sobre nossos serviços nos bairros CIC, Sabará, Fazendinha, Itatiaia, Tatuquara e Vitória Régia!</p>
+         <p className="text-center text-gray-500 mb-8">Veja algumas dúvidas comuns ou acesse nossa <a href="/faq" className="text-primary font-bold underline">Central de Ajuda Completa</a>.</p>
          
-         {/* Search Input */}
-         <div className="mb-10 relative">
-           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-             <i className="fa fa-search text-gray-400"></i>
-           </div>
-           <input 
-              type="text" 
-              placeholder="Digite uma palavra-chave (ex: esgoto, preço, CIC)..." 
-              className="w-full pl-10 pr-4 py-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none shadow-sm transition-all focus:shadow-md"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-           />
-         </div>
-
          <div className="space-y-4">
-           {filteredFaqs.length > 0 ? (
-             filteredFaqs.map((faq, i) => (
+           {filteredFaqs.map((faq, i) => (
                <div key={i} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
                  <button 
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
@@ -319,20 +306,18 @@ export const FAQSection = () => {
                    <span>{faq.title}</span>
                    <i className={`fa fa-chevron-down text-primary transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}></i>
                  </button>
-                 <div className={`transition-all duration-300 overflow-hidden ${openIndex === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                 <div className={`transition-all duration-300 overflow-hidden ${openIndex === i ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
                    <div className="p-6 bg-white text-gray-700 leading-relaxed border-t border-gray-100">
                      {faq.content}
                    </div>
                  </div>
                </div>
-             ))
-           ) : (
-             <div className="text-center py-8 text-gray-500">
-               <i className="fa fa-frown text-4xl mb-3 block opacity-30"></i>
-               <p>Nenhuma pergunta encontrada com o termo "{searchTerm}".</p>
-               <button onClick={() => setSearchTerm('')} className="text-primary hover:underline mt-2">Limpar busca</button>
-             </div>
-           )}
+             ))}
+         </div>
+         <div className="text-center mt-8">
+            <a href="/faq" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-700 transition">
+              Ver Todas as Perguntas
+            </a>
          </div>
        </div>
     </section>
