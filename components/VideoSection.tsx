@@ -21,11 +21,12 @@ const VideoSection: React.FC<VideoSectionProps> = ({
             <div className="relative w-full h-0 pb-[56.25%] lg:pb-0 lg:h-auto bg-black">
               <iframe 
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/jJ0WJqgXZ3k?si=twu74dX-bda_MI9L" 
+                src="https://www.youtube.com/embed/jJ0WJqgXZ3k?si=twu74dX-bda_MI9L&playsinline=1&controls=1&rel=0&modestbranding=1" 
                 title={customTitle ? "Vídeo Institucional ADP" : `Vídeo Institucional ADP Desentupidora em ${locationName}`}
                 frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
                 allowFullScreen
+                loading="lazy"
               ></iframe>
             </div>
 

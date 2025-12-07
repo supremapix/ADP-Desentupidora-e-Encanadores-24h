@@ -78,12 +78,13 @@ export const HeroSection = () => (
              <div className="relative w-full max-w-[320px] mx-auto aspect-[9/16] rounded-2xl shadow-2xl border-4 border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500 z-10">
                <iframe 
                  className="absolute inset-0 w-full h-full"
-                 /* Added playsinline=1, controls=1 and rel=0 for better mobile compatibility */
-                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&loop=1&playlist=12D85Dmnheg&playsinline=1&controls=1&rel=0" 
+                 /* Mobile-optimized: playsinline, controls, rel=0, and proper allow attributes */
+                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&loop=1&playlist=12D85Dmnheg&playsinline=1&controls=1&rel=0&modestbranding=1" 
                  title="Desentupidora ADP em Ação" 
                  frameBorder="0" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
                  allowFullScreen
+                 loading="lazy"
                  style={{ pointerEvents: 'auto' }}
                ></iframe>
              </div>
