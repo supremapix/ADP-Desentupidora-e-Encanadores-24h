@@ -8,6 +8,7 @@ import RegionPage from './pages/RegionPage';
 import ServiceHydrojetting from './pages/ServiceHydrojetting';
 import ServiceSeptic from './pages/ServiceSeptic';
 import FAQPage from './pages/FAQPage';
+import HeroDemo from './pages/HeroDemo';
 import NotFound from './pages/NotFound';
 import LegacyDesentupidora from './pages/LegacyDesentupidora';
 
@@ -76,6 +77,9 @@ const App: React.FC = () => {
             <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
             
             <Route path="/faq" element={<FAQPage />} />
+            
+            {/* Hero Component Demo */}
+            <Route path="/hero-demo" element={<HeroDemo />} />
 
             {/* Legacy URL Route - Para capturar tráfego antigo */}
             <Route path="/desentupidora.html" element={<LegacyDesentupidora />} />
