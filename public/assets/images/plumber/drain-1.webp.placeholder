@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#aa0088"/>
+  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="80" fill="white" text-anchor="middle" dominant-baseline="middle">
+    <tspan x="50%" dy="-40">DRAIN 1</tspan>
+    <tspan x="50%" dy="100">PLACEHOLDER</tspan>
+  </text>
+</svg>
