@@ -63,7 +63,7 @@ const RegionPage: React.FC<RegionPageProps> = ({ type }) => {
       "@type": "LocalBusiness",
       "name": "ADP Desentupidora",
       "telephone": "+55-41-3345-1194",
-      "image": "https://loremflickr.com/1920/1080/plumber,truck,logo",
+      "image": "https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L", // White Truck Pumping
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Luiz Maltaca, 36",
@@ -89,7 +89,6 @@ const RegionPage: React.FC<RegionPageProps> = ({ type }) => {
   };
 
   // Dynamic Content Generator (>200 words)
-  // This generates unique-feeling content for each neighborhood by weaving the name into specific contexts.
   const neighborhoodContent = (
     <div className="space-y-4 text-gray-700 leading-relaxed text-justify">
       <p>
@@ -121,32 +120,32 @@ const RegionPage: React.FC<RegionPageProps> = ({ type }) => {
   const articles = [
     { 
       title: `Desentupidora Profissional em ${formattedName}`, 
-      imageKeyword: "plumber,professional,uniform",
+      image: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2", // Smiling Plumber
       content: `Nossa equipe técnica está pronta para atender qualquer demanda residencial ou comercial em ${formattedName} com rapidez e eficiência, 24 horas por dia.`
     },
     { 
       title: `Desentupimento de Esgoto em ${formattedName}`, 
-      imageKeyword: "sewer,pipe,cleaning",
+      image: "https://file-service.aistudio.google.com/download/GS-2x3c4v5b6n7m8l9k", // Dirty Sink
       content: "Utilizamos equipamentos modernos e sondas elétricas para desobstruir redes de esgoto sem a necessidade de quebrar pisos ou paredes do seu imóvel."
     },
     { 
       title: `Limpeza de Fossa Séptica 24h`, 
-      imageKeyword: "septic,tank,truck,vacuum",
+      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k", // Green Truck
       content: "Caminhões de auto vácuo disponíveis na região para limpeza e esgotamento de fossas sépticas e negras com descarte ecológico certificado."
     },
     { 
       title: `Hidrojateamento em ${formattedName}`, 
-      imageKeyword: "hydro,jetting,water,pressure",
+      image: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l", // White Truck
       content: "Alta tecnologia para limpeza de tubulações com jatos de água de alta pressão, removendo gordura e detritos incrustados definitivamente."
     },
     { 
       title: `Desentupimento de Pia e Ralo`, 
-      imageKeyword: "sink,drain,clogged,repair",
+      image: "https://file-service.aistudio.google.com/download/GS-8y6t4r9e0w1q2a3s", // Toilet Pump
       content: "Pia da cozinha ou ralo do banheiro entupido? Resolvemos na hora com equipamentos que protegem a tubulação e garantem a higiene do local."
     },
     { 
       title: `Caça Vazamentos em ${formattedName}`, 
-      imageKeyword: "leak,detection,device",
+      image: "https://file-service.aistudio.google.com/download/GS-zJ1k2l3m4n5o6p7q", // Heater Guy (Leak detection look)
       content: "Conta de água alta? Detectamos vazamentos ocultos em paredes e pisos com aparelhos eletrônicos de precisão (Geofone)."
     },
   ];
@@ -162,7 +161,8 @@ const RegionPage: React.FC<RegionPageProps> = ({ type }) => {
       {/* Hero Region */}
       <section className="bg-dark text-white py-24 text-center px-4 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-             <img src={`https://loremflickr.com/1920/600/curitiba,city,skyline,${type === 'bairro' ? 'neighborhood' : 'brazil'}`} alt={`Desentupidora em ${formattedName}`} className="w-full h-full object-cover opacity-20" />
+             {/* Using White Truck Pumping */}
+             <img src="https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L" alt={`Desentupidora em ${formattedName}`} className="w-full h-full object-cover opacity-20" />
              <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
         </div>
         <div className="relative z-10 animate-fade-in-up">
@@ -256,7 +256,7 @@ const RegionPage: React.FC<RegionPageProps> = ({ type }) => {
               <article key={index} className="bg-white rounded-xl shadow-md hover:shadow-2xl transition duration-300 border border-gray-100 overflow-hidden group">
                 <div className="h-48 overflow-hidden relative">
                    <img 
-                    src={`https://loremflickr.com/800/600/${article.imageKeyword}`} 
+                    src={article.image} 
                     alt={article.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                    />

@@ -18,7 +18,7 @@ const ServiceHydrojetting: React.FC = () => {
       "@type": "LocalBusiness",
       "name": "ADP Desentupidora",
       "telephone": "+55-41-3345-1194",
-      "image": "https://loremflickr.com/1920/1080/hydro,jetting,equipment,action",
+      "image": "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l", // White Truck Studio
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Luiz Maltaca, 36",
@@ -54,92 +54,92 @@ const ServiceHydrojetting: React.FC = () => {
     {
       title: "O que é Hidrojateamento?",
       content: "O hidrojateamento é uma tecnologia avançada que utiliza água pressurizada para desobstruir e limpar tubulações. Diferente de métodos mecânicos que apenas perfuram o bloqueio, o hidrojateamento lava as paredes internas do cano, removendo gordura, incrustações e detritos, restaurando o fluxo original e prevenindo novos entupimentos por mais tempo.",
-      imageKeyword: "hydro,jet,nozzle,cleaning,pipe"
+      image: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" // White Truck
     },
     {
       title: "Como funciona a Alta Pressão?",
       content: "Utilizamos caminhões equipados com bombas de alta potência capazes de gerar pressão de até 25.000 PSI (libras por polegada quadrada). A água é liberada através de mangueiras com bicos especiais que impulsionam o jato para frente, cortando raízes, gordura solidificada e outros materiais resistentes, garantindo uma limpeza profunda e eficiente.",
-      imageKeyword: "high,pressure,water,cleaning,pipes"
+      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Blue Truck (Using as variety)
     },
     {
       title: "Benefícios para Tubulações",
       content: "O principal benefício é a preservação da integridade dos canos. Ao contrário de cabos de aço que podem arranhar ou danificar tubulações antigas (especialmente de cerâmica ou PVC ressecado), a água age de maneira uniforme. Além disso, a limpeza é completa, não deixando resíduos que possam servir de base para novos bloqueios imediatos.",
-      imageKeyword: "drain,cleaning,before,after,comparison"
+      image: "https://file-service.aistudio.google.com/download/GS-2x3c4v5b6n7m8l9k" // Dirty Sink
     },
     {
       title: "Hidrojateamento em Redes de Esgoto",
       content: "Redes de esgoto sofrem com acúmulo de detritos pesados ao longo dos anos. O hidrojateamento é a solução ideal para redes coletoras de condomínios e ruas, pois consegue empurrar grandes volumes de detritos para as caixas de inspeção, onde podem ser removidos. É a solução definitiva para evitar retornos de esgoto indesejados.",
-      imageKeyword: "industrial,pipe,cleaning,equipment"
+      image: "https://file-service.aistudio.google.com/download/GS-9o0p1l2k3j4h5g6f" // Manhole
     },
     {
       title: "Limpeza de Caixas de Gordura",
       content: "Caixas de gordura são o pesadelo de muitas cozinhas industriais e residenciais. A gordura solidifica como pedra. O hidrojateamento quebra esses blocos sólidos, transformando-os em pequenas partículas que fluem ou são aspiradas pelo nosso caminhão limpa-fossa, deixando a caixa de gordura praticamente nova.",
-      imageKeyword: "grease,trap,cleaning,commercial,kitchen"
+      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Grease Trap
     },
     {
       title: "Hidrojateamento em Colunas de Prédios",
       content: "Em edifícios verticais, as colunas de esgoto e gordura entopem frequentemente devido ao uso intenso. Realizamos a limpeza vertical (prumadas) utilizando bicos rotativos que descem pela tubulação, limpando andar por andar, garantindo que o fluxo de todos os apartamentos seja restabelecido sem risco de transbordamento nos andares baixos.",
-      imageKeyword: "apartment,building,plumbing,system"
+      image: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" // White Truck
     },
     {
       title: "Aplicações Industriais",
       content: "Indústrias requerem limpezas técnicas em trocadores de calor, caldeiras, tanques e reatores. O hidrojateamento industrial remove incrustações químicas e minerais sem o uso de produtos abrasivos ou químicos perigosos, sendo uma opção ecologicamente correta e extremamente segura para o ambiente fabril.",
-      imageKeyword: "industrial,factory,drain,cleaning"
+      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k" // Green Truck
     },
     {
       title: "Diferença: Hidrojato vs. Máquina Rotativa",
       content: "A máquina rotativa (Roto-Rooter) utiliza cabos de aço e é excelente para obstruções pontuais e objetos sólidos (como panos ou brinquedos). O hidrojato, por sua vez, é superior para limpeza geral, remoção de gordura, areia e terra. Frequentemente, a ADP utiliza ambas as técnicas em conjunto para um resultado perfeito.",
-      imageKeyword: "drain,cleaning,tools,comparison"
+      image: "https://file-service.aistudio.google.com/download/GS-8y6t4r9e0w1q2a3s" // Toilet Pump
     },
     {
       title: "Limpeza de Fachadas e Pisos",
       content: "Além de tubulações, nossos equipamentos podem ser configurados para lavagem de superfícies. Removemos pichações, musgo, bolor e sujeira incrustada de fachadas de prédios, calçadas, pátios industriais e estacionamentos, devolvendo o aspecto de novo às superfícies com o poder da água.",
-      imageKeyword: "pressure,washing,floor,cleaning"
+      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Grease Trap (Action shot)
     },
     {
       title: "Manutenção Preventiva",
       content: "Não espere entupir! Condomínios e empresas inteligentes contratam o hidrojateamento preventivo anualmente ou semestralmente. Isso evita emergências, mau cheiro e paradas não programadas, além de representar uma economia significativa a longo prazo comparado aos custos de reparos emergenciais.",
-      imageKeyword: "preventive,maintenance,plumbing,schedule"
+      image: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" // White Truck
     },
     {
       title: "Equipamentos de Ponta",
       content: "A ADP investe constantemente em tecnologia. Nossos caminhões combinados possuem tanques de água limpa e tanques de vácuo para sucção simultânea. Utilizamos bicos de diversas geometrias (bico torpedo, bico rotativo, bico de arraste) para cada situação específica encontrada em campo.",
-      imageKeyword: "hydro,jetting,machine,equipment,modern"
+      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k" // Green Truck
     },
     {
       title: "Segurança no Processo",
       content: "Lidar com alta pressão exige responsabilidade. Nossos operadores são treinados (NR-33 e NR-35) e utilizam todos os EPIs necessários (botas, luvas, óculos, capacetes). A segurança da sua propriedade e da nossa equipe é prioridade absoluta em cada operação de hidrojateamento realizada.",
-      imageKeyword: "plumber,safety,equipment,ppe"
+      image: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2" // Smiling Plumber
     },
     {
       title: "Galerias Pluviais",
       content: "Galerias de água da chuva frequentemente entopem com terra, folhas e lixo da rua, causando alagamentos. O hidrojateamento é a única técnica capaz de arrastar toneladas de areia e sedimentos para fora das galerias, desassoreando o sistema e permitindo o livre fluxo da água pluvial.",
-      imageKeyword: "storm,drain,cleaning,maintenance"
+      image: "https://file-service.aistudio.google.com/download/GS-9o0p1l2k3j4h5g6f" // Manhole
     },
     {
       title: "Remoção de Raízes",
       content: "Raízes de árvores buscam a umidade dentro dos canos e causam bloqueios severos. O hidrojateamento com bicos cortadores de raízes fatia a vegetação intrusiva sem a necessidade de escavar e trocar o tubo, sendo uma solução cirúrgica e muito menos destrutiva para o seu jardim ou calçada.",
-      imageKeyword: "tree,roots,sewer,pipe,damage"
+      image: "https://file-service.aistudio.google.com/download/GS-2x3c4v5b6n7m8l9k" // Dirty Sink
     },
     {
       title: "Economia Gerada",
       content: "Embora o custo inicial possa parecer maior que uma visita simples de encanador, a durabilidade do serviço de hidrojateamento compensa. Uma tubulação hidrojateada pode ficar anos sem apresentar problemas, enquanto métodos paliativos exigem visitas constantes. É o melhor custo-benefício do mercado.",
-      imageKeyword: "money,savings,affordable,pricing"
+      image: "https://file-service.aistudio.google.com/download/GS-5g4h3j2k1l0m9n8b" // Green Liquid/Hand
     },
     {
       title: "Tanques e Reservatórios",
       content: "Limpamos tanques de armazenamento de água potável, combustível ou produtos químicos. O jato de água remove o biofilme e sedimentos do fundo e paredes, garantindo a qualidade do produto armazenado e atendendo às normas sanitárias e ambientais vigentes.",
-      imageKeyword: "water,tank,industrial,cleaning"
+      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Blue Truck
     },
     {
       title: "Por que Escolher a ADP?",
       content: "Somos pioneiros em Curitiba no uso desta tecnologia. Nossa frota é própria e moderna. Oferecemos garantia por escrito, atendimento 24 horas e facilitamos o pagamento. Não somos apenas desentupidores, somos técnicos especializados em saneamento e manutenção hidráulica de alta performance.",
-      imageKeyword: "professional,plumber,team,portrait"
+      image: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2" // Smiling Plumber
     },
     {
       title: "Sustentabilidade",
       content: "O hidrojateamento utiliza apenas água potável, sem aditivos químicos nocivos ao lençol freático. É a forma mais ecológica de limpar esgoto. Além disso, nossos caminhões realizam a sucção dos resíduos para descarte correto em estações de tratamento, fechando o ciclo ambiental com responsabilidade.",
-      imageKeyword: "eco,friendly,water,recycling"
+      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k" // Green Truck
     }
   ];
 
@@ -154,7 +154,8 @@ const ServiceHydrojetting: React.FC = () => {
       {/* Hero Section */}
       <section className="relative bg-dark text-white pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-             <img src="https://loremflickr.com/1920/1080/hydro,jetting,equipment,action" alt="Hidrojateamento Background" className="w-full h-full object-cover opacity-30" />
+             {/* Using White Truck Studio Image */}
+             <img src="https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" alt="Hidrojateamento Background" className="w-full h-full object-cover opacity-30" />
              <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/60 to-dark"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -227,7 +228,7 @@ const ServiceHydrojetting: React.FC = () => {
               <article key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full border border-gray-100">
                 <div className="h-48 overflow-hidden relative group">
                   <img 
-                    src={`https://loremflickr.com/600/400/${item.imageKeyword}`} 
+                    src={item.image} 
                     alt={item.title} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />

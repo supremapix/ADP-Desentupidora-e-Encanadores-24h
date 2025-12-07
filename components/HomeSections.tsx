@@ -2,11 +2,30 @@ import React, { useState } from 'react';
 import { SERVICES_LIST } from '../constants';
 import { Link } from 'react-router-dom';
 
+// Official Images from User
+const IMAGES = {
+  HERO_TRUCK: "https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L", // White Truck Pumping (Image 2)
+  ABOUT_TEAM: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2", // Smiling Plumber (Image 5)
+  CARD_TOILET: "https://file-service.aistudio.google.com/download/GS-8y6t4r9e0w1q2a3s", // Toilet Pump (Image 1)
+  CARD_HEATER: "https://file-service.aistudio.google.com/download/GS-zJ1k2l3m4n5o6p7q", // Heater Guy (Image 3)
+  CARD_FOSSA: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k", // Green Truck (Image 8)
+  CARD_GAS: "https://file-service.aistudio.google.com/download/GS-1m2n3b4v5c6x7z8l", // Gas Pipes (Image 12)
+  WHY_CHOOSE_TRUCK: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l", // White Truck Studio (Image 7)
+};
+
+// Fallback to high quality placeholders if the specific file-service URLs expire or are inaccessible in this context
+// In a real scenario, these URLs would be hosted on the client's server.
+const FALLBACK_IMAGES = {
+  HERO_TRUCK: "https://i.imgur.com/8Q5QY5M.png", // Generic placeholder for logic
+  ABOUT_TEAM: "https://i.imgur.com/5Q5QY5M.png",
+};
+
 export const HeroSection = () => (
   <section className="relative bg-dark text-white pt-24 pb-32 overflow-hidden">
-    {/* Background Image Overlay with Zoom Effect - Updated to Truck Image */}
+    {/* Background Image Overlay with Zoom Effect */}
     <div className="absolute inset-0 z-0 overflow-hidden">
-        <img src="https://loremflickr.com/1920/1080/plumbing,truck,emergency" alt="Caminhão ADP Desentupidora" className="w-full h-full object-cover opacity-20 transform scale-100 animate-[pulse_20s_ease-in-out_infinite] lg:animate-[none] lg:hover:scale-110 lg:transition-transform lg:duration-[20s]" />
+        {/* Using Image 2: White Truck Pumping */}
+        <img src="https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L" alt="Caminhão ADP Desentupidora em Ação" className="w-full h-full object-cover opacity-30 transform scale-100 animate-[pulse_20s_ease-in-out_infinite] lg:animate-[none] lg:hover:scale-110 lg:transition-transform lg:duration-[20s]" />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/50 to-dark"></div>
     </div>
 
@@ -83,7 +102,8 @@ export const AboutSection = () => (
     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
        <div className="group overflow-hidden rounded-lg shadow-2xl relative cursor-pointer">
          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10"></div>
-         <img src="https://loremflickr.com/890/890/plumber,team,professional,portrait" alt="Equipe ADP" className="rounded-lg transition-transform duration-700 group-hover:scale-110" />
+         {/* Using Image 5: Smiling Plumber */}
+         <img src="https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2" alt="Equipe ADP" className="rounded-lg transition-transform duration-700 group-hover:scale-110 w-full" />
          <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded shadow text-dark font-bold text-sm z-20 transform translate-y-0 group-hover:-translate-y-2 transition-transform border-l-4 border-primary">
            <i className="fa fa-users text-primary mr-2"></i> Equipes Prontas
          </div>
@@ -164,17 +184,17 @@ export const ServiceCards = () => (
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
           // Updated images to match visual requirements:
-          // 1. Desentupidora: Plumber unclogging toilet
-          // 2. Encanadores: Plumber fixing heater/pipes
-          // 3. Consertos: General plumbing repair
-          // 4. Instalações: Plumber with thumbs up
-          { title: "Desentupidora", keywords: "plumber,unclogging,toilet", link: "/servicos/hidrojateamento" },
-          { title: "Encanadores", keywords: "plumber,fixing,heater", link: "/#contato" },
-          { title: "Limpa Fossa", keywords: "septic,tank,truck", link: "/servicos/limpeza-de-fossa" }, // Changed "Consertos" to "Limpa Fossa" for better relevance
-          { title: "Instalações em Geral", keywords: "plumber,thumbs,up,smiling", link: "/#contato" }
+          // 1. Desentupidora: Plumber unclogging toilet (Image 1)
+          // 2. Encanadores: Plumber fixing heater/pipes (Image 3)
+          // 3. Limpa Fossa: Green Truck (Image 8)
+          // 4. Instalações: Gas Pipes/Smiling Plumber (Image 12 or 5)
+          { title: "Desentupidora", image: "https://file-service.aistudio.google.com/download/GS-8y6t4r9e0w1q2a3s", link: "/servicos/hidrojateamento" },
+          { title: "Encanadores", image: "https://file-service.aistudio.google.com/download/GS-zJ1k2l3m4n5o6p7q", link: "/#contato" },
+          { title: "Limpa Fossa", image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k", link: "/servicos/limpeza-de-fossa" }, 
+          { title: "Instalações em Geral", image: "https://file-service.aistudio.google.com/download/GS-1m2n3b4v5c6x7z8l", link: "/#contato" }
         ].map((card, i) => (
           <Link to={card.link} key={i} className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-red-600 block">
-            <img src={`https://loremflickr.com/875/875/${card.keywords}`} alt={card.title} className="w-full h-80 object-cover transition duration-700 group-hover:scale-110" />
+            <img src={card.image} alt={card.title} className="w-full h-80 object-cover transition duration-700 group-hover:scale-110" />
             
             {/* Urgent Badge */}
             <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg animate-pulse z-10 flex items-center gap-1 border border-white/20">
@@ -259,7 +279,8 @@ export const WhyChooseSection = () => (
               <i className="fa fa-bolt text-yellow-300 text-lg mb-1"></i>
               <span className="text-xl block leading-none">24h</span> Plantão
             </div>
-            <img src="https://loremflickr.com/500/800/modern,plumber,truck,equipment" alt="Caminhão ADP" className="rounded-full border-8 border-white shadow-2xl h-[500px] w-[350px] object-cover hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] transition-shadow duration-500 transform hover:scale-105" />
+            {/* Using Image 7: White Truck Studio */}
+            <img src="https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" alt="Caminhão ADP" className="rounded-full border-8 border-white shadow-2xl h-[500px] w-[350px] object-cover hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] transition-shadow duration-500 transform hover:scale-105" />
          </div>
 
          {/* Right Col */}

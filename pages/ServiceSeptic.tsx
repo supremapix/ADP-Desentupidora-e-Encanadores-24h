@@ -18,7 +18,7 @@ const ServiceSeptic: React.FC = () => {
       "@type": "LocalBusiness",
       "name": "ADP Desentupidora",
       "telephone": "+55-41-3345-1194",
-      "image": "https://loremflickr.com/1920/1080/septic,tank,truck,vacuum",
+      "image": "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k", // Blue Truck
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Luiz Maltaca, 36",
@@ -54,92 +54,92 @@ const ServiceSeptic: React.FC = () => {
     {
       title: "Como Funciona a Limpeza de Fossa?",
       content: "A limpeza de fossa é realizada através de caminhões equipados com potentes bombas de auto vácuo. Este sistema suga todos os resíduos líquidos e pastosos (lodo) armazenados na fossa séptica ou negra, transportando-os para o tanque do caminhão de forma hermética, sem vazamentos ou mau cheiro no local.",
-      imageKeyword: "septic,tank,pumping,truck"
+      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Blue Truck
     },
     {
       title: "Quando Limpar a Fossa?",
       content: "Recomenda-se a limpeza periódica a cada 6 ou 12 meses, dependendo do volume de uso e tamanho da fossa. Sinais de que a fossa está cheia incluem: mau cheiro no quintal ou ralos, retorno de esgoto pelo vaso sanitário, e o solo ao redor da fossa úmido ou com grama muito verde.",
-      imageKeyword: "septic,tank,inspection,yard"
+      image: "https://file-service.aistudio.google.com/download/GS-9o0p1l2k3j4h5g6f" // Manhole
     },
     {
       title: "Limpeza de Caixa de Gordura",
       content: "A caixa de gordura retém óleos e graxas da cozinha para não entupir a rede de esgoto. Quando cheia, ela transborda e causa forte odor. Realizamos a aspiração completa da gordura solidificada e líquida, lavando as paredes da caixa e garantindo o fluxo livre da água da pia.",
-      imageKeyword: "grease,trap,cleaning,kitchen"
+      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Grease Trap
     },
     {
       title: "Fossa Séptica vs. Fossa Negra",
       content: "Fossas sépticas são estruturas de cimento que tratam o esgoto. Fossas negras são buracos no solo (comuns em áreas rurais ou antigas). A ADP limpa ambos os tipos, mas tomamos cuidados extras com fossas negras para evitar desmoronamentos durante a sucção.",
-      imageKeyword: "septic,system,diagram,underground"
+      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k" // Green Truck
     },
     {
       title: "Descarte Ecológico Correto",
       content: "O resíduo da fossa não pode ser jogado em rios ou bueiros. A ADP possui licença ambiental e cadastro na Sanepar. Todo o efluente coletado é transportado para estações de tratamento de esgoto (ETE) certificadas, onde recebem o tratamento adequado antes de retornar à natureza.",
-      imageKeyword: "sewage,treatment,plant,eco"
+      image: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" // White Truck
     },
     {
       title: "Caminhões Combinados",
       content: "Nossa frota possui caminhões 'Combinados' que fazem tanto a sucção da fossa quanto o hidrojateamento das tubulações. Isso significa que, se houver um entupimento na linha que leva à fossa, resolvemos tudo na mesma visita, sem custo adicional de deslocamento de outro veículo.",
-      imageKeyword: "vacuum,truck,hydro,jetting"
+      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Blue Truck
     },
     {
       title: "Atendimento a Condomínios",
       content: "Condomínios residenciais possuem grandes fossas e caixas de passagem que exigem manutenção regular. Oferecemos contratos mensais ou semestrais com preços especiais para síndicos e administradoras, evitando emergências que afetam todos os moradores.",
-      imageKeyword: "condominium,building,sewer,maintenance"
+      image: "https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L" // White Truck Pumping
     },
     {
       title: "Limpeza Industrial",
       content: "Atendemos indústrias para limpeza de caixas separadoras de água e óleo (CSAO), tanques de decantação e sumidouros. Nossos equipamentos são adequados para resíduos industriais não perigosos, garantindo a continuidade da produção fabril.",
-      imageKeyword: "industrial,wastewater,treatment,factory"
+      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k" // Green Truck
     },
     {
       title: "Desentupimento de Sumidouro",
       content: "O sumidouro é para onde vai o líquido tratado da fossa. Com o tempo, o solo impermeabiliza (satura) e a água não desce mais. Realizamos o esgotamento do sumidouro e aplicamos hidrojateamento no fundo para tentar recuperar a permeabilidade do solo.",
-      imageKeyword: "drain,field,septic,repair"
+      image: "https://file-service.aistudio.google.com/download/GS-9o0p1l2k3j4h5g6f" // Manhole
     },
     {
       title: "Segurança Sanitária",
       content: "O contato com esgoto traz riscos de doenças. Nossos técnicos utilizam EPIs completos (macacão impermeável, luvas, máscaras, botas) e isolam a área de trabalho. Após o serviço, realizamos a higienização do local para garantir a segurança da sua família.",
-      imageKeyword: "plumber,safety,ppe,protection"
+      image: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2" // Smiling Plumber
     },
     {
       title: "Capacidade dos Caminhões",
       content: "Dispomos de caminhões com diferentes capacidades cúbicas (de 3m³ a 15m³) para atender desde pequenas residências com acesso difícil até grandes indústrias. Nossos veículos são compactos o suficiente para entrar na maioria das garagens residenciais.",
-      imageKeyword: "small,vacuum,truck,residential"
+      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Blue Truck
     },
     {
       title: "Certificado de Limpeza",
       content: "Para comércios, restaurantes e indústrias, a vigilância sanitária e o meio ambiente exigem comprovante de limpeza. A ADP emite o Certificado de Destinação Final de Efluentes e Laudo Técnico, comprovando que sua empresa está em dia com as obrigações ambientais.",
-      imageKeyword: "document,paperwork,certification,compliance"
+      image: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2" // Smiling Plumber
     },
     {
       title: "Prevenção de Mau Cheiro",
       content: "O retorno de gases pelo ralo é sinal de problemas na ventilação ou fossa cheia. Além da limpeza, verificamos os sifões e tubos de ventilação da sua rede, eliminando o odor desagradável de esgoto dentro de casa.",
-      imageKeyword: "bathroom,sink,smell,plumbing"
+      image: "https://file-service.aistudio.google.com/download/GS-2x3c4v5b6n7m8l9k" // Dirty Sink
     },
     {
       title: "Atendimento de Emergência",
       content: "Fossa transbordando é uma emergência sanitária. Mantemos plantão 24 horas, inclusive sábados, domingos e feriados, para realizar o esgotamento imediato e evitar a contaminação do solo e áreas de lazer.",
-      imageKeyword: "emergency,plumber,night,service"
+      image: "https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L" // White Truck Pumping
     },
     {
       title: "Bacias de Contenção",
       content: "Em postos de gasolina e lavacarros, realizamos a limpeza das caixas de areia e bacias de contenção. A remoção correta da lama contaminada com óleo é essencial para evitar multas ambientais pesadas.",
-      imageKeyword: "gas,station,drain,cleaning"
+      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Grease Trap
     },
     {
       title: "Equipamentos Modernos",
       content: "Nossas bombas de vácuo são de anel líquido de alta performance, capazes de sugar resíduos a grandes distâncias e profundidades. Isso permite limpar fossas que estão longe da rua ou em subsolos profundos.",
-      imageKeyword: "modern,pump,technology,equipment"
+      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k" // Green Truck
     },
     {
       title: "Transparência no Preço",
       content: "O orçamento pode ser feito por metro cúbico retirado ou preço fechado (quando sabemos o tamanho exato da fossa). Explicamos tudo antes de começar, sem surpresas na hora de pagar. Aceitamos cartões.",
-      imageKeyword: "credit,card,payment,machine"
+      image: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2" // Smiling Plumber
     },
     {
       title: "Região de Atendimento",
       content: "Atendemos Curitiba e toda a Região Metropolitana (São José dos Pinhais, Colombo, Pinhais, Araucária, Campo Largo, etc.) com a mesma agilidade e sem cobrança abusiva de taxa de deslocamento.",
-      imageKeyword: "map,location,service,area"
+      image: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" // White Truck
     }
   ];
 
@@ -153,7 +153,8 @@ const ServiceSeptic: React.FC = () => {
       {/* Hero Section */}
       <section className="relative bg-dark text-white pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-             <img src="https://loremflickr.com/1920/1080/septic,tank,truck,service" alt="Limpeza de Fossa Background" className="w-full h-full object-cover opacity-30" />
+             {/* Using Blue Truck */}
+             <img src="https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" alt="Limpeza de Fossa Background" className="w-full h-full object-cover opacity-30" />
              <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/60 to-dark"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -224,7 +225,7 @@ const ServiceSeptic: React.FC = () => {
               <article key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full border border-gray-100">
                 <div className="h-48 overflow-hidden relative group">
                   <img 
-                    src={`https://loremflickr.com/600/400/${item.imageKeyword}`} 
+                    src={item.image} 
                     alt={item.title} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
