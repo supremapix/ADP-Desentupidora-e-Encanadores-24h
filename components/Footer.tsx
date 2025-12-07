@@ -4,6 +4,8 @@ import { COMPANY_PHONE, COMPANY_WHATSAPP } from '../constants';
 import AnimatedLogo from './AnimatedLogo';
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-dark text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
@@ -63,7 +65,7 @@ const Footer: React.FC = () => {
         {/* Copyright */}
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="flex items-center justify-center gap-1 text-sm text-gray-400">
-            Desenvolvido 
+            &copy; {currentYear} ADP Desentupidora. Desenvolvido 
             <span className="text-red-500 text-xl animate-pulse cursor-pointer hover:scale-125 transition-transform">❤️</span> 
             por 
             <a href="https://supremasite.com.br" target="_blank" rel="noreferrer" className="text-primary font-bold hover:underline hover:text-teal-400 transition-colors">
