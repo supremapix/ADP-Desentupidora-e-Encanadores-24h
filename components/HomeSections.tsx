@@ -5,139 +5,123 @@ import { Link } from 'react-router-dom';
 export const HeroSection = () => (
   <section className="relative bg-slate-900 text-white pt-28 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
     
-    {/* 1. Background Image (Pia Entupida/Plumbing) */}
+    {/* 1. Dynamic Background: Professional Plumbing Texture */}
     <div className="absolute inset-0 z-0 overflow-hidden bg-slate-950">
       <img 
-        src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" 
-        alt="Fundo Pia Entupida" 
+        src="https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=2670&auto=format&fit=crop" 
+        alt="Tubulações e Encanamento Profissional" 
         className="absolute inset-0 w-full h-full object-cover opacity-20 animate-zoom-slow mix-blend-overlay"
       />
-      {/* High Contrast Overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/95 to-slate-900/80"></div>
+      {/* Heavy Gradient for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/95 to-slate-900/70"></div>
+      
+      {/* Decorative Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 animate-pulse-slow"></div>
     </div>
 
-    {/* 2. Live Status Bar */}
-    <div className="absolute top-0 left-0 w-full bg-red-600/95 backdrop-blur-sm text-white py-2 z-20 shadow-md border-b border-white/10">
-       <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2 text-xs sm:text-sm font-bold tracking-wide">
-          <div className="flex items-center gap-2 animate-pulse">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-            </span>
-            <span>PLANTÃO AGORA:</span>
-          </div>
-          <span className="opacity-90">Equipes prontas no CIC, Santa Felicidade e Centro Cívico.</span>
+    {/* 2. Top Urgency Bar */}
+    <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-red-700 to-red-600 text-white py-2 z-20 shadow-lg">
+       <div className="container mx-auto px-4 flex items-center justify-center gap-2 text-xs sm:text-sm font-bold tracking-wider uppercase animate-fade-in">
+          <i className="fa fa-ambulance animate-pulse text-yellow-300"></i>
+          <span>Plantão 24h: Chegada em 40 minutos confirmada</span>
        </div>
     </div>
 
-    <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+    <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
       
-      {/* Left Column: Copy & CTAs */}
-      <div className="space-y-8 text-center lg:text-left">
+      {/* Left Column: Copy & CTAs (7 cols) */}
+      <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
         
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-primary-light animate-fade-in-up">
-          <i className="fa fa-clock text-green-400"></i>
-          <span>Chegada média: 40 minutos</span>
+        {/* Trust Badge */}
+        <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full pl-1 pr-4 py-1 text-sm font-medium text-gray-200 animate-fade-in-up">
+          <span className="bg-green-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">ONLINE</span>
+          <span>Atendimento imediato em Curitiba</span>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight shadow-black drop-shadow-lg animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          Desentupidora <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-400">24 Horas</span> em Curitiba
-        </h1>
-
-        {/* Subheadline */}
-        <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          Resolvemos entupimentos de esgoto, pias e fossas com rapidez, sem quebrar pisos e com preço justo. Atendimento emergencial no CIC e Região Metropolitana.
-        </p>
-
-        {/* Value Props */}
-        <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm sm:text-base font-medium text-gray-200 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <div className="flex items-center gap-2 bg-slate-800/50 px-3 py-1 rounded-lg border border-white/5">
-            <i className="fa fa-check-circle text-green-500"></i> Orçamento Grátis
-          </div>
-          <div className="flex items-center gap-2 bg-slate-800/50 px-3 py-1 rounded-lg border border-white/5">
-            <i className="fa fa-check-circle text-green-500"></i> Garantia Total
-          </div>
-          <div className="flex items-center gap-2 bg-slate-800/50 px-3 py-1 rounded-lg border border-white/5">
-            <i className="fa fa-check-circle text-green-500"></i> Visita sem Taxa
-          </div>
+        {/* Headlines */}
+        <div className="space-y-4">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-xl animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            Desentupidora <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-300">Profissional 24h</span>
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            Soluções definitivas para esgoto, pias e fossas. Técnicos licenciados, equipamentos modernos e <strong>garantia de serviço limpo</strong> sem quebra-quebra.
+          </p>
         </div>
 
-        {/* Action Buttons */}
+        {/* Benefits Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 gap-y-2 gap-x-4 text-sm font-medium text-gray-300 max-w-md mx-auto lg:mx-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex items-center gap-2"><i className="fa fa-check text-green-500"></i> Chegada em 40 min</div>
+          <div className="flex items-center gap-2"><i className="fa fa-check text-green-500"></i> Orçamento Grátis</div>
+          <div className="flex items-center gap-2"><i className="fa fa-check text-green-500"></i> Preço Justo</div>
+          <div className="flex items-center gap-2"><i className="fa fa-check text-green-500"></i> Garantia Total</div>
+        </div>
+
+        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           <a 
             href="https://api.whatsapp.com/send?phone=5541985171966" 
-            className="group bg-[#25d366] hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-green-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3"
+            className="relative group bg-[#25d366] hover:bg-green-500 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 overflow-hidden"
           >
-            <i className="fab fa-whatsapp text-2xl group-hover:rotate-12 transition-transform"></i>
-            <div className="text-left leading-tight">
-              <span className="block text-xs font-normal opacity-90">Atendimento Rápido</span>
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+            <i className="fab fa-whatsapp text-3xl"></i>
+            <div className="text-left leading-none">
+              <span className="block text-[10px] font-medium uppercase tracking-wider opacity-80 mb-1">Resposta Rápida</span>
               Chamar no WhatsApp
             </div>
           </a>
           
           <a 
             href="tel:4133451194" 
-            className="group bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-red-600/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 border border-red-500"
+            className="group bg-transparent border-2 border-white/20 hover:border-red-500 hover:bg-red-600/20 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all flex items-center justify-center gap-3 backdrop-blur-sm"
           >
-            <div className="bg-white/20 rounded-full p-2 group-hover:animate-shake">
-               <i className="fa fa-phone text-xl"></i>
-            </div>
-            <div className="text-left leading-tight">
-              <span className="block text-xs font-normal opacity-90">Emergência 24h</span>
-              (41) 3345-1194
-            </div>
+            <i className="fa fa-phone-alt text-xl group-hover:text-red-500 transition-colors"></i>
+            <span>(41) 3345-1194</span>
           </a>
-        </div>
-
-        {/* Social Proof */}
-        <div className="pt-4 flex items-center justify-center lg:justify-start gap-4 opacity-80 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-           <div className="flex -space-x-2">
-              <div className="w-8 h-8 rounded-full bg-gray-600 border-2 border-slate-900 flex items-center justify-center"><i className="fa fa-user text-xs"></i></div>
-              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-slate-900 flex items-center justify-center"><i className="fa fa-user text-xs"></i></div>
-              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-slate-900 flex items-center justify-center"><i className="fa fa-user text-xs"></i></div>
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-[10px] font-bold border-2 border-slate-900">+1k</div>
-           </div>
-           <div className="text-sm">
-             <div className="flex text-yellow-400 text-xs mb-0.5">
-               <i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i>
-             </div>
-             <p>Clientes satisfeitos</p>
-           </div>
         </div>
 
       </div>
       
-      {/* Right Column: Visual/Video */}
-      <div className="flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-        <div className="relative w-full max-w-[320px] mx-auto lg:mx-0">
-             {/* Decorative Blobs */}
-             <div className="absolute top-10 -left-10 w-24 h-24 bg-primary/30 rounded-full blur-xl animate-pulse"></div>
-             <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-red-600/20 rounded-full blur-xl animate-pulse delay-700"></div>
+      {/* Right Column: Video & Visuals (5 cols) */}
+      <div className="lg:col-span-5 flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+        <div className="relative w-full max-w-[340px]">
+             
+             {/* Decorative Ring */}
+             <div className="absolute -inset-4 bg-gradient-to-tr from-primary to-teal-600 rounded-[2.5rem] opacity-30 blur-lg animate-pulse"></div>
 
-             {/* Video Container */}
-             <div className="relative aspect-[9/16] rounded-2xl shadow-2xl border-4 border-slate-800 bg-black overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500 group">
+             {/* Phone Container Look */}
+             <div className="relative rounded-[2rem] bg-black border-8 border-slate-800 shadow-2xl overflow-hidden aspect-[9/16] z-10">
+               {/* Header of "Phone" */}
+               <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black/80 to-transparent z-20 pointer-events-none flex items-center justify-center">
+                  <div className="w-16 h-4 bg-black/50 rounded-b-xl backdrop-blur-sm"></div>
+               </div>
+
                <iframe 
                  className="absolute inset-0 w-full h-full object-cover"
-                 src="https://www.youtube.com/embed/jJ0WJqgXZ3k?autoplay=0&loop=1&playlist=jJ0WJqgXZ3k&playsinline=1&controls=1&rel=0&mute=0" 
+                 src="https://www.youtube.com/embed/12D85Dmnheg?playlist=12D85Dmnheg&autoplay=1&loop=1&controls=1&mute=0&rel=0&modestbranding=1&playsinline=1" 
                  title="Desentupidora ADP em Ação" 
                  frameBorder="0" 
                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                  allowFullScreen
                  style={{ pointerEvents: 'auto' }}
                ></iframe>
+
+               {/* Overlay Badge */}
+               <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-3 rounded-xl shadow-lg flex items-center gap-3 z-20 animate-fade-in-up delay-700">
+                 <div className="bg-primary/20 p-2 rounded-full text-primary">
+                   <i className="fa fa-check-circle text-xl"></i>
+                 </div>
+                 <div>
+                   <p className="text-dark font-bold text-xs leading-tight">Serviço Gravado</p>
+                   <p className="text-gray-500 text-[10px]">Transparência Total</p>
+                 </div>
+               </div>
              </div>
 
-             {/* Floating Badge */}
-             <div className="absolute -bottom-6 -right-6 bg-white text-slate-900 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow max-w-[200px] z-20">
-               <div className="bg-green-100 p-2 rounded-full text-green-600">
-                 <i className="fa fa-shield-alt text-xl"></i>
-               </div>
-               <div>
-                 <p className="font-bold text-sm leading-tight">Empresa Licenciada</p>
-                 <p className="text-xs text-gray-500">Sanepar e Meio Ambiente</p>
-               </div>
+             {/* Floating Elements behind */}
+             <div className="absolute top-10 -right-10 bg-red-600 text-white p-4 rounded-xl shadow-xl z-20 animate-bounce-slow hidden sm:block">
+                <i className="fa fa-bolt text-2xl mb-1 block text-center text-yellow-300"></i>
+                <span className="font-bold text-sm">Chegamos<br/>Rápido!</span>
              </div>
         </div>
       </div>
