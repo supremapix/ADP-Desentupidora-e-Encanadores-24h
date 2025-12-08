@@ -3,64 +3,135 @@ import { SERVICES_LIST } from '../constants';
 import { Link } from 'react-router-dom';
 
 export const HeroSection = () => (
-  <section className="relative bg-dark text-white pt-24 pb-32 overflow-hidden">
-    {/* Background Icon Overlay */}
-    <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center bg-gray-900">
-        <i className="fa fa-truck-fast text-[20rem] text-white/5 animate-pulse-slow transform -rotate-12"></i>
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 to-dark"></div>
+  <section className="relative bg-slate-900 text-white pt-28 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
+    
+    {/* 1. Background Image with Professional Context */}
+    <div className="absolute inset-0 z-0">
+      {/* Suggestion: Replace this URL with a real photo of your truck or team for maximum trust */}
+      <img 
+        src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=2070&auto=format&fit=crop" 
+        alt="Equipe profissional de desentupimento com equipamentos modernos" 
+        className="w-full h-full object-cover opacity-30 animate-zoom-slow"
+      />
+      {/* High Contrast Overlay for Readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/60"></div>
     </div>
 
-    {/* Live Status Bar */}
-    <div className="absolute top-0 left-0 w-full bg-red-600/90 text-white py-2 z-20 overflow-hidden shadow-lg">
-       <div className="container mx-auto px-4 flex items-center justify-center gap-2 animate-pulse">
-          <i className="fa fa-circle text-xs text-green-300"></i>
-          <span className="text-sm font-bold uppercase tracking-wider">Status Agora: Equipes disponíveis no CIC, Fazendinha e Campo Comprido</span>
+    {/* 2. Live Status Bar - Urgency Trigger */}
+    <div className="absolute top-0 left-0 w-full bg-red-600/95 backdrop-blur-sm text-white py-2 z-20 shadow-md border-b border-white/10">
+       <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2 text-xs sm:text-sm font-bold tracking-wide">
+          <div className="flex items-center gap-2 animate-pulse">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span>PLANTÃO AGORA:</span>
+          </div>
+          <span className="opacity-90">Equipes prontas no CIC, Santa Felicidade e Centro Cívico.</span>
        </div>
     </div>
 
-    <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12 mt-8">
-      <div className="md:w-1/2 space-y-6">
-        <div className="inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-widest mb-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          <i className="fa fa-bolt mr-1 text-yellow-300"></i> Chegamos Rápido
+    <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left Column: Copy & CTAs */}
+      <div className="space-y-8 text-center lg:text-left">
+        
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-primary-light animate-fade-in-up">
+          <i className="fa fa-clock text-green-400"></i>
+          <span>Chegada média: 40 minutos</span>
         </div>
-        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          🚨 Atendimento de <span className="text-primary">Urgências CIC</span> Desentupidora ADP Curitiba 🚨
+
+        {/* Main Headline - SEO Optimized */}
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight shadow-black drop-shadow-lg animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          Desentupidora <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-400">24 Horas</span> em Curitiba
         </h1>
-        <h2 className="text-2xl text-gray-300 font-light animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          Chegada média: <span className="text-white font-bold bg-red-600 px-2 rounded shadow-lg shadow-red-600/50 animate-pulse">40 a 45 minutos</span>
-        </h2>
-        <p className="text-gray-300 text-lg animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          Atendendo Cidade Industrial de Curitiba (CIC), Fazendinha, Campo Comprido, Orleans, São Braz, Mossunguê (Ecoville) e Santa Felicidade.
+
+        {/* Subheadline - Pain Points & Solution */}
+        <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          Resolvemos entupimentos de esgoto, pias e fossas com rapidez, sem quebrar pisos e com preço justo. Atendimento emergencial no CIC e Região Metropolitana.
         </p>
-        <ul className="space-y-2 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-          {['Tempo médio de chegada: 40 a 45 minutos', 'Atendimento 24 horas, 7 dias por semana', 'Profissionais licenciados e experientes', 'Garantia em todos os serviços prestados'].map((item, i) => (
-            <li key={i} className="flex items-center gap-2 group">
-              <i className="fa fa-check-circle text-green-500 transition-transform duration-300 group-hover:scale-125"></i> <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-        <div className="pt-4 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all hover:scale-105 inline-block hover:shadow-[0_0_40px_rgba(220,38,38,1)] text-center btn-shimmer relative overflow-hidden">
-            <span className="absolute inset-0 bg-white/20 animate-[pulse_2s_infinite]"></span>
-            <i className="fa fa-phone mr-2 animate-bounce"></i> Chamar Agora
+
+        {/* Value Props - Checkmarks */}
+        <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm sm:text-base font-medium text-gray-200 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex items-center gap-2 bg-slate-800/50 px-3 py-1 rounded-lg border border-white/5">
+            <i className="fa fa-check-circle text-green-500"></i> Orçamento Grátis
+          </div>
+          <div className="flex items-center gap-2 bg-slate-800/50 px-3 py-1 rounded-lg border border-white/5">
+            <i className="fa fa-check-circle text-green-500"></i> Garantia Total
+          </div>
+          <div className="flex items-center gap-2 bg-slate-800/50 px-3 py-1 rounded-lg border border-white/5">
+            <i className="fa fa-check-circle text-green-500"></i> Visita sem Taxa
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <a 
+            href="https://api.whatsapp.com/send?phone=5541985171966" 
+            className="group bg-[#25d366] hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-green-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3"
+          >
+            <i className="fab fa-whatsapp text-2xl group-hover:rotate-12 transition-transform"></i>
+            <div className="text-left leading-tight">
+              <span className="block text-xs font-normal opacity-90">Atendimento Rápido</span>
+              Chamar no WhatsApp
+            </div>
           </a>
-          <a href="https://api.whatsapp.com/send?phone=5541985171966" className="bg-[#25d366] hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg transition-all hover:scale-105 inline-block text-center border-2 border-transparent hover:border-white">
-            <i className="fab fa-whatsapp mr-2"></i> WhatsApp (Online)
+          
+          <a 
+            href="tel:4133451194" 
+            className="group bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-red-600/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 border border-red-500"
+          >
+            <div className="bg-white/20 rounded-full p-2 group-hover:animate-shake">
+               <i className="fa fa-phone text-xl"></i>
+            </div>
+            <div className="text-left leading-tight">
+              <span className="block text-xs font-normal opacity-90">Emergência 24h</span>
+              (41) 3345-1194
+            </div>
           </a>
         </div>
+
+        {/* Social Proof / Trust Badge */}
+        <div className="pt-4 flex items-center justify-center lg:justify-start gap-4 opacity-80 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+           <div className="flex -space-x-2">
+              <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-slate-900"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-slate-900"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-slate-900"></div>
+              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-[10px] font-bold border-2 border-slate-900">+1k</div>
+           </div>
+           <div className="text-sm">
+             <div className="flex text-yellow-400 text-xs mb-0.5">
+               <i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i>
+             </div>
+             <p>Clientes satisfeitos em Curitiba</p>
+           </div>
+        </div>
+
       </div>
       
-      <div className="md:w-1/2 flex justify-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-        <div className="relative group w-full max-w-sm">
-             {/* Pointer events none ensures the blur effect doesn't block touches on the video on mobile */}
-             <div className="absolute inset-0 bg-primary rounded-2xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"></div>
-             
-             {/* YouTube Short Embed with responsive width for mobile compatibility */}
-             <div className="relative w-full max-w-[320px] mx-auto aspect-[9/16] rounded-2xl shadow-2xl border-4 border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500 z-10 bg-black">
+      {/* Right Column: Visual/Video Evidence */}
+      <div className="flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="relative w-full max-w-[360px] mx-auto lg:mx-0">
+             {/* Decorative Blobs */}
+             <div className="absolute top-10 -left-10 w-24 h-24 bg-primary/30 rounded-full blur-xl animate-pulse"></div>
+             <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-red-600/20 rounded-full blur-xl animate-pulse delay-700"></div>
+
+             {/* Video Container */}
+             <div className="relative aspect-[9/16] rounded-2xl shadow-2xl border-4 border-slate-800 bg-black overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500 group">
+               {/* Click barrier for mobile scrolling, removed on interaction if needed */}
+               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-10">
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <p className="text-white font-bold text-sm mb-1"><i className="fa fa-play-circle mr-2 text-red-500"></i> Veja nosso trabalho</p>
+                    <div className="h-1 w-full bg-gray-700 rounded-full overflow-hidden">
+                      <div className="h-full bg-red-600 w-2/3"></div>
+                    </div>
+                  </div>
+               </div>
+
                <iframe 
-                 className="absolute inset-0 w-full h-full"
-                 /* Added playsinline=1, controls=1 and rel=0 for better mobile compatibility */
-                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&loop=1&playlist=12D85Dmnheg&playsinline=1&controls=1&rel=0" 
+                 className="absolute inset-0 w-full h-full object-cover"
+                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&loop=1&playlist=12D85Dmnheg&playsinline=1&controls=0&rel=0&mute=1" 
                  title="Desentupidora ADP em Ação" 
                  frameBorder="0" 
                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -68,12 +139,20 @@ export const HeroSection = () => (
                  style={{ pointerEvents: 'auto' }}
                ></iframe>
              </div>
-             {/* Urgent Badge on Video - pointer-events-none to click through if needed, though usually in corner */}
-             <div className="absolute top-4 right-1/2 translate-x-1/2 sm:right-4 sm:translate-x-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow animate-pulse z-20 pointer-events-none border border-white/20">
-               <i className="fa fa-circle text-[8px] mr-1 text-green-300"></i> AO VIVO
+
+             {/* Floating Badge */}
+             <div className="absolute -bottom-6 -left-6 bg-white text-slate-900 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow max-w-[200px]">
+               <div className="bg-green-100 p-2 rounded-full text-green-600">
+                 <i className="fa fa-shield-alt text-xl"></i>
+               </div>
+               <div>
+                 <p className="font-bold text-sm leading-tight">Empresa Licenciada</p>
+                 <p className="text-xs text-gray-500">Sanepar e Meio Ambiente</p>
+               </div>
              </div>
         </div>
       </div>
+
     </div>
   </section>
 );
