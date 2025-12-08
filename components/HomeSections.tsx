@@ -9,7 +9,7 @@ export const HeroSection = () => (
     <div className="absolute inset-0 z-0">
       {/* Suggestion: Replace this URL with a real photo of your truck or team for maximum trust */}
       <img 
-        src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=2070&auto=format&fit=crop" 
+        src="https://file-service.aistudio.google.com/download/GS-y5K7J4T8P9X2M1L" 
         alt="Equipe profissional de desentupimento com equipamentos modernos" 
         className="w-full h-full object-cover opacity-30 animate-zoom-slow"
       />
@@ -112,26 +112,18 @@ export const HeroSection = () => (
       
       {/* Right Column: Visual/Video Evidence */}
       <div className="flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-        <div className="relative w-full max-w-[360px] mx-auto lg:mx-0">
+        <div className="relative w-[300px] sm:w-[360px] mx-auto lg:mx-0">
              {/* Decorative Blobs */}
              <div className="absolute top-10 -left-10 w-24 h-24 bg-primary/30 rounded-full blur-xl animate-pulse"></div>
              <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-red-600/20 rounded-full blur-xl animate-pulse delay-700"></div>
 
              {/* Video Container */}
              <div className="relative aspect-[9/16] rounded-2xl shadow-2xl border-4 border-slate-800 bg-black overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500 group">
-               {/* Click barrier for mobile scrolling, removed on interaction if needed */}
-               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-10">
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-white font-bold text-sm mb-1"><i className="fa fa-play-circle mr-2 text-red-500"></i> Veja nosso trabalho</p>
-                    <div className="h-1 w-full bg-gray-700 rounded-full overflow-hidden">
-                      <div className="h-full bg-red-600 w-2/3"></div>
-                    </div>
-                  </div>
-               </div>
-
+               {/* Click barrier removed for controls interaction */}
+               
                <iframe 
                  className="absolute inset-0 w-full h-full object-cover"
-                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&loop=1&playlist=12D85Dmnheg&playsinline=1&controls=0&rel=0&mute=1" 
+                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&loop=1&playlist=12D85Dmnheg&playsinline=1&controls=1&rel=0&mute=0" 
                  title="Desentupidora ADP em Ação" 
                  frameBorder="0" 
                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -140,8 +132,8 @@ export const HeroSection = () => (
                ></iframe>
              </div>
 
-             {/* Floating Badge - MOVED TO RIGHT SIDE */}
-             <div className="absolute -bottom-6 -right-6 bg-white text-slate-900 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow max-w-[200px]">
+             {/* Floating Badge - Right Side */}
+             <div className="absolute -bottom-6 -right-6 bg-white text-slate-900 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow max-w-[200px] z-20">
                <div className="bg-green-100 p-2 rounded-full text-green-600">
                  <i className="fa fa-shield-alt text-xl"></i>
                </div>
@@ -161,13 +153,15 @@ export const AboutSection = () => (
   <section id="sobre" className="py-20 bg-white reveal">
     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
        <div className="group overflow-hidden rounded-lg shadow-2xl relative cursor-pointer bg-gray-50 flex items-center justify-center h-[400px]">
-         <div className="text-primary opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-            <i className="fa fa-users-cog text-[10rem] animate-bounce-slow"></i>
-         </div>
-         <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent flex items-end p-6">
-            <div className="text-center w-full">
+         <img 
+           src="https://file-service.aistudio.google.com/download/GS-z2L8X1V7T9P3K4M5N"
+           alt="Técnico da ADP sorrindo e fazendo sinal de positivo"
+           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+         />
+         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+            <div className="text-center w-full text-white">
                <i className="fa fa-id-card text-primary text-4xl mb-2"></i>
-               <p className="font-bold text-gray-600">Profissionais Certificados</p>
+               <p className="font-bold">Profissionais Certificados</p>
             </div>
          </div>
          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded shadow text-dark font-bold text-sm z-20 transform translate-y-0 group-hover:-translate-y-2 transition-transform border-l-4 border-primary">
@@ -249,14 +243,18 @@ export const ServiceCards = () => (
       <h2 className="font-display text-3xl font-bold text-center text-dark mb-10">Serviços de Urgência</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { title: "Desentupidora", icon: "fa-toilet", link: "/servicos/hidrojateamento", color: "text-blue-500" },
-          { title: "Encanadores", icon: "fa-wrench", link: "/#contato", color: "text-gray-600" },
-          { title: "Limpa Fossa", icon: "fa-truck-droplet", link: "/servicos/limpeza-de-fossa", color: "text-green-600" }, 
-          { title: "Instalações em Geral", icon: "fa-tools", link: "/#contato", color: "text-orange-500" }
+          { title: "Desentupidora", image: "https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L", link: "/servicos/hidrojateamento" },
+          { title: "Encanadores", image: "https://file-service.aistudio.google.com/download/GS-p8O3W6L2Q5R9T1N4", link: "/#contato" },
+          { title: "Limpa Fossa", image: "https://file-service.aistudio.google.com/download/GS-r2J9M5N3B8V6X1C4", link: "/servicos/limpeza-de-fossa" }, 
+          { title: "Instalações em Geral", image: "https://file-service.aistudio.google.com/download/GS-w7T4P1L9M3N2B5V8", link: "/#contato" }
         ].map((card, i) => (
           <Link to={card.link} key={i} className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-red-600 block bg-gray-50">
-            <div className="w-full h-80 flex items-center justify-center bg-gradient-to-b from-white to-gray-100 group-hover:from-gray-100 group-hover:to-gray-200 transition-colors">
-               <i className={`fa ${card.icon} text-9xl ${card.color} opacity-80 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}></i>
+            <div className="w-full h-80 flex items-center justify-center bg-gray-200 group-hover:opacity-90 transition-opacity">
+               <img 
+                 src={card.image} 
+                 alt={card.title} 
+                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+               />
             </div>
             
             {/* Urgent Badge */}
@@ -269,7 +267,7 @@ export const ServiceCards = () => (
               <i className="fa fa-truck"></i> SAINDO AGORA
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
               <h3 className="text-white font-display text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors translate-y-0 group-hover:translate-y-[-5px] duration-300 drop-shadow-md">{card.title}</h3>
               
               <div className="flex flex-col gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 opacity-0 group-hover:opacity-100">
@@ -342,9 +340,13 @@ export const WhyChooseSection = () => (
               <i className="fa fa-bolt text-yellow-300 text-lg mb-1"></i>
               <span className="text-xl block leading-none">24h</span> Plantão
             </div>
-            <div className="w-[350px] h-[350px] rounded-full border-8 border-white shadow-2xl bg-gradient-to-br from-primary to-teal-800 flex items-center justify-center transform hover:scale-105 transition-transform duration-500 group">
-               <i className="fa fa-shield-alt text-white text-9xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
-               <i className="fa fa-check text-green-400 text-6xl absolute bottom-20 right-20 bg-white rounded-full p-2 border-4 border-primary"></i>
+            <div className="w-[350px] h-[350px] rounded-full border-8 border-white shadow-2xl overflow-hidden flex items-center justify-center transform hover:scale-105 transition-transform duration-500 group relative">
+               <img 
+                 src="https://file-service.aistudio.google.com/download/GS-q3N7B5V9X2M1L4K8" 
+                 alt="Caminhão da ADP pronto para atendimento" 
+                 className="w-full h-full object-cover"
+               />
+               <i className="fa fa-check text-green-400 text-6xl absolute bottom-20 right-20 bg-white rounded-full p-2 border-4 border-primary z-20"></i>
             </div>
          </div>
 
