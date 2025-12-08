@@ -140,8 +140,8 @@ export const HeroSection = () => (
                ></iframe>
              </div>
 
-             {/* Floating Badge */}
-             <div className="absolute -bottom-6 -left-6 bg-white text-slate-900 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow max-w-[200px]">
+             {/* Floating Badge - MOVED TO RIGHT SIDE */}
+             <div className="absolute -bottom-6 -right-6 bg-white text-slate-900 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow max-w-[200px]">
                <div className="bg-green-100 p-2 rounded-full text-green-600">
                  <i className="fa fa-shield-alt text-xl"></i>
                </div>
