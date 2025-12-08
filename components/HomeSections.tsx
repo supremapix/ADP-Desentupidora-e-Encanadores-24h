@@ -5,11 +5,14 @@ import { Link } from 'react-router-dom';
 export const HeroSection = () => (
   <section className="relative bg-slate-900 text-white pt-28 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
     
-    {/* 1. Background Icon (Replaces Image) */}
-    <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-slate-950">
-      <i className="fa fa-truck-fast text-[30rem] sm:text-[40rem] text-white/5 absolute -right-20 bottom-0 animate-pulse-slow transform -rotate-12 translate-x-20"></i>
-      <i className="fa fa-wrench text-[20rem] text-white/5 absolute top-20 -left-20 animate-bounce-slow"></i>
-      {/* High Contrast Overlay */}
+    {/* 1. Background Image (Pia Entupida/Plumbing) */}
+    <div className="absolute inset-0 z-0 overflow-hidden bg-slate-950">
+      <img 
+        src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" 
+        alt="Fundo Pia Entupida" 
+        className="absolute inset-0 w-full h-full object-cover opacity-20 animate-zoom-slow mix-blend-overlay"
+      />
+      {/* High Contrast Overlay to ensure text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/95 to-slate-900/80"></div>
     </div>
 
@@ -117,7 +120,7 @@ export const HeroSection = () => (
              <div className="relative aspect-[9/16] rounded-2xl shadow-2xl border-4 border-slate-800 bg-black overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500 group">
                <iframe 
                  className="absolute inset-0 w-full h-full object-cover"
-                 src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=0&loop=1&playlist=12D85Dmnheg&playsinline=1&controls=1&rel=0&mute=0" 
+                 src="https://www.youtube.com/embed/jJ0WJqgXZ3k?autoplay=0&loop=1&playlist=jJ0WJqgXZ3k&playsinline=1&controls=1&rel=0&mute=0" 
                  title="Desentupidora ADP em Ação" 
                  frameBorder="0" 
                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
