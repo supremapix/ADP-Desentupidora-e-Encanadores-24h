@@ -69,9 +69,9 @@ const ImageGallery: React.FC = () => {
   return (
     <main className="bg-gray-50 min-h-screen">
       <section className="bg-dark text-white py-24 text-center px-4 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 flex items-center justify-center bg-gray-900">
+             <i className="fa fa-robot text-[20rem] text-white/5 animate-pulse-slow"></i>
              <div className="absolute inset-0 bg-gradient-to-r from-primary to-dark opacity-90"></div>
-             <img src="https://loremflickr.com/1920/600/artificial,intelligence,technology" alt="AI Background" className="w-full h-full object-cover opacity-20" />
         </div>
         <div className="relative z-10 animate-fade-in-up">
           <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">

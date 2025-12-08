@@ -2,31 +2,12 @@ import React, { useState } from 'react';
 import { SERVICES_LIST } from '../constants';
 import { Link } from 'react-router-dom';
 
-// Official Images from User
-const IMAGES = {
-  HERO_TRUCK: "https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L", // White Truck Pumping (Image 2)
-  ABOUT_TEAM: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2", // Smiling Plumber (Image 5)
-  CARD_TOILET: "https://file-service.aistudio.google.com/download/GS-8y6t4r9e0w1q2a3s", // Toilet Pump (Image 1)
-  CARD_HEATER: "https://file-service.aistudio.google.com/download/GS-zJ1k2l3m4n5o6p7q", // Heater Guy (Image 3)
-  CARD_FOSSA: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k", // Green Truck (Image 8)
-  CARD_GAS: "https://file-service.aistudio.google.com/download/GS-1m2n3b4v5c6x7z8l", // Gas Pipes (Image 12)
-  WHY_CHOOSE_TRUCK: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l", // White Truck Studio (Image 7)
-};
-
-// Fallback to high quality placeholders if the specific file-service URLs expire or are inaccessible in this context
-// In a real scenario, these URLs would be hosted on the client's server.
-const FALLBACK_IMAGES = {
-  HERO_TRUCK: "https://i.imgur.com/8Q5QY5M.png", // Generic placeholder for logic
-  ABOUT_TEAM: "https://i.imgur.com/5Q5QY5M.png",
-};
-
 export const HeroSection = () => (
   <section className="relative bg-dark text-white pt-24 pb-32 overflow-hidden">
-    {/* Background Image Overlay with Zoom Effect */}
-    <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Using Image 2: White Truck Pumping */}
-        <img src="https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L" alt="Caminhão ADP Desentupidora em Ação" className="w-full h-full object-cover opacity-30 animate-zoom-slow" />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/50 to-dark"></div>
+    {/* Background Icon Overlay */}
+    <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center bg-gray-900">
+        <i className="fa fa-truck-fast text-[20rem] text-white/5 animate-pulse-slow transform -rotate-12"></i>
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 to-dark"></div>
     </div>
 
     {/* Live Status Bar */}
@@ -75,7 +56,7 @@ export const HeroSection = () => (
              <div className="absolute inset-0 bg-primary rounded-2xl blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"></div>
              
              {/* YouTube Short Embed with responsive width for mobile compatibility */}
-             <div className="relative w-full max-w-[320px] mx-auto aspect-[9/16] rounded-2xl shadow-2xl border-4 border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500 z-10">
+             <div className="relative w-full max-w-[320px] mx-auto aspect-[9/16] rounded-2xl shadow-2xl border-4 border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500 z-10 bg-black">
                <iframe 
                  className="absolute inset-0 w-full h-full"
                  /* Added playsinline=1, controls=1 and rel=0 for better mobile compatibility */
@@ -100,11 +81,17 @@ export const HeroSection = () => (
 export const AboutSection = () => (
   <section id="sobre" className="py-20 bg-white reveal">
     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-       <div className="group overflow-hidden rounded-lg shadow-2xl relative cursor-pointer">
-         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10"></div>
-         {/* Using Image 5: Smiling Plumber */}
-         <img src="https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2" alt="Equipe ADP" className="rounded-lg transition-transform duration-700 group-hover:scale-110 w-full" />
-         <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded shadow text-dark font-bold text-sm z-20 transform translate-y-0 group-hover:-translate-y-2 transition-transform border-l-4 border-primary">
+       <div className="group overflow-hidden rounded-lg shadow-2xl relative cursor-pointer bg-gray-50 flex items-center justify-center h-[400px]">
+         <div className="text-primary opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+            <i className="fa fa-users-cog text-[10rem] animate-bounce-slow"></i>
+         </div>
+         <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent flex items-end p-6">
+            <div className="text-center w-full">
+               <i className="fa fa-id-card text-primary text-4xl mb-2"></i>
+               <p className="font-bold text-gray-600">Profissionais Certificados</p>
+            </div>
+         </div>
+         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded shadow text-dark font-bold text-sm z-20 transform translate-y-0 group-hover:-translate-y-2 transition-transform border-l-4 border-primary">
            <i className="fa fa-users text-primary mr-2"></i> Equipes Prontas
          </div>
        </div>
@@ -183,18 +170,15 @@ export const ServiceCards = () => (
       <h2 className="font-display text-3xl font-bold text-center text-dark mb-10">Serviços de Urgência</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          // Updated images to match visual requirements:
-          // 1. Desentupidora: Plumber unclogging toilet (Image 1)
-          // 2. Encanadores: Plumber fixing heater/pipes (Image 3)
-          // 3. Limpa Fossa: Green Truck (Image 8)
-          // 4. Instalações: Gas Pipes/Smiling Plumber (Image 12 or 5)
-          { title: "Desentupidora", image: "https://file-service.aistudio.google.com/download/GS-8y6t4r9e0w1q2a3s", link: "/servicos/hidrojateamento" },
-          { title: "Encanadores", image: "https://file-service.aistudio.google.com/download/GS-zJ1k2l3m4n5o6p7q", link: "/#contato" },
-          { title: "Limpa Fossa", image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k", link: "/servicos/limpeza-de-fossa" }, 
-          { title: "Instalações em Geral", image: "https://file-service.aistudio.google.com/download/GS-1m2n3b4v5c6x7z8l", link: "/#contato" }
+          { title: "Desentupidora", icon: "fa-toilet", link: "/servicos/hidrojateamento", color: "text-blue-500" },
+          { title: "Encanadores", icon: "fa-wrench", link: "/#contato", color: "text-gray-600" },
+          { title: "Limpa Fossa", icon: "fa-truck-droplet", link: "/servicos/limpeza-de-fossa", color: "text-green-600" }, 
+          { title: "Instalações em Geral", icon: "fa-tools", link: "/#contato", color: "text-orange-500" }
         ].map((card, i) => (
-          <Link to={card.link} key={i} className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-red-600 block">
-            <img src={card.image} alt={card.title} className="w-full h-80 object-cover transition duration-700 group-hover:scale-110" />
+          <Link to={card.link} key={i} className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-[0_20px_50px_rgba(220,38,38,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-red-600 block bg-gray-50">
+            <div className="w-full h-80 flex items-center justify-center bg-gradient-to-b from-white to-gray-100 group-hover:from-gray-100 group-hover:to-gray-200 transition-colors">
+               <i className={`fa ${card.icon} text-9xl ${card.color} opacity-80 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}></i>
+            </div>
             
             {/* Urgent Badge */}
             <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg animate-pulse z-10 flex items-center gap-1 border border-white/20">
@@ -206,8 +190,8 @@ export const ServiceCards = () => (
               <i className="fa fa-truck"></i> SAINDO AGORA
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
-              <h3 className="text-white font-display text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors translate-y-0 group-hover:translate-y-[-5px] duration-300">{card.title}</h3>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+              <h3 className="text-white font-display text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors translate-y-0 group-hover:translate-y-[-5px] duration-300 drop-shadow-md">{card.title}</h3>
               
               <div className="flex flex-col gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 opacity-0 group-hover:opacity-100">
                 <span className="text-white/90 text-xs font-bold bg-black/50 px-2 py-1 rounded w-fit"><i className="fa fa-clock text-red-500 mr-1"></i> Chegamos em 40min</span>
@@ -273,14 +257,16 @@ export const WhyChooseSection = () => (
             </div>
          </div>
 
-         {/* Center Image */}
+         {/* Center Icon */}
          <div className="flex justify-center relative">
-            <div className="absolute top-10 -right-4 bg-red-600 text-white font-bold w-24 h-24 rounded-full flex flex-col items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.6)] z-10 animate-pulse text-center text-xs p-2 border-4 border-white">
+            <div className="absolute top-0 right-0 bg-red-600 text-white font-bold w-24 h-24 rounded-full flex flex-col items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.6)] z-10 animate-pulse text-center text-xs p-2 border-4 border-white">
               <i className="fa fa-bolt text-yellow-300 text-lg mb-1"></i>
               <span className="text-xl block leading-none">24h</span> Plantão
             </div>
-            {/* Using Image 7: White Truck Studio */}
-            <img src="https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" alt="Caminhão ADP" className="rounded-full border-8 border-white shadow-2xl h-[500px] w-[350px] object-cover hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] transition-shadow duration-500 transform hover:scale-105" />
+            <div className="w-[350px] h-[350px] rounded-full border-8 border-white shadow-2xl bg-gradient-to-br from-primary to-teal-800 flex items-center justify-center transform hover:scale-105 transition-transform duration-500 group">
+               <i className="fa fa-shield-alt text-white text-9xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+               <i className="fa fa-check text-green-400 text-6xl absolute bottom-20 right-20 bg-white rounded-full p-2 border-4 border-primary"></i>
+            </div>
          </div>
 
          {/* Right Col */}

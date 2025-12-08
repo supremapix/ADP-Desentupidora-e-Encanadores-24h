@@ -63,7 +63,7 @@ const RegionPage: React.FC<RegionPageProps> = ({ type }) => {
       "@type": "LocalBusiness",
       "name": "ADP Desentupidora",
       "telephone": "+55-41-3345-1194",
-      "image": "https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L", // White Truck Pumping
+      "image": "https://adpcuritiba.com.br/logo.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Luiz Maltaca, 36",
@@ -120,32 +120,32 @@ const RegionPage: React.FC<RegionPageProps> = ({ type }) => {
   const articles = [
     { 
       title: `Desentupidora Profissional em ${formattedName}`, 
-      image: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2", // Smiling Plumber
+      icon: "fa-user-tie",
       content: `Nossa equipe técnica está pronta para atender qualquer demanda residencial ou comercial em ${formattedName} com rapidez e eficiência, 24 horas por dia.`
     },
     { 
       title: `Desentupimento de Esgoto em ${formattedName}`, 
-      image: "https://file-service.aistudio.google.com/download/GS-2x3c4v5b6n7m8l9k", // Dirty Sink
+      icon: "fa-toilet",
       content: "Utilizamos equipamentos modernos e sondas elétricas para desobstruir redes de esgoto sem a necessidade de quebrar pisos ou paredes do seu imóvel."
     },
     { 
       title: `Limpeza de Fossa Séptica 24h`, 
-      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k", // Green Truck
+      icon: "fa-truck-loading",
       content: "Caminhões de auto vácuo disponíveis na região para limpeza e esgotamento de fossas sépticas e negras com descarte ecológico certificado."
     },
     { 
       title: `Hidrojateamento em ${formattedName}`, 
-      image: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l", // White Truck
+      icon: "fa-water",
       content: "Alta tecnologia para limpeza de tubulações com jatos de água de alta pressão, removendo gordura e detritos incrustados definitivamente."
     },
     { 
       title: `Desentupimento de Pia e Ralo`, 
-      image: "https://file-service.aistudio.google.com/download/GS-8y6t4r9e0w1q2a3s", // Toilet Pump
+      icon: "fa-sink",
       content: "Pia da cozinha ou ralo do banheiro entupido? Resolvemos na hora com equipamentos que protegem a tubulação e garantem a higiene do local."
     },
     { 
       title: `Caça Vazamentos em ${formattedName}`, 
-      image: "https://file-service.aistudio.google.com/download/GS-zJ1k2l3m4n5o6p7q", // Heater Guy (Leak detection look)
+      icon: "fa-search-location",
       content: "Conta de água alta? Detectamos vazamentos ocultos em paredes e pisos com aparelhos eletrônicos de precisão (Geofone)."
     },
   ];
@@ -160,10 +160,9 @@ const RegionPage: React.FC<RegionPageProps> = ({ type }) => {
 
       {/* Hero Region */}
       <section className="bg-dark text-white py-24 text-center px-4 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-             {/* Using White Truck Pumping */}
-             <img src="https://file-service.aistudio.google.com/download/GS-hK6R9X8Z5V3N2M1L" alt={`Desentupidora em ${formattedName}`} className="w-full h-full object-cover opacity-20" />
-             <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+        <div className="absolute inset-0 z-0 flex items-center justify-center bg-gray-800">
+             <i className="fa fa-map-marked-alt text-[20rem] text-white/5 animate-pulse-slow"></i>
+             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent"></div>
         </div>
         <div className="relative z-10 animate-fade-in-up">
           <div className="inline-block bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-full mb-4 animate-pulse">
@@ -254,13 +253,9 @@ const RegionPage: React.FC<RegionPageProps> = ({ type }) => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {articles.map((article, index) => (
               <article key={index} className="bg-white rounded-xl shadow-md hover:shadow-2xl transition duration-300 border border-gray-100 overflow-hidden group">
-                <div className="h-48 overflow-hidden relative">
-                   <img 
-                    src={article.image} 
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                   />
-                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                <div className="h-40 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                   <i className={`fa ${article.icon} text-7xl text-primary/30 group-hover:text-primary/80 group-hover:scale-125 transition-all duration-500`}></i>
+                   <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-50"></div>
                    <div className="absolute top-2 right-2 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
                      24H
                    </div>

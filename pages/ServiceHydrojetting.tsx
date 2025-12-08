@@ -18,7 +18,7 @@ const ServiceHydrojetting: React.FC = () => {
       "@type": "LocalBusiness",
       "name": "ADP Desentupidora",
       "telephone": "+55-41-3345-1194",
-      "image": "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l", // White Truck Studio
+      "image": "https://adpcuritiba.com.br/logo.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Luiz Maltaca, 36",
@@ -54,92 +54,92 @@ const ServiceHydrojetting: React.FC = () => {
     {
       title: "O que é Hidrojateamento?",
       content: "O hidrojateamento é uma tecnologia avançada que utiliza água pressurizada para desobstruir e limpar tubulações. Diferente de métodos mecânicos que apenas perfuram o bloqueio, o hidrojateamento lava as paredes internas do cano, removendo gordura, incrustações e detritos, restaurando o fluxo original e prevenindo novos entupimentos por mais tempo.",
-      image: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" // White Truck
+      icon: "fa-water"
     },
     {
       title: "Como funciona a Alta Pressão?",
       content: "Utilizamos caminhões equipados com bombas de alta potência capazes de gerar pressão de até 25.000 PSI (libras por polegada quadrada). A água é liberada através de mangueiras com bicos especiais que impulsionam o jato para frente, cortando raízes, gordura solidificada e outros materiais resistentes, garantindo uma limpeza profunda e eficiente.",
-      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Blue Truck (Using as variety)
+      icon: "fa-tachometer-alt"
     },
     {
       title: "Benefícios para Tubulações",
       content: "O principal benefício é a preservação da integridade dos canos. Ao contrário de cabos de aço que podem arranhar ou danificar tubulações antigas (especialmente de cerâmica ou PVC ressecado), a água age de maneira uniforme. Além disso, a limpeza é completa, não deixando resíduos que possam servir de base para novos bloqueios imediatos.",
-      image: "https://file-service.aistudio.google.com/download/GS-2x3c4v5b6n7m8l9k" // Dirty Sink
+      icon: "fa-check-double"
     },
     {
       title: "Hidrojateamento em Redes de Esgoto",
       content: "Redes de esgoto sofrem com acúmulo de detritos pesados ao longo dos anos. O hidrojateamento é a solução ideal para redes coletoras de condomínios e ruas, pois consegue empurrar grandes volumes de detritos para as caixas de inspeção, onde podem ser removidos. É a solução definitiva para evitar retornos de esgoto indesejados.",
-      image: "https://file-service.aistudio.google.com/download/GS-9o0p1l2k3j4h5g6f" // Manhole
+      icon: "fa-stream"
     },
     {
       title: "Limpeza de Caixas de Gordura",
       content: "Caixas de gordura são o pesadelo de muitas cozinhas industriais e residenciais. A gordura solidifica como pedra. O hidrojateamento quebra esses blocos sólidos, transformando-os em pequenas partículas que fluem ou são aspiradas pelo nosso caminhão limpa-fossa, deixando a caixa de gordura praticamente nova.",
-      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Grease Trap
+      icon: "fa-utensils"
     },
     {
       title: "Hidrojateamento em Colunas de Prédios",
       content: "Em edifícios verticais, as colunas de esgoto e gordura entopem frequentemente devido ao uso intenso. Realizamos a limpeza vertical (prumadas) utilizando bicos rotativos que descem pela tubulação, limpando andar por andar, garantindo que o fluxo de todos os apartamentos seja restabelecido sem risco de transbordamento nos andares baixos.",
-      image: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" // White Truck
+      icon: "fa-building"
     },
     {
       title: "Aplicações Industriais",
       content: "Indústrias requerem limpezas técnicas em trocadores de calor, caldeiras, tanques e reatores. O hidrojateamento industrial remove incrustações químicas e minerais sem o uso de produtos abrasivos ou químicos perigosos, sendo uma opção ecologicamente correta e extremamente segura para o ambiente fabril.",
-      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k" // Green Truck
+      icon: "fa-industry"
     },
     {
       title: "Diferença: Hidrojato vs. Máquina Rotativa",
       content: "A máquina rotativa (Roto-Rooter) utiliza cabos de aço e é excelente para obstruções pontuais e objetos sólidos (como panos ou brinquedos). O hidrojato, por sua vez, é superior para limpeza geral, remoção de gordura, areia e terra. Frequentemente, a ADP utiliza ambas as técnicas em conjunto para um resultado perfeito.",
-      image: "https://file-service.aistudio.google.com/download/GS-8y6t4r9e0w1q2a3s" // Toilet Pump
+      icon: "fa-balance-scale"
     },
     {
       title: "Limpeza de Fachadas e Pisos",
       content: "Além de tubulações, nossos equipamentos podem ser configurados para lavagem de superfícies. Removemos pichações, musgo, bolor e sujeira incrustada de fachadas de prédios, calçadas, pátios industriais e estacionamentos, devolvendo o aspecto de novo às superfícies com o poder da água.",
-      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Grease Trap (Action shot)
+      icon: "fa-broom"
     },
     {
       title: "Manutenção Preventiva",
       content: "Não espere entupir! Condomínios e empresas inteligentes contratam o hidrojateamento preventivo anualmente ou semestralmente. Isso evita emergências, mau cheiro e paradas não programadas, além de representar uma economia significativa a longo prazo comparado aos custos de reparos emergenciais.",
-      image: "https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" // White Truck
+      icon: "fa-calendar-check"
     },
     {
       title: "Equipamentos de Ponta",
       content: "A ADP investe constantemente em tecnologia. Nossos caminhões combinados possuem tanques de água limpa e tanques de vácuo para sucção simultânea. Utilizamos bicos de diversas geometrias (bico torpedo, bico rotativo, bico de arraste) para cada situação específica encontrada em campo.",
-      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k" // Green Truck
+      icon: "fa-truck-monster"
     },
     {
       title: "Segurança no Processo",
       content: "Lidar com alta pressão exige responsabilidade. Nossos operadores são treinados (NR-33 e NR-35) e utilizam todos os EPIs necessários (botas, luvas, óculos, capacetes). A segurança da sua propriedade e da nossa equipe é prioridade absoluta em cada operação de hidrojateamento realizada.",
-      image: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2" // Smiling Plumber
+      icon: "fa-hard-hat"
     },
     {
       title: "Galerias Pluviais",
       content: "Galerias de água da chuva frequentemente entopem com terra, folhas e lixo da rua, causando alagamentos. O hidrojateamento é a única técnica capaz de arrastar toneladas de areia e sedimentos para fora das galerias, desassoreando o sistema e permitindo o livre fluxo da água pluvial.",
-      image: "https://file-service.aistudio.google.com/download/GS-9o0p1l2k3j4h5g6f" // Manhole
+      icon: "fa-cloud-rain"
     },
     {
       title: "Remoção de Raízes",
       content: "Raízes de árvores buscam a umidade dentro dos canos e causam bloqueios severos. O hidrojateamento com bicos cortadores de raízes fatia a vegetação intrusiva sem a necessidade de escavar e trocar o tubo, sendo uma solução cirúrgica e muito menos destrutiva para o seu jardim ou calçada.",
-      image: "https://file-service.aistudio.google.com/download/GS-2x3c4v5b6n7m8l9k" // Dirty Sink
+      icon: "fa-tree"
     },
     {
       title: "Economia Gerada",
       content: "Embora o custo inicial possa parecer maior que uma visita simples de encanador, a durabilidade do serviço de hidrojateamento compensa. Uma tubulação hidrojateada pode ficar anos sem apresentar problemas, enquanto métodos paliativos exigem visitas constantes. É o melhor custo-benefício do mercado.",
-      image: "https://file-service.aistudio.google.com/download/GS-5g4h3j2k1l0m9n8b" // Green Liquid/Hand
+      icon: "fa-piggy-bank"
     },
     {
       title: "Tanques e Reservatórios",
       content: "Limpamos tanques de armazenamento de água potável, combustível ou produtos químicos. O jato de água remove o biofilme e sedimentos do fundo e paredes, garantindo a qualidade do produto armazenado e atendendo às normas sanitárias e ambientais vigentes.",
-      image: "https://file-service.aistudio.google.com/download/GS-5t6y7u8i9o0p1l2k" // Blue Truck
+      icon: "fa-drum-steelpan"
     },
     {
       title: "Por que Escolher a ADP?",
       content: "Somos pioneiros em Curitiba no uso desta tecnologia. Nossa frota é própria e moderna. Oferecemos garantia por escrito, atendimento 24 horas e facilitamos o pagamento. Não somos apenas desentupidores, somos técnicos especializados em saneamento e manutenção hidráulica de alta performance.",
-      image: "https://file-service.aistudio.google.com/download/GS-S9d8f7g6h5j4k3l2" // Smiling Plumber
+      icon: "fa-star"
     },
     {
       title: "Sustentabilidade",
       content: "O hidrojateamento utiliza apenas água potável, sem aditivos químicos nocivos ao lençol freático. É a forma mais ecológica de limpar esgoto. Além disso, nossos caminhões realizam a sucção dos resíduos para descarte correto em estações de tratamento, fechando o ciclo ambiental com responsabilidade.",
-      image: "https://file-service.aistudio.google.com/download/GS-mN0b9v8c7x6z5l4k" // Green Truck
+      icon: "fa-leaf"
     }
   ];
 
@@ -153,10 +153,9 @@ const ServiceHydrojetting: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative bg-dark text-white pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-             {/* Using White Truck Studio Image */}
-             <img src="https://file-service.aistudio.google.com/download/GS-tM9n8b7v6c5x4z3l" alt="Hidrojateamento Background" className="w-full h-full object-cover opacity-30" />
-             <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/60 to-dark"></div>
+        <div className="absolute inset-0 z-0 flex items-center justify-center bg-blue-900">
+             <i className="fa fa-water text-[25rem] text-white/5 animate-pulse-slow"></i>
+             <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
@@ -225,24 +224,20 @@ const ServiceHydrojetting: React.FC = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((item, index) => (
-              <article key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full border border-gray-100">
-                <div className="h-48 overflow-hidden relative group">
-                  <img 
-                    src={item.image} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300"></div>
+              <article key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full border border-gray-100 group">
+                <div className="h-40 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                  <i className={`fa ${item.icon} text-8xl text-primary/30 group-hover:text-primary/80 group-hover:scale-125 transition-all duration-500`}></i>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-50"></div>
                 </div>
                 <div className="p-8 flex-grow flex flex-col">
-                  <h3 className="font-display text-xl font-bold text-primary mb-4 border-b-2 border-gray-100 pb-2">
-                    {index + 1}. {item.title}
+                  <h3 className="font-display text-xl font-bold text-primary mb-4 border-b-2 border-gray-100 pb-2 flex items-center gap-2">
+                    <span className="bg-primary text-white text-xs w-6 h-6 rounded-full flex items-center justify-center">{index + 1}</span> {item.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow text-justify">
                     {item.content}
                   </p>
-                  <a href="#contato" className="text-red-600 font-bold text-sm uppercase tracking-wider hover:text-red-700 flex items-center gap-2 mt-auto self-start group">
-                    Solicitar Urgência <i className="fa fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                  <a href="#contato" className="text-red-600 font-bold text-sm uppercase tracking-wider hover:text-red-700 flex items-center gap-2 mt-auto self-start group/link">
+                    Solicitar Urgência <i className="fa fa-arrow-right transform group-hover/link:translate-x-1 transition-transform"></i>
                   </a>
                 </div>
               </article>

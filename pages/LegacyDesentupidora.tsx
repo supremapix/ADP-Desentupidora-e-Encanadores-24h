@@ -19,7 +19,10 @@ const LegacyDesentupidora: React.FC = () => {
 
       {/* Hero Section Simplificada */}
       <section className="bg-dark text-white py-16 px-4 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/10 z-0"></div>
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
+             <i className="fa fa-phone-volume text-[20rem] text-white/5 animate-pulse-slow"></i>
+             <div className="absolute inset-0 bg-primary/20 z-0"></div>
+        </div>
         <div className="relative z-10 container mx-auto max-w-4xl">
           <h1 className="font-display text-3xl md:text-5xl font-bold mb-6">
             Buscando Desentupidora em Curitiba?
