@@ -9,6 +9,7 @@ import ServiceHydrojetting from './pages/ServiceHydrojetting';
 import ServiceSeptic from './pages/ServiceSeptic';
 import FAQPage from './pages/FAQPage';
 import ImageGallery from './pages/ImageGallery';
+import HeroDemo from './pages/HeroDemo';
 import NotFound from './pages/NotFound';
 import LegacyDesentupidora from './pages/LegacyDesentupidora';
 
@@ -78,6 +79,9 @@ const App: React.FC = () => {
             
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/galeria-ia" element={<ImageGallery />} />
+            
+            {/* Hero Component Demo */}
+            <Route path="/hero-demo" element={<HeroDemo />} />
 
             {/* Legacy URL Route - Para capturar tráfego antigo */}
             <Route path="/desentupidora.html" element={<LegacyDesentupidora />} />
