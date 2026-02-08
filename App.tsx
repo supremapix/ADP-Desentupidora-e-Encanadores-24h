@@ -30,9 +30,11 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
+  // Intersection Observer for Scroll Animations
   useEffect(() => {
     const handleScrollReveal = () => {
       const reveals = document.querySelectorAll('.reveal');
+      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -40,9 +42,20 @@ const App: React.FC = () => {
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
-      reveals.forEach((reveal) => observer.observe(reveal));
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      reveals.forEach((reveal) => {
+        observer.observe(reveal);
+      });
+
+      return () => {
+        reveals.forEach((reveal) => observer.unobserve(reveal));
+      };
     };
+
     const timeoutId = setTimeout(handleScrollReveal, 100);
     return () => clearTimeout(timeoutId);
   }, []);
@@ -50,10 +63,10 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col font-sans text-gray-900 bg-secondary">
+      <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-secondary">
         <Header />
-        {/* Adicionado padding-top responsivo para compensar a altura do Header fixo */}
-        <div className="flex-grow pt-[80px] lg:pt-[140px]">
+        {/* Padding ajustado para compensar o header fixo (aprox 80px mobile, 140px desktop) */}
+        <div className="flex-grow pt-[80px] lg:pt-[154px]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/bairro/:slug" element={<RegionPage type="bairro" />} />

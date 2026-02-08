@@ -1,6 +1,9 @@
+
 export const COMPANY_PHONE = "(41) 3345-1194";
 export const COMPANY_MOBILE = "(41) 98517-1966";
 export const COMPANY_WHATSAPP = "5541985171966";
+export const COMPANY_EMAIL = "contato@desentopeadp.com.br";
+export const COMPANY_SITE = "https://www.desentopeadp.com.br";
 export const COMPANY_ADDRESS = "Rua Luiz Maltaca, 36 - CIC, Curitiba-PR";
 
 export const BAIRROS = [
