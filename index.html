@@ -65,10 +65,15 @@
             animation: {
               'zoom-slow': 'zoom 20s infinite alternate',
               'fade-in': 'fadeIn 0.5s ease-out',
+              'fade-in-right': 'fadeInRight 0.4s ease-out forwards',
             },
             keyframes: {
               zoom: { '0%': { transform: 'scale(1)' }, '100%': { transform: 'scale(1.1)' } },
-              fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } }
+              fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+              fadeInRight: { 
+                '0%': { opacity: '0', transform: 'translateX(20px)' }, 
+                '100%': { opacity: '1', transform: 'translateX(0)' } 
+              }
             }
           }
         }
@@ -86,6 +91,13 @@
       ::-webkit-scrollbar-thumb { background: #39847a; border-radius: 4px; }
       ::-webkit-scrollbar-thumb:hover { background: #2d6a62; }
       
+      .stagger-1 { animation-delay: 0.1s; }
+      .stagger-2 { animation-delay: 0.15s; }
+      .stagger-3 { animation-delay: 0.2s; }
+      .stagger-4 { animation-delay: 0.25s; }
+      .stagger-5 { animation-delay: 0.3s; }
+      .stagger-6 { animation-delay: 0.35s; }
+
       @keyframes pulse {
         0%, 100% { transform: scale(1); opacity: 1; }
         50% { transform: scale(1.15); opacity: 0.9; }

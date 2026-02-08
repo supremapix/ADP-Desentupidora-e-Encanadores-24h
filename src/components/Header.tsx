@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { COMPANY_PHONE, COMPANY_WHATSAPP, slugify } from '../constants';
+import { COMPANY_PHONE, COMPANY_WHATSAPP } from '../constants';
 import AnimatedLogo from './AnimatedLogo';
 
 const Header: React.FC = () => {
@@ -16,9 +16,24 @@ const Header: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
     setIsMobileMenuOpen(false);
-    window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  const navLinks = [
+    { label: 'Início', href: '/', icon: 'fa-home', stagger: 'stagger-1' },
+    { label: 'Hidrojateamento', href: '/servicos/hidrojateamento', icon: 'fa-water', stagger: 'stagger-2' },
+    { label: 'Limpeza de Fossa', href: '/servicos/limpeza-de-fossa', icon: 'fa-truck', stagger: 'stagger-3' },
+    { label: 'Galeria IA PRO', href: '/galeria-ia', icon: 'fa-magic', color: 'text-primary', stagger: 'stagger-4' },
+    { label: 'Dúvidas Frequentes', href: '/faq', icon: 'fa-question-circle', stagger: 'stagger-5' },
+  ];
 
   return (
     <header 
@@ -30,15 +45,15 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Branding */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className={`transition-all duration-500 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} group-hover:scale-105`}>
+        <Link to="/" className="flex items-center gap-3 group relative z-[110]">
+          <div className={`transition-all duration-500 ${isScrolled ? 'w-10 h-10' : 'w-14 h-14'} group-hover:scale-105`}>
             <AnimatedLogo />
           </div>
           <div className="flex flex-col">
-            <h1 className="font-display font-black text-xl lg:text-2xl text-dark leading-none uppercase tracking-tighter">
+            <h1 className="font-display font-black text-lg lg:text-2xl text-dark leading-none uppercase tracking-tighter">
               ADP <span className="text-primary">Saneamento</span>
             </h1>
-            <p className="text-[9px] font-bold text-gray-400 uppercase tracking-widest hidden sm:block">Desentupidora 24 Horas</p>
+            <p className="text-[8px] font-bold text-gray-400 uppercase tracking-widest hidden sm:block">Desentupidora 24 Horas</p>
           </div>
         </Link>
 
@@ -53,8 +68,6 @@ const Header: React.FC = () => {
               <div className="bg-white shadow-2xl rounded-xl border border-gray-100 py-4 min-w-[220px]">
                 <Link to="/servicos/hidrojateamento" className="px-6 py-3 hover:bg-primary/5 text-sm font-bold text-gray-600 block">Hidrojateamento</Link>
                 <Link to="/servicos/limpeza-de-fossa" className="px-6 py-3 hover:bg-primary/5 text-sm font-bold text-gray-600 block">Limpeza de Fossa</Link>
-                <Link to="/servicos/desentupimento-de-pia" className="px-6 py-3 hover:bg-primary/5 text-sm font-bold text-gray-600 block">Desentupimento de Pia</Link>
-                <Link to="/servicos/desentupimento-de-vaso" className="px-6 py-3 hover:bg-primary/5 text-sm font-bold text-gray-600 block">Desentupimento de Vaso</Link>
               </div>
             </div>
           </div>
@@ -65,54 +78,78 @@ const Header: React.FC = () => {
           </a>
         </nav>
 
-        {/* Mobile Toggle */}
-        <div className="flex items-center gap-3 lg:hidden">
-          <Link to="/galeria-ia" className="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center">
-            <i className="fa fa-magic"></i>
-          </Link>
+        {/* Mobile Toggle & Actions */}
+        <div className="flex items-center gap-3 lg:hidden relative z-[110]">
+          <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center shadow-md animate-pulse">
+            <i className="fab fa-whatsapp"></i>
+          </a>
           <button 
-            className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-gray-100 rounded-lg"
+            className="w-11 h-11 flex flex-col items-center justify-center gap-1.5 bg-gray-100 rounded-xl transition-all active:scale-90"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Menu"
           >
-            <span className={`w-5 h-0.5 bg-dark transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`w-5 h-0.5 bg-dark transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`w-5 h-0.5 bg-dark transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-dark transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-dark transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 -translate-x-2' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-dark transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Simplificado */}
-      <div className={`fixed inset-0 bg-dark/50 backdrop-blur-sm z-[90] lg:hidden transition-opacity ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`} onClick={() => setIsMobileMenuOpen(false)}></div>
+      {/* Mobile Drawer - Solid Background for maximum readability */}
+      <div 
+        className={`fixed inset-0 bg-dark/60 backdrop-blur-md z-[90] lg:hidden transition-opacity duration-500 ${
+          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`} 
+        onClick={() => setIsMobileMenuOpen(false)}
+      ></div>
       
-      <div className={`fixed top-0 right-0 h-full w-[280px] bg-white z-[100] lg:hidden transition-transform shadow-2xl ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="p-6 flex flex-col h-full">
-          <div className="flex justify-between items-center mb-8">
-            <div className="w-12 h-12"><AnimatedLogo /></div>
-            <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-400"><i className="fa fa-times text-xl"></i></button>
+      <div 
+        className={`fixed top-0 right-0 h-full w-[300px] bg-white z-[100] lg:hidden transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) shadow-[-20px_0_50px_rgba(0,0,0,0.1)] ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col h-full">
+          {/* Menu Header */}
+          <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+            <div className="w-10 h-10"><AnimatedLogo /></div>
+            <span className="font-display font-black text-dark text-sm tracking-tighter uppercase">Menu Navegação</span>
+            <button onClick={() => setIsMobileMenuOpen(false)} className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-500">
+              <i className="fa fa-times"></i>
+            </button>
           </div>
 
-          <nav className="flex flex-col gap-5">
-            <Link to="/" className="text-lg font-black text-dark border-b pb-2">Início</Link>
-            <Link to="/galeria-ia" className="text-lg font-bold text-primary flex items-center gap-2"><i className="fa fa-magic"></i> Galeria IA PRO</Link>
-            
-            <div className="space-y-3 border-t pt-4">
-              <p className="text-[10px] font-bold text-primary uppercase tracking-widest">Serviços Mais Pedidos</p>
-              <Link to="/servicos/hidrojateamento" className="font-bold text-gray-700 flex items-center gap-3"><i className="fa fa-water text-primary"></i> Hidrojateamento</Link>
-              <Link to="/servicos/limpeza-de-fossa" className="font-bold text-gray-700 flex items-center gap-3"><i className="fa fa-truck text-primary"></i> Limpeza de Fossa</Link>
-              <Link to="/servicos/desentupimento-de-pia" className="font-bold text-gray-700 flex items-center gap-3"><i className="fa fa-utensils text-primary"></i> Pia de Cozinha</Link>
-              <Link to="/servicos/desentupimento-de-vaso" className="font-bold text-gray-700 flex items-center gap-3"><i className="fa fa-toilet text-primary"></i> Vaso Sanitário</Link>
-            </div>
-
-            <Link to="/faq" className="text-lg font-bold text-gray-700 border-t pt-4">Dúvidas Frequentes</Link>
+          {/* Menu Links with Staggered Animation */}
+          <nav className="flex-grow p-6 space-y-2 overflow-y-auto">
+            {navLinks.map((link, idx) => (
+              <Link 
+                key={idx} 
+                to={link.href} 
+                className={`flex items-center gap-4 p-4 rounded-2xl font-bold text-gray-700 hover:bg-primary/5 hover:text-primary transition-all group ${
+                  isMobileMenuOpen ? `animate-fade-in-right ${link.stagger}` : 'opacity-0'
+                } ${link.color || ''}`}
+              >
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${link.color ? 'bg-primary/10' : 'bg-gray-100 group-hover:bg-primary/10'}`}>
+                  <i className={`fa ${link.icon}`}></i>
+                </div>
+                <span className="text-base uppercase tracking-tight">{link.label}</span>
+              </Link>
+            ))}
           </nav>
 
-          <div className="mt-auto space-y-3">
-             <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="flex items-center justify-center gap-2 p-4 bg-green-500 text-white rounded-xl font-bold shadow-lg">
-               <i className="fab fa-whatsapp"></i> WhatsApp 24h
+          {/* Menu Footer - Call to Actions */}
+          <div className={`p-6 bg-gray-50 space-y-3 transition-all duration-700 delay-300 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+             <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] text-center mb-4">Atendimento Imediato</p>
+             <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="flex items-center justify-center gap-3 p-4 bg-green-500 text-white rounded-2xl font-black shadow-lg shadow-green-500/20 active:scale-95 transition-transform uppercase text-xs tracking-widest">
+               <i className="fab fa-whatsapp text-xl"></i> WhatsApp 24h
              </a>
-             <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="flex items-center justify-center gap-2 p-4 bg-red-600 text-white rounded-xl font-bold shadow-lg">
-               <i className="fa fa-phone-alt"></i> {COMPANY_PHONE}
+             <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="flex items-center justify-center gap-3 p-4 bg-red-600 text-white rounded-2xl font-black shadow-lg shadow-red-600/20 active:scale-95 transition-transform uppercase text-xs tracking-widest">
+               <i className="fa fa-phone-alt text-lg"></i> {COMPANY_PHONE}
              </a>
+             <div className="pt-4 flex justify-center gap-4 opacity-30 grayscale">
+               <i className="fab fa-cc-visa text-2xl"></i>
+               <i className="fab fa-cc-mastercard text-2xl"></i>
+               <i className="fa fa-qrcode text-2xl"></i>
+             </div>
           </div>
         </div>
       </div>
