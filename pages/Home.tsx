@@ -9,26 +9,28 @@ import ETACalculator from '../components/ETACalculator';
 const Home: React.FC = () => {
   useEffect(() => {
     document.title = "ADP Saneamento | Desentupidora Curitiba 24h - Preço Fechado";
+    window.scrollTo(0, 0);
   }, []);
 
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <HeroSection />
       
-      {/* Widget Flutuante Interativo na Home */}
-      <section className="py-12 bg-white">
+      {/* Widget Interativo Integrado */}
+      <section className="py-12 bg-white relative z-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto -mt-32 relative z-20">
-            <div className="grid md:grid-cols-2 gap-8 items-stretch">
+          <div className="max-w-5xl mx-auto -mt-20 lg:-mt-24">
+            <div className="grid md:grid-cols-2 gap-6 items-stretch">
                <ETACalculator />
-               <div className="bg-primary p-10 rounded-[2.5rem] text-white flex flex-col justify-center shadow-2xl">
-                 <h3 className="text-3xl font-display font-black mb-4 uppercase leading-none">Preço <br/>Sem Surpresas</h3>
-                 <p className="text-white/80 text-sm mb-6 leading-relaxed">
-                   <strong>PARE DE SER ENGANADO.</strong> Na ADP Curitiba, nós não cobramos por metro de cabo ou metro cúbico. Você recebe o preço final antes da execução.
+               <div className="bg-primary p-12 rounded-[2.5rem] text-white flex flex-col justify-center shadow-2xl relative overflow-hidden group">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:scale-125 transition-transform"></div>
+                 <h3 className="text-3xl font-display font-black mb-4 uppercase leading-none tracking-tighter">Transparência <br/>Total ADP</h3>
+                 <p className="text-white/80 text-sm mb-8 leading-relaxed font-light">
+                   <strong>NÃO COBRAMOS POR METRO CÚBICO.</strong> Na ADP Curitiba, o preço é passado antes de começar o serviço e não muda no final. Segurança para seu bolso.
                  </p>
-                 <div className="flex items-center gap-4">
-                   <div className="bg-white/10 px-4 py-2 rounded-xl text-[10px] font-black uppercase border border-white/20">Sem Taxa de Visita</div>
-                   <div className="bg-white/10 px-4 py-2 rounded-xl text-[10px] font-black uppercase border border-white/20">Até 12x no Cartão</div>
+                 <div className="flex flex-wrap gap-3">
+                   <div className="bg-white/10 px-4 py-2 rounded-xl text-[9px] font-black uppercase border border-white/20">Visita Grátis</div>
+                   <div className="bg-white/10 px-4 py-2 rounded-xl text-[9px] font-black uppercase border border-white/20">Laudo Técnico</div>
                  </div>
                </div>
             </div>
