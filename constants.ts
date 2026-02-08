@@ -1,5 +1,4 @@
 
-
 export const COMPANY_PHONE = "(41) 3345-1194";
 export const COMPANY_MOBILE = "(41) 98517-1966";
 export const COMPANY_WHATSAPP = "5541985171966";
@@ -7,7 +6,6 @@ export const COMPANY_EMAIL = "contato@desentopeadp.com.br";
 export const COMPANY_SITE = "https://www.desentopeadp.com.br";
 export const COMPANY_ADDRESS = "Rua Luiz Maltaca, 36 - CIC, Curitiba-PR";
 
-// Lista expandida conforme solicitação
 export const BAIRROS = [
   "Vila Parolin", "Vila Torres", "Jardim Schaffer", "Vila Sabará", "Boqueirão de Baixo", 
   "Boqueirão de Cima", "Tanguá", "Vila Zumbi", "Abranches de Baixo", "Abranches de Cima", 
@@ -43,7 +41,6 @@ export const CIDADES_RMC = [
   "Tunas do Paraná", "Curitiba"
 ];
 
-// Fix: Adding the missing SERVICES_LIST export required by HomeSections.tsx
 export const SERVICES_LIST = [
   "Desentupimento de Pia",
   "Desentupimento de Ralo",
