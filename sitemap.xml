@@ -3,6 +3,7 @@
   <!-- Home e Institucional -->
   <url><loc>https://www.desentopeadp.com.br/</loc><lastmod>2025-02-08</lastmod><priority>1.0</priority><changefreq>daily</changefreq></url>
   <url><loc>https://www.desentopeadp.com.br/faq</loc><lastmod>2025-02-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/galeria-ia</loc><lastmod>2025-02-08</lastmod><priority>0.7</priority></url>
 
   <!-- Serviços Principais -->
   <url><loc>https://www.desentopeadp.com.br/servicos/hidrojateamento</loc><priority>0.9</priority></url>
@@ -14,7 +15,7 @@
   <url><loc>https://www.desentopeadp.com.br/servicos/limpeza-de-caixa-de-gordura</loc><priority>0.8</priority></url>
   <url><loc>https://www.desentopeadp.com.br/servicos/video-inspecao</loc><priority>0.8</priority></url>
 
-  <!-- Cidades da Região Metropolitana -->
+  <!-- Cidades RMC (Slugified) -->
   <url><loc>https://www.desentopeadp.com.br/cidade/adrianopolis</loc><priority>0.7</priority></url>
   <url><loc>https://www.desentopeadp.com.br/cidade/agudos-do-sul</loc><priority>0.7</priority></url>
   <url><loc>https://www.desentopeadp.com.br/cidade/almirante-tamandare</loc><priority>0.7</priority></url>
@@ -22,14 +23,29 @@
   <url><loc>https://www.desentopeadp.com.br/cidade/balsa-nova</loc><priority>0.7</priority></url>
   <url><loc>https://www.desentopeadp.com.br/cidade/bocaiuva-do-sul</loc><priority>0.7</priority></url>
   <url><loc>https://www.desentopeadp.com.br/cidade/campina-grande-do-sul</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/campo-do-tenente</loc><priority>0.7</priority></url>
   <url><loc>https://www.desentopeadp.com.br/cidade/campo-largo</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/campo-magro</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/cerro-azul</loc><priority>0.7</priority></url>
   <url><loc>https://www.desentopeadp.com.br/cidade/colombo</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/contenda</loc><priority>0.7</priority></url>
   <url><loc>https://www.desentopeadp.com.br/cidade/fazenda-rio-grande</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/itaperucu</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/lapa</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/mandirituba</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/pien</loc><priority>0.7</priority></url>
   <url><loc>https://www.desentopeadp.com.br/cidade/pinhais</loc><priority>0.7</priority></url>
   <url><loc>https://www.desentopeadp.com.br/cidade/piraquara</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/quatro-barras</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/quitandinha</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/rio-branco-do-sul</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/rio-negro</loc><priority>0.7</priority></url>
   <url><loc>https://www.desentopeadp.com.br/cidade/sao-jose-dos-pinhais</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/tijucas-do-sul</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/tunas-do-parana</loc><priority>0.7</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/cidade/curitiba</loc><priority>0.7</priority></url>
 
-  <!-- Bairros de Curitiba (Principais para SEO Local) -->
+  <!-- Bairros Curitiba (Slugified) -->
   <url><loc>https://www.desentopeadp.com.br/bairro/cic</loc><priority>0.6</priority></url>
   <url><loc>https://www.desentopeadp.com.br/bairro/batel</loc><priority>0.6</priority></url>
   <url><loc>https://www.desentopeadp.com.br/bairro/agua-verde</loc><priority>0.6</priority></url>
@@ -49,4 +65,11 @@
   <url><loc>https://www.desentopeadp.com.br/bairro/ahu</loc><priority>0.6</priority></url>
   <url><loc>https://www.desentopeadp.com.br/bairro/cabral</loc><priority>0.6</priority></url>
   <url><loc>https://www.desentopeadp.com.br/bairro/juveve</loc><priority>0.6</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/bairro/ecoville</loc><priority>0.6</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/bairro/merces</loc><priority>0.6</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/bairro/bigorrilho</loc><priority>0.6</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/bairro/capao-raso</loc><priority>0.6</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/bairro/fazendinha</loc><priority>0.6</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/bairro/parolin</loc><priority>0.6</priority></url>
+  <url><loc>https://www.desentopeadp.com.br/bairro/reboucas</loc><priority>0.6</priority></url>
 </urlset>
