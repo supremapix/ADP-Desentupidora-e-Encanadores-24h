@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import RegionPage from './pages/RegionPage';
 import ServiceHydrojetting from './pages/ServiceHydrojetting';
 import ServiceSeptic from './pages/ServiceSeptic';
+import ServiceDetail from './pages/ServiceDetail';
 import FAQPage from './pages/FAQPage';
 import NotFound from './pages/NotFound';
 import LegacyDesentupidora from './pages/LegacyDesentupidora';
@@ -30,11 +31,9 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
-  // Intersection Observer for Scroll Animations
   useEffect(() => {
     const handleScrollReveal = () => {
       const reveals = document.querySelectorAll('.reveal');
-      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -46,16 +45,8 @@ const App: React.FC = () => {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
       });
-
-      reveals.forEach((reveal) => {
-        observer.observe(reveal);
-      });
-
-      return () => {
-        reveals.forEach((reveal) => observer.unobserve(reveal));
-      };
+      reveals.forEach((reveal) => observer.observe(reveal));
     };
-
     const timeoutId = setTimeout(handleScrollReveal, 100);
     return () => clearTimeout(timeoutId);
   }, []);
@@ -65,7 +56,6 @@ const App: React.FC = () => {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-secondary">
         <Header />
-        {/* Padding ajustado para compensar o header fixo (aprox 80px mobile, 140px desktop) */}
         <div className="flex-grow pt-[80px] lg:pt-[154px]">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -73,6 +63,7 @@ const App: React.FC = () => {
             <Route path="/cidade/:slug" element={<RegionPage type="cidade" />} />
             <Route path="/servicos/hidrojateamento" element={<ServiceHydrojetting />} />
             <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
+            <Route path="/servicos/:id" element={<ServiceDetail />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/desentupidora.html" element={<LegacyDesentupidora />} />
             <Route path="*" element={<NotFound />} />
