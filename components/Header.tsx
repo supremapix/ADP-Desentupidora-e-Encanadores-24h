@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BAIRROS, CIDADES_RMC } from '../constants';
@@ -9,9 +10,6 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-  
-  const handleDropdownEnter = (menu: string) => setOpenDropdown(menu);
-  const handleDropdownLeave = () => setOpenDropdown(null);
 
   const navigateTo = (path: string) => {
     navigate(path);
@@ -19,203 +17,82 @@ const Header: React.FC = () => {
     setOpenDropdown(null);
   };
 
-  const NavLink = ({ to, label, hasDropdown, dropdownKey }: { to: string, label: string, hasDropdown?: boolean, dropdownKey?: string }) => (
-    <div 
-      className="relative group h-full flex items-center"
-      onMouseEnter={() => hasDropdown && dropdownKey && handleDropdownEnter(dropdownKey)}
-      onMouseLeave={() => hasDropdown && handleDropdownLeave()}
-    >
-      <Link 
-        to={to} 
-        className="px-3 py-2 font-display font-medium text-base xl:text-lg text-dark hover:text-primary transition-colors flex items-center gap-1 nav-link whitespace-nowrap"
-      >
-        {label}
-        {hasDropdown && <i className="fa fa-chevron-down text-xs mt-1 transition-transform duration-300 group-hover:rotate-180"></i>}
-      </Link>
-      
-      {/* Desktop Dropdown Logic */}
-      {hasDropdown && openDropdown === dropdownKey && (
-         <div className="absolute top-full left-0 bg-white shadow-xl border-t-4 border-primary min-w-[200px] z-50 animate-fade-in origin-top">
-            {dropdownKey === 'bairros' ? (
-              <div className="w-[800px] p-6 grid grid-cols-4 gap-2 max-h-[60vh] overflow-y-auto custom-scrollbar">
-                 {BAIRROS.map((bairro, idx) => (
-                   <button 
-                    key={idx} 
-                    onClick={() => navigateTo(`/bairro/${bairro.toLowerCase().replace(/ /g, '-')}`)}
-                    className="text-left text-sm text-gray-600 hover:text-primary hover:bg-gray-50 p-1 rounded transition-colors"
-                   >
-                     {bairro}
-                   </button>
-                 ))}
-              </div>
-            ) : dropdownKey === 'cidades' ? (
-              <div className="w-[600px] p-6 grid grid-cols-3 gap-2">
-                 {CIDADES_RMC.map((cidade, idx) => (
-                   <button 
-                    key={idx} 
-                    onClick={() => navigateTo(`/cidade/${cidade.toLowerCase().replace(/ /g, '-')}`)}
-                    className="text-left text-sm text-gray-600 hover:text-primary hover:bg-gray-50 p-1 rounded transition-colors"
-                   >
-                     {cidade}
-                   </button>
-                 ))}
-              </div>
-            ) : (
-              <div className="flex flex-col py-2">
-                 <Link to="/#servicos" className="px-4 py-2 hover:bg-gray-50 text-gray-700 transition-colors border-l-2 border-transparent hover:border-primary">Desentupimentos</Link>
-                 <Link to="/servicos/hidrojateamento" className="px-4 py-2 hover:bg-gray-50 text-gray-700 transition-colors border-l-2 border-transparent hover:border-primary">Hidrojateamento</Link>
-                 <Link to="/servicos/limpeza-de-fossa" className="px-4 py-2 hover:bg-gray-50 text-gray-700 transition-colors border-l-2 border-transparent hover:border-primary">Limpeza de Fossa</Link>
-                 <Link to="/faq" className="px-4 py-2 hover:bg-gray-50 text-gray-700 transition-colors border-l-2 border-transparent hover:border-primary">Perguntas Frequentes (FAQ)</Link>
-                 <Link to="/galeria-ia" className="px-4 py-2 hover:bg-gray-50 text-gray-700 transition-colors border-l-2 border-transparent hover:border-primary font-bold text-primary"><i className="fa fa-magic mr-1"></i> Galeria IA (Beta)</Link>
-              </div>
-            )}
-         </div>
-      )}
-    </div>
-  );
-
   return (
-    <header className="bg-white/95 backdrop-blur-md shadow-md sticky top-0 z-50 transition-all duration-300">
-      {/* Urgency Top Bar Mobile */}
-      <div className="lg:hidden bg-red-600 text-white text-xs font-bold text-center py-1 px-2 animate-pulse flex items-center justify-center gap-2">
-        <i className="fa fa-bolt text-yellow-300"></i> EQUIPES DE PLANTÃO AGORA NO CIC <i className="fa fa-bolt text-yellow-300"></i>
+    <header className="bg-white shadow-lg sticky top-0 z-[100]">
+      {/* Top Urgency Bar */}
+      <div className="bg-primary text-white py-1 px-4 text-[10px] sm:text-xs font-bold text-center tracking-widest flex items-center justify-center gap-2 uppercase">
+        <i className="fa fa-bolt animate-pulse"></i> Plantão 24h Curitiba e RMC: Chegada em 40min <i className="fa fa-bolt animate-pulse"></i>
       </div>
 
-      <div className="container mx-auto px-4 h-20 lg:h-28 flex items-center justify-between transition-all duration-300">
-        {/* Logo Section */}
-        <Link to="/" className="flex items-center gap-2 group relative z-10">
-          <div className="transform scale-75 lg:scale-100 origin-left transition-transform duration-300">
-             <AnimatedLogo />
+      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3">
+          <div className="w-14 h-14">
+            <AnimatedLogo />
           </div>
-          {/* Hide text on very small screens or keep as minimal brand reinforcement */}
-          <div className="hidden xl:block">
-            <h1 className="font-display font-bold text-2xl text-primary leading-none group-hover:text-teal-700 transition-colors">ADP Desentupidora</h1>
-            <p className="text-sm text-gray-500 font-sans flex items-center gap-1">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Aberto Agora 24h
-            </p>
+          <div className="hidden sm:block">
+            <h1 className="font-display font-bold text-xl text-primary leading-none uppercase tracking-tighter">ADP Desentupidora</h1>
+            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Excelência em Saneamento</p>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex h-full items-center ml-4">
-          <NavLink to="/" label="Home" />
-          <NavLink to="/#sobre" label="Empresa" />
-          <NavLink to="/#servicos" label="Serviços" hasDropdown dropdownKey="servicos" />
-          <NavLink to="#" label="Bairros" hasDropdown dropdownKey="bairros" />
-          <NavLink to="#" label="Cidades" hasDropdown dropdownKey="cidades" />
-          <NavLink to="/#contato" label="Contato" />
+        <nav className="hidden lg:flex items-center gap-6">
+          <Link to="/" className="font-bold text-gray-700 hover:text-primary transition-colors uppercase text-sm">Home</Link>
+          <div className="relative group" onMouseEnter={() => setOpenDropdown('servicos')} onMouseLeave={() => setOpenDropdown(null)}>
+            <button className="font-bold text-gray-700 hover:text-primary transition-colors uppercase text-sm flex items-center gap-1">
+              Serviços <i className="fa fa-chevron-down text-[10px]"></i>
+            </button>
+            {openDropdown === 'servicos' && (
+              <div className="absolute top-full left-0 bg-white shadow-xl border-t-2 border-primary py-2 min-w-[220px] animate-fade-in">
+                <Link to="/#servicos" className="block px-4 py-2 text-sm hover:bg-gray-50 text-gray-700">Todos os Serviços</Link>
+                <Link to="/servicos/hidrojateamento" className="block px-4 py-2 text-sm hover:bg-gray-50 text-gray-700">Hidrojateamento</Link>
+                <Link to="/servicos/limpeza-de-fossa" className="block px-4 py-2 text-sm hover:bg-gray-50 text-gray-700">Limpeza de Fossa</Link>
+                <Link to="/faq" className="block px-4 py-2 text-sm hover:bg-gray-50 text-gray-700">FAQ / Dúvidas</Link>
+              </div>
+            )}
+          </div>
+          <Link to="/#contato" className="font-bold text-gray-700 hover:text-primary transition-colors uppercase text-sm">Contato</Link>
+          <a href="tel:4133451194" className="bg-red-600 text-white px-5 py-2 rounded-full font-bold text-sm shadow-md hover:bg-red-700 transition flex items-center gap-2">
+            <i className="fa fa-phone-alt"></i> (41) 3345-1194
+          </a>
         </nav>
 
-        {/* CTA & Socials */}
-        <div className="hidden xl:flex items-center gap-4">
-          <div className="flex flex-col items-end mr-2">
-            <span className="text-[10px] font-bold text-red-500 bg-red-50 px-2 py-0.5 rounded-full animate-pulse border border-red-100 whitespace-nowrap flex items-center gap-1">
-              <i className="fa fa-circle text-[8px] text-red-600"></i> PLANTÃO ATIVO
-            </span>
-          </div>
-          <div className="flex gap-2 items-center">
-             <a 
-               href="https://wa.me/5541985171966" 
-               className="text-green-500 text-2xl transition-all duration-300 hover:scale-110 hover:rotate-6 active:scale-95 relative group" 
-               title="WhatsApp"
-             >
-               <i className="fab fa-whatsapp transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"></i>
-               <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
-             </a>
-             <a 
-               href="tel:4133451194" 
-               className="text-primary text-2xl transition-all duration-300 hover:scale-110 hover:-rotate-6 active:scale-95 relative group" 
-               title="Ligar"
-             >
-               <i className="fa fa-phone transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12"></i>
-               <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping delay-75"></span>
-             </a>
-          </div>
-          <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl active:scale-95 flex items-center gap-2 btn-shimmer whitespace-nowrap relative overflow-hidden group">
-            <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-            <i className="fa fa-bolt text-yellow-300 animate-pulse"></i> Emergência
-          </a>
-        </div>
-
-        {/* Mobile Toggle with Pixel Perfect Animation */}
-        <button 
-          className="lg:hidden text-primary w-10 h-10 flex items-center justify-center relative focus:outline-none ml-auto z-50 p-2" 
-          onClick={toggleMobileMenu}
-          aria-label="Menu Principal"
-        >
-          <div className="w-6 h-5 relative rotate-0 transition-transform duration-500 ease-in-out cursor-pointer">
-            <span 
-              className={`block absolute h-0.5 w-full bg-primary rounded opacity-100 left-0 rotate-0 transition-all duration-300 ease-in-out ${
-                isMobileMenuOpen ? 'top-2.5 rotate-[135deg]' : 'top-0'
-              }`}
-            ></span>
-            <span 
-              className={`block absolute h-0.5 w-full bg-primary rounded opacity-100 left-0 rotate-0 transition-all duration-300 ease-in-out ${
-                isMobileMenuOpen ? 'opacity-0 left-[-60px]' : 'top-2.5'
-              }`}
-            ></span>
-            <span 
-              className={`block absolute h-0.5 w-full bg-primary rounded opacity-100 left-0 rotate-0 transition-all duration-300 ease-in-out ${
-                isMobileMenuOpen ? 'top-2.5 rotate-[-135deg]' : 'top-5'
-              }`}
-            ></span>
-          </div>
+        {/* Mobile Toggle */}
+        <button className="lg:hidden text-primary text-2xl p-2 focus:outline-none" onClick={toggleMobileMenu}>
+          <i className={isMobileMenuOpen ? 'fa fa-times' : 'fa fa-bars'}></i>
         </button>
       </div>
 
-      {/* Mobile Menu - Slide In Effect */}
-      <div 
-        className={`lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 max-h-[calc(100vh-80px)] overflow-y-auto fixed top-20 left-0 w-full z-40 shadow-xl transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) ${
-          isMobileMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
-        }`}
-      >
-          <div className="flex flex-col p-4 space-y-4 pb-20">
-            <div className="bg-red-50 border border-red-100 p-3 rounded-lg flex items-center gap-3 animate-pulse">
-              <div className="bg-red-100 p-2 rounded-full text-red-600">
-                <i className="fa fa-bolt"></i>
-              </div>
-              <div>
-                <p className="font-bold text-red-700 text-sm">Precisa de urgência?</p>
-                <p className="text-xs text-red-600 font-bold">Chegamos em 40 minutos!</p>
-              </div>
-            </div>
+      {/* Simplified Mobile Menu */}
+      <div className={`lg:hidden fixed inset-0 top-20 bg-white z-[90] transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col p-6 gap-6 h-full overflow-y-auto">
+          <Link to="/" onClick={toggleMobileMenu} className="text-xl font-bold border-b pb-4">Home</Link>
+          
+          <div className="space-y-4">
+            <p className="font-bold text-primary uppercase text-xs tracking-widest">Serviços</p>
+            <Link to="/servicos/hidrojateamento" onClick={toggleMobileMenu} className="block text-lg font-medium text-gray-700">Hidrojateamento</Link>
+            <Link to="/servicos/limpeza-de-fossa" onClick={toggleMobileMenu} className="block text-lg font-medium text-gray-700">Limpeza de Fossa</Link>
+            <Link to="/#servicos" onClick={toggleMobileMenu} className="block text-lg font-medium text-gray-700">Outros Desentupimentos</Link>
+          </div>
 
-            <Link to="/" onClick={toggleMobileMenu} className="font-bold text-lg text-gray-700 hover:text-primary transition-colors border-b border-gray-50 pb-2">Home</Link>
-            <Link to="/#sobre" onClick={toggleMobileMenu} className="font-bold text-lg text-gray-700 hover:text-primary transition-colors border-b border-gray-50 pb-2">Empresa</Link>
-            
-            <div className="border-l-4 border-primary pl-4">
-              <p className="font-bold text-primary mb-2">Serviços</p>
-              <Link to="/#servicos" onClick={toggleMobileMenu} className="block py-1 text-gray-600 hover:text-primary transition-transform hover:translate-x-1">Todos os Serviços</Link>
-              <Link to="/servicos/hidrojateamento" onClick={toggleMobileMenu} className="block py-1 text-gray-600 hover:text-primary transition-transform hover:translate-x-1">Hidrojateamento</Link>
-              <Link to="/servicos/limpeza-de-fossa" onClick={toggleMobileMenu} className="block py-1 text-gray-600 hover:text-primary transition-transform hover:translate-x-1">Limpeza de Fossa</Link>
-              <Link to="/faq" onClick={toggleMobileMenu} className="block py-1 text-gray-600 hover:text-primary transition-transform hover:translate-x-1">FAQ / Dúvidas</Link>
-              <Link to="/galeria-ia" onClick={toggleMobileMenu} className="block py-1 font-bold text-primary hover:text-teal-700 transition-transform hover:translate-x-1"><i className="fa fa-magic"></i> Galeria IA</Link>
-            </div>
+          <div className="space-y-4 pt-4">
+             <p className="font-bold text-primary uppercase text-xs tracking-widest">Contatos Rápidos</p>
+             <a href="tel:4133451194" className="flex items-center gap-4 p-4 bg-red-50 text-red-700 rounded-xl font-bold">
+               <i className="fa fa-phone-alt text-2xl"></i>
+               <span>(41) 3345-1194</span>
+             </a>
+             <a href="https://wa.me/5541985171966" className="flex items-center gap-4 p-4 bg-green-50 text-green-700 rounded-xl font-bold">
+               <i className="fab fa-whatsapp text-2xl"></i>
+               <span>Chamar WhatsApp</span>
+             </a>
+          </div>
 
-            <div className="border-l-4 border-primary pl-4">
-              <p className="font-bold text-primary mb-2">Principais Bairros</p>
-              {BAIRROS.slice(0, 10).map(b => (
-                <button key={b} onClick={() => navigateTo(`/bairro/${b.toLowerCase().replace(/ /g, '-')}`)} className="block py-1 text-gray-600 text-left w-full hover:text-primary transition-transform hover:translate-x-1">
-                  {b}
-                </button>
-              ))}
-              <span className="text-xs text-gray-400 italic">...e muitos outros</span>
-            </div>
-
-             <div className="border-l-4 border-primary pl-4">
-              <p className="font-bold text-primary mb-2">Cidades RMC</p>
-              {CIDADES_RMC.slice(0, 5).map(c => (
-                <button key={c} onClick={() => navigateTo(`/cidade/${c.toLowerCase().replace(/ /g, '-')}`)} className="block py-1 text-gray-600 text-left w-full hover:text-primary transition-transform hover:translate-x-1">
-                  {c}
-                </button>
-              ))}
-            </div>
-
-            <Link to="/#contato" onClick={toggleMobileMenu} className="bg-red-600 text-white text-center py-3 rounded-lg font-bold shadow-md hover:bg-red-700 transition-all btn-shimmer flex items-center justify-center gap-2">
-              <i className="fa fa-phone-alt animate-bounce"></i> CHAMAR AGORA (24h)
-            </Link>
+          <div className="mt-auto pb-10">
+            <p className="text-center text-xs text-gray-400">Atendimento 24h em toda Curitiba e RMC</p>
           </div>
         </div>
+      </div>
     </header>
   );
 };

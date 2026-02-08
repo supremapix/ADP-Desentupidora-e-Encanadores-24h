@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
@@ -8,7 +9,6 @@ import RegionPage from './pages/RegionPage';
 import ServiceHydrojetting from './pages/ServiceHydrojetting';
 import ServiceSeptic from './pages/ServiceSeptic';
 import FAQPage from './pages/FAQPage';
-import ImageGallery from './pages/ImageGallery';
 import NotFound from './pages/NotFound';
 import LegacyDesentupidora from './pages/LegacyDesentupidora';
 
@@ -30,32 +30,19 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
-  // Intersection Observer for Scroll Animations
   useEffect(() => {
     const handleScrollReveal = () => {
       const reveals = document.querySelectorAll('.reveal');
-      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Only animate once
+            observer.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      reveals.forEach((reveal) => {
-        observer.observe(reveal);
-      });
-
-      return () => {
-        reveals.forEach((reveal) => observer.unobserve(reveal));
-      };
+      }, { threshold: 0.1 });
+      reveals.forEach((reveal) => observer.observe(reveal));
     };
-
     const timeoutId = setTimeout(handleScrollReveal, 100);
     return () => clearTimeout(timeoutId);
   }, []);
@@ -63,26 +50,17 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col font-sans text-gray-800">
+      <div className="min-h-screen flex flex-col font-sans text-gray-900 bg-secondary">
         <Header />
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* Dynamic Routes for Bairros and Cities */}
             <Route path="/bairro/:slug" element={<RegionPage type="bairro" />} />
             <Route path="/cidade/:slug" element={<RegionPage type="cidade" />} />
-            
-            {/* Service Pages */}
             <Route path="/servicos/hidrojateamento" element={<ServiceHydrojetting />} />
             <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
-            
             <Route path="/faq" element={<FAQPage />} />
-            <Route path="/galeria-ia" element={<ImageGallery />} />
-
-            {/* Legacy URL Route - Para capturar tráfego antigo */}
             <Route path="/desentupidora.html" element={<LegacyDesentupidora />} />
-            
-            {/* 404 Not Found Route - Catch All */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
