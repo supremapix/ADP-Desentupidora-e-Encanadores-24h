@@ -10,6 +10,7 @@ import ServiceHydrojetting from './pages/ServiceHydrojetting';
 import ServiceSeptic from './pages/ServiceSeptic';
 import ServiceDetail from './pages/ServiceDetail';
 import FAQPage from './pages/FAQPage';
+import ImageGallery from './pages/ImageGallery';
 import NotFound from './pages/NotFound';
 import LegacyDesentupidora from './pages/LegacyDesentupidora';
 
@@ -36,16 +37,25 @@ const App: React.FC = () => {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-secondary">
         <Header />
-        <div className="flex-grow pt-[74px] lg:pt-[110px]">
+        <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/bairro/:slug" element={<RegionPage type="bairro" />} />
-            <Route path="/cidade/:slug" element={<RegionPage type="cidade" />} />
+            
+            {/* Serviços Específicos */}
             <Route path="/servicos/hidrojateamento" element={<ServiceHydrojetting />} />
             <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
+            
+            {/* Galeria IA PRO */}
+            <Route path="/galeria-ia" element={<ImageGallery />} />
+            
+            {/* Outros Serviços e SEO Local */}
             <Route path="/servicos/:id" element={<ServiceDetail />} />
+            <Route path="/bairro/:slug" element={<RegionPage type="bairro" />} />
+            <Route path="/cidade/:slug" element={<RegionPage type="cidade" />} />
+            
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/desentupidora.html" element={<LegacyDesentupidora />} />
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

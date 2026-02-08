@@ -46,8 +46,12 @@ const ServiceDetail: React.FC = () => {
                 <p>A ADP utiliza equipamentos de ponta para garantir que o serviço seja feito de forma limpa e eficiente. Nossos técnicos são especialistas em diagnóstico hidráulico, identificando a causa raiz do problema para evitar que o entupimento retorne em poucos dias.</p>
               </div>
             </div>
-            <div className="rounded-[3rem] overflow-hidden shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2670&auto=format&fit=crop" alt={service.title} className="w-full h-full object-cover" />
+            <div className="rounded-[3rem] overflow-hidden shadow-2xl bg-gray-100 aspect-square lg:aspect-auto h-full min-h-[400px]">
+              <img 
+                src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=2000&auto=format&fit=crop" 
+                alt="Encanador Profissional ADP em serviço" 
+                className="w-full h-full object-cover" 
+              />
             </div>
           </div>
 
