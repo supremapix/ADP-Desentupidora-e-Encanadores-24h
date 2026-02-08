@@ -7,51 +7,47 @@ const AnimatedLogo: React.FC = () => {
       <svg
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full drop-shadow-xl filter"
+        className="w-full h-full drop-shadow-2xl"
       >
         <defs>
           <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style={{ stopColor: '#e11d48', stopOpacity: 1 }} />
-            <stop offset="100%" style={{ stopColor: '#9f1239', stopOpacity: 1 }} />
+            <stop offset="0%" style={{ stopColor: '#39847a', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#2d6a62', stopOpacity: 1 }} />
           </linearGradient>
-          <filter id="innerShadow">
-            <feOffset dx="0" dy="2" />
-            <feGaussianBlur stdDeviation="2" result="offset-blur" />
-            <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
-            <feFlood floodColor="black" floodOpacity="0.3" result="color" />
-            <feComposite operator="in" in="color" in2="inverse" result="shadow" />
-            <feComposite operator="over" in="shadow" in2="SourceGraphic" />
+          <filter id="innerGlow">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k2="1" k3="-1" result="glow" />
           </filter>
         </defs>
 
-        {/* Outer Ring Animation */}
+        {/* Dynamic Rotation Ring */}
         <circle 
-          cx="100" cy="100" r="92" 
+          cx="100" cy="100" r="95" 
           fill="none" 
           stroke="#39847a" 
-          strokeWidth="3" 
-          strokeDasharray="10 5" 
-          className="animate-[spin_20s_linear_infinite]" 
+          strokeWidth="2" 
+          strokeDasharray="15 10" 
+          className="animate-[spin_30s_linear_infinite] opacity-30" 
         />
 
-        {/* Base Shield */}
-        <circle cx="100" cy="100" r="85" fill="url(#logoGrad)" filter="url(#innerShadow)" />
-        <circle cx="100" cy="100" r="80" fill="none" stroke="white" strokeWidth="1" opacity="0.3" />
+        {/* Main Shield Body */}
+        <circle cx="100" cy="100" r="88" fill="url(#logoGrad)" />
+        <circle cx="100" cy="100" r="82" fill="none" stroke="white" strokeWidth="0.5" opacity="0.2" />
 
-        {/* Icon: Modern Minimalist Truck/Hose */}
-        <g transform="translate(45, 65) scale(0.7)" fill="white">
-          <path d="M10 40h110v50H10z" opacity="0.9" />
-          <path d="M120 40h30l15 25v25h-45z" />
-          <rect x="20" y="25" width="90" height="10" rx="5" />
-          <circle cx="45" cy="95" r="12" fill="white" stroke="#9f1239" strokeWidth="4" />
-          <circle cx="130" cy="95" r="12" fill="white" stroke="#9f1239" strokeWidth="4" />
+        {/* Central Graphic: Stylized Truck / Flow */}
+        <g transform="translate(45, 75) scale(0.7)" fill="white">
+          <path d="M10 20h110v50H10z" opacity="0.95" />
+          <path d="M120 20h30l15 30v20h-45z" />
+          <circle cx="45" cy="85" r="15" fill="#2d6a62" stroke="white" strokeWidth="4" />
+          <circle cx="130" cy="85" r="15" fill="#2d6a62" stroke="white" strokeWidth="4" />
+          <path d="M20 5h80v8H20z" opacity="0.6" />
         </g>
 
-        {/* Center Text */}
+        {/* Typography */}
         <text 
-          x="100" y="85" 
+          x="100" y="90" 
           fill="white" 
-          fontSize="36" 
+          fontSize="42" 
           fontWeight="900" 
           fontFamily="Arial Black, sans-serif" 
           textAnchor="middle" 
@@ -59,23 +55,20 @@ const AnimatedLogo: React.FC = () => {
         >
           ADP
         </text>
-        <text 
-          x="100" y="105" 
-          fill="rgba(255,255,255,0.8)" 
-          fontSize="10" 
-          fontWeight="bold" 
-          fontFamily="Arial, sans-serif" 
-          textAnchor="middle" 
-          className="uppercase tracking-[0.2em]"
-        >
-          Saneamento 24h
+        
+        {/* Quality Seal Text */}
+        <path id="curve" d="M 40,100 A 60,60 0 0,1 160,100" fill="transparent" />
+        <text className="uppercase tracking-[0.4em] font-black fill-white/80" fontSize="8">
+          <textPath href="#curve" startOffset="50%" textAnchor="middle">
+            QUALIDADE & CONFIANÇA
+          </textPath>
         </text>
 
-        {/* Bottom Contact Label */}
-        <rect x="40" y="145" width="120" height="25" rx="12.5" fill="white" />
+        {/* Bottom Contact Pill */}
+        <rect x="35" y="145" width="130" height="28" rx="14" fill="white" />
         <text 
-          x="100" y="163" 
-          fill="#9f1239" 
+          x="100" y="164" 
+          fill="#39847a" 
           fontSize="14" 
           fontWeight="900" 
           fontFamily="Arial, sans-serif" 

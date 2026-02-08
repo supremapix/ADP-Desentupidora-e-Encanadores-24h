@@ -52,7 +52,8 @@ const App: React.FC = () => {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col font-sans text-gray-900 bg-secondary">
         <Header />
-        <div className="flex-grow">
+        {/* Adicionado padding-top responsivo para compensar a altura do Header fixo */}
+        <div className="flex-grow pt-[80px] lg:pt-[140px]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/bairro/:slug" element={<RegionPage type="bairro" />} />
