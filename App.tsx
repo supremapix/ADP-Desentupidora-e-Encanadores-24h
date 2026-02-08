@@ -31,32 +31,12 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
-  useEffect(() => {
-    const handleScrollReveal = () => {
-      const reveals = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-      reveals.forEach((reveal) => observer.observe(reveal));
-    };
-    const timeoutId = setTimeout(handleScrollReveal, 100);
-    return () => clearTimeout(timeoutId);
-  }, []);
-
   return (
     <BrowserRouter>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-secondary">
         <Header />
-        <div className="flex-grow pt-[80px] lg:pt-[154px]">
+        <div className="flex-grow pt-[74px] lg:pt-[110px]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/bairro/:slug" element={<RegionPage type="bairro" />} />

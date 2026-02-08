@@ -6,6 +6,14 @@ export const COMPANY_EMAIL = "contato@desentopeadp.com.br";
 export const COMPANY_SITE = "https://www.desentopeadp.com.br";
 export const COMPANY_ADDRESS = "Rua Luiz Maltaca, 36 - CIC, Curitiba-PR";
 
+// Utilitário para gerar slugs consistentes (ex: "Bocaiúva" -> "bocaiuva")
+export const slugify = (text: string) => 
+  text.toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '');
+
 export const BAIRROS = [
   "Vila Parolin", "Vila Torres", "Jardim Schaffer", "Vila Sabará", "Boqueirão de Baixo", 
   "Boqueirão de Cima", "Tanguá", "Vila Zumbi", "Abranches de Baixo", "Abranches de Cima", 
