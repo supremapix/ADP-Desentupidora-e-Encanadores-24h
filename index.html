@@ -23,25 +23,6 @@
     <meta property="og:url" content="https://www.desentopeadp.com.br/" />
     <meta property="og:image" content="https://www.desentopeadp.com.br/og-image.jpg" />
 
-    <!-- Schema: BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.desentopeadp.com.br/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Serviços",
-        "item": "https://www.desentopeadp.com.br/#servicos"
-      }]
-    }
-    </script>
-    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,14 +64,8 @@
       html { scroll-behavior: smooth; }
       .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
       .reveal.active { opacity: 1; transform: translateY(0); }
-      .btn-shimmer { position: relative; overflow: hidden; }
-      .btn-shimmer::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: 0.5s; }
-      .btn-shimmer:hover::after { left: 100%; }
-      ::-webkit-scrollbar { width: 8px; }
-      ::-webkit-scrollbar-track { background: #f1f1f1; }
-      ::-webkit-scrollbar-thumb { background: #39847a; border-radius: 4px; }
-      ::-webkit-scrollbar-thumb:hover { background: #2d6a62; }
       
+      /* Classes de Atraso para Efeito Cascata no Menu */
       .stagger-1 { animation-delay: 0.1s; }
       .stagger-2 { animation-delay: 0.15s; }
       .stagger-3 { animation-delay: 0.2s; }
@@ -98,10 +73,9 @@
       .stagger-5 { animation-delay: 0.3s; }
       .stagger-6 { animation-delay: 0.35s; }
 
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.15); opacity: 0.9; }
-      }
+      /* Ajuste para evitar flickering em mobiles lentos */
+      .mobile-menu-item { opacity: 0; }
+      .is-open .mobile-menu-item { animation: fadeInRight 0.4s ease-out forwards; }
     </style>
   <script type="importmap">
 {

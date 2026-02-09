@@ -40,7 +40,7 @@ const Header: React.FC = () => {
       className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
         isScrolled 
           ? 'bg-white shadow-xl py-2' 
-          : 'bg-white/95 backdrop-blur-md py-4'
+          : 'bg-white py-4 lg:bg-white/95 lg:backdrop-blur-md' 
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -95,7 +95,7 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer - Solid Background for maximum readability */}
+      {/* Mobile Drawer Backdrop */}
       <div 
         className={`fixed inset-0 bg-dark/60 backdrop-blur-md z-[90] lg:hidden transition-opacity duration-500 ${
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
@@ -103,30 +103,29 @@ const Header: React.FC = () => {
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
       
+      {/* Mobile Drawer - 100% Solid White */}
       <div 
-        className={`fixed top-0 right-0 h-full w-[300px] bg-white z-[100] lg:hidden transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) shadow-[-20px_0_50px_rgba(0,0,0,0.1)] ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-0 right-0 h-full w-[310px] bg-white z-[100] lg:hidden transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) shadow-[-20px_0_60px_rgba(0,0,0,0.15)] ${
+          isMobileMenuOpen ? 'translate-x-0 is-open' : 'translate-x-full'
         }`}
       >
         <div className="flex flex-col h-full">
-          {/* Menu Header */}
-          <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+          {/* Drawer Header */}
+          <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50/80">
             <div className="w-10 h-10"><AnimatedLogo /></div>
-            <span className="font-display font-black text-dark text-sm tracking-tighter uppercase">Menu Navegação</span>
-            <button onClick={() => setIsMobileMenuOpen(false)} className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-500">
+            <span className="font-display font-black text-dark text-xs tracking-widest uppercase">Navegação ADP</span>
+            <button onClick={() => setIsMobileMenuOpen(false)} className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-500 active:scale-90 transition-transform">
               <i className="fa fa-times"></i>
             </button>
           </div>
 
-          {/* Menu Links with Staggered Animation */}
-          <nav className="flex-grow p-6 space-y-2 overflow-y-auto">
+          {/* Links Staggered */}
+          <nav className="flex-grow p-6 space-y-2 overflow-y-auto bg-white">
             {navLinks.map((link, idx) => (
               <Link 
                 key={idx} 
                 to={link.href} 
-                className={`flex items-center gap-4 p-4 rounded-2xl font-bold text-gray-700 hover:bg-primary/5 hover:text-primary transition-all group ${
-                  isMobileMenuOpen ? `animate-fade-in-right ${link.stagger}` : 'opacity-0'
-                } ${link.color || ''}`}
+                className={`mobile-menu-item flex items-center gap-4 p-4 rounded-2xl font-bold text-gray-700 hover:bg-primary/5 hover:text-primary transition-all group ${link.stagger} ${link.color || ''}`}
               >
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${link.color ? 'bg-primary/10' : 'bg-gray-100 group-hover:bg-primary/10'}`}>
                   <i className={`fa ${link.icon}`}></i>
@@ -136,13 +135,19 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Menu Footer - Call to Actions */}
-          <div className={`p-6 bg-gray-50 space-y-3 transition-all duration-700 delay-300 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-             <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] text-center mb-4">Atendimento Imediato</p>
-             <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="flex items-center justify-center gap-3 p-4 bg-green-500 text-white rounded-2xl font-black shadow-lg shadow-green-500/20 active:scale-95 transition-transform uppercase text-xs tracking-widest">
+          {/* Call to Actions - Fundo Sólido e Alto Contraste */}
+          <div className="p-6 bg-gray-50 border-t border-gray-100 space-y-3">
+             <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] text-center mb-2">Atendimento Imediato</p>
+             <a 
+              href={`https://wa.me/${COMPANY_WHATSAPP}`} 
+              className="flex items-center justify-center gap-3 p-4 bg-green-500 text-white rounded-2xl font-black shadow-lg shadow-green-500/20 active:scale-95 transition-transform uppercase text-xs tracking-widest w-full"
+             >
                <i className="fab fa-whatsapp text-xl"></i> WhatsApp 24h
              </a>
-             <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="flex items-center justify-center gap-3 p-4 bg-red-600 text-white rounded-2xl font-black shadow-lg shadow-red-600/20 active:scale-95 transition-transform uppercase text-xs tracking-widest">
+             <a 
+              href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} 
+              className="flex items-center justify-center gap-3 p-4 bg-red-600 text-white rounded-2xl font-black shadow-lg shadow-red-600/20 active:scale-95 transition-transform uppercase text-xs tracking-widest w-full"
+             >
                <i className="fa fa-phone-alt text-lg"></i> {COMPANY_PHONE}
              </a>
              <div className="pt-4 flex justify-center gap-4 opacity-30 grayscale">
