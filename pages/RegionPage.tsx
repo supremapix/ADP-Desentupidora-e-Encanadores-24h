@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 import PremiumImage from '../components/PremiumImage';
-import { BAIRROS, CIDADES_RMC, COMPANY_PHONE, COMPANY_SITE, slugify } from '../constants';
+import { BAIRROS, CIDADES_RMC, COMPANY_PHONE, COMPANY_SITE, slugify, getADPImage, ADP_IMAGES } from '../constants';
 import VideoSection from '../components/VideoSection';
 
 const RegionPage: React.FC<{ type: 'bairro' | 'cidade' }> = ({ type }) => {
@@ -25,13 +25,13 @@ const RegionPage: React.FC<{ type: 'bairro' | 'cidade' }> = ({ type }) => {
   const canonicalUrl = `${COMPANY_SITE}/${type}/${slug}`;
 
   return (
-    <main className="bg-secondary min-h-screen">
+    <main className="bg-lightGray min-h-screen">
       <link rel="canonical" href={canonicalUrl} />
       
       {/* SEO Hero Premium */}
       <section className="bg-dark text-white pt-32 pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
-          <img src="https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=2670&auto=format&fit=crop" className="w-full h-full object-cover" alt={`Serviços em ${name}`} />
+        <div className="absolute inset-0 z-0 opacity-15">
+          <img src={ADP_IMAGES.caminhaoRed} className="w-full h-full object-cover filter brightness-50" alt={`Serviços em ${name}`} />
         </div>
         <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-3/5 text-center lg:text-left">
@@ -44,20 +44,26 @@ const RegionPage: React.FC<{ type: 'bairro' | 'cidade' }> = ({ type }) => {
              <p className="text-xl text-gray-300 leading-relaxed max-w-xl mb-10 font-light">
                Equipes táticas prontas para resolver qualquer obstrução hidráulica em <strong>{name}</strong> com equipamentos de última geração.
              </p>
-             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="bg-red-600 hover:bg-red-700 text-white font-black px-10 py-5 rounded-2xl shadow-xl transition-all flex items-center gap-3 uppercase text-sm">
-                  <i className="fa fa-phone-alt"></i> ATENDIMENTO {name}
-                </a>
-                <a href="#contato" className="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-black px-10 py-5 rounded-2xl hover:bg-white/20 transition-all text-sm uppercase">
-                  Orçamento Online
-                </a>
+             <div className="flex flex-wrap gap-6 justify-center lg:justify-start items-center lg:items-start text-center lg:text-left">
+                <div className="flex flex-col items-center lg:items-start w-full sm:w-auto">
+                  <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-black px-10 py-5 rounded-2xl shadow-xl transition-all flex items-center justify-center gap-3 uppercase text-sm">
+                    <i className="fa fa-phone-alt"></i> Ligar
+                  </a>
+                  <p className="text-[10px] text-gray-300 mt-1.5 leading-tight">Ligar para nossa central em {name}.</p>
+                </div>
+                <div className="flex flex-col items-center lg:items-start w-full sm:w-auto">
+                  <a href="#contato" className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border border-white/20 text-white font-black px-10 py-5 rounded-2xl hover:bg-white/20 transition-all text-sm uppercase flex items-center justify-center gap-2">
+                    <i className="fa fa-clipboard-list"></i> Orçamento
+                  </a>
+                  <p className="text-[10px] text-gray-300 mt-1.5 leading-tight">Preencher formulário para Curitiba e RMC.</p>
+                </div>
              </div>
           </div>
           <div className="hidden lg:block lg:w-2/5">
              <PremiumImage 
-               src="https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=1000&auto=format&fit=crop" 
+               src={getADPImage(name)} 
                alt={`Encanador em ${name}`} 
-               className="aspect-square rotate-3"
+               className="aspect-square rotate-3 border-4 border-slate-800 shadow-2xl rounded-2xl"
              />
           </div>
         </div>

@@ -25,7 +25,7 @@ const PremiumImage: React.FC<PremiumImageProps> = ({ src, alt, className = "" })
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 skew-x-12"></div>
 
       {/* Marca d'água de Identidade */}
-      <div className="absolute bottom-6 right-6 w-12 h-12 opacity-30 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110 grayscale brightness-200">
+      <div className="absolute bottom-6 right-6 h-12 w-auto opacity-30 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110 grayscale brightness-200">
         <AnimatedLogo />
       </div>
 

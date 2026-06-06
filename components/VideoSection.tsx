@@ -60,21 +60,27 @@ const VideoSection: React.FC<VideoSectionProps> = ({
                 )}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <a 
-                  href="#contato" 
-                  className="bg-primary hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-lg text-center shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2"
-                >
-                  <i className="fa fa-clipboard-list"></i> Orçamento Grátis
-                </a>
-                <a 
-                  href={`https://api.whatsapp.com/send?phone=${COMPANY_WHATSAPP}&text=Olá%20assisti%20o%20vídeo%20no%20site%20e%20preciso%20de%20um%20orçamento${locationName !== "Curitiba e Região" ? `%20para%20${locationName}` : ''}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-[#25d366] hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-center shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2"
-                >
-                  <i className="fab fa-whatsapp"></i> Chamar no WhatsApp
-                </a>
+              <div className="flex flex-col sm:flex-row gap-6 pt-4 items-center sm:items-start text-center sm:text-left">
+                <div className="flex flex-col items-center sm:items-start w-full sm:w-auto">
+                  <a 
+                    href="#contato" 
+                    className="w-full sm:w-auto bg-primary hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-center shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                  >
+                    <i className="fa fa-clipboard-list"></i> Orçamento
+                  </a>
+                  <p className="text-[10px] text-gray-400 mt-1.5 leading-tight">Preencha os dados do local.</p>
+                </div>
+                <div className="flex flex-col items-center sm:items-start w-full sm:w-auto">
+                  <a 
+                    href={`https://api.whatsapp.com/send?phone=${COMPANY_WHATSAPP}&text=Olá%20assisti%20o%20vídeo%20no%20site%20e%20preciso%20de%20um%20orçamento${locationName !== "Curitiba e Região" ? `%20para%20${locationName}` : ''}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full sm:w-auto bg-[#25d366] hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-center shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                  >
+                    <i className="fab fa-whatsapp"></i> WhatsApp
+                  </a>
+                  <p className="text-[10px] text-gray-400 mt-1.5 leading-tight">Converse direto no aplicativo.</p>
+                </div>
               </div>
             </div>
           </div>

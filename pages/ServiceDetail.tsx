@@ -111,7 +111,8 @@ const ServiceDetail: React.FC = () => {
                    <p className="text-[10px] font-black uppercase tracking-widest opacity-60">Status Atual</p>
                    <p className="text-lg font-black text-green-400">● DISPONÍVEL AGORA</p>
                  </div>
-                 <a href="#contato" className="block bg-white text-primary font-black py-4 rounded-xl text-center hover:scale-105 transition-transform uppercase text-xs">Solicitar Orçamento</a>
+                 <a href="#contato" className="block bg-white text-primary font-black py-4 rounded-xl text-center hover:scale-105 transition-transform uppercase text-[11px] tracking-widest">Orçamento</a>
+                  <p className="text-[10px] text-white/70 mt-2 text-center">Formulário rápido sem compromisso.</p>
               </div>
 
               <div className="bg-slate-50 border border-slate-100 p-8 rounded-[2.5rem]">

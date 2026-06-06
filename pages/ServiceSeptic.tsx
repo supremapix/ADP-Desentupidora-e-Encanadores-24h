@@ -163,9 +163,12 @@ const ServiceSeptic: React.FC = () => {
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up delay-100">
             Caminhões auto vácuo de alta capacidade para esgotamento de fossas, caixas de gordura e resíduos industriais. Descarte 100% ecológico.
           </p>
-          <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all hover:scale-105 inline-block animate-bounce-slow">
-            Pedir Caminhão Agora
-          </a>
+          <div className="flex flex-col items-center justify-center">
+            <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all hover:scale-105 inline-block animate-bounce-slow">
+              Solicitar
+            </a>
+            <p className="text-[12px] text-gray-300 mt-2">Agende o envio de caminhão de auto vácuo.</p>
+          </div>
         </div>
       </section>
 
@@ -180,7 +183,7 @@ const ServiceSeptic: React.FC = () => {
              <p className="text-yellow-700 text-sm">Evite multas e contaminação. Atendemos com urgência em até 45 minutos.</p>
            </div>
            <a href="https://api.whatsapp.com/send?phone=5541985171966" className="bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition shadow-md whitespace-nowrap">
-             <i className="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
+             <i className="fab fa-whatsapp mr-2"></i> WhatsApp<span className="block text-[8px] font-normal leading-tight opacity-90 mt-0.5">Atendimento do plantão de fossa</span>
            </a>
         </div>
       </section>

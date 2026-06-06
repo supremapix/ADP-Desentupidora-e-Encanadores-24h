@@ -71,11 +71,14 @@ const Header: React.FC = () => {
               </div>
             </div>
           </div>
-          <Link to="/galeria-ia" className="font-bold text-xs text-primary hover:text-teal-700 transition-colors uppercase tracking-widest flex items-center gap-1"><i className="fa fa-magic text-[10px]"></i> Galeria IA</Link>
+          <Link to="/galeria-ia" className="font-bold text-xs text-primary hover:text-red-700 transition-colors uppercase tracking-widest flex items-center gap-1"><i className="fa fa-magic text-[10px]"></i> Galeria IA</Link>
           <Link to="/faq" className="font-bold text-xs text-gray-700 hover:text-primary transition-colors uppercase tracking-widest">Dúvidas</Link>
-          <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="bg-red-600 text-white px-6 py-3 rounded-full font-black text-xs shadow-lg hover:bg-red-700 transition-all flex items-center gap-2 uppercase">
-            <i className="fa fa-phone-alt"></i> {COMPANY_PHONE}
-          </a>
+          <div className="flex flex-col items-center">
+            <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="bg-red-600 text-white px-6 py-2.5 rounded-full font-black text-xs shadow-lg hover:bg-red-700 transition-all flex items-center gap-2 uppercase">
+              <i className="fa fa-phone-alt"></i> Ligar
+            </a>
+            <span className="text-[8px] text-gray-400 mt-1 uppercase font-semibold">Central 24h</span>
+          </div>
         </nav>
 
         {/* Mobile Toggle & Actions */}

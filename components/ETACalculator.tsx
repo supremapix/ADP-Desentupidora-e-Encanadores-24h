@@ -59,12 +59,15 @@ const ETACalculator: React.FC = () => {
         <p className="text-gray-400 text-sm">Calcule quanto tempo nossa equipe levará para chegar até você agora.</p>
 
         {status === 'idle' && (
-          <button 
-            onClick={handleCalculate}
-            className="w-full bg-primary hover:bg-teal-700 text-white font-black py-4 rounded-xl transition-all shadow-lg shadow-primary/20 uppercase text-xs tracking-widest flex items-center justify-center gap-2"
-          >
-            <i className="fa fa-location-dot"></i> Calcular Distância
-          </button>
+          <div className="flex flex-col items-center w-full">
+            <button 
+              onClick={handleCalculate}
+              className="w-full bg-primary hover:bg-red-700 text-white font-black py-4 rounded-xl transition-all shadow-lg shadow-primary/20 uppercase text-xs tracking-widest flex items-center justify-center gap-2"
+            >
+              <i className="fa fa-location-dot"></i> Calcular
+            </button>
+            <p className="text-[10px] text-gray-400 mt-1.5 text-center leading-normal">Solicita sua geolocalização para estimar o tempo.</p>
+          </div>
         )}
 
         {status === 'loading' && (
@@ -87,9 +90,12 @@ const ETACalculator: React.FC = () => {
                 </div>
              </div>
              <p className="text-[9px] mt-4 text-gray-500 italic">* Tempo médio calculado com base no tráfego atual de Curitiba.</p>
-             <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="mt-4 block bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl transition-all text-sm uppercase">
-               Confirmar Emergência
-             </a>
+             <div className="flex flex-col items-center w-full mt-4">
+               <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="w-full block bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl transition-all text-sm uppercase">
+                 Ligar
+               </a>
+               <p className="text-[9px] text-gray-400 mt-1 text-center leading-normal">Ligue para despachar nossa equipe de emergência imediatamente.</p>
+             </div>
           </div>
         )}
 

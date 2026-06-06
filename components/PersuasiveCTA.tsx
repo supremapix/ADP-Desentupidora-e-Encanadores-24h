@@ -49,13 +49,16 @@ const PersuasiveCTA: React.FC = () => {
                  <h3 className="text-3xl font-bold">Últimas 3 vagas <br/> de plantão para hoje</h3>
                </div>
                
-               <a 
-                href={`https://wa.me/${COMPANY_WHATSAPP}`}
-                className="group relative block w-full bg-[#25d366] hover:bg-green-600 text-white py-6 rounded-2xl font-black text-xl shadow-[0_20px_50px_rgba(37,211,102,0.4)] transition-all transform hover:-translate-y-2 text-center overflow-hidden"
-               >
-                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
-                 <i className="fab fa-whatsapp mr-3"></i> WHATSAPP URGENTE
-               </a>
+               <div className="flex flex-col items-center w-full">
+                 <a 
+                  href={`https://wa.me/${COMPANY_WHATSAPP}`}
+                  className="group relative block w-full bg-[#25d366] hover:bg-green-600 text-white py-6 rounded-2xl font-black text-xl shadow-[0_20px_50px_rgba(37,211,102,0.4)] transition-all transform hover:-translate-y-2 text-center overflow-hidden"
+                 >
+                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+                   <i className="fab fa-whatsapp mr-3"></i> WhatsApp
+                 </a>
+                 <p className="text-[10px] text-gray-400 mt-2 text-center">Fale com um técnico de plantão para atendimento de emergência.</p>
+               </div>
 
                <div className="flex justify-center lg:justify-start gap-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
                  <span className="flex items-center gap-1"><i className="fa fa-lock text-primary"></i> 100% Seguro</span>

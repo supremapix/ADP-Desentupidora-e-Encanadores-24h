@@ -108,12 +108,15 @@ const ImageGallery: React.FC = () => {
             <p className="font-bold mb-1"><i className="fa fa-info-circle"></i> Importante:</p>
             Acesse <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noreferrer" className="underline font-bold">ai.google.dev/gemini-api/docs/billing</a> para configurar sua conta paga.
           </div>
-          <button 
-            onClick={handleSelectKey}
-            className="w-full bg-primary hover:bg-teal-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-1"
-          >
-            Selecionar Chave de API
-          </button>
+          <div className="flex flex-col items-center w-full">
+            <button 
+              onClick={handleSelectKey}
+              className="w-full bg-primary hover:bg-red-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-1"
+            >
+              Selecionar
+            </button>
+            <p className="text-[11px] text-gray-500 mt-2 text-center">Informe sua chave de API pessoal do Google Gemini.</p>
+          </div>
         </div>
       </main>
     );
@@ -187,22 +190,25 @@ const ImageGallery: React.FC = () => {
               />
             </div>
 
-            <button
-              type="submit"
-              disabled={loading || !prompt.trim()}
-              className={`w-full py-6 rounded-2xl font-bold text-xl text-white shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-4 ${loading || !prompt.trim() ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary hover:bg-teal-700 shadow-primary/30'}`}
-            >
-              {loading ? (
-                <>
-                  <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  Processando Alta Qualidade...
-                </>
-              ) : (
-                <>
-                  <i className="fa fa-wand-magic-sparkles"></i> Renderizar Imagem {imageSize}
-                </>
-              )}
-            </button>
+            <div className="flex flex-col items-center w-full">
+              <button
+                type="submit"
+                disabled={loading || !prompt.trim()}
+                className={`w-full py-6 rounded-2xl font-bold text-xl text-white shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-4 ${loading || !prompt.trim() ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary hover:bg-red-700 shadow-primary/30'}`}
+              >
+                {loading ? (
+                  <>
+                    <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    Processando...
+                  </>
+                ) : (
+                  <>
+                    <i className="fa fa-wand-magic-sparkles"></i> Gerar
+                  </>
+                )}
+              </button>
+              <p className="text-[10px] text-gray-400 mt-2 text-center leading-normal">Solicita o modelo Gemini canônico para sintetizar a imagem técnica em {imageSize}.</p>
+            </div>
           </form>
 
           {error && (

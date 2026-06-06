@@ -74,3 +74,52 @@ export const SERVICES_DETAILED = [
   { id: "limpeza-de-fossa", title: "Limpeza de Fossa", desc: "Esgotamento com caminhão vácuo e descarte em estação de tratamento certificada." },
   { id: "video-inspecao", title: "Vídeo Inspeção", desc: "Localização precisa de problemas estruturais com câmeras de alta definição." }
 ];
+
+export const ADP_IMAGES = {
+  vaso: "https://encanadorcuritiba.desentopeadp.com.br/assets/images/desentupidor-de-vaso-sanitrio-profissional-em-curitiba-adp-soluo-eficaz-para-obstrues-493x491-493x491.png",
+  cicBase: "https://encanadorcuritiba.desentopeadp.com.br/assets/images/adp-desentupidora-no-cic-cidade-industrial-em-curitiba-1024x1024.png",
+  atendimentoTriplo: "https://encanadorcuritiba.desentopeadp.com.br/assets/images/desentupidora-adp-atendemos-curitiba-cic-sabara-e-tatuquara-875x1167.jpg",
+  caminhaoCic: "https://encanadorcuritiba.desentopeadp.com.br/assets/images/caminhao-desentupimento-cidade-industrial-em-curitiba-890x890.png",
+  squadSabara: "https://encanadorcuritiba.desentopeadp.com.br/assets/images/adp-desentupidora-cic-dp-desentupidora-no-sabar-desentupimos-ralos-esgotos-vasos-e-muito-mais.-atendimento-gil-e-preo-justo-875x875.png",
+  caminhaoRed: "https://encanadorcuritiba.desentopeadp.com.br/assets/images/adp-desentupidora-cic-875x875.png",
+  sabaraCard: "https://encanadorcuritiba.desentopeadp.com.br/assets/images/servio-de-desentupimento-no-sabar-com-atendimento-rpido-e-garantia.-pea-seu-oramento-sem-compromisso-875x875.png",
+  cicCard: "https://encanadorcuritiba.desentopeadp.com.br/assets/images/desentupimento-de-esgoto-vaso-e-ralos-no-cic.-atendimento-24h-sem-sujeira.-chame-a-adp-desentupidora-875x875.png"
+};
+
+export const getADPImage = (locationName: string, serviceType?: string): string => {
+  const norm = slugify(locationName);
+  
+  // Se for específico do Sabará
+  if (norm.includes("sabara")) {
+    if (Math.random() > 0.5) {
+      return ADP_IMAGES.sabaraCard;
+    }
+    return ADP_IMAGES.squadSabara;
+  }
+  
+  // Se for específico do CIC
+  if (norm.includes("cic") || norm.includes("industrial")) {
+    const r = Math.random();
+    if (r < 0.33) return ADP_IMAGES.cicCard;
+    if (r < 0.66) return ADP_IMAGES.caminhaoCic;
+    return ADP_IMAGES.cicBase;
+  }
+  
+  // Se pedir vaso ou bloqueio sanitário
+  if (serviceType?.includes("vaso") || serviceType?.includes("sanitario") || norm.includes("vaso")) {
+    return ADP_IMAGES.vaso;
+  }
+
+  // Distribuição geral determinística para garantir páginas bonitas e consistentes por localidade
+  const sum = norm.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const pool = [
+    ADP_IMAGES.caminhaoRed,
+    ADP_IMAGES.cicBase,
+    ADP_IMAGES.atendimentoTriplo,
+    ADP_IMAGES.caminhaoCic,
+    ADP_IMAGES.squadSabara,
+    ADP_IMAGES.vaso
+  ];
+  return pool[sum % pool.length];
+};
+

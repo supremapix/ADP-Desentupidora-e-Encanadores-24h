@@ -10,6 +10,7 @@ import ServiceSeptic from './pages/ServiceSeptic';
 import FAQPage from './pages/FAQPage';
 import NotFound from './pages/NotFound';
 import LegacyDesentupidora from './pages/LegacyDesentupidora';
+import Glossario from './pages/Glossario';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -62,7 +63,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col font-sans text-gray-800">
+      <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-lightGray">
         <Header />
         <div className="flex-grow">
           <Routes>
@@ -76,6 +77,7 @@ const App: React.FC = () => {
             <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
             
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/glossario" element={<Glossario />} />
 
             {/* Legacy URL Route - Para capturar tráfego antigo */}
             <Route path="/desentupidora.html" element={<LegacyDesentupidora />} />

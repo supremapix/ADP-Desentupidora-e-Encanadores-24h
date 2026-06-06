@@ -30,13 +30,19 @@ const LegacyDesentupidora: React.FC = () => {
           <p className="text-xl text-gray-300 mb-8">
             A ADP modernizou sua estrutura. Continuamos oferecendo o melhor atendimento 24h com chegada em 40 minutos.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`https://api.whatsapp.com/send?phone=${COMPANY_WHATSAPP}`} className="bg-[#25d366] hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
-              <i className="fab fa-whatsapp text-xl"></i> Chamar no WhatsApp
-            </a>
-            <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
-              <i className="fa fa-phone text-xl"></i> Ligar (41) 3345-1194
-            </a>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col items-center w-full sm:w-auto">
+              <a href={`https://api.whatsapp.com/send?phone=${COMPANY_WHATSAPP}`} className="w-full sm:w-auto bg-[#25d366] hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                <i className="fab fa-whatsapp text-xl"></i> WhatsApp
+              </a>
+              <p className="text-[10px] text-gray-400 mt-1.5 leading-tight">Fale com atendentes de plantão.</p>
+            </div>
+            <div className="flex flex-col items-center w-full sm:w-auto">
+              <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                <i className="fa fa-phone text-xl"></i> Ligar
+              </a>
+              <p className="text-[10px] text-gray-400 mt-1.5 leading-tight">Ligue para a central telefônica ADP.</p>
+            </div>
           </div>
         </div>
       </section>

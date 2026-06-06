@@ -16,19 +16,25 @@ const NotFound: React.FC = () => {
           Se você precisa de atendimento urgente, use os botões abaixo.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link 
-            to="/" 
-            className="bg-primary hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1"
-          >
-            <i className="fa fa-home mr-2"></i> Voltar para Home
-          </Link>
-          <a 
-            href="https://api.whatsapp.com/send?phone=5541985171966" 
-            className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1"
-          >
-            <i className="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
-          </a>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex flex-col items-center w-full sm:w-auto">
+            <Link 
+              to="/" 
+              className="w-full sm:w-auto bg-primary hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2"
+            >
+              <i className="fa fa-home"></i> Home
+            </Link>
+            <p className="text-[10px] text-gray-400 mt-1.5 leading-tight">Retorne para a página inicial.</p>
+          </div>
+          <div className="flex flex-col items-center w-full sm:w-auto">
+            <a 
+              href="https://api.whatsapp.com/send?phone=5541985171966" 
+              className="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2"
+            >
+              <i className="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <p className="text-[10px] text-gray-400 mt-1.5 leading-tight">Fale diretamente com nossa equipe.</p>
+          </div>
         </div>
       </div>
     </main>

@@ -61,7 +61,7 @@ const FloatingButtons: React.FC = () => {
         <div className="fixed bottom-5 right-5 z-[9999]">
           <button 
             onClick={scrollToTop} 
-            className="bg-primary hover:bg-teal-700 w-[50px] h-[50px] rounded-full shadow-lg text-white flex items-center justify-center transition-all duration-300 transform hover:-translate-y-2"
+            className="bg-primary hover:bg-red-700 w-[50px] h-[50px] rounded-full shadow-lg text-white flex items-center justify-center transition-all duration-300 transform hover:-translate-y-2"
           >
             <i className="fa fa-arrow-up text-xl"></i>
           </button>

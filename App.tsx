@@ -13,6 +13,8 @@ import FAQPage from './pages/FAQPage';
 import ImageGallery from './pages/ImageGallery';
 import NotFound from './pages/NotFound';
 import LegacyDesentupidora from './pages/LegacyDesentupidora';
+import Glossario from './pages/Glossario';
+import SitemapPage from './pages/SitemapPage';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -35,7 +37,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-secondary">
+      <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-lightGray">
         <Header />
         <div className="flex-grow">
           <Routes>
@@ -54,6 +56,8 @@ const App: React.FC = () => {
             <Route path="/cidade/:slug" element={<RegionPage type="cidade" />} />
             
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/glossario" element={<Glossario />} />
+            <Route path="/mapa-do-site" element={<SitemapPage />} />
             <Route path="/desentupidora.html" element={<LegacyDesentupidora />} />
             
             <Route path="*" element={<NotFound />} />

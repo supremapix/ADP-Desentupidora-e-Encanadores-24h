@@ -2,15 +2,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PremiumImage from './PremiumImage';
-import { SERVICES_LIST, COMPANY_PHONE, COMPANY_WHATSAPP, BAIRROS } from '../constants';
+import { SERVICES_LIST, COMPANY_PHONE, COMPANY_WHATSAPP, BAIRROS, ADP_IMAGES } from '../constants';
 
 export const HeroSection = () => (
   <section className="relative bg-slate-950 text-white pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden border-b border-white/5">
     <div className="absolute inset-0 z-0">
       <img 
-        src="https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=2670&auto=format&fit=crop" 
+        src={ADP_IMAGES.caminhaoCic} 
         alt="Saneamento Profissional" 
-        className="absolute inset-0 w-full h-full object-cover opacity-20 animate-zoom-slow"
+        className="absolute inset-0 w-full h-full object-cover opacity-25 animate-zoom-slow filter brightness-75"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-primary/10"></div>
     </div>
@@ -21,20 +21,26 @@ export const HeroSection = () => (
           <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span> 
           BASE OPERACIONAL CIC - CURITIBA & RMC
         </div>
-        <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-black leading-[0.85] uppercase tracking-tighter">
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black leading-tight uppercase tracking-tighter">
           CHEGA DE <br/>
           <span className="text-primary drop-shadow-[0_0_30px_rgba(57,132,122,0.6)]">PREÇO POR METRO</span>
         </h1>
         <p className="text-base text-gray-300 leading-relaxed max-w-xl font-light">
           Orçamento <strong>fechado e transparente</strong> no local. Tecnologia industrial para resolver seu entupimento seguindo as normas NBR 8160.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start">
-          <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="btn-shimmer bg-[#25d366] text-white px-8 py-4 rounded-2xl font-black text-lg shadow-[0_20px_40px_rgba(37,211,102,0.4)] hover:scale-105 transition-all flex items-center justify-center gap-3">
-            <i className="fab fa-whatsapp text-2xl"></i> WHATSAPP URGENTE
-          </a>
-          <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="bg-white/5 border border-white/10 backdrop-blur-md text-white px-6 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-3">
-             <i className="fa fa-phone-alt text-primary"></i> {COMPANY_PHONE}
-          </a>
+        <div className="flex flex-col sm:flex-row gap-6 pt-2 justify-center lg:justify-start items-center sm:items-start">
+          <div className="flex flex-col items-center lg:items-start w-full sm:w-auto max-w-[280px]">
+            <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="w-full btn-shimmer bg-[#25d366] text-white px-8 py-4 rounded-xl font-black text-lg shadow-[0_20px_40px_rgba(37,211,102,0.4)] hover:scale-105 transition-all flex items-center justify-center gap-3">
+              <i className="fab fa-whatsapp text-2xl"></i> WhatsApp
+            </a>
+            <p className="text-[10px] text-gray-400 mt-1.5 text-center lg:text-left leading-tight">Orçamento rápido e sem taxa de visita.</p>
+          </div>
+          <div className="flex flex-col items-center lg:items-start w-full sm:w-auto max-w-[280px]">
+            <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="w-full bg-white/5 border border-white/10 backdrop-blur-md text-white px-6 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-3">
+               <i className="fa fa-phone-alt text-primary"></i> Ligar
+            </a>
+            <p className="text-[10px] text-gray-400 mt-1.5 text-center lg:text-left leading-tight">Atendimento emergencial imediato 24h.</p>
+          </div>
         </div>
       </div>
       
@@ -55,7 +61,7 @@ export const HeroSection = () => (
 
 export const ArsenalSection = () => (
   <section className="py-12 bg-dark relative overflow-hidden">
-     <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#39847a15_1px,transparent_1px)] [background-size:20px_20px] opacity-40"></div>
+     <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#9B111E15_1px,transparent_1px)] [background-size:20px_20px] opacity-40"></div>
      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
            <h2 className="text-white font-display text-3xl font-black uppercase tracking-tight">Arsenal <span className="text-primary">Tecnológico</span></h2>
@@ -139,12 +145,17 @@ export const ServiceCards = () => (
           { title: "Limpeza de Fossa", icon: "fa-truck", color: "bg-dark text-white", desc: "Esgotamento técnico com descarte certificado e laudo ambiental.", link: "/servicos/limpeza-de-fossa" },
           { title: "Vídeo Inspeção", icon: "fa-search", color: "bg-slate-50 text-dark border", desc: "Diagnóstico preciso por micro-câmeras HD sem quebra de piso.", link: "/servicos/video-inspecao" }
         ].map((item, i) => (
-          <div key={i} className={`${item.color} p-8 rounded-[3rem] shadow-xl space-y-4 hover:-translate-y-2 transition-all relative overflow-hidden group`}>
-            <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -mr-12 -mt-12 group-hover:scale-125 transition-transform"></div>
-            <i className={`fa ${item.icon} text-4xl opacity-30`}></i>
-            <h3 className="text-2xl font-black font-display uppercase tracking-tight">{item.title}</h3>
-            <p className="opacity-70 text-sm leading-relaxed">{item.desc}</p>
-            <Link to={item.link} className="block w-full text-center py-3 rounded-xl font-black text-[10px] uppercase tracking-widest bg-white text-primary hover:bg-primary hover:text-white transition-all">Saber Mais</Link>
+          <div key={i} className={`${item.color} p-8 rounded-[3rem] shadow-xl space-y-4 hover:-translate-y-2 transition-all relative overflow-hidden group flex flex-col justify-between`}>
+            <div className="space-y-4">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -mr-12 -mt-12 group-hover:scale-125 transition-transform"></div>
+              <i className={`fa ${item.icon} text-4xl opacity-30`}></i>
+              <h3 className="text-xl md:text-2xl font-black font-display uppercase tracking-tight">{item.title}</h3>
+              <p className="opacity-70 text-xs md:text-sm leading-relaxed">{item.desc}</p>
+            </div>
+            <div className="pt-4">
+              <Link to={item.link} className="block w-full text-center py-3 rounded-xl font-black text-[10px] uppercase tracking-widest bg-white text-primary hover:bg-primary hover:text-white transition-all">Detalhes</Link>
+              <p className="text-[9px] opacity-60 text-center mt-1.5 font-semibold">Consulte laudos e especificações.</p>
+            </div>
           </div>
         ))}
       </div>
@@ -156,7 +167,7 @@ export const ContentExpansionSection = () => (
   <section className="py-12 bg-white relative">
     <div className="container mx-auto px-4 max-w-6xl">
       <div className="grid lg:grid-cols-2 gap-10 items-center">
-        <PremiumImage src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop" alt="Engenharia ADP" className="aspect-video" />
+        <PremiumImage src={ADP_IMAGES.atendimentoTriplo} alt="Engenharia ADP" className="aspect-video shadow-2xl border-4 border-slate-100 rounded-3xl" />
         <div className="space-y-4">
           <h2 className="text-4xl font-display font-black text-dark tracking-tighter uppercase leading-none">REFERÊNCIA <br/><span className="text-primary">SANEAMENTO</span></h2>
           <p className="text-sm text-gray-600 leading-relaxed font-light">A ADP utiliza protocolos de engenharia para garantir a fluidez total da rede pluvial e sanitária. Atendemos indústrias, comércios e residências com precisão militar no CIC e toda Curitiba.</p>

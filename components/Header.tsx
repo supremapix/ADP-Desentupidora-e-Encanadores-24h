@@ -31,7 +31,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Branding */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className={`transition-all duration-500 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} group-hover:scale-105`}>
+          <div className={`transition-all duration-500 ${isScrolled ? 'h-10' : 'h-14'} w-auto max-w-[180px] flex items-center justify-center group-hover:scale-105`}>
             <AnimatedLogo />
           </div>
           <div className="flex flex-col">
@@ -59,9 +59,12 @@ const Header: React.FC = () => {
             </div>
           </div>
           <Link to="/faq" className="font-bold text-xs text-gray-700 hover:text-primary transition-colors uppercase tracking-widest">Dúvidas</Link>
-          <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="bg-red-600 text-white px-6 py-3 rounded-full font-black text-xs shadow-lg hover:bg-red-700 transition-all flex items-center gap-2 uppercase">
-            <i className="fa fa-phone-alt"></i> {COMPANY_PHONE}
-          </a>
+          <div className="flex flex-col items-center">
+            <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="bg-red-600 text-white px-6 py-2.5 rounded-full font-black text-xs shadow-lg hover:bg-red-700 transition-all flex items-center gap-2 uppercase">
+              <i className="fa fa-phone-alt"></i> Ligar
+            </a>
+            <span className="text-[8px] text-gray-400 mt-1 uppercase font-semibold">Central 24h</span>
+          </div>
         </nav>
 
         {/* Mobile Toggle */}
@@ -86,7 +89,7 @@ const Header: React.FC = () => {
       <div className={`fixed top-0 right-0 h-full w-[280px] bg-white z-[100] lg:hidden transition-transform shadow-2xl ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="p-6 flex flex-col h-full">
           <div className="flex justify-between items-center mb-8">
-            <div className="w-12 h-12"><AnimatedLogo /></div>
+            <div className="h-10 w-auto flex items-center justify-center"><AnimatedLogo /></div>
             <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-400"><i className="fa fa-times text-xl"></i></button>
           </div>
 
@@ -101,16 +104,22 @@ const Header: React.FC = () => {
               <Link to="/servicos/desentupimento-de-vaso" className="font-bold text-gray-700 flex items-center gap-3"><i className="fa fa-toilet text-primary"></i> Vaso Sanitário</Link>
             </div>
 
-            <Link to="/faq" className="text-lg font-bold text-gray-700 border-t pt-4">Dúvidas Frequentes</Link>
+            <Link to="/faq" className="text-lg font-bold text-gray-700 border-t pt-4 block">Dúvidas Frequentes</Link>
           </nav>
 
-          <div className="mt-auto space-y-3">
-             <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="flex items-center justify-center gap-2 p-4 bg-green-500 text-white rounded-xl font-bold shadow-lg">
-               <i className="fab fa-whatsapp"></i> WhatsApp 24h
-             </a>
-             <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="flex items-center justify-center gap-2 p-4 bg-red-600 text-white rounded-xl font-bold shadow-lg">
-               <i className="fa fa-phone-alt"></i> {COMPANY_PHONE}
-             </a>
+          <div className="mt-auto space-y-4">
+             <div className="flex flex-col items-center w-full">
+               <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="w-full flex items-center justify-center gap-2 p-3 bg-green-500 text-white rounded-xl font-bold shadow-lg">
+                 <i className="fab fa-whatsapp"></i> WhatsApp
+               </a>
+               <p className="text-[9px] text-gray-400 mt-1 text-center font-medium">Fale com atendentes no Whats.</p>
+             </div>
+             <div className="flex flex-col items-center w-full">
+               <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="w-full flex items-center justify-center gap-2 p-3 bg-red-600 text-white rounded-xl font-bold shadow-lg">
+                 <i className="fa fa-phone-alt"></i> Ligar
+               </a>
+               <p className="text-[9px] text-gray-400 mt-1 text-center font-medium">Ligue para nossa central 24h.</p>
+             </div>
           </div>
         </div>
       </div>

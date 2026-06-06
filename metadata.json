@@ -1,7 +1,10 @@
 {
-  "name": "ADP Desentupidora",
-  "description": "Professional plumbing and unclogging services in Curitiba and metropolitan region. 24/7 emergency service.",
+  "name": "ADP Desentupidora Curitiba 24h",
+  "description": "Desentupidora 24 Horas em Curitiba e Região Metropolitana. Atendimento tático em 40 minutos com preço fechado, garantia de 90 dias e orçamento grátis.",
   "requestFramePermissions": [
     "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
   ]
 }
