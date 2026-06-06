@@ -5,6 +5,7 @@ import ContactForm from '../components/ContactForm';
 import PremiumImage from '../components/PremiumImage';
 import ETACalculator from '../components/ETACalculator';
 import PersuasiveCTA from '../components/PersuasiveCTA';
+import EnhancedSEO from '../components/EnhancedSEO';
 import { SERVICES_DETAILED, COMPANY_SITE } from '../constants';
 import VideoSection from '../components/VideoSection';
 
@@ -14,14 +15,15 @@ const ServiceDetail: React.FC = () => {
 
   useEffect(() => {
     if (service) {
-      document.title = `${service.title} em Curitiba 24h | Manual Técnico ADP`;
       window.scrollTo(0, 0);
     }
   }, [service]);
 
   if (!service) return <Navigate to="/" />;
 
-  const canonicalUrl = `${COMPANY_SITE}/servicos/${service.id}`;
+  const pagePath = `/servicos/${service.id}`;
+  const pageTitle = `${service.title} Curitiba | ADP Desentupidora 24h`;
+  const pageDescription = `Serviço especializado de ${service.title.toLowerCase()} em Curitiba. Atendimento imediato 24h residencial, comercial e industrial. Visita gratuita e preço aberto antes de iniciar.`;
 
   const serviceImages: Record<string, string> = {
     'desentupimento-de-vaso': 'https://img.desentopeadp.com.br/desentupir-vaso.webp',
@@ -31,9 +33,35 @@ const ServiceDetail: React.FC = () => {
     'default': 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=2000&auto=format&fit=crop'
   };
 
+  const currentImage = serviceImages[service.id] || serviceImages['default'];
+
+  // Dedicated Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.desc || pageDescription,
+    "serviceType": service.title,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "ADP Desentupidora",
+      "telephone": "+55-41-3345-1194"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Curitiba"
+    }
+  };
+
   return (
     <main className="bg-white">
-      <link rel="canonical" href={canonicalUrl} />
+      <EnhancedSEO 
+        title={pageTitle}
+        description={pageDescription}
+        path={pagePath}
+        image={currentImage}
+        structuredData={serviceSchema}
+      />
       
       <section className="bg-dark text-white pt-32 pb-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-15">

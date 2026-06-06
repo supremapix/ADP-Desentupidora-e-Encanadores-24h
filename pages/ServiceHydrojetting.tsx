@@ -2,15 +2,34 @@
 import React, { useEffect } from 'react';
 import ContactForm from '../components/ContactForm';
 import VideoSection from '../components/VideoSection';
+import EnhancedSEO from '../components/EnhancedSEO';
 
 const ServiceHydrojetting: React.FC = () => {
   useEffect(() => {
-    document.title = "Hidrojateamento Curitiba 24h | Desentupimento de Alta Pressão";
     window.scrollTo(0, 0);
   }, []);
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Hidrojateamento de Alta Pressão",
+    "name": "Serviço de Hidrojateamento Curitiba",
+    "description": "Limpeza técnica profunda, desobstrução de encanamentos comerciais, industriais e de redes coletoras de esgoto com hidrojateamento de alta pressão.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "ADP Desentupidora",
+      "telephone": "+55-41-3345-1194"
+    }
+  };
+
   return (
     <main>
+      <EnhancedSEO 
+        title="Hidrojateamento Curitiba 24h | Desentupimento de Alta Pressão"
+        description="Equipamentos industriais táticos de hidrojateamento para redes de esgoto, galerias pluviais e colunas prediais. Atendimento 24h em Curitiba e Região."
+        path="/servicos/hidrojateamento"
+        structuredData={schemaData}
+      />
       <section className="bg-primary text-white py-24 text-center">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-display font-bold">Hidrojateamento Profissional</h1>

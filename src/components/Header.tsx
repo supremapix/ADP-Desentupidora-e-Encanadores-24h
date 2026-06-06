@@ -40,7 +40,7 @@ const Header: React.FC = () => {
       className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
         isScrolled 
           ? 'bg-white shadow-xl py-2' 
-          : 'bg-white py-4 lg:bg-white/95 lg:backdrop-blur-md' 
+          : 'bg-white shadow-md py-2.5 lg:py-4 lg:bg-white/95 lg:backdrop-blur-md' 
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -108,13 +108,17 @@ const Header: React.FC = () => {
       
       {/* Mobile Drawer - 100% Solid White */}
       <div 
-        className={`fixed top-0 right-0 h-full w-[310px] bg-white z-[100] lg:hidden transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) shadow-[-20px_0_60px_rgba(0,0,0,0.15)] ${
+        className={`fixed top-0 right-0 h-full w-[310px] z-[100] lg:hidden transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) shadow-[-20px_0_60px_rgba(0,0,0,0.15)] ${
           isMobileMenuOpen ? 'translate-x-0 is-open' : 'translate-x-full'
         }`}
+        style={{ backgroundColor: '#ffffff', opacity: 1 }}
       >
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full bg-white" style={{ backgroundColor: '#ffffff' }}>
           {/* Drawer Header */}
-          <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50/80">
+          <div 
+            className="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50/95"
+            style={{ backgroundColor: '#f9fafb' }}
+          >
             <div className="w-10 h-10"><AnimatedLogo /></div>
             <span className="font-display font-black text-dark text-xs tracking-widest uppercase">Navegação ADP</span>
             <button onClick={() => setIsMobileMenuOpen(false)} className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-500 active:scale-90 transition-transform">
@@ -123,7 +127,10 @@ const Header: React.FC = () => {
           </div>
 
           {/* Links Staggered */}
-          <nav className="flex-grow p-6 space-y-2 overflow-y-auto bg-white">
+          <nav 
+            className="flex-grow p-6 space-y-2 overflow-y-auto bg-white"
+            style={{ backgroundColor: '#ffffff' }}
+          >
             {navLinks.map((link, idx) => (
               <Link 
                 key={idx} 
@@ -139,7 +146,10 @@ const Header: React.FC = () => {
           </nav>
 
           {/* Call to Actions - Fundo Sólido e Alto Contraste */}
-          <div className="p-6 bg-gray-50 border-t border-gray-100 space-y-3">
+          <div 
+            className="p-6 bg-gray-50 border-t border-gray-100 space-y-3"
+            style={{ backgroundColor: '#f9fafb' }}
+          >
              <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] text-center mb-2">Atendimento Imediato</p>
              <a 
               href={`https://wa.me/${COMPANY_WHATSAPP}`} 

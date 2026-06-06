@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
@@ -35,39 +36,42 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-lightGray">
-        <Header />
-        <div className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            
-            {/* Serviços Específicos */}
-            <Route path="/servicos/hidrojateamento" element={<ServiceHydrojetting />} />
-            <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
-            
-            {/* Galeria IA PRO */}
-            <Route path="/galeria-ia" element={<ImageGallery />} />
-            
-            {/* Outros Serviços e SEO Local */}
-            <Route path="/servicos/:id" element={<ServiceDetail />} />
-            <Route path="/bairro/:slug" element={<RegionPage type="bairro" />} />
-            <Route path="/cidade/:slug" element={<RegionPage type="cidade" />} />
-            
-            <Route path="/faq" element={<FAQPage />} />
-            <Route path="/glossario" element={<Glossario />} />
-            <Route path="/mapa-do-site" element={<SitemapPage />} />
-            <Route path="/desentupidora.html" element={<LegacyDesentupidora />} />
-            
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-lightGray">
+          <Header />
+          <div className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              
+              {/* Serviços Específicos */}
+              <Route path="/servicos/hidrojateamento" element={<ServiceHydrojetting />} />
+              <Route path="/servicos/limpeza-de-fossa" element={<ServiceSeptic />} />
+              
+              {/* Galeria IA PRO */}
+              <Route path="/galeria-ia" element={<ImageGallery />} />
+              
+              {/* Outros Serviços e SEO Local */}
+              <Route path="/servicos/:id" element={<ServiceDetail />} />
+              <Route path="/bairro/:slug" element={<RegionPage type="bairro" />} />
+              <Route path="/cidade/:slug" element={<RegionPage type="cidade" />} />
+              
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="/glossario" element={<Glossario />} />
+              <Route path="/mapa-do-site" element={<SitemapPage />} />
+              <Route path="/desentupidora.html" element={<LegacyDesentupidora />} />
+              
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+          <Footer />
+          <FloatingButtons />
         </div>
-        <Footer />
-        <FloatingButtons />
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 };
 
 export default App;
+

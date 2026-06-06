@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import EnhancedSEO from '../components/EnhancedSEO';
 import { HeroSection, ContentExpansionSection, PremiumHighlightSection, ServiceCards, TechnicalAccordion, ArsenalSection } from '../components/HomeSections';
 import ContactForm from '../components/ContactForm';
 import VideoSection from '../components/VideoSection';
@@ -8,13 +9,18 @@ import ETACalculator from '../components/ETACalculator';
 
 const Home: React.FC = () => {
   useEffect(() => {
-    document.title = "ADP Saneamento | Desentupidora Curitiba 24h - Preço Fechado";
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <main className="overflow-x-hidden bg-white">
+      <EnhancedSEO 
+        title="ADP Desentupidora Curitiba | R$ 79,90 o metro | 24h"
+        description="Desentupidora em Curitiba 24h. Chegada em 30 min, a partir de R$ 79,90 o metro linear. Todos os bairros. Ligue (41) 3345-1194 ou WhatsApp (41) 98517-1966."
+        path="/"
+      />
       <HeroSection />
+
       
       {/* Bloco de Ação Imediata - Sem espaços vazios */}
       <section className="py-6 bg-white relative z-20">

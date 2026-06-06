@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ContactForm from '../components/ContactForm';
+import EnhancedSEO from '../components/EnhancedSEO';
 
 const FAQPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -7,9 +8,9 @@ const FAQPage: React.FC = () => {
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
 
   useEffect(() => {
-    document.title = "Perguntas Frequentes (FAQ) - Guia Completo ADP Desentupidora";
     window.scrollTo(0, 0);
   }, []);
+
 
   const toggleSection = (section: string) => {
     setOpenSection(openSection === section ? null : section);
@@ -207,10 +208,12 @@ const FAQPage: React.FC = () => {
 
   return (
     <main>
-       {/* Schema.org Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      <EnhancedSEO 
+        title="Perguntas Frequentes (FAQ) - Guia Completo ADP Desentupidora"
+        description="Tire suas dúvidas sobre serviços de desentupimento em Curitiba, preços, formas de pagamento, responsabilidade entre inquilinos e condomínios, e mais."
+        path="/faq"
+        type="article"
+        structuredData={faqSchema}
       />
       
       <section className="bg-dark text-white py-20 text-center">

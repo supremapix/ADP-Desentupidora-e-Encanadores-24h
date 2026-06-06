@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import ContactForm from '../components/ContactForm';
 import VideoSection from '../components/VideoSection';
+import EnhancedSEO from '../components/EnhancedSEO';
 
 const ServiceSeptic: React.FC = () => {
   useEffect(() => {
-    document.title = "Limpeza de Fossa Séptica 24h - ADP Desentupidora Curitiba";
     window.scrollTo(0, 0);
   }, []);
+
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -145,9 +146,11 @@ const ServiceSeptic: React.FC = () => {
 
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      <EnhancedSEO 
+        title="Limpeza de Fossa Séptica 24h - ADP Desentupidora Curitiba"
+        description="Esgotamento e limpeza profissional de fossas sépticas com caminhão vácuo em Curitiba e Região Metropolitana. Descarte certificado na Sanepar."
+        path="/servicos/limpeza-de-fossa"
+        structuredData={schemaData}
       />
 
       {/* Hero Section */}

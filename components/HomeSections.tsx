@@ -15,7 +15,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative bg-slate-950 text-white pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden border-b border-white/5">
+    <section className="relative bg-slate-950 text-white pt-32 pb-12 sm:pt-36 lg:pt-44 lg:pb-20 overflow-hidden border-b border-white/5">
       <div className="absolute inset-0 z-0">
         <img 
           src="https://img.desentopeadp.com.br/hero-adp.webp" 

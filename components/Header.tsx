@@ -25,7 +25,7 @@ const Header: React.FC = () => {
       className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
         isScrolled 
           ? 'bg-white shadow-xl py-2' 
-          : 'bg-white/95 backdrop-blur-md py-4'
+          : 'bg-white shadow-md py-2.5 lg:py-4 lg:bg-white/95 lg:backdrop-blur-md'
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -83,38 +83,42 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer Simplificado */}
-      <div className={`fixed inset-0 bg-dark/50 backdrop-blur-sm z-[90] lg:hidden transition-opacity ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`} onClick={() => setIsMobileMenuOpen(false)}></div>
+      <div className={`fixed inset-0 bg-dark/60 backdrop-blur-sm z-[90] lg:hidden transition-opacity ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`} onClick={() => setIsMobileMenuOpen(false)}></div>
       
-      <div className={`fixed top-0 right-0 h-full w-[280px] bg-white z-[100] lg:hidden transition-transform shadow-2xl ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="p-6 flex flex-col h-full">
-          <div className="flex justify-between items-center mb-8">
-            <div className="h-10 w-auto flex items-center justify-center"><AnimatedLogo /></div>
-            <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-400"><i className="fa fa-times text-xl"></i></button>
+      <div 
+        className={`fixed top-0 right-0 h-full w-[280px] z-[100] lg:hidden transition-transform shadow-2xl ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        style={{ backgroundColor: '#ffffff', opacity: 1 }}
+      >
+        <div className="p-6 flex flex-col h-full bg-white" style={{ backgroundColor: '#ffffff' }}>
+          <div className="flex justify-between items-center mb-8 bg-white" style={{ backgroundColor: '#ffffff' }}>
+            <div className="h-10 w-auto flex items-center justify-center bg-white" style={{ backgroundColor: '#ffffff' }}><AnimatedLogo /></div>
+            <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-400 bg-white" style={{ backgroundColor: '#ffffff' }}><i className="fa fa-times text-xl"></i></button>
           </div>
-
-          <nav className="flex flex-col gap-5">
+ 
+          <nav className="flex flex-col gap-5 bg-white" style={{ backgroundColor: '#ffffff' }}>
             <Link to="/" className="text-lg font-black text-dark border-b pb-2">Início</Link>
             
-            <div className="space-y-3">
-              <p className="text-[10px] font-bold text-primary uppercase tracking-widest">Serviços Mais Pedidos</p>
+            <div className="space-y-3 bg-white" style={{ backgroundColor: '#ffffff' }}>
+              <p className="text-[10px] font-bold text-primary uppercase tracking-widest bg-white">Serviços Mais Pedidos</p>
               <Link to="/servicos/hidrojateamento" className="font-bold text-gray-700 flex items-center gap-3"><i className="fa fa-water text-primary"></i> Hidrojateamento</Link>
               <Link to="/servicos/limpeza-de-fossa" className="font-bold text-gray-700 flex items-center gap-3"><i className="fa fa-truck text-primary"></i> Limpeza de Fossa</Link>
               <Link to="/servicos/desentupimento-de-pia" className="font-bold text-gray-700 flex items-center gap-3"><i className="fa fa-utensils text-primary"></i> Pia de Cozinha</Link>
               <Link to="/servicos/desentupimento-de-vaso" className="font-bold text-gray-700 flex items-center gap-3"><i className="fa fa-toilet text-primary"></i> Vaso Sanitário</Link>
             </div>
-
+ 
             <Link to="/faq" className="text-lg font-bold text-gray-700 border-t pt-4 block">Dúvidas Frequentes</Link>
           </nav>
-
-          <div className="mt-auto space-y-4">
-             <div className="flex flex-col items-center w-full">
+ 
+          <div className="mt-auto space-y-4 bg-gray-50 border-t border-gray-100 p-4 rounded-2xl" style={{ backgroundColor: '#f9fafb' }}>
+             <div className="flex flex-col items-center w-full bg-gray-50" style={{ backgroundColor: '#f9fafb' }}>
                <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="w-full flex items-center justify-center gap-2 p-3 bg-green-500 text-white rounded-xl font-bold shadow-lg">
                  <i className="fab fa-whatsapp"></i> WhatsApp
                </a>
                <p className="text-[9px] text-gray-400 mt-1 text-center font-medium">Fale com atendentes no Whats.</p>
              </div>
-             <div className="flex flex-col items-center w-full">
+             <div className="flex flex-col items-center w-full bg-gray-50" style={{ backgroundColor: '#f9fafb' }}>
                <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="w-full flex items-center justify-center gap-2 p-3 bg-red-600 text-white rounded-xl font-bold shadow-lg">
                  <i className="fa fa-phone-alt"></i> Ligar
                </a>

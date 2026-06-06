@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 import PremiumImage from '../components/PremiumImage';
+import EnhancedSEO from '../components/EnhancedSEO';
 import { BAIRROS, CIDADES_RMC, COMPANY_PHONE, COMPANY_SITE, slugify, getADPImage, ADP_IMAGES } from '../constants';
 import VideoSection from '../components/VideoSection';
 
@@ -15,20 +16,56 @@ const RegionPage: React.FC<{ type: 'bairro' | 'cidade' }> = ({ type }) => {
 
   useEffect(() => {
     if (originalItem) {
-      document.title = `Desentupidora em ${name} 24h | Atendimento Emergencial em ${name}`;
       window.scrollTo(0, 0);
     }
   }, [slug, name, originalItem]);
 
   if (!originalItem) return <Navigate to="/" />;
 
-  const canonicalUrl = `${COMPANY_SITE}/${type}/${slug}`;
+  const pagePath = `/${type}/${slug}`;
+  const pageTitle = `Desentupidora em ${name} 24h | Atendimento Emergencial em ${name}`;
+  const pageDescription = `Precisa de desentupidora em ${name}? Atendimento imediato em 30 min com preço fechado no local sem cobrar por metro. Central 24h. Ligue (41) 3345-1194 ou WhatsApp.`;
+
+  // Custom LocalBusiness structured data for local SEO targeting the specific area
+  const localStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${COMPANY_SITE}${pagePath}#localbusiness`,
+    "name": `ADP Desentupidora ${name}`,
+    "url": `${COMPANY_SITE}${pagePath}`,
+    "telephone": COMPANY_PHONE,
+    "logo": "https://img.desentopeadp.com.br/adp-desentupidora.webp",
+    "image": getADPImage(name),
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": type === 'bairro' ? "Curitiba" : name,
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "description": `Serviços profissionais e emergenciais de desentupimento 24 horas em ${name}, Curitiba e Região Metropolitana.`,
+    "areaServed": {
+      "@type": type === 'bairro' ? "Neighborhood" : "City",
+      "name": name,
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Curitiba Metropolitana"
+      }
+    }
+  };
 
   return (
     <main className="bg-lightGray min-h-screen">
-      <link rel="canonical" href={canonicalUrl} />
+      <EnhancedSEO 
+        title={pageTitle}
+        description={pageDescription}
+        path={pagePath}
+        type="business"
+        structuredData={localStructuredData}
+      />
       
       {/* SEO Hero Premium */}
+
       <section className="bg-dark text-white pt-32 pb-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-15">
           <img src="https://img.desentopeadp.com.br/hero-adp.webp" fetchPriority="high" className="w-full h-full object-cover filter brightness-50" alt={`Serviços em ${name}`} />
