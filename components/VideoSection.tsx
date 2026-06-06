@@ -18,7 +18,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({
         <div className="bg-gray-50 rounded-2xl shadow-xl overflow-hidden border border-gray-200">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Video Column */}
-            <div className="relative w-full h-0 pb-[56.25%] lg:pb-0 lg:h-auto bg-black">
+            <div className="relative w-full aspect-video bg-black flex items-center justify-center">
               <iframe 
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/jJ0WJqgXZ3k?si=twu74dX-bda_MI9L" 

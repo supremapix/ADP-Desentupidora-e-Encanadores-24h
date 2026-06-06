@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { HeroSection, ContentExpansionSection, ServiceCards, TechnicalAccordion, ArsenalSection } from '../components/HomeSections';
+import { HeroSection, ContentExpansionSection, PremiumHighlightSection, ServiceCards, TechnicalAccordion, ArsenalSection } from '../components/HomeSections';
 import ContactForm from '../components/ContactForm';
 import VideoSection from '../components/VideoSection';
 import PersuasiveCTA from '../components/PersuasiveCTA';
@@ -39,6 +39,7 @@ const Home: React.FC = () => {
       </section>
 
       <ContentExpansionSection />
+      <PremiumHighlightSection />
       <ArsenalSection />
       <ServiceCards />
       <PersuasiveCTA />

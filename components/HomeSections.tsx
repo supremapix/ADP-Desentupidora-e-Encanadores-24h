@@ -186,3 +186,49 @@ export const ContentExpansionSection = () => (
     </div>
   </section>
 );
+
+export const PremiumHighlightSection = () => (
+  <section className="py-16 bg-slate-900 overflow-hidden relative border-t border-b border-primary/20 bg-dark">
+    <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-dark"></div>
+    <div className="container mx-auto px-4 max-w-6xl relative z-10">
+      <div className="grid lg:grid-cols-12 gap-12 items-center">
+        <div className="lg:col-span-6 space-y-6 text-left">
+          <div className="badge">Destaque Exclusivo</div>
+          <h2 className="text-4xl lg:text-5xl font-display font-black text-white leading-none uppercase tracking-tighter">
+            TECNOLOGIA EM <br/>
+            <span className="text-primary">ULTRA PERFORMANCE</span>
+          </h2>
+          <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light">
+            Nossa equipe técnica conta com a frota mais moderna de Curitiba. Atendemos com caminhões de alta capacidade, hidrojato rotativo e vídeo inspeção completa, garantindo o restabelecimento imediato dos fluxos sanitários sem quebrar pisos ou paredes.
+          </p>
+          <div className="bg-white/5 border border-white/10 p-6 rounded-3xl space-y-4">
+             <div className="flex gap-4 items-start">
+               <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+                 <i className="fa fa-shield-alt text-sm"></i>
+               </div>
+               <div>
+                 <p className="text-sm font-bold text-white uppercase tracking-tight">Garantia Blindada ADP</p>
+                 <p className="text-xs text-gray-400 mt-1 leading-relaxed">Seu problema resolvido de verdade ou seu dinheiro de volta. Sem pegadinhas, sem letras miúdas com conformidade plena ABNT.</p>
+               </div>
+             </div>
+          </div>
+          <div className="flex pt-4">
+            <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="btn-whatsapp w-full sm:w-auto shadow-[0_20px_40px_rgba(37,211,102,0.3)]">
+               <i className="fab fa-whatsapp text-lg"></i> SOLICITAR ATENDIMENTO IMEDIATO
+            </a>
+          </div>
+        </div>
+        <div className="lg:col-span-6 relative">
+          <div className="relative group">
+             <div className="absolute -inset-1.5 bg-gradient-to-r from-primary to-[#25d366] rounded-[2.5rem] blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+             <img 
+               src="https://img.desentopeadp.com.br/adp-desenupiu.webp" 
+               alt="Ação profissional ADP" 
+               className="relative rounded-[2.5rem] shadow-2xl border-2 border-white/10 w-full object-cover aspect-[4/3] transform hover:scale-[1.01] transition-transform duration-500" 
+             />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
