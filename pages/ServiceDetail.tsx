@@ -36,7 +36,7 @@ const ServiceDetail: React.FC = () => {
       
       <section className="bg-dark text-white pt-32 pb-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-15">
-          <img src="https://img.desentopeadp.com.br/hero-adp.webp" className="w-full h-full object-cover filter brightness-50" alt={service.title} />
+          <img src="https://img.desentopeadp.com.br/hero-adp.webp" fetchPriority="high" className="w-full h-full object-cover filter brightness-50" alt={service.title} />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent z-0"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">

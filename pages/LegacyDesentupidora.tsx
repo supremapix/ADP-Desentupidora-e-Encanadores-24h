@@ -20,7 +20,7 @@ const LegacyDesentupidora: React.FC = () => {
       {/* Hero Section Simplificada */}
       <section className="bg-dark text-white py-16 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-15">
-          <img src="https://img.desentopeadp.com.br/hero-adp.webp" className="w-full h-full object-cover filter brightness-50" alt="Buscando Desentupidora em Curitiba" />
+          <img src="https://img.desentopeadp.com.br/hero-adp.webp" fetchPriority="high" className="w-full h-full object-cover filter brightness-50" alt="Buscando Desentupidora em Curitiba" />
         </div>
         <div className="absolute inset-0 bg-primary/20 z-0"></div>
         <div className="relative z-10 container mx-auto max-w-4xl">

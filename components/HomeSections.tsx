@@ -10,6 +10,7 @@ export const HeroSection = () => (
       <img 
         src="https://img.desentopeadp.com.br/hero-adp.webp" 
         alt="Saneamento Profissional" 
+        fetchPriority="high"
         className="absolute inset-0 w-full h-full object-cover opacity-25 animate-zoom-slow filter brightness-75"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-primary/10"></div>
