@@ -26,6 +26,7 @@ const ServiceDetail: React.FC = () => {
   const serviceImages: Record<string, string> = {
     'desentupimento-de-vaso': 'https://img.desentopeadp.com.br/desentupir-vaso.webp',
     'desentupimento-de-pia': 'https://img.desentopeadp.com.br/adp-encanamentos.webp',
+    'video-inspecao': 'https://img.desentopeadp.com.br/limpesa-encanamentos-adp-cic.webp',
     'desentupimento-de-ralo': 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2000&auto=format&fit=crop',
     'default': 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=2000&auto=format&fit=crop'
   };

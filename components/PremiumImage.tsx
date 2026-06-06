@@ -16,6 +16,7 @@ const PremiumImage: React.FC<PremiumImageProps> = ({ src, alt, className = "" })
         src={src} 
         alt={alt} 
         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+        loading="lazy"
       />
       
       {/* Overlay de Cor Primária (Transparência) */}

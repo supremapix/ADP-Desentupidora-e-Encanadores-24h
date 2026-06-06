@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { COMPANY_WHATSAPP } from '../constants';
 
 interface VideoSectionProps {
@@ -12,6 +12,8 @@ const VideoSection: React.FC<VideoSectionProps> = ({
   customTitle,
   customDescription
 }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <section className="py-16 bg-white border-y border-gray-100">
       <div className="container mx-auto px-4">
@@ -19,14 +21,35 @@ const VideoSection: React.FC<VideoSectionProps> = ({
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Video Column */}
             <div className="relative w-full aspect-video bg-black flex items-center justify-center">
-              <iframe 
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/jJ0WJqgXZ3k?si=twu74dX-bda_MI9L" 
-                title={customTitle ? "Vídeo Institucional ADP" : `Vídeo Institucional ADP Desentupidora em ${locationName}`}
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowFullScreen
-              ></iframe>
+              {!isPlaying ? (
+                <div 
+                  className="absolute inset-0 w-full h-full cursor-pointer group flex items-center justify-center overflow-hidden" 
+                  onClick={() => setIsPlaying(true)}
+                >
+                  <img 
+                    src="https://img.youtube.com/vi/jJ0WJqgXZ3k/hqdefault.jpg" 
+                    alt={customTitle ? "Vídeo Institucional ADP" : `Vídeo Institucional ADP Desentupidora em ${locationName}`}
+                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-90 transition-opacity duration-300 group-hover:scale-[1.02] transform transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                  {/* Glassmorphism play button overlay */}
+                  <div className="relative z-10 w-20 h-20 bg-primary/95 text-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(155,17,30,0.5)] group-hover:scale-110 group-hover:bg-primary transition-all duration-300">
+                    <i className="fa fa-play text-3xl ml-1"></i>
+                  </div>
+                  <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md text-white px-3 py-1.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-white/10">
+                    <i className="fa fa-play mr-1.5"></i> Clique para Assistir
+                  </div>
+                </div>
+              ) : (
+                <iframe 
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/jJ0WJqgXZ3k?si=twu74dX-bda_MI9L&autoplay=1" 
+                  title={customTitle ? "Vídeo Institucional ADP" : `Vídeo Institucional ADP Desentupidora em ${locationName}`}
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowFullScreen
+                ></iframe>
+              )}
             </div>
 
             {/* Content Column */}

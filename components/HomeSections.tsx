@@ -1,64 +1,96 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PremiumImage from './PremiumImage';
 import { SERVICES_LIST, COMPANY_PHONE, COMPANY_WHATSAPP, BAIRROS, ADP_IMAGES } from '../constants';
 
-export const HeroSection = () => (
-  <section className="relative bg-slate-950 text-white pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden border-b border-white/5">
-    <div className="absolute inset-0 z-0">
-      <img 
-        src="https://img.desentopeadp.com.br/hero-adp.webp" 
-        alt="Saneamento Profissional" 
-        fetchPriority="high"
-        className="absolute inset-0 w-full h-full object-cover opacity-25 animate-zoom-slow filter brightness-75"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-primary/10"></div>
-    </div>
+export const HeroSection = () => {
+  const [loadVideo, setLoadVideo] = useState(false);
 
-    <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-12 gap-8 items-center">
-      <div className="lg:col-span-7 space-y-5 text-center lg:text-left reveal active">
-        <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-black border border-primary/30 tracking-widest text-primary">
-          <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span> 
-          BASE OPERACIONAL CIC - CURITIBA & RMC
-        </div>
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black leading-tight uppercase tracking-tighter">
-          CHEGA DE <br/>
-          <span className="text-primary drop-shadow-[0_0_30px_rgba(57,132,122,0.6)]">PREÇO POR METRO</span>
-        </h1>
-        <p className="text-base text-gray-300 leading-relaxed max-w-xl font-light">
-          Orçamento <strong>fechado e transparente</strong> no local. Tecnologia industrial para resolver seu entupimento seguindo as normas NBR 8160.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-6 pt-2 justify-center lg:justify-start items-center sm:items-start">
-          <div className="flex flex-col items-center lg:items-start w-full sm:w-auto max-w-[280px]">
-            <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="w-full btn-shimmer bg-[#25d366] text-white px-8 py-4 rounded-xl font-black text-lg shadow-[0_20px_40px_rgba(37,211,102,0.4)] hover:scale-105 transition-all flex items-center justify-center gap-3">
-              <i className="fab fa-whatsapp text-2xl"></i> WhatsApp
-            </a>
-            <p className="text-[10px] text-gray-400 mt-1.5 text-center lg:text-left leading-tight">Orçamento rápido e sem taxa de visita.</p>
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoadVideo(true);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <section className="relative bg-slate-950 text-white pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden border-b border-white/5">
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://img.desentopeadp.com.br/hero-adp.webp" 
+          alt="Saneamento Profissional" 
+          fetchPriority="high"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 animate-zoom-slow filter brightness-75"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-primary/10"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-12 gap-8 items-center">
+        <div className="lg:col-span-7 space-y-5 text-center lg:text-left reveal active">
+          <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-black border border-primary/30 tracking-widest text-primary">
+            <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span> 
+            BASE OPERACIONAL CIC - CURITIBA & RMC
           </div>
-          <div className="flex flex-col items-center lg:items-start w-full sm:w-auto max-w-[280px]">
-            <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="w-full bg-white/5 border border-white/10 backdrop-blur-md text-white px-6 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-3">
-               <i className="fa fa-phone-alt text-primary"></i> Ligar
-            </a>
-            <p className="text-[10px] text-gray-400 mt-1.5 text-center lg:text-left leading-tight">Atendimento emergencial imediato 24h.</p>
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black leading-tight uppercase tracking-tighter">
+            CHEGA DE <br/>
+            <span className="text-primary drop-shadow-[0_0_30px_rgba(57,132,122,0.6)]">PREÇO POR METRO</span>
+          </h1>
+          <p className="text-base text-gray-300 leading-relaxed max-w-xl font-light">
+            Orçamento <strong>fechado e transparente</strong> no local. Tecnologia industrial para resolver seu entupimento seguindo as normas NBR 8160.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 pt-2 justify-center lg:justify-start items-center sm:items-start">
+            <div className="flex flex-col items-center lg:items-start w-full sm:w-auto max-w-[280px]">
+              <a href={`https://wa.me/${COMPANY_WHATSAPP}`} className="w-full btn-shimmer bg-[#25d366] text-white px-8 py-4 rounded-xl font-black text-lg shadow-[0_20px_40px_rgba(37,211,102,0.4)] hover:scale-105 transition-all flex items-center justify-center gap-3">
+                <i className="fab fa-whatsapp text-2xl"></i> WhatsApp
+              </a>
+              <p className="text-[10px] text-gray-400 mt-1.5 text-center lg:text-left leading-tight">Orçamento rápido e sem taxa de visita.</p>
+            </div>
+            <div className="flex flex-col items-center lg:items-start w-full sm:w-auto max-w-[280px]">
+              <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="w-full bg-white/5 border border-white/10 backdrop-blur-md text-white px-6 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-3">
+                 <i className="fa fa-phone-alt text-primary"></i> Ligar
+              </a>
+              <p className="text-[10px] text-gray-400 mt-1.5 text-center lg:text-left leading-tight">Atendimento emergencial imediato 24h.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div 
+          className="lg:col-span-5 hidden lg:flex justify-end relative cursor-pointer"
+          onMouseEnter={() => setLoadVideo(true)}
+          onClick={() => setLoadVideo(true)}
+        >
+          <div className="relative bg-slate-900 p-1.5 rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.5)] border border-white/10 w-full max-w-[340px] aspect-[9/16] overflow-hidden group">
+            {!loadVideo ? (
+              <div className="relative w-full h-full flex items-center justify-center bg-black">
+                <img 
+                  src="https://img.youtube.com/vi/12D85Dmnheg/hqdefault.jpg" 
+                  alt="ADP Operação Preview" 
+                  className="w-full h-full object-cover opacity-80"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center gap-2">
+                  <div className="w-12 h-12 rounded-full bg-primary/95 flex items-center justify-center text-white text-sm group-hover:scale-110 transition-transform duration-300">
+                    <i className="fa fa-play ml-0.5"></i>
+                  </div>
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-white/80">Ver Operação</span>
+                </div>
+              </div>
+            ) : (
+              <iframe 
+                className="w-full h-full object-cover opacity-80"
+                src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=1&mute=1&loop=1&playlist=12D85Dmnheg&controls=0&modestbranding=1" 
+                title="ADP Operação"
+                frameBorder="0"
+              ></iframe>
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent pointer-events-none"></div>
           </div>
         </div>
       </div>
-      
-      <div className="lg:col-span-5 hidden lg:flex justify-end relative">
-        <div className="relative bg-slate-900 p-1.5 rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.5)] border border-white/10 w-full max-w-[340px] aspect-[9/16] overflow-hidden group">
-           <iframe 
-            className="w-full h-full object-cover opacity-80"
-            src="https://www.youtube.com/embed/12D85Dmnheg?autoplay=1&mute=1&loop=1&playlist=12D85Dmnheg&controls=0&modestbranding=1" 
-            title="ADP Operação"
-            frameBorder="0"
-          ></iframe>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent pointer-events-none"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export const ArsenalSection = () => (
   <section className="py-12 bg-dark relative overflow-hidden">
@@ -225,6 +257,7 @@ export const PremiumHighlightSection = () => (
              <img 
                src="https://img.desentopeadp.com.br/adp-desenupiu.webp" 
                alt="Ação profissional ADP" 
+               loading="lazy"
                className="relative rounded-[2.5rem] shadow-2xl border-2 border-white/10 w-full object-cover aspect-[4/3] transform hover:scale-[1.01] transition-transform duration-500" 
              />
           </div>
