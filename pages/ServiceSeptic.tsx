@@ -152,10 +152,10 @@ const ServiceSeptic: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative bg-dark text-white pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0 z-0 flex items-center justify-center bg-green-900">
-             <i className="fa fa-biohazard text-[25rem] text-white/5 animate-pulse-slow"></i>
-             <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark"></div>
+        <div className="absolute inset-0 z-0 opacity-15">
+          <img src="https://img.desentopeadp.com.br/hero-adp.webp" className="w-full h-full object-cover filter brightness-50" alt="Limpeza de Fossa Séptica" />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark z-0"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
             Limpeza de <span className="text-primary">Fossa Séptica</span> 24h

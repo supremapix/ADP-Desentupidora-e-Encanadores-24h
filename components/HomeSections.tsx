@@ -8,7 +8,7 @@ export const HeroSection = () => (
   <section className="relative bg-slate-950 text-white pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden border-b border-white/5">
     <div className="absolute inset-0 z-0">
       <img 
-        src={ADP_IMAGES.caminhaoCic} 
+        src="https://img.desentopeadp.com.br/hero-adp.webp" 
         alt="Saneamento Profissional" 
         className="absolute inset-0 w-full h-full object-cover opacity-25 animate-zoom-slow filter brightness-75"
       />
@@ -167,7 +167,7 @@ export const ContentExpansionSection = () => (
   <section className="py-12 bg-white relative">
     <div className="container mx-auto px-4 max-w-6xl">
       <div className="grid lg:grid-cols-2 gap-10 items-center">
-        <PremiumImage src={ADP_IMAGES.atendimentoTriplo} alt="Engenharia ADP" className="aspect-video shadow-2xl border-4 border-slate-100 rounded-3xl" />
+        <PremiumImage src="https://img.desentopeadp.com.br/adp-desentope-cwb.webp" alt="Engenharia ADP" className="aspect-video shadow-2xl border-4 border-slate-100 rounded-3xl" />
         <div className="space-y-4">
           <h2 className="text-4xl font-display font-black text-dark tracking-tighter uppercase leading-none">REFERÊNCIA <br/><span className="text-primary">SANEAMENTO</span></h2>
           <p className="text-sm text-gray-600 leading-relaxed font-light">A ADP utiliza protocolos de engenharia para garantir a fluidez total da rede pluvial e sanitária. Atendemos indústrias, comércios e residências com precisão militar no CIC e toda Curitiba.</p>

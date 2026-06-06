@@ -31,7 +31,7 @@ const RegionPage: React.FC<{ type: 'bairro' | 'cidade' }> = ({ type }) => {
       {/* SEO Hero Premium */}
       <section className="bg-dark text-white pt-32 pb-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-15">
-          <img src={ADP_IMAGES.caminhaoRed} className="w-full h-full object-cover filter brightness-50" alt={`Serviços em ${name}`} />
+          <img src="https://img.desentopeadp.com.br/hero-adp.webp" className="w-full h-full object-cover filter brightness-50" alt={`Serviços em ${name}`} />
         </div>
         <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-3/5 text-center lg:text-left">

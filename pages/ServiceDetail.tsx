@@ -35,7 +35,10 @@ const ServiceDetail: React.FC = () => {
       <link rel="canonical" href={canonicalUrl} />
       
       <section className="bg-dark text-white pt-32 pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent"></div>
+        <div className="absolute inset-0 z-0 opacity-15">
+          <img src="https://img.desentopeadp.com.br/hero-adp.webp" className="w-full h-full object-cover filter brightness-50" alt={service.title} />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent z-0"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
            <div className="inline-block bg-primary text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 shadow-lg shadow-primary/20">
              GUIA TÉCNICO PROFISSIONAL
