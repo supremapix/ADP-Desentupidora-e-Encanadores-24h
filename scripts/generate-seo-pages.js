@@ -253,8 +253,8 @@ const getContactFormHtml = (locationName) => `
 // ==================== GENERATE HOMEPAGE (/) ====================
 console.log(' - Renderizando Home (/)');
 const homeSeo = {
-  title: "ADP Desentupidora Curitiba | R$ 79,90 o metro | 24h",
-  description: "Desentupidora em Curitiba 24h. Chegada em 30 min, a partir de R$ 79,90 o metro linear. Todos os bairros. Ligue (41) 3345-1194 ou WhatsApp (41) 98517-1966.",
+  title: "ADP Desentupidora em Curitiba | Atendimento Residencial e Comercial 24h",
+  description: "ADP Desentupidora em Curitiba. Serviços de desentupimento de esgoto, pia, ralo, vaso sanitário, hidrojateamento e limpeza de fossa. Ligue (41) 3345-1194.",
   structuredData: [
     {
       "@context": "https://schema.org",
@@ -264,21 +264,20 @@ const homeSeo = {
       "url": COMPANY_SITE,
       "telephone": [COMPANY_PHONE, COMPANY_MOBILE],
       "openingHours": "Mo-Su 00:00-23:59",
-      "description": "Desentupidora em Curitiba 24h. Atendemos todos os bairros com chegada em 30 minutos.",
+      "description": "Desentupidora em Curitiba com atendimento residencial, comercial e industrial em todos os bairros e RMC.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Luiz Maltaca, 36 - CIC",
         "addressLocality": "Curitiba",
         "addressRegion": "PR",
-        "postalCode": "81250-130",
+        "postalCode": "81265-480",
         "addressCountry": "BR"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": -25.4770,
-        "longitude": -49.2845
-      },
-      "priceRange": "R$ 79,90 - R$ 199,90"
+        "latitude": -25.4851,
+        "longitude": -49.3382
+      }
     }
   ]
 };
@@ -547,8 +546,8 @@ console.log(` - Cooperando com ${BAIRROS.length} bairros para geração de pági
 BAIRROS.forEach(bairroName => {
   const slug = slugify(bairroName);
   const path = `/bairro/${slug}`;
-  const title = `Desentupidora em ${bairroName} 24h | Atendimento Emergencial em ${bairroName}`;
-  const desc = `Precisa de desentupidora em ${bairroName}? Atendimento tático imediato em 30 min com preço fechado justo. Visita gratuita. Ligue (41) 3345-1194 ou envie WhatsApp.`;
+  const title = `Desentupidora em ${bairroName} | ADP Desentupidora Curitiba`;
+  const desc = `Atendimento de desentupimento em ${bairroName}, Curitiba. Serviços de esgoto, pia, ralo, vaso sanitário e limpeza de fossa. Ligue (41) 3345-1194.`;
 
   const structuredLocal = {
     "@context": "https://schema.org",

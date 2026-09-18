@@ -1,250 +1,144 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
-import VideoSection from '../components/VideoSection';
 import EnhancedSEO from '../components/EnhancedSEO';
+import { COMPANY_PHONE, COMPANY_WHATSAPP, ADP_IMAGES } from '../constants';
 
 const ServiceSeptic: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Limpeza de Fossa Séptica e Caixa de Gordura",
-    "name": "Serviço de Limpa Fossa e Saneamento",
-    "description": "Serviço completo de limpeza de fossa séptica, negra, sumidouros e caixas de gordura com caminhões de auto vácuo. Descarte ecológico certificado e atendimento emergencial 24h.",
+    "name": "Limpeza de Fossa Curitiba",
+    "description": "Esgotamento e limpeza técnica de fossas sépticas e caixas de gordura com caminhão auto-vácuo em Curitiba e Região Metropolitana.",
     "provider": {
       "@type": "LocalBusiness",
       "name": "ADP Desentupidora",
-      "telephone": "+55-41-3345-1194",
-      "image": "https://adpcuritiba.com.br/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Luiz Maltaca, 36",
-        "addressLocality": "Curitiba",
-        "addressRegion": "PR",
-        "postalCode": "81265-480",
-        "addressCountry": "BR"
-      },
-      "priceRange": "$$",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-        ],
-        "opens": "00:00",
-        "closes": "23:59"
-      }
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Curitiba"
-      },
-      {
-        "@type": "AdministrativeArea",
-        "name": "Região Metropolitana de Curitiba"
-      }
-    ],
-    "url": "https://adpcuritiba.com.br/servicos/limpeza-de-fossa"
+      "telephone": "+55-41-3345-1194"
+    }
   };
 
-  const articles = [
-    {
-      title: "Como Funciona a Limpeza de Fossa?",
-      content: "A limpeza de fossa é realizada através de caminhões equipados com potentes bombas de auto vácuo. Este sistema suga todos os resíduos líquidos e pastosos (lodo) armazenados na fossa séptica ou negra, transportando-os para o tanque do caminhão de forma hermética, sem vazamentos ou mau cheiro no local.",
-      icon: "fa-truck-loading"
-    },
-    {
-      title: "Quando Limpar a Fossa?",
-      content: "Recomenda-se a limpeza periódica a cada 6 ou 12 meses, dependendo do volume de uso e tamanho da fossa. Sinais de que a fossa está cheia incluem: mau cheiro no quintal ou ralos, retorno de esgoto pelo vaso sanitário, e o solo ao redor da fossa úmido ou com grama muito verde.",
-      icon: "fa-calendar-alt"
-    },
-    {
-      title: "Limpeza de Caixa de Gordura",
-      content: "A caixa de gordura retém óleos e graxas da cozinha para não entupir a rede de esgoto. Quando cheia, ela transborda e causa forte odor. Realizamos a aspiração completa da gordura solidificada e líquida, lavando as paredes da caixa e garantindo o fluxo livre da água da pia.",
-      icon: "fa-drumstick-bite"
-    },
-    {
-      title: "Fossa Séptica vs. Fossa Negra",
-      content: "Fossas sépticas são estruturas de cimento que tratam o esgoto. Fossas negras são buracos no solo (comuns em áreas rurais ou antigas). A ADP limpa ambos os tipos, mas tomamos cuidados extras com fossas negras para evitar desmoronamentos durante a sucção.",
-      icon: "fa-layer-group"
-    },
-    {
-      title: "Descarte Ecológico Correto",
-      content: "O resíduo da fossa não pode ser jogado em rios ou bueiros. A ADP possui licença ambiental e cadastro na Sanepar. Todo o efluente coletado é transportado para estações de tratamento de esgoto (ETE) certificadas, onde recebem o tratamento adequado antes de retornar à natureza.",
-      icon: "fa-recycle"
-    },
-    {
-      title: "Caminhões Combinados",
-      content: "Nossa frota possui caminhões 'Combinados' que fazem tanto a sucção da fossa quanto o hidrojateamento das tubulações. Isso significa que, se houver um entupimento na linha que leva à fossa, resolvemos tudo na mesma visita, sem custo adicional de deslocamento de outro veículo.",
-      icon: "fa-truck-monster"
-    },
-    {
-      title: "Atendimento a Condomínios",
-      content: "Condomínios residenciais possuem grandes fossas e caixas de passagem que exigem manutenção regular. Oferecemos contratos mensais ou semestrais com preços especiais para síndicos e administradoras, evitando emergências que afetam todos os moradores.",
-      icon: "fa-building"
-    },
-    {
-      title: "Limpeza Industrial",
-      content: "Atendemos indústrias para limpeza de caixas separadoras de água e óleo (CSAO), tanques de decantação e sumidouros. Nossos equipamentos são adequados para resíduos industriais não perigosos, garantindo a continuidade da produção fabril.",
-      icon: "fa-industry"
-    },
-    {
-      title: "Desentupimento de Sumidouro",
-      content: "O sumidouro é para onde vai o líquido tratado da fossa. Com o tempo, o solo impermeabiliza (satura) e a água não desce mais. Realizamos o esgotamento do sumidouro e aplicamos hidrojateamento no fundo para tentar recuperar a permeabilidade do solo.",
-      icon: "fa-water"
-    },
-    {
-      title: "Segurança Sanitária",
-      content: "O contato com esgoto traz riscos de doenças. Nossos técnicos utilizam EPIs completos (macacão impermeável, luvas, máscaras, botas) e isolam a área de trabalho. Após o serviço, realizamos a higienização do local para garantir a segurança da sua família.",
-      icon: "fa-shield-virus"
-    },
-    {
-      title: "Capacidade dos Caminhões",
-      content: "Dispomos de caminhões com diferentes capacidades cúbicas (de 3m³ a 15m³) para atender desde pequenas residências com acesso difícil até grandes indústrias. Nossos veículos são compactos o suficiente para entrar na maioria das garagens residenciais.",
-      icon: "fa-balance-scale-right"
-    },
-    {
-      title: "Certificado de Limpeza",
-      content: "Para comércios, restaurantes e indústrias, a vigilância sanitária e o meio ambiente exigem comprovante de limpeza. A ADP emite o Certificado de Destinação Final de Efluentes e Laudo Técnico, comprovando que sua empresa está em dia com as obrigações ambientais.",
-      icon: "fa-file-signature"
-    },
-    {
-      title: "Prevenção de Mau Cheiro",
-      content: "O retorno de gases pelo ralo é sinal de problemas na ventilação ou fossa cheia. Além da limpeza, verificamos os sifões e tubos de ventilação da sua rede, eliminando o odor desagradável de esgoto dentro de casa.",
-      icon: "fa-wind"
-    },
-    {
-      title: "Atendimento de Emergência",
-      content: "Fossa transbordando é uma emergência sanitária. Mantemos plantão 24 horas, inclusive sábados, domingos e feriados, para realizar o esgotamento imediato e evitar a contaminação do solo e áreas de lazer.",
-      icon: "fa-ambulance"
-    },
-    {
-      title: "Bacias de Contenção",
-      content: "Em postos de gasolina e lavacarros, realizamos a limpeza das caixas de areia e bacias de contenção. A remoção correta da lama contaminada com óleo é essencial para evitar multas ambientais pesadas.",
-      icon: "fa-gas-pump"
-    },
-    {
-      title: "Equipamentos Modernos",
-      content: "Nossas bombas de vácuo são de anel líquido de alta performance, capazes de sugar resíduos a grandes distâncias e profundidades. Isso permite limpar fossas que estão longe da rua ou em subsolos profundos.",
-      icon: "fa-cogs"
-    },
-    {
-      title: "Transparência no Preço",
-      content: "O orçamento pode ser feito por metro cúbico retirado ou preço fechado (quando sabemos o tamanho exato da fossa). Explicamos tudo antes de começar, sem surpresas na hora de pagar. Aceitamos cartões.",
-      icon: "fa-hand-holding-usd"
-    },
-    {
-      title: "Região de Atendimento",
-      content: "Atendemos Curitiba e toda a Região Metropolitana (São José dos Pinhais, Colombo, Pinhais, Araucária, Campo Largo, etc.) com a mesma agilidade e sem cobrança abusiva de taxa de deslocamento.",
-      icon: "fa-map-marked-alt"
-    }
-  ];
-
   return (
-    <main>
-      <EnhancedSEO 
-        title="Limpeza de Fossa Séptica 24h - ADP Desentupidora Curitiba"
-        description="Esgotamento e limpeza profissional de fossas sépticas com caminhão vácuo em Curitiba e Região Metropolitana. Descarte certificado na Sanepar."
+    <main className="bg-white">
+      <EnhancedSEO
+        title="Limpeza de Fossa em Curitiba | ADP Desentupidora"
+        description="Limpeza e esgotamento de fossa séptica, negra e caixas de gordura com caminhão auto-vácuo em Curitiba e RMC. Atendimento técnico 24h."
         path="/servicos/limpeza-de-fossa"
+        image={ADP_IMAGES.caminhaoRed}
         structuredData={schemaData}
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-dark text-white pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-15">
-          <img src="https://img.desentopeadp.com.br/hero-adp.webp" fetchPriority="high" className="w-full h-full object-cover filter brightness-50" alt="Limpeza de Fossa Séptica" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark z-0"></div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
-            Limpeza de <span className="text-primary">Fossa Séptica</span> 24h
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up delay-100">
-            Caminhões auto vácuo de alta capacidade para esgotamento de fossas, caixas de gordura e resíduos industriais. Descarte 100% ecológico.
-          </p>
-          <div className="flex flex-col items-center justify-center">
-            <a href="#contato" className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all hover:scale-105 inline-block animate-bounce-slow">
-              Solicitar
-            </a>
-            <p className="text-[12px] text-gray-300 mt-2">Agende o envio de caminhão de auto vácuo.</p>
+      {/* Hero Header */}
+      <section className="bg-slate-50 border-b border-slate-200 py-10 lg:py-14">
+        <div className="site-container">
+          <div className="max-w-3xl">
+            <nav className="text-xs text-slate-500 mb-4 flex items-center gap-2">
+              <Link to="/" className="hover:text-red-700">Início</Link>
+              <span>/</span>
+              <span className="text-slate-800 font-bold">Limpeza de Fossa</span>
+            </nav>
+
+            <span className="text-xs font-extrabold text-red-700 uppercase tracking-widest block mb-2">
+              Serviço de Esgotamento
+            </span>
+
+            <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 uppercase leading-tight mb-4">
+              Limpeza de Fossa e Caixa de Gordura em Curitiba
+            </h1>
+
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Esgotamento e remoção de efluentes sanitários com caminhão de sucção a vácuo para residências, condomínios, comércios e indústrias em Curitiba e Região Metropolitana.
+            </p>
+
+            <div className="flex flex-wrap gap-3 pt-6">
+              <a
+                href={`https://wa.me/${COMPANY_WHATSAPP}?text=${encodeURIComponent('Olá! Gostaria de um orçamento para limpeza de fossa.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase px-6 py-3.5 rounded-xl shadow transition-all flex items-center gap-2"
+              >
+                <i className="fab fa-whatsapp text-base"></i>
+                <span>Orçamento via WhatsApp</span>
+              </a>
+
+              <a
+                href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
+                className="bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs uppercase px-6 py-3.5 rounded-xl shadow transition-all flex items-center gap-2"
+              >
+                <i className="fa fa-phone-alt text-red-500 text-sm"></i>
+                <span>Ligar {COMPANY_PHONE}</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Emergency Alert Box */}
-      <section className="bg-yellow-50 border-b-4 border-yellow-500">
-        <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
-           <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 text-2xl animate-pulse flex-shrink-0">
-             <i className="fa fa-exclamation-circle"></i>
-           </div>
-           <div>
-             <h3 className="font-bold text-yellow-800 text-lg">Fossa Transbordando?</h3>
-             <p className="text-yellow-700 text-sm">Evite multas e contaminação. Atendemos com urgência em até 45 minutos.</p>
-           </div>
-           <a href="https://api.whatsapp.com/send?phone=5541985171966" className="bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition shadow-md whitespace-nowrap">
-             <i className="fab fa-whatsapp mr-2"></i> WhatsApp<span className="block text-[8px] font-normal leading-tight opacity-90 mt-0.5">Atendimento do plantão de fossa</span>
-           </a>
-        </div>
-      </section>
+      {/* Conteúdo Técnico */}
+      <section className="py-12 lg:py-16">
+        <div className="site-container max-w-4xl space-y-8">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-sm">
+            <img
+              src={ADP_IMAGES.caminhaoRed}
+              alt="Caminhão de sucção a vácuo ADP"
+              loading="eager"
+              className="w-full h-[320px] sm:h-[400px] object-cover"
+            />
+          </div>
 
-      {/* Intro Text */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="font-display text-3xl font-bold text-dark mb-6">Soluções Completas em Saneamento</h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            A Limpeza de Fossa é essencial para a saúde da sua família e preservação do meio ambiente. 
-            A ADP Desentupidora utiliza equipamentos de sucção a vácuo selados, garantindo um serviço limpo, 
-            sem cheiro e rápido. Emitimos certificado de descarte para a Sanepar e órgãos ambientais.
-          </p>
-        </div>
-      </section>
+          <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+            <h2 className="font-display font-extrabold text-2xl text-slate-900 uppercase">
+              Como é realizada a limpeza de fossa
+            </h2>
 
-      <VideoSection 
-        customTitle={<>Equipe Especializada em <span className="text-primary">Limpa Fossa</span></>}
-        customDescription={
-          <>
             <p>
-              Veja como nossa operação é realizada com total segurança e higiene. 
-              Nossos caminhões possuem potentes bombas de sucção capazes de remover resíduos sólidos e líquidos em minutos.
+              O serviço de esgotamento de fossa séptica ou negra é executado com veículo equipado com bomba de sucção a vácuo de alto desempenho. O efluente acumulado é aspirado para o tanque hermético do caminhão e transportado para destinação em estações de tratamento.
             </p>
-            <p className="mt-4">
-              Atendemos residências, condomínios e grandes indústrias em Curitiba e Região Metropolitana.
-            </p>
-          </>
-        }
-      />
 
-      {/* 18 Detailed Sections Grid */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="font-display text-4xl font-bold text-center text-dark mb-16">
-            Serviços de Esgotamento e Limpeza
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((item, index) => (
-              <article key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full border border-gray-100 group">
-                <div className="h-40 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-                  <i className={`fa ${item.icon} text-8xl text-primary/30 group-hover:text-primary/80 group-hover:scale-125 transition-all duration-500`}></i>
-                  <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-50"></div>
-                </div>
-                <div className="p-8 flex-grow flex flex-col">
-                  <h3 className="font-display text-xl font-bold text-primary mb-4 border-b-2 border-gray-100 pb-2 flex items-center gap-2">
-                    <span className="bg-primary text-white text-xs w-6 h-6 rounded-full flex items-center justify-center">{index + 1}</span> {item.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow text-justify">
-                    {item.content}
-                  </p>
-                  <a href="#contato" className="text-green-600 font-bold text-sm uppercase tracking-wider hover:text-green-700 flex items-center gap-2 mt-auto self-start group/link">
-                    Solicitar Orçamento <i className="fa fa-arrow-right transform group-hover/link:translate-x-1 transition-transform"></i>
-                  </a>
-                </div>
-              </article>
-            ))}
+            <h3 className="font-display font-extrabold text-lg text-slate-900 uppercase pt-2">
+              Locais e Estruturas Atendidas
+            </h3>
+
+            <div className="grid sm:grid-cols-2 gap-4 pt-2">
+              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                <span className="font-extrabold text-slate-900 text-xs block uppercase">Fossas Sépticas e Negras</span>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Esgotamento completo de lodo e efluentes líquidos acumulados no sistema de esgoto local.
+                </p>
+              </div>
+
+              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                <span className="font-extrabold text-slate-900 text-xs block uppercase">Caixas de Gordura e Passagem</span>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Raspagem e sucção de óleos, gorduras e sedimentos sólidos retidos nas caixas.
+                </p>
+              </div>
+
+              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                <span className="font-extrabold text-slate-900 text-xs block uppercase">Sumidouros e Poços</span>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Esgotamento e limpeza de reservatórios subterrâneos em residências e empresas.
+                </p>
+              </div>
+
+              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                <span className="font-extrabold text-slate-900 text-xs block uppercase">Condomínios e Indústrias</span>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Atendimento programado ou emergencial para grandes volumes de efluentes sanitários.
+                </p>
+              </div>
+            </div>
+
+            <h3 className="font-display font-extrabold text-lg text-slate-900 uppercase pt-4">
+              Atendimento Técnico e Orçamento
+            </h3>
+
+            <p>
+              Com sede no CIC em Curitiba, a ADP desloca caminhões adaptados conforme o volume e o acesso do local. O orçamento é avaliado e explicado diretamente ao cliente antes da execução do serviço.
+            </p>
           </div>
         </div>
       </section>

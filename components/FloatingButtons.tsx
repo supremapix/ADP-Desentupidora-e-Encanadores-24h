@@ -1,74 +1,56 @@
 
-import React, { useEffect, useState } from 'react';
-import { COMPANY_PHONE, COMPANY_WHATSAPP, COMPANY_EMAIL } from '../constants';
+import React from 'react';
+import { COMPANY_PHONE, COMPANY_WHATSAPP } from '../constants';
 
 const FloatingButtons: React.FC = () => {
-  const [showScroll, setShowScroll] = useState(false);
-
-  useEffect(() => {
-    const checkScroll = () => {
-      if (window.scrollY > 300) {
-        setShowScroll(true);
-      } else {
-        setShowScroll(false);
-      }
-    };
-    window.addEventListener('scroll', checkScroll);
-    return () => window.removeEventListener('scroll', checkScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <>
-      {/* Principal: WhatsApp */}
-      <div className="fixed bottom-[100px] right-4 z-[9999]">
-        <a 
-          href={`https://api.whatsapp.com/send?phone=${COMPANY_WHATSAPP}&text=Olá%20preciso%20de%20atendimento%20urgente%20vim%20pelo%20site%20➡️`} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="relative block group"
-        >
-          <div className="absolute -inset-2 bg-green-500/30 rounded-full blur animate-pulse"></div>
-          <div className="relative bg-[#25d366] text-white w-[65px] h-[65px] rounded-full flex items-center justify-center shadow-2xl border-2 border-white transform transition-transform group-hover:scale-110">
-            <i className="fab fa-whatsapp text-4xl"></i>
-          </div>
-        </a>
-      </div>
-
-      {/* Secundário: Ligar */}
-      <div className="fixed bottom-[185px] right-5 z-[9999]">
-        <a href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`} className="block group">
-          <div className="bg-red-600 hover:bg-red-700 w-[55px] h-[55px] rounded-full flex items-center justify-center shadow-xl border-2 border-white transform transition-transform group-hover:scale-110">
-             <i className="fa fa-phone text-white text-2xl animate-bounce"></i>
-          </div>
-        </a>
-      </div>
-
-      {/* Terciário: Email */}
-      <div className="fixed bottom-[260px] right-5 z-[9999]">
-        <a href={`mailto:${COMPANY_EMAIL}`} className="block group">
-          <div className="bg-dark hover:bg-gray-800 w-[55px] h-[55px] rounded-full flex items-center justify-center shadow-xl border-2 border-white transform transition-transform group-hover:scale-110">
-             <i className="fa fa-envelope text-white text-2xl"></i>
-          </div>
-        </a>
-      </div>
-
-      {/* Voltar ao Topo */}
-      {showScroll && (
-        <div className="fixed bottom-5 right-5 z-[9999]">
-          <button 
-            onClick={scrollToTop} 
-            className="bg-primary hover:bg-red-700 w-[50px] h-[50px] rounded-full shadow-lg text-white flex items-center justify-center transition-all duration-300 transform hover:-translate-y-2"
+      {/* MOBILE FIXED BOTTOM BAR (md:hidden) */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2 sm:p-3 md:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+        <div className="grid grid-cols-2 gap-2">
+          <a
+            href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
+            className="min-h-[48px] bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs uppercase rounded-xl flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-transform"
+            aria-label="Ligar Agora"
           >
-            <i className="fa fa-arrow-up text-xl"></i>
-          </button>
+            <i className="fa fa-phone-alt text-red-500 text-sm"></i>
+            <span>Ligar Agora</span>
+          </a>
+
+          <a
+            href={`https://wa.me/${COMPANY_WHATSAPP}?text=${encodeURIComponent('Olá! Vim pelo site e preciso de atendimento para desentupimento.')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-[48px] bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase rounded-xl flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-transform"
+            aria-label="Atendimento WhatsApp"
+          >
+            <i className="fab fa-whatsapp text-base"></i>
+            <span>WhatsApp</span>
+          </a>
         </div>
-      )}
+      </div>
+
+      {/* DESKTOP FLOATING WHATSAPP BUTTON (hidden md:block) */}
+      <div className="hidden md:block fixed bottom-6 right-6 z-40">
+        <a
+          href={`https://wa.me/${COMPANY_WHATSAPP}?text=${encodeURIComponent('Olá! Vim pelo site e preciso de atendimento para desentupimento.')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative flex items-center bg-emerald-600 hover:bg-emerald-700 text-white p-3 pr-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+          aria-label="Atendimento via WhatsApp"
+        >
+          <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+            <i className="fab fa-whatsapp text-2xl"></i>
+          </div>
+          <div className="flex flex-col text-left">
+            <span className="text-[10px] uppercase font-bold text-emerald-100 tracking-wider">Plantão 24h</span>
+            <span className="text-xs font-extrabold tracking-wide uppercase">Atendimento WhatsApp</span>
+          </div>
+        </a>
+      </div>
     </>
   );
 };
 
 export default FloatingButtons;
+

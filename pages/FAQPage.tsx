@@ -27,7 +27,7 @@ const FAQPage: React.FC = () => {
       questions: [
         { 
           q: "A ADP atende todos os bairros de Curitiba e a Região Metropolitana?", 
-          a: "Sim, a ADP Desentupidora cobre 100% da área de Curitiba e Região Metropolitana. Nossa estrutura logística é dividida em bases operacionais estratégicas (Norte, Sul, Leste e Oeste) para garantir que, independentemente de onde você esteja – seja no centro de Curitiba, na Cidade Industrial (CIC), em Santa Felicidade ou em cidades vizinhas como São José dos Pinhais, Araucária, Pinhais, Colombo e Campo Largo – tenhamos uma equipe pronta para chegar até você em aproximadamente 40 minutos. Diferente de empresas menores que atendem apenas localmente, nossa frota circula constantemente pela cidade. Isso significa que, muitas vezes, quando você liga, já temos um técnico finalizando um serviço no seu bairro, o que reduz drasticamente o tempo de espera. Além disso, conhecemos as particularidades das tubulações de cada região, desde as redes mais antigas do Centro Histórico até os sistemas de saneamento mais modernos dos novos condomínios do Ecoville." 
+          a: "Sim, a ADP Desentupidora cobre 100% da área de Curitiba e Região Metropolitana. Nossa estrutura logística atende o centro de Curitiba, a Cidade Industrial (CIC), Santa Felicidade, Água Verde, Batel, Portão e todos os bairros, além de cidades vizinhas como São José dos Pinhais, Araucária, Pinhais, Colombo e Campo Largo. Nossas equipes contam com veículos equipados com maquinário rotativo e hidrojateamento para atendimento técnico ágil e eficiente." 
         },
         { 
           q: "Vocês atendem emergências de madrugada e finais de semana?", 

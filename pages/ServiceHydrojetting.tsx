@@ -1,8 +1,9 @@
 
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
-import VideoSection from '../components/VideoSection';
 import EnhancedSEO from '../components/EnhancedSEO';
+import { COMPANY_PHONE, COMPANY_WHATSAPP, ADP_IMAGES } from '../constants';
 
 const ServiceHydrojetting: React.FC = () => {
   useEffect(() => {
@@ -13,8 +14,8 @@ const ServiceHydrojetting: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Hidrojateamento de Alta Pressão",
-    "name": "Serviço de Hidrojateamento Curitiba",
-    "description": "Limpeza técnica profunda, desobstrução de encanamentos comerciais, industriais e de redes coletoras de esgoto com hidrojateamento de alta pressão.",
+    "name": "Hidrojateamento Curitiba",
+    "description": "Serviços de hidrojateamento para limpeza de tubulações de esgoto, galerias e caixas de gordura em Curitiba e Região Metropolitana.",
     "provider": {
       "@type": "LocalBusiness",
       "name": "ADP Desentupidora",
@@ -23,75 +24,130 @@ const ServiceHydrojetting: React.FC = () => {
   };
 
   return (
-    <main>
-      <EnhancedSEO 
-        title="Hidrojateamento Curitiba 24h | Desentupimento de Alta Pressão"
-        description="Equipamentos industriais táticos de hidrojateamento para redes de esgoto, galerias pluviais e colunas prediais. Atendimento 24h em Curitiba e Região."
+    <main className="bg-white">
+      <EnhancedSEO
+        title="Hidrojateamento em Curitiba | ADP Desentupidora"
+        description="Hidrojateamento de alta pressão para tubulações de esgoto, galerias pluviais e colunas em Curitiba e Região Metropolitana. Atendimento 24h."
         path="/servicos/hidrojateamento"
+        image={ADP_IMAGES.caminhaoRed}
         structuredData={schemaData}
       />
-      <section className="bg-primary text-white py-24 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-display font-bold">Hidrojateamento Profissional</h1>
-          <p className="text-xl mt-4 max-w-2xl mx-auto opacity-90">A solução mais potente do mercado para desobstrução técnica e limpeza de galerias industriais e residenciais.</p>
+
+      {/* Hero Header */}
+      <section className="bg-slate-50 border-b border-slate-200 py-10 lg:py-14">
+        <div className="site-container">
+          <div className="max-w-3xl">
+            <nav className="text-xs text-slate-500 mb-4 flex items-center gap-2">
+              <Link to="/" className="hover:text-red-700">Início</Link>
+              <span>/</span>
+              <span className="text-slate-800 font-bold">Hidrojateamento</span>
+            </nav>
+
+            <span className="text-xs font-extrabold text-red-700 uppercase tracking-widest block mb-2">
+              Saneamento e Limpeza
+            </span>
+
+            <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 uppercase leading-tight mb-4">
+              Hidrojateamento em Curitiba e RMC
+            </h1>
+
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Limpeza e desobstrução técnica de tubulações de grande extensão, galerias pluviais, redes coletoras de esgoto e caixas de gordura utilizando jato de água em alta pressão.
+            </p>
+
+            <div className="flex flex-wrap gap-3 pt-6">
+              <a
+                href={`https://wa.me/${COMPANY_WHATSAPP}?text=${encodeURIComponent('Olá! Gostaria de informações sobre Hidrojateamento.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase px-6 py-3.5 rounded-xl shadow transition-all flex items-center gap-2"
+              >
+                <i className="fab fa-whatsapp text-base"></i>
+                <span>Orçamento via WhatsApp</span>
+              </a>
+
+              <a
+                href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
+                className="bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs uppercase px-6 py-3.5 rounded-xl shadow transition-all flex items-center gap-2"
+              >
+                <i className="fa fa-phone-alt text-red-500 text-sm"></i>
+                <span>Ligar {COMPANY_PHONE}</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="prose prose-lg max-w-none text-gray-700">
-            <h2 className="text-3xl font-bold text-dark border-b-4 border-primary pb-4">A Ciência por Trás da Alta Pressão</h2>
+      {/* Conteúdo Técnico */}
+      <section className="py-12 lg:py-16">
+        <div className="site-container max-w-4xl space-y-8">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-sm">
+            <img
+              src={ADP_IMAGES.caminhaoRed}
+              alt="Caminhão e equipamento de hidrojateamento ADP"
+              loading="eager"
+              className="w-full h-[320px] sm:h-[400px] object-cover"
+            />
+          </div>
+
+          <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+            <h2 className="font-display font-extrabold text-2xl text-slate-900 uppercase">
+              O que é e como funciona o hidrojateamento
+            </h2>
+
             <p>
-              O hidrojateamento não é apenas "jogar água no cano". É um processo de engenharia que utiliza a energia cinética de jatos de água pressurizada. Nossos equipamentos operam com pressões que variam de 5.000 a 25.000 PSI (Pound-force per square inch). Para se ter uma ideia, uma mangueira de jardim comum opera a cerca de 40 PSI. 
-            </p>
-            <p>
-              Essa força colossal, quando canalizada através de bicos de aço inoxidável com furos calculados a laser, é capaz de cortar raízes de árvores, pulverizar concreto acumulado (resto de obra) e dissolver placas de gordura petrificada que nenhuma máquina rotativa conseguiria remover.
+              O <strong>hidrojateamento</strong> é uma técnica de limpeza hidrodinâmica que utiliza o fluxo de água sob alta pressão para raspagem interna de tubulações. O sistema limpa as paredes da tubulação, removendo acúmulos de gordura petrificada, crostas e incrustações que impedem a vazão normal dos efluentes.
             </p>
 
-            <div className="bg-slate-900 text-white p-10 rounded-3xl my-12 grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <i className="fa fa-tachometer-alt text-4xl text-primary mb-4"></i>
-                <h4 className="font-bold">25.000 PSI</h4>
-                <p className="text-xs opacity-70">Pressão máxima para serviços industriais pesados.</p>
+            <h3 className="font-display font-extrabold text-lg text-slate-900 uppercase pt-2">
+              Principais Aplicações do Hidrojateamento
+            </h3>
+
+            <div className="grid sm:grid-cols-2 gap-4 pt-2">
+              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                <span className="font-extrabold text-slate-900 text-xs block uppercase">Redes Coletoras de Esgoto</span>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Desobstrução de tubulações de esgoto em condomínios, empresas e vias internas.
+                </p>
               </div>
-              <div className="text-center">
-                <i className="fa fa-truck-monster text-4xl text-primary mb-4"></i>
-                <h4 className="font-bold">Caminhão Combinado</h4>
-                <p className="text-xs opacity-70">Tanques de água e vácuo integrados.</p>
+
+              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                <span className="font-extrabold text-slate-900 text-xs block uppercase">Caixas de Gordura Comerciais</span>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Remoção de gordura em restaurantes, lanchonetes e indústrias alimentícias.
+                </p>
               </div>
-              <div className="text-center">
-                <i className="fa fa-leaf text-4xl text-primary mb-4"></i>
-                <h4 className="font-bold">100% Ecológico</h4>
-                <p className="text-xs opacity-70">Sem uso de químicos abrasivos.</p>
+
+              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                <span className="font-extrabold text-slate-900 text-xs block uppercase">Galerias e Calhas Pluviais</span>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Limpeza de condutores de águas da chuva em barracões, galpões e condomínios.
+                </p>
+              </div>
+
+              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                <span className="font-extrabold text-slate-900 text-xs block uppercase">Colunas e Prumadas Prediais</span>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Manutenção preventiva e corretiva em tubulações verticais de edifícios.
+                </p>
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold text-dark mt-12">Aplicações Típicas do Hidrojateamento em Curitiba</h3>
-            <p>
-              Curitiba, sendo uma cidade com grande parque industrial e muitos condomínios de alto padrão, exige serviços de hidrojateamento em diversas frentes:
-            </p>
-            <ul className="space-y-4 mt-6">
-              <li><strong>Redes de Esgoto Condominiais:</strong> Limpeza das prumadas (colunas verticais) para evitar transbordamentos nos apartamentos do térreo.</li>
-              <li><strong>Galerias Pluviais Industriais:</strong> Manutenção de calhas e condutores de grande diâmetro em galpões industriais no CIC.</li>
-              <li><strong>Caixas de Gordura de Restaurantes:</strong> Limpeza profunda que remove o biofilme bacteriano, eliminando o mau cheiro definitivamente.</li>
-              <li><strong>Desobstrução de Tubos Resto de Obra:</strong> Remoção de cimento e argamassa que caíram acidentalmente na rede durante a construção.</li>
-            </ul>
+            <h3 className="font-display font-extrabold text-lg text-slate-900 uppercase pt-4">
+              Atendimento Técnico ADP
+            </h3>
 
-            <h3 className="text-2xl font-bold text-dark mt-12">Vantagens: Por que investir no Hidrojato?</h3>
             <p>
-              Muitos clientes optam pela máquina rotativa pelo preço inicial mais baixo. No entanto, o hidrojateamento é um investimento em <strong>manutenção duradoura</strong>. Enquanto a mola da máquina apenas abre um caminho no meio da gordura, o hidrojato deixa o cano "como novo". Isso estende o prazo da próxima manutenção em até 3 vezes, gerando uma economia real a longo prazo.
-            </p>
-            <p>
-              Além disso, o hidrojateamento é o método mais seguro para a integridade física das tubulações. Como utiliza apenas água, não há o atrito metálico das molas que pode, em canos de barro ou PVC ressecado, causar rachaduras e infiltrações futuras.
+              Com sede no CIC e atendimento em Curitiba e Região Metropolitana, a ADP envia equipe com equipamento apropriado para realizar a avaliação no local e apresentar o orçamento com clareza.
             </p>
           </div>
         </div>
       </section>
 
-      <VideoSection locationName="Hidrojateamento" />
       <ContactForm />
     </main>
   );
 };
 
 export default ServiceHydrojetting;
+
