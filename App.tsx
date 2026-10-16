@@ -16,6 +16,7 @@ import NotFound from './pages/NotFound';
 import LegacyDesentupidora from './pages/LegacyDesentupidora';
 import Glossario from './pages/Glossario';
 import SitemapPage from './pages/SitemapPage';
+import EnhancedSEO from './components/EnhancedSEO';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -36,7 +37,16 @@ const ScrollToTop = () => {
 
 const PageFrame: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { pathname } = useLocation();
-  return <div id="main-content" tabIndex={-1} className={pathname === "/" ? "flex-grow" : "flex-grow adp-interior"}>{children}</div>;
+  const auxiliaryTitles: Record<string, string> = {
+    '/glossario': 'Glossário e Termos Técnicos | ADP Desentupidora',
+    '/mapa-do-site': 'Mapa do Site | ADP Desentupidora Curitiba',
+    '/galeria-ia': 'Galeria ADP | ADP Desentupidora Curitiba',
+    '/desentupidora.html': 'Desentupidora em Curitiba | ADP Desentupidora 24h',
+  };
+  return <div id="main-content" tabIndex={-1} className={pathname === "/" ? "flex-grow" : "flex-grow adp-interior"}>
+    {auxiliaryTitles[pathname] && <EnhancedSEO title={auxiliaryTitles[pathname]} description="ADP Desentupidora Curitiba. Atendimento 24h em Curitiba e Região Metropolitana." path={pathname} />}
+    {children}
+  </div>;
 };
 
 const App: React.FC = () => {
