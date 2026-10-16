@@ -109,7 +109,9 @@ button, summary { cursor: pointer; }
 .adp-contact-form .adp-button { width: 100%; }
 .adp-form-note { font-size: 12px; line-height: 1.5; color: #606358; margin-top: -8px; }
 /* Existing service and local SEO pages inherit the same material and type scale. */
-.adp-interior main > section:first-of-type { background: var(--adp-paper); border-bottom: 1px solid var(--adp-line); }
+.adp-interior main > section:first-of-type:not(.bg-dark) { background: var(--adp-paper); border-bottom: 1px solid var(--adp-line); }
+.adp-interior main > section:first-of-type.bg-dark { background: var(--adp-ink); color: var(--adp-paper); }
+.adp-interior main > section:first-of-type.bg-dark h1 { color: var(--adp-paper); }
 .adp-interior main > section:first-of-type h1 { font-size: clamp(38px,5vw,66px); line-height: 1.05; text-transform: none; max-width: 900px; }
 .adp-interior main :is(.rounded-xl,.rounded-2xl,.rounded-3xl) { border-radius: 2px; }
 .adp-interior main :is(.shadow,.shadow-md,.shadow-lg,.shadow-xl) { box-shadow: none; }
