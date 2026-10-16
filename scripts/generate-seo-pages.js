@@ -91,7 +91,11 @@ const saveFile = (relativeDir, content) => {
 };
 
 // Replace elements in Template Header and Body
+const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[char]));
+
 const buildPage = (urlPath, seoData, bodyHtml) => {
+  const title = escapeHtml(seoData.title);
+  const description = escapeHtml(seoData.description);
   const canonicalUrl = `${COMPANY_SITE}${urlPath}`;
   const keywordsStr = seoData.keywords || 'desentupidora curitiba, desentupimento curitiba, desentupir vaso, desentupir pia, limpa fossa, hidrojateamento';
   
@@ -100,32 +104,43 @@ const buildPage = (urlPath, seoData, bodyHtml) => {
     `<script type="application/ld+json">${JSON.stringify(sd)}</script>`
   ).join('\n    ');
 
-  let html = template;
+  // Remove template-level metadata before inserting route-specific tags.
+  // Social crawlers use the first tag, so duplicate home tags break deep-link previews.
+  let html = template
+    .replace(/<meta\b[^>]*(?:name|property)=["'](?:description|keywords|robots|og:[^"']*|twitter:[^"']*)["'][^>]*>/gi, '')
+    .replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi, '')
+    .replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, '');
 
   // 1. Reemplazar Título
-  html = html.replace(/<title>[^<]*<\/title>/i, `<title>${seoData.title}</title>`);
+  html = html.replace(/<title>[^<]*<\/title>/i, `<title>${title}</title>`);
 
   // 2. Insertar Metas e JSON-LD no <head>
   const seoHeadTags = `
-    <meta name="description" content="${seoData.description}">
+    <meta name="description" content="${description}">
     <meta name="keywords" content="${keywordsStr}">
     <link rel="canonical" href="${canonicalUrl}">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="${seoData.title}">
-    <meta property="og:description" content="${seoData.description}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${description}">
     <meta property="og:url" content="${canonicalUrl}">
     <meta property="og:site_name" content="ADP Desentupidora Curitiba">
-    <meta property="og:image" content="${seoData.image || 'https://img.desentopeadp.com.br/hero-adp.webp'}">
+    <meta property="og:image" content="${COMPANY_SITE}/og-adp.jpg">
+    <meta property="og:image:secure_url" content="${COMPANY_SITE}/og-adp.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="ADP Desentupidora — atendimento 24h em Curitiba e Região Metropolitana">
     <meta property="og:locale" content="pt_BR">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${seoData.title}">
-    <meta name="twitter:description" content="${seoData.description}">
-    <meta name="twitter:image" content="${seoData.image || 'https://img.desentopeadp.com.br/hero-adp.webp'}">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${description}">
+    <meta name="twitter:image" content="${COMPANY_SITE}/og-adp.jpg">
+    <meta name="twitter:image:alt" content="ADP Desentupidora — atendimento 24h em Curitiba e Região Metropolitana">
     
     <!-- Resource Hints -->
     <link rel="dns-prefetch" href="https://img.desentopeadp.com.br">
@@ -205,6 +220,7 @@ const getFooterHtml = () => `
         <a href="/faq" class="hover:text-white transition-colors">FAQ</a>
       </div>
     </div>
+    <div class="adp-credit"><p class="adp-credit-badge"><span>Desenvolvido com</span><span class="adp-credit-heart" role="img" aria-label="amor">♥</span><span>por</span><a id="developer-suprema-link" href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer"><span>Suprema Sites Express</span><img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema" width="63" height="18" referrerpolicy="no-referrer" loading="lazy"></a></p></div>
   </footer>
 `;
 
@@ -539,6 +555,10 @@ const legacySeo = {
   description: "Atendimento imediato e emergencial de desentupimento com preços imbatíveis táticos. Ligue agora mesmo 24 horas por dia."
 };
 saveFile('desentupidora', buildPage('/desentupidora.html', legacySeo, fossaBodyHtml));
+fs.writeFileSync(path.join(DIST_DIR, 'desentupidora.html'), buildPage('/desentupidora.html', legacySeo, fossaBodyHtml), 'utf-8');
+
+// Preserve social metadata for this existing application route too.
+saveFile('galeria-ia', buildPage('/galeria-ia', { title: 'Galeria ADP | ADP Desentupidora Curitiba', description: 'Galeria da ADP Desentupidora Curitiba. Atendimento 24h em Curitiba e Região Metropolitana.' }, `${getHeaderHtml()}<main class="py-24 site-container"><h1>Galeria ADP</h1><p>ADP Desentupidora Curitiba e Região Metropolitana.</p></main>${getFooterHtml()}`));
 
 
 // ==================== GENERATE ALL BAIRROS (/bairro/:slug) ====================

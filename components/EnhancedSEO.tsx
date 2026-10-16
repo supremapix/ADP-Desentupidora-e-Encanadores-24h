@@ -17,7 +17,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   description,
   path,
   type = 'website',
-  image = 'https://img.desentopeadp.com.br/hero-adp.webp',
+  image = `${COMPANY_SITE}/og-adp.jpg`,
   keywords = 'desentupidora curitiba, desentupimento curitiba, desentupir pia, desentupir ralo, desentupir esgoto, limpeza de fossa curitiba, hidrojateamento curitiba',
   structuredData
 }) => {
@@ -92,7 +92,9 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content="ADP Desentupidora Curitiba" />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={`${COMPANY_SITE}/og-adp.jpg`} />
+      <meta property="og:image:alt" content="ADP Desentupidora — atendimento 24h em Curitiba e Região Metropolitana" />
+      <meta property="og:image:secure_url" content={`${COMPANY_SITE}/og-adp.jpg`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:type" content="image/jpeg" />
@@ -102,7 +104,8 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={`${COMPANY_SITE}/og-adp.jpg`} />
+      <meta name="twitter:image:alt" content="ADP Desentupidora — atendimento 24h em Curitiba e Região Metropolitana" />
 
       {/* Structured Data (JSON-LD) */}
       <script type="application/ld+json">

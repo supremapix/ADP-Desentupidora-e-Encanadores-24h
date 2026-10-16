@@ -1,110 +1,52 @@
-# Sistema de Design Completo (Design System) - ADP Desentupidora
+# ADP: identidade editorial
 
-Este arquivo reúne todas as especificações visuais, padrões de tipografia, paleta de cores, espaçamentos e componentes de interface da **ADP Desentupidora Curitiba**. Ele serve como um mapa estético centralizado para que você revise a identidade visual e realize quaisquer atualizações ou correções de design.
+## Direção
+Uma empresa local de serviço técnico, não uma plataforma de tecnologia. O layout usa tipografia condensada de grande escala, linhas divisórias, numeração de serviços e blocos de cor sóbria. Sem gradientes decorativos, brilho, contadores de credibilidade ou depoimentos inventados.
 
----
+## Tokens
+- Vermelho ADP: `#9b111e`.
+- Papel: `#f5f2e9`.
+- Grafite: `#242822`.
+- Fundo de serviços: `#fffef9`.
+- Linhas: `#d4d5c9`.
+- Títulos: Barlow Condensed, 600–800.
+- Texto: Barlow, 400–600. Controles de formulário com 16px para evitar zoom involuntário no celular.
 
-## 🎨 1. Paleta de Cores (Color Palette)
+Os tokens e o layout da página inicial ficam em `index.css`. Cabeçalho, rodapé e contatos fixos ficam em `components/SiteChrome.css`. Não adicionar um segundo conjunto de tokens inline ao `index.html`.
 
-A paleta de cores foi desenvolvida para transmitir **urgência extrema, confiabilidade técnica e forte contraste visual**, mantendo alta conformidade de acessibilidade tanto no modo claro quanto em seções com fundo escuro.
+## Hierarquia
+1. Problema e contato imediato.
+2. Diretório dos oito serviços existentes, com links preservados.
+3. Endereço e etapas do atendimento.
+4. Bairros e cidades com links para páginas SEO existentes.
+5. Dúvidas práticas.
+6. Formulário que prepara a mensagem no WhatsApp, sem simular orçamento ou prazo de resposta.
 
-| Papel Visual | Nome do Token | Valor Hexadecimual | Uso Principal |
-| :--- | :--- | :--- | :--- |
-| **Principal (Primary)** | `primary` | `#9B111E` (Vermelho Rubi Profundo) | Botões de ação imediata, ícones de alerta, cabeçalhos de destaque. |
-| **Secundária (Secondary)** | `secondary` | `#FFEBB3` (Bege Creme Suave) | Fundos secundários quentes, textos secundários de contraste. |
-| **Destaque (Accent/Ink)** | `accent` / `ink` | `#FFC72C` (Amarelo Ouro Técnico) | Chamadas, badges, estrelas de avaliação técnica, badges de destaque. |
-| **Escuro (Dark/Slate)** | `slate-900 / dark` | `#111111` / `#0F172A` | Backgrounds de alta imersão, rodapé, modo escuro. |
-| **Cinza Claro (Light Gray)** | `lightGray` | `#FAF9F6` (Branco Off-white Nobre) | Fundos principais limpos, seções de texto corrido. |
+## Imagens e afirmações
+A imagem de tubulação vem de um ativo já utilizado pelo site e foi convertida para WebP. A legenda é descritiva e não atribui a instalação a uma obra da ADP. Ver `public/images/README.md`. Não utilizar imagens de procedência não documentada como prova de frota, equipe ou obra real. Novas fotografias devem ter autoria e contexto confirmados.
 
----
+## Acessibilidade
+- Menu acionável por teclado, fecha ao navegar, clicar fora ou usar Escape.
+- Link de salto para o conteúdo; foco visível.
+- FAQ com disclosure nativo (`details`/`summary`).
+- Formulário com labels associados e indicação de que o usuário revisa/envia no WhatsApp.
+- Sem animações permanentes; preferência por movimento reduzido respeitada.
+- Contatos móveis acima da área segura do sistema e espaço correspondente no rodapé.
 
-## font 2. Tipografia (Typography) & Escala
+## Validação
+- `npm ci`
+- `npm run typecheck`
+- `npm run build` (inclui a geração das 177 URLs SEO; o gerador existente também atualiza `public/sitemap.xml`).
+- `npm run dev`
 
-A tipografia do site combina a fluidez moderna da família **Barlow** com o rigor técnico de **Inter**, proporcionando leitura confortável e alto impacto promocional.
+O TypeScript verifica a aplicação ativa da raiz, `components/` e `pages/`. A pasta antiga `src/` contém cópias incompletas não importadas pelo entrypoint e fica fora do programa de compilação, sem remover arquivos do histórico.
 
-*   **Fonte de Títulos (Display):** `'Barlow Condensed', sans-serif` — Para títulos (h1, h2, h3, h4) com peso Bold/Black (700 a 900), resultando em excelente estrutura vertical.
-*   **Fonte de Apoio/Texto Corrido (SANS):** `'Barlow', 'Inter', sans-serif` — Para parágrafos, botões e legibilidade geral no mobile.
+Antes de publicar, revisar em navegador a 390px, 768px e 1440px: menu/serviços/Escape, navegação e voltar, links de bairro, FAQ, campos obrigatórios, mensagem preparada no WhatsApp (não enviar durante QA), ausência de rolagem horizontal, foco e contraste. Também verificar páginas de serviço, cidade e bairro, além da home. Não confundir build aprovado com teste visual concluído.
 
-### Escala de Fontes (Variáveis CSS da `:root`)
-
-```css
-:root {
-  --font-primary-family: 'Barlow', 'Inter', sans-serif;
-  --font-secondary-family: 'Barlow Condensed', sans-serif;
-  
-  /* Tamanhos de Títulos */
-  --text-h1: 3rem;              /* Desktop */
-  --text-h1-mobile: 2.25rem;    /* Mobile */
-  --text-h2: 2.25rem;           /* Desktop */
-  --text-h2-mobile: 1.75rem;    /* Mobile */
-  --text-h3: 1.75rem;           /* Desktop */
-  --text-h3-mobile: 1.4rem;     /* Mobile */
-  --text-h4: 1.35rem;           /* Desktop */
-  --text-h4-mobile: 1.15rem;    /* Mobile */
-  
-  /* Textos de Apoio */
-  --text-p: 1.05rem;            /* Desktop */
-  --text-p-mobile: 0.95rem;     /* Mobile */
-  --text-small: 0.875rem;       /* Avisos menores, legendas */
-  --text-label: 0.75rem;        /* Subtítulos de tags e labels secundárias */
-  
-  /* Pesos e Linhas */
-  --font-weight-title: 700;     /* Bold */
-  --font-weight-body: 400;      /* Regular */
-  --line-height-title: 1.1;     /* Títulos espremidos e agressivos */
-  --line-height-body: 1.6;      /* Conforto na leitura dos parágrafos */
-  --letter-spacing-uppercase: 0.08em; /* Elegância em termos em caixa alta */
-}
-```
-
----
-
-## 📏 3. Espaçamentos, Gaps e Grades (Grid & Layout)
-
-Para alcançar consistência rítmica ao longo do site, utilizamos unidades fixas e proporcionais:
-
-```css
-:root {
-  --margin-title-subtitle: 1rem;       /* Margem inferior do título principal */
-  --margin-subtitle-paragraph: 1.5rem;  /* Margem entre subtítulo secundário e corpo */
-  --padding-section: 5.5rem;           /* Espaçamento interno de seções (Desktop) */
-  --padding-section-mobile: 3rem;      /* Espaçamento interno de seções (Mobile) */
-  --gap-cards: 2rem;                   /* Distância entre grades de cartões (Desktop) */
-  --gap-cards-mobile: 1.25rem;         /* Distância entre grades de cartões (Mobile) */
-  --padding-card: 2.5rem;              /* Espaço interno dos cards (Desktop) */
-  --padding-card-mobile: 1.5rem;       /* Espaço interno dos cards (Mobile) */
-}
-```
-
----
-
-## 🛠️ 4. Configurações Prontas em Código (Vapor JSON-LD / HTML / CSS)
-
-As variáveis CSS acima estão inseridas no cabeçalho do arquivo `/index.html` e são herdadas por toda a aplicação React.
-
-### Exemplo de Configuração Tailwind Extendida no Site (`index.html`):
-
-```javascript
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#9B111E',   // Vermelho Rubi
-        secondary: '#FFEBB3', // Bege Creme
-        dark: '#111111',      // Preto Grafite
-        accent: '#FFC72C',    // Amarelo Destaque
-        lightGray: '#FAF9F6'  // Off-white
-      }
-    }
-  }
-}
-```
-
----
-
-## ✏️ Como Realizar Correções de Design
-
-Se desejar corrigir qualquer padrão visual:
-1. **Para alterar Cores:** Modifique as constantes dentro de `tailwind.config` no `/index.html`.
-2. **Para alterar Fontes ou Alturas:** Atualize os valores de `--text-` no seletor `:root` localizado no bloco `<style>` do `/index.html`.
-3. **Para alterar Componentes Específicos:** Me responda listando a alteração desejada e eu irei ajustar cirurgicamente as classes CSS correspondentes!
+## Compartilhamento e identidade nos navegadores
+- `FloatingButtons.tsx` exporta FloatingActions: links de compartilhamento só abrem após clique; nenhuma postagem automática. Mensagem copiada inclui título atual e URL pública canônica, sem parâmetros privados de consulta.
+- `https://www.desentopeadp.com.br/` respondeu 200 em 16/10/2026; o domínio sem www redirecionou para www. A prévia não é usada como URL pública de compartilhamento.
+- OG JPEG em `/og-adp.jpg`, 1200×630, é ilustração de identidade (não fotografia de serviço). WhatsApp e outras redes buscam os metadados HTML; não é possível forçar o cache ou a apresentação final do aplicativo. A imagem só estará disponível no domínio canônico após aprovação e publicação em produção.
+- Ícones seguem os formatos atuais documentados em https://realfavicongenerator.net/: SVG, PNG96, ICO, Apple Touch180 e manifest192/512. O ícone maskable é separado e tem margem de segurança. Não se afirma que o validador externo tenha sido executado.
+- `npm run test:seo`, após o build, verifica metadados únicos e corretos nas 177 URLs, favicon e crédito. Imagens de favicon têm dimensões conferidas na geração.
+- Referências de compartilhamento: https://developer.pinterest.com/docs/web-features/buttons/ ; https://faq.whatsapp.com/425247423114725/ ; https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/share-plugin . Endpoints convencionais de Facebook/X/LinkedIn/Threads precisam de smoke test autenticado; não foram efetuadas postagens de teste.
