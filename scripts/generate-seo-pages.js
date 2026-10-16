@@ -165,6 +165,8 @@ const buildPage = (urlPath, seoData, bodyHtml) => {
   html = html.replace('<div id="root"></div>', cleanBodyHtml);
   html = html.replace('<div id="root" class="root"></div>', cleanBodyHtml);
 
+  // Let Helmet replace these tags during client-side navigation instead of appending duplicates.
+  html = html.replace(/<(meta|link|script)\b([^>]*(?:(?:name|property)="(?:description|keywords|robots|og:[^"]*|twitter:[^"]*)"|rel="canonical"|type="application\/ld\+json")[^>]*)>/gi, '<$1 data-rh="true"$2>');
   return html;
 };
 
