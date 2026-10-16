@@ -1,9 +1,22 @@
 import React from 'react';
+import { Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { COMPANY_PHONE, COMPANY_MOBILE, COMPANY_WHATSAPP, BAIRROS, COMPANY_EMAIL, slugify } from '../constants';
 
 export function SupremaCredit() {
-  return <p className="adp-credit">Desenvolvido por <a id="developer-suprema-link" href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer">Suprema Sites Express ↗</a></p>;
+  return (
+    <div className="adp-credit">
+      <p className="adp-credit-badge">
+        <span>Desenvolvido com</span>
+        <Heart size={14} className="adp-credit-heart" role="img" aria-label="amor" />
+        <span>por</span>
+        <a id="developer-suprema-link" href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer">
+          <span>Suprema Sites Express</span>
+          <img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema" width={63} height={18} referrerPolicy="no-referrer" loading="lazy" />
+        </a>
+      </p>
+    </div>
+  );
 }
 
 const services = [
@@ -34,7 +47,8 @@ const Footer: React.FC = () => (
         <div className="adp-footer-contact"><h2>Fale com a ADP</h2><span className="adp-footer-label">PLANTÃO 24 HORAS</span><a className="adp-footer-number" href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}>{COMPANY_PHONE}</a><a href={`https://wa.me/${COMPANY_WHATSAPP}`} target="_blank" rel="noopener noreferrer">WhatsApp: {COMPANY_MOBILE} ↗</a><a className="adp-footer-email" href={`mailto:${COMPANY_EMAIL}`}>{COMPANY_EMAIL}</a><p>Residências, comércios,<br />condomínios e indústrias.</p></div>
       </div>
       <details className="adp-neighborhoods"><summary>Bairros atendidos em Curitiba <span aria-hidden="true">+</span></summary><div>{BAIRROS.map(b => <Link key={b} to={`/bairro/${slugify(b)}`}>{b}</Link>)}</div></details>
-      <div className="adp-footer-bottom"><p>© {new Date().getFullYear()} ADP Desentupidora. Todos os direitos reservados.</p><SupremaCredit /></div>
+      <div className="adp-footer-bottom"><p>© {new Date().getFullYear()} ADP Desentupidora. Todos os direitos reservados.</p></div>
+      <SupremaCredit />
     </div>
   </footer>
 );
