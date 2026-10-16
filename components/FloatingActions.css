@@ -1,0 +1,33 @@
+/* Independent controls: no duplicate mobile contact bar. */
+.adp-floating-share,.adp-floating-contact{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;font-family:inherit}
+.adp-floating-share{left:calc(20px + env(safe-area-inset-left,0px))}
+.adp-floating-contact{right:calc(20px + env(safe-area-inset-right,0px));display:flex;align-items:flex-end;flex-direction:column;gap:10px}
+.adp-floating-button{min-width:52px;min-height:52px;border-radius:100px;border:1px solid rgba(245,242,233,.25);display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;background:#242822;color:#f5f2e9;box-shadow:0 6px 24px #24282226;font-weight:700;font-size:13px;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s}
+.adp-floating-button:hover{transform:translateY(-3px);box-shadow:0 8px 28px #24282240}
+.adp-floating-button svg{flex-shrink:0}
+.adp-share-toggle,.adp-whatsapp-button{background:#9b111e}
+.adp-whatsapp-button{animation:adp-contact-pulse 5s ease-in-out 2}
+.adp-whatsapp-button span{text-align:left;line-height:1.3}
+.adp-whatsapp-button small{display:block;font-size:10px;font-weight:500;letter-spacing:.04em;margin-top:2px}
+.adp-back-top{width:44px;min-width:44px;min-height:44px;padding:10px;background:#f5f2e9;color:#242822;border-color:#24282233}
+.adp-share-panel{position:absolute;bottom:calc(100% + 12px);left:0;width:310px;max-width:calc(100vw - 112px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px));max-height:calc(100dvh - 110px - env(safe-area-inset-bottom,0px));overflow:auto;background:rgba(245,242,233,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:#242822;border:1px solid #ffffffb3;border-radius:20px;padding:20px;box-shadow:0 12px 48px #24282230;animation:adp-share-enter .18s ease-out}
+.adp-share-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.adp-share-heading span{font-size:9px;letter-spacing:.15em;font-weight:800;color:#9b111e}
+.adp-share-heading h2{font-size:17px;font-weight:750;line-height:1.3;margin:5px 0 0;letter-spacing:-.02em}
+.adp-share-close{display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;border:0;border-radius:50%;background:transparent;color:#242822;cursor:pointer}
+.adp-share-close:hover{background:#2428220c}
+.adp-share-description{font-size:12px;line-height:1.5;margin:12px 0;color:#53564f}
+.adp-share-links{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.adp-share-links a{display:flex;align-items:center;gap:8px;min-height:44px;padding:10px;border:1px solid #2428221a;border-radius:10px;font-size:12px;font-weight:650;text-decoration:none;color:#242822;transition:background .2s,color .2s}
+.adp-share-links a:hover{background:#9b111e;color:#fff}
+.adp-share-links svg{flex-shrink:0}
+.adp-share-copy{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:44px;margin-top:12px;padding:10px;border:0;border-radius:10px;background:#242822;color:#f5f2e9;font-size:12px;font-weight:700;cursor:pointer}
+.adp-share-copy:disabled{opacity:.6;cursor:wait}
+.adp-share-feedback{font-size:12px;line-height:1.5;margin:8px 0 0}
+.adp-share-feedback:empty{display:none}
+.adp-share-manual{width:100%;min-height:100px;margin-top:8px;padding:8px;font-size:12px;line-height:1.5;border:1px solid #24282244;border-radius:8px;background:#fff;color:#242822;resize:vertical}
+.adp-floating-share :focus-visible,.adp-floating-contact :focus-visible{outline:3px solid #9b111e;outline-offset:4px;box-shadow:0 0 0 4px #f5f2e9}
+@keyframes adp-contact-pulse{0%,70%,100%{box-shadow:0 6px 24px #24282226}80%{box-shadow:0 0 0 6px #9b111e15,0 6px 24px #24282226}}
+@keyframes adp-share-enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.adp-floating-share{left:calc(14px + env(safe-area-inset-left,0px))}.adp-floating-contact{right:calc(14px + env(safe-area-inset-right,0px))}.adp-floating-share,.adp-floating-contact{bottom:calc(14px + env(safe-area-inset-bottom,0px))}.adp-floating-button{width:52px;height:52px;padding:13px}.adp-share-toggle>span,.adp-call-button>span,.adp-whatsapp-button>span{display:none}.adp-back-top{width:44px;height:44px}.adp-share-panel{padding:14px;max-width:calc(100vw - 94px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px))}.adp-share-heading h2{font-size:15px}.adp-share-links{grid-template-columns:1fr}.adp-share-links a{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.adp-floating-button,.adp-share-links a{transition:none}.adp-whatsapp-button,.adp-share-panel{animation:none}.adp-floating-button:hover{transform:none}}

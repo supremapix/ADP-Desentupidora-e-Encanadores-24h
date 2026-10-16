@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build && node scripts/generate-seo-pages.js",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:seo": "node scripts/check-social-metadata.js"
   },
   "dependencies": {
     "@google/genai": "^1.31.0",

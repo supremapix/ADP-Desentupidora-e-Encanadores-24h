@@ -228,13 +228,14 @@ const FAQPage: React.FC = () => {
             <input 
               type="text" 
               placeholder="Digite sua dúvida (ex: soda cáustica, raiz, cheiro)..." 
-              className="w-full p-4 rounded-full text-gray-800 focus:ring-4 focus:ring-primary/50 outline-none shadow-lg"
+              aria-label="Buscar nas perguntas frequentes"
+              className="w-full p-4 rounded-full bg-white text-gray-800 focus:ring-4 focus:ring-primary/50 outline-none shadow-lg"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button className="absolute right-4 top-1/2 -translate-y-1/2 text-primary">
+            <span aria-hidden="true" className="absolute right-4 top-1/2 -translate-y-1/2 text-primary pointer-events-none">
               <i className="fa fa-search text-xl"></i>
-            </button>
+            </span>
           </div>
         </div>
       </section>

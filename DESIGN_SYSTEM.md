@@ -42,3 +42,11 @@ A imagem de tubulação vem de um ativo já utilizado pelo site e foi convertida
 O TypeScript verifica a aplicação ativa da raiz, `components/` e `pages/`. A pasta antiga `src/` contém cópias incompletas não importadas pelo entrypoint e fica fora do programa de compilação, sem remover arquivos do histórico.
 
 Antes de publicar, revisar em navegador a 390px, 768px e 1440px: menu/serviços/Escape, navegação e voltar, links de bairro, FAQ, campos obrigatórios, mensagem preparada no WhatsApp (não enviar durante QA), ausência de rolagem horizontal, foco e contraste. Também verificar páginas de serviço, cidade e bairro, além da home. Não confundir build aprovado com teste visual concluído.
+
+## Compartilhamento e identidade nos navegadores
+- `FloatingButtons.tsx` exporta FloatingActions: links de compartilhamento só abrem após clique; nenhuma postagem automática. Mensagem copiada inclui título atual e URL pública canônica, sem parâmetros privados de consulta.
+- `https://www.desentopeadp.com.br/` respondeu 200 em 16/10/2026; o domínio sem www redirecionou para www. A prévia não é usada como URL pública de compartilhamento.
+- OG JPEG em `/og-adp.jpg`, 1200×630, é ilustração de identidade (não fotografia de serviço). WhatsApp e outras redes buscam os metadados HTML; não é possível forçar o cache ou a apresentação final do aplicativo. A imagem só estará disponível no domínio canônico após aprovação e publicação em produção.
+- Ícones seguem os formatos atuais documentados em https://realfavicongenerator.net/: SVG, PNG96, ICO, Apple Touch180 e manifest192/512. O ícone maskable é separado e tem margem de segurança. Não se afirma que o validador externo tenha sido executado.
+- `npm run test:seo`, após o build, verifica metadados únicos e corretos nas 177 URLs, favicon e crédito. Imagens de favicon têm dimensões conferidas na geração.
+- Referências de compartilhamento: https://developer.pinterest.com/docs/web-features/buttons/ ; https://faq.whatsapp.com/425247423114725/ ; https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/share-plugin . Endpoints convencionais de Facebook/X/LinkedIn/Threads precisam de smoke test autenticado; não foram efetuadas postagens de teste.
