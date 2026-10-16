@@ -34,6 +34,11 @@ const ScrollToTop = () => {
   return null;
 };
 
+const PageFrame: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const { pathname } = useLocation();
+  return <div id="main-content" tabIndex={-1} className={pathname === "/" ? "flex-grow" : "flex-grow adp-interior"}>{children}</div>;
+};
+
 const App: React.FC = () => {
   return (
     <HelmetProvider>
@@ -41,7 +46,7 @@ const App: React.FC = () => {
         <ScrollToTop />
         <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-lightGray">
           <Header />
-          <div className="flex-grow">
+          <PageFrame>
             <Routes>
               <Route path="/" element={<Home />} />
               
@@ -64,7 +69,7 @@ const App: React.FC = () => {
               
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </div>
+          </PageFrame>
           <Footer />
           <FloatingButtons />
         </div>

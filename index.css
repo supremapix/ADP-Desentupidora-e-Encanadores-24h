@@ -29,3 +29,99 @@
     100% { opacity: 1; transform: translateX(0); }
   }
 }
+
+/* ADP editorial system: warm paper, ruby ink, practical industrial typography. */
+:root { --adp-paper: #f5f2e9; --adp-ink: #242822; --adp-red: #9b111e; --adp-line: #d4d5c9; --color-primary: #9b111e; --font-primary-family: 'Barlow', sans-serif; }
+body { margin: 0; color: var(--adp-ink); background: var(--adp-paper); font-family: 'Barlow', sans-serif; }
+html { scroll-padding-top: 110px; }
+.site-container { width: 100%; max-width: 1320px; margin-inline: auto; padding-inline: clamp(20px,4vw,64px); }
+:where(a, button, input, select, textarea, summary):focus-visible { outline: 3px solid #bc5811; outline-offset: 5px; }
+button, summary { cursor: pointer; }
+.adp-home { background: var(--adp-paper); color: var(--adp-ink); }
+.adp-eyebrow { display: flex; align-items: center; gap: 10px; font: 600 12px/1.4 'Barlow',sans-serif; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 25px; }
+.adp-status-dot { width: 7px; height: 7px; background: var(--adp-red); border-radius: 50%; }
+.adp-hero-grid { display: grid; grid-template-columns: 1.17fr 1fr; gap: 55px; padding-top: 48px; padding-bottom: 42px; align-items: center; }
+.adp-hero h1 { font: 700 clamp(64px,7.1vw,102px)/.94 'Barlow Condensed',sans-serif; letter-spacing: -.025em; margin: 0 0 28px; }
+.adp-hero h1 span { color: var(--adp-red); }
+.adp-hero-description { max-width: 430px; font-size: 18px; line-height: 1.55; margin: 0 0 28px; color: #54584f; }
+.adp-actions { display: flex; flex-wrap: wrap; gap: 22px; align-items: center; }
+.adp-button { display: inline-flex; min-height: 54px; padding: 16px 22px; gap: 24px; justify-content: space-between; align-items: center; background: var(--adp-red); color: #fff; font-size: 15px; font-weight: 600; border: 1px solid transparent; text-decoration: none; transition: background .18s; }
+.adp-button:hover { background: #74101a; }
+.adp-phone-link { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 15px; }
+.adp-hero-note { font-size: 12px; color: #63665c; margin-top: 25px; }
+.adp-hero-visual { position: relative; height: 490px; background: #dddcd3; }
+.adp-hero-visual > img { width: 100%; height: 100%; object-fit: cover; object-position: center 53%; }
+.adp-duty { position: absolute; right: -15px; top: 26px; background: var(--adp-red); color: white; width: 150px; height: 168px; padding: 17px; display: flex; flex-direction: column; }
+.adp-duty > span { font-size: 11px; text-transform: uppercase; letter-spacing: .13em; }
+.adp-duty strong { font: 700 82px/.95 'Barlow Condensed',sans-serif; letter-spacing: -.035em; margin: 5px 0; }
+.adp-duty strong span { font-size: 44px; }
+.adp-image-label { position: absolute; bottom: 0; inset-inline: 0; background: var(--adp-ink); color: #f5f2e9; padding: 15px 18px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; }
+.adp-hero-bottom { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--adp-line); padding-block: 20px; font-size: 13px; }
+.adp-hero-bottom a { display: flex; gap: 15px; align-items: center; }
+.adp-section { padding-block: 88px; }
+.adp-section h2 { font: 600 clamp(42px,4.3vw,62px)/1 'Barlow Condensed',sans-serif; letter-spacing: -.02em; margin: 0 0 24px; }
+.adp-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 50px; margin-bottom: 30px; }
+.adp-section-heading > p { max-width: 340px; margin-bottom: 26px; line-height: 1.6; color: #606358; }
+.adp-services { background: #fffef9; border-top: 1px solid var(--adp-line); }
+.adp-service-list { border-top: 1px solid var(--adp-ink); }
+.adp-service-row { display: grid; grid-template-columns: 42px 1fr 1.1fr 24px; gap: 25px; align-items: center; padding: 24px 8px; border-bottom: 1px solid var(--adp-line); transition: background .15s, color .15s; }
+.adp-service-row:hover { background: #f0eee4; color: var(--adp-red); }
+.adp-index { font: 13px ui-monospace,monospace; color: #73776a; }
+.adp-service-row h3 { font: 600 28px/1.1 'Barlow Condensed',sans-serif; margin: 0; }
+.adp-service-row p { font-size: 14px; line-height: 1.5; max-width: 390px; color: #606358; }
+.adp-service-row > svg { color: var(--adp-red); }
+.adp-company { background: var(--adp-ink); color: var(--adp-paper); }
+.adp-company-grid,.adp-areas-grid,.adp-faq-grid,.adp-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }
+.adp-company .adp-eyebrow { color: #d4c0a9; }
+.adp-company-intro { font-size: 18px; line-height: 1.6; color: #d3d5cb; max-width: 420px; margin-bottom: 30px; }
+.adp-company address { display: flex; align-items: center; gap: 10px; font-size: 14px; font-style: normal; color: #d3d5cb; }
+.adp-process { padding-top: 5px; }
+.adp-process-step { display: flex; gap: 24px; padding: 22px 0; border-top: 1px solid #50544a; }
+.adp-process-step > span { color: #c2a98d; font: 13px ui-monospace,monospace; padding-top: 5px; }
+.adp-process h3 { font-size: 27px; font-weight: 600; margin-bottom: 8px; }
+.adp-process-step p { font-size: 15px; line-height: 1.5; color: #c9cec0; }
+.adp-areas-grid { grid-template-columns: .8fr 1.2fr; }
+.adp-areas-grid > div > p:not(.adp-eyebrow) { max-width: 320px; color: #606358; line-height: 1.6; margin-bottom: 25px; }
+.adp-text-link { display: inline-flex; align-items: center; gap: 15px; font-size: 14px; font-weight: 600; padding-block: 12px; border-bottom: 1px solid; }
+.adp-region-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.adp-region-lists h3 { font: 600 24px 'Barlow Condensed',sans-serif; border-bottom: 1px solid var(--adp-ink); padding-bottom: 20px; margin-bottom: 10px; }
+.adp-region-lists a { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 11px 0; font-size: 14px; border-bottom: 1px solid var(--adp-line); }
+.adp-region-lists a:hover { color: var(--adp-red); }
+.adp-region-lists svg { flex-shrink: 0; }
+.adp-faq { border-block: 1px solid var(--adp-line); }
+.adp-faq details { border-top: 1px solid var(--adp-line); }
+.adp-faq details:last-child { border-bottom: 1px solid var(--adp-line); }
+.adp-faq summary { display: flex; justify-content: space-between; gap: 25px; padding: 22px 0; list-style: none; font-size: 17px; font-weight: 600; }
+.adp-faq summary::-webkit-details-marker { display: none; }
+.adp-faq summary span { color: var(--adp-red); font-size: 23px; font-weight: 400; }
+.adp-faq details[open] summary span { transform: rotate(45deg); }
+.adp-faq details p { padding-bottom: 24px; font-size: 15px; line-height: 1.6; color: #606358; }
+.adp-contact { background: #e9e7db; color: var(--adp-ink); }
+.adp-contact h2 { font-size: clamp(60px,6vw,84px); }
+.adp-contact-grid > div > p:not(.adp-eyebrow) { max-width: 350px; line-height: 1.6; color: #54584f; }
+.adp-contact-phone { display: flex; align-items: center; gap: 12px; font: 600 34px 'Barlow Condensed',sans-serif; margin: 30px 0 12px; }
+.adp-contact-email { font-size: 15px; text-decoration: underline; text-underline-offset: 4px; }
+.adp-contact-form { display: grid; gap: 20px; }
+.adp-form-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.adp-contact-form label { display: grid; gap: 8px; font-size: 13px; font-weight: 600; }
+.adp-contact-form input,.adp-contact-form select,.adp-contact-form textarea { width: 100%; min-width: 0; padding: 14px; border: 1px solid #b4b7a9; background: #fffef9; color: #242822; font: 400 16px 'Barlow',sans-serif; border-radius: 0; }
+.adp-contact-form textarea { resize: vertical; }
+.adp-contact-form .adp-button { width: 100%; }
+.adp-form-note { font-size: 12px; line-height: 1.5; color: #606358; margin-top: -8px; }
+/* Existing service and local SEO pages inherit the same material and type scale. */
+.adp-interior main > section:first-of-type { background: var(--adp-paper); border-bottom: 1px solid var(--adp-line); }
+.adp-interior main > section:first-of-type h1 { font-size: clamp(38px,5vw,66px); line-height: 1.05; text-transform: none; max-width: 900px; }
+.adp-interior main :is(.rounded-xl,.rounded-2xl,.rounded-3xl) { border-radius: 2px; }
+.adp-interior main :is(.shadow,.shadow-md,.shadow-lg,.shadow-xl) { box-shadow: none; }
+.adp-interior main p.text-xs { font-size: 14px; line-height: 1.6; }
+@media(max-width: 1000px) {
+ .adp-hero-grid { gap: 30px; }.adp-hero-visual { height: 430px; }.adp-duty { width: 125px; height: 152px; right: 0; }.adp-duty strong { font-size: 70px; }
+ .adp-company-grid,.adp-areas-grid,.adp-faq-grid,.adp-contact-grid { gap: 40px; }.adp-service-row { gap: 16px; }
+}
+@media(max-width: 720px) {
+ .adp-hero-grid { grid-template-columns: 1fr; padding-top: 34px; gap: 30px; }.adp-hero h1 { font-size: clamp(62px,13vw,88px); }.adp-hero-description { font-size: 17px; }.adp-hero-visual { height: 330px; }.adp-hero-visual > img { object-position: center 60%; }.adp-duty { top: 20px; right: -6px; }.adp-hero-bottom { align-items: start; flex-direction: column; gap: 8px; font-size: 12px; }.adp-hero-note { font-size: 11px; }
+ .adp-section { padding-block: 54px; }.adp-section-heading { display: block; }.adp-section-heading > p { margin-top: 20px; }.adp-eyebrow { margin-bottom: 20px; font-size: 11px; }
+ .adp-service-row { grid-template-columns: 24px 1fr 22px; gap: 12px; padding-block: 20px; }.adp-service-row h3 { font-size: 25px; }.adp-service-row p { grid-column: 2; font-size: 13px; }.adp-service-row > svg { grid-column: 3; grid-row: 1; }
+ .adp-company-grid,.adp-areas-grid,.adp-faq-grid,.adp-contact-grid { grid-template-columns: 1fr; gap: 35px; }.adp-region-lists { gap: 24px; }.adp-region-lists h3 { font-size: 22px; }.adp-region-lists a { font-size: 13px; min-height: 44px; }.adp-form-pair { grid-template-columns: 1fr; gap: 20px; }
+}
+@media(prefers-reduced-motion: reduce) { *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

@@ -1,119 +1,17 @@
-
 import React, { FormEvent } from 'react';
-import { COMPANY_WHATSAPP, COMPANY_EMAIL, COMPANY_SITE, COMPANY_PHONE } from '../constants';
+import { ArrowUpRight, Phone } from 'lucide-react';
+import { COMPANY_WHATSAPP, COMPANY_EMAIL, COMPANY_PHONE } from '../constants';
 
-const ContactForm: React.FC = () => {
+const ContactForm = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    const nome = formData.get('nome') as string;
-    const servico = formData.get('servico') as string;
-    const local = formData.get('local') as string;
-    const mensagem = formData.get('mensagem') as string;
-
-    const textoWhatsApp = `🚨 *NOVO ORÇAMENTO SITE* 🚨\n\n👤 *Nome:* ${nome}\n🛠️ *Serviço:* ${servico}\n📍 *Localização:* ${local}\n📝 *Mensagem:* ${mensagem}\n\n_Vim pelo site oficial desentopeadp.com.br_`;
-    const urlWhatsApp = `https://api.whatsapp.com/send?phone=${COMPANY_WHATSAPP}&text=${encodeURIComponent(textoWhatsApp)}`;
-    
-    window.open(urlWhatsApp, '_blank');
+    const data = new FormData(e.currentTarget);
+    const message = `Olá! Gostaria de solicitar um orçamento.\n\nNome / empresa: ${data.get('nome')}\nBairro / cidade: ${data.get('local')}\nServiço: ${data.get('servico')}\nProblema: ${data.get('mensagem')}\n\nVim pelo site desentopeadp.com.br`;
+    window.open(`https://api.whatsapp.com/send?phone=${COMPANY_WHATSAPP}&text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
   };
-
-  return (
-    <section id="contato" className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -mr-48 -mt-48"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto bg-white rounded-3xl md:rounded-[3.5rem] shadow-[0_30px_100px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col lg:flex-row border border-gray-100">
-          
-          {/* Lado Esquerdo: Info */}
-          <div className="lg:w-2/5 bg-primary text-white p-6 sm:p-12 lg:p-16 flex flex-col justify-center space-y-12">
-             <div>
-                <span className="bg-white/10 border border-white/20 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">Atendimento Direto</span>
-                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-black mb-6 leading-none uppercase tracking-tighter">Peça seu <br/>Orçamento <span className="text-white/50">Grátis</span></h3>
-                <p className="text-white/70 text-sm sm:text-lg leading-relaxed">
-                  Preencha os dados e receba resposta em menos de 2 minutos diretamente no seu WhatsApp. 
-                  Estamos de plantão agora.
-                </p>
-             </div>
-             
-             <div className="space-y-6 sm:space-y-8">
-                <div className="flex items-center gap-4 sm:gap-6 group">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/10 flex items-center justify-center border border-white/10 transition-transform group-hover:scale-110">
-                    <i className="fa fa-phone-alt text-xl sm:text-2xl"></i>
-                  </div>
-                  <div>
-                    <p className="text-[9px] sm:text-[10px] font-bold text-white/40 uppercase tracking-widest">Central de Atendimento</p>
-                    <p className="font-black text-xl sm:text-2xl">{COMPANY_PHONE}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 sm:gap-6 group">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/10 flex items-center justify-center border border-white/10 transition-transform group-hover:scale-110">
-                    <i className="fa fa-envelope text-xl sm:text-2xl"></i>
-                  </div>
-                  <div>
-                    <p className="text-[9px] sm:text-[10px] font-bold text-white/40 uppercase tracking-widest">E-mail Comercial</p>
-                    <p className="font-bold text-base sm:text-lg lowercase">{COMPANY_EMAIL}</p>
-                  </div>
-                </div>
-             </div>
-             
-             <div className="pt-6 sm:pt-10 flex gap-4 opacity-50">
-               <i className="fab fa-cc-visa text-2xl sm:text-3xl"></i>
-               <i className="fab fa-cc-mastercard text-2xl sm:text-3xl"></i>
-               <i className="fa fa-qrcode text-2xl sm:text-3xl"></i>
-               <span className="text-[9px] sm:text-[10px] font-bold uppercase ml-auto self-center">Aceitamos Cartões</span>
-             </div>
-          </div>
-
-          {/* Lado Direito: Form */}
-          <div className="lg:w-3/5 p-6 sm:p-12 lg:p-20">
-            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-black text-dark mb-6 sm:mb-10 uppercase tracking-tighter">Fale com <span className="text-primary">Nossos Técnicos</span></h2>
-            
-            <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
-              <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-                <div className="space-y-2">
-                  <label className="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Seu Nome / Empresa</label>
-                  <input type="text" name="nome" placeholder="Ex: João Silva" required className="w-full bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-5 focus:ring-4 focus:ring-primary/20 outline-none transition-all" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Bairro / Cidade</label>
-                  <input type="text" name="local" placeholder="Ex: Batel, Curitiba" required className="w-full bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-5 focus:ring-4 focus:ring-primary/20 outline-none transition-all" />
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Tipo de Urgência</label>
-                <select name="servico" required className="w-full bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-5 focus:ring-4 focus:ring-primary/20 outline-none transition-all appearance-none">
-                  <option value="">Selecione o serviço...</option>
-                  <option value="Desentupimento Geral">Desentupimento Geral</option>
-                  <option value="Hidrojateamento">Hidrojateamento</option>
-                  <option value="Limpeza de Fossa">Limpeza de Fossa</option>
-                  <option value="Vídeo Inspeção">Vídeo Inspeção</option>
-                  <option value="Caça Vazamentos">Caça Vazamentos</option>
-                  <option value="Outros">Outros / Urgência</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">O que está acontecendo?</label>
-                <textarea name="mensagem" rows={4} placeholder="Conte brevemente o problema..." required className="w-full bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-5 focus:ring-4 focus:ring-primary/20 outline-none transition-all resize-none"></textarea>
-              </div>
-
-              <div className="flex flex-col items-center w-full">
-                <button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white font-black py-5 sm:py-6 rounded-2xl shadow-2xl hover:shadow-red-600/30 transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-4 uppercase tracking-widest text-lg">
-                  Enviar <i className="fab fa-whatsapp text-2xl"></i>
-                </button>
-                <p className="text-[10px] text-gray-400 mt-2 text-center leading-normal">Seu orçamento será gerado e enviado diretamente para o WhatsApp comercial da central.</p>
-              </div>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
+  return <section id="contato" className="adp-section adp-contact"><div className="site-container adp-contact-grid">
+    <div><p className="adp-eyebrow">Vamos resolver?</p><h2>Conte com<br />a ADP.</h2><p>Conte o que está acontecendo. Você será direcionado ao WhatsApp da central para conversar sobre o atendimento.</p><a className="adp-contact-phone" href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}><Phone size={22} />{COMPANY_PHONE}</a><a className="adp-contact-email" href={`mailto:${COMPANY_EMAIL}`}>{COMPANY_EMAIL}</a></div>
+    <form onSubmit={handleSubmit} className="adp-contact-form"><div className="adp-form-pair"><label htmlFor="contact-name">Seu nome ou empresa<input id="contact-name" name="nome" autoComplete="name" placeholder="Como podemos chamar você?" required /></label><label htmlFor="contact-location">Bairro e cidade<input id="contact-location" name="local" autoComplete="address-level2" placeholder="Ex.: CIC, Curitiba" required /></label></div><label htmlFor="contact-service">De qual serviço precisa?<select id="contact-service" name="servico" required defaultValue=""><option value="" disabled>Selecione uma opção</option>{['Desentupimento Geral', 'Hidrojateamento', 'Limpeza de Fossa', 'Vídeo Inspeção', 'Caça Vazamentos', 'Outros / Urgência'].map(s => <option key={s}>{s}</option>)}</select></label><label htmlFor="contact-message">O que está acontecendo?<textarea id="contact-message" name="mensagem" rows={3} placeholder="Descreva o problema" required /></label><button className="adp-button" type="submit">Continuar no WhatsApp <ArrowUpRight size={20} /></button><p className="adp-form-note">A mensagem abre preenchida no WhatsApp. Revise os dados e envie quando quiser. Nenhum orçamento é gerado automaticamente.</p></form>
+  </div></section>;
 };
-
 export default ContactForm;
